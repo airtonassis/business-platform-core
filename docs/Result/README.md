@@ -16,9 +16,38 @@ flowchart TD
     C --> E[Contém Valor / Value]
     D --> F[Contém Erro / Error]
 
-## Benefícios
-Performance: Evita o overhead de stack trace gerado por Exceptions.
+### Benefícios
 
-Explicitação de Contratos: Métodos declaram explicitamente que podem falhar no retorno do tipo.
+- **Contratos explícitos:** o método declara no próprio retorno que uma operação pode resultar em sucesso ou falha.
+- **Fluxo previsível:** falhas esperadas não dependem de exceções para controlar o fluxo.
+- **Composição:** permite encadear operações de forma previsível.
+- **Tipagem forte:** sucesso e falha fazem parte do contrato de compilação.
+- **Performance:** evita o custo associado ao uso de exceções para situações esperadas.
 
-Composição: Facilita encadeamento de operações (railway-oriented programming).
+## Quando utilizar
+
+O `Result` deve ser utilizado quando uma operação pode falhar de forma
+esperada por uma regra de negócio ou validação conhecida.
+
+Exemplos:
+
+- criação de usuário;
+- alteração de dados;
+- validação de domínio;
+- criação de contrato;
+- operação financeira;
+- transição de estado;
+- execução de um caso de uso.
+
+## Quando NÃO utilizar
+
+O `Result` não deve ser utilizado como substituto universal para exceções.
+
+Não utilizar `Result` para:
+
+- erros inesperados de programação;
+- falhas catastróficas;
+- corrupção de estado;
+- violações de invariantes internas;
+- exceções de infraestrutura que devem ser tratadas por políticas específicas;
+- situações em que a operação não possui uma falha esperada representável no contrato.

@@ -41,3 +41,11 @@ public class Result<TValue> : Result
 Support a conversões implícitas adicionado.
 
 Métodos de extensão e Match mapeados.
+### Estado do Error
+
+Todo Result deve possuir uma representação válida de Error.
+
+- Result em Success deve utilizar `Error.None`.
+- Result em Failure deve possuir um Error diferente de `Error.None`.
+- `Error` não deve ser nulo.
+
