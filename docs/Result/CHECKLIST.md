@@ -8,3 +8,8 @@ Utilize este checklist para aprovar a liberação ou atualização do componente
 - [ ] **Testes de Unidade**: 100% dos caminhos e exceções testados.
 - [ ] **Testes de Mutação**: Escore Stryker / Mutação acima de 90%.
 - [ ] **Documentação em `docs/`**: Todos os arquivos (`README`, `BUSINESS_RULES`, `USE_CASES`, `IMPLEMENTATION`, `TESTS`, `CHECKLIST`) devidamente preenchidos e sincronizados.
+[ ] Nullable Reference Types habilitado
+[ ] Zero warnings de compilação
+[ ] API pública documentada
+[ ] Testes de integração/arquitetura avaliados quando aplicável
+[ ] Nenhuma alteração de ADR necessária ou ADR atualizada
