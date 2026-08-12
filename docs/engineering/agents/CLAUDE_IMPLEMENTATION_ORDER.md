@@ -151,3 +151,18 @@ O Result somente será considerado concluído quando:
 
 Após a conclusão, o agente deve aguardar autorização
 antes de iniciar o próximo componente.
+
+
+Result
+   ↓
+Claude implementa
+   ↓
+Você revisa
+   ↓
+Base44 audita
+   ↓
+ChatGPT revisa arquitetura
+   ↓
+APROVADO
+   ↓
+Entity
