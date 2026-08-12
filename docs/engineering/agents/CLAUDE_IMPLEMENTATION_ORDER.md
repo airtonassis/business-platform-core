@@ -26,3 +26,128 @@ Nenhum componente deve ser construído se suas dependências diretas na sequênc
 - Suíte de testes (Unidade, Arquitetura e Mutação) verde.
 - Documentação sincronizada em `docs/foundation/[Componente]`.
 - Checklist do componente aprovado.
+
+# Claude Implementation Order
+
+## Objetivo
+
+Este documento define a ordem oficial de implementação da
+Business Management Platform.
+
+O agente deve respeitar a sequência definida neste documento e
+não deve avançar para componentes posteriores sem concluir
+integralmente o componente atual.
+
+---
+
+# Regras Gerais de Implementação
+
+Antes de iniciar qualquer implementação, o agente deve:
+
+1. Ler a documentação geral da plataforma.
+2. Ler os Architecture Principles.
+3. Ler o Technology Stack.
+4. Ler os ADRs aplicáveis.
+5. Ler os Development Playbooks aplicáveis.
+6. Ler a documentação específica do componente.
+7. Verificar se existem decisões arquiteturais pendentes.
+
+O agente NÃO deve inventar regras arquiteturais.
+
+Quando encontrar uma decisão não especificada ou uma
+contradição entre documentos, deve interromper a implementação
+e solicitar decisão arquitetural.
+
+---
+
+# Fase 1 — Shared Foundation
+
+A Shared Foundation contém os componentes técnicos
+fundamentais utilizados pelas demais camadas e produtos
+da plataforma.
+
+A implementação deve seguir obrigatoriamente esta ordem:
+
+1. Result
+2. Error
+3. Entity
+4. AggregateRoot
+5. ValueObject
+6. DomainEvent
+7. Repository
+8. Specification
+9. Pagination
+10. Auditing
+11. TimeProvider
+
+---
+
+# FEATURE-0001 — Result
+
+## Objetivo
+
+Implementar o componente Result da Shared Foundation conforme
+sua especificação oficial.
+
+## Documentação obrigatória
+
+Antes de implementar, o agente deve ler:
+
+- Result/README.md
+- Result/BUSINESS_RULES.md
+- Result/USE_CASES.md
+- Result/IMPLEMENTATION.md
+- Result/TESTS.md
+- Result/CHECKLIST.md
+
+Além da documentação arquitetural geral aplicável ao projeto.
+
+## Escopo
+
+Implementar exclusivamente o componente Result.
+
+Não implementar:
+
+- Entity
+- AggregateRoot
+- ValueObject
+- DomainEvent
+- Repository
+- outros componentes da Foundation
+
+## Processo
+
+1. Ler toda a documentação obrigatória.
+2. Validar as dependências necessárias.
+3. Implementar o código conforme a especificação.
+4. Implementar os testes definidos.
+5. Executar os testes.
+6. Executar as verificações de qualidade definidas pelo projeto.
+7. Atualizar a documentação de implementação.
+8. Atualizar o CHECKLIST.
+9. Apresentar resumo da implementação.
+
+## Regra de parada
+
+Se existir alguma decisão arquitetural não definida,
+contradição entre documentos ou requisito ambíguo:
+
+- NÃO assumir uma decisão;
+- NÃO alterar unilateralmente a arquitetura;
+- interromper a implementação;
+- registrar a questão;
+- solicitar decisão.
+
+## Critérios de conclusão
+
+O Result somente será considerado concluído quando:
+
+- código implementado;
+- testes implementados;
+- testes aprovados;
+- verificações arquiteturais executadas;
+- documentação atualizada;
+- CHECKLIST concluído.
+
+Após a conclusão, o agente deve aguardar autorização
+antes de iniciar o próximo componente.
