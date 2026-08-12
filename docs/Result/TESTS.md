@@ -8,6 +8,20 @@
 4. **`ImplicitConversion_From_Value_Should_Create_SuccessResult`**: Testar conversão implícita do tipo T para `Result<T>`.
 5. **`ImplicitConversion_From_Error_Should_Create_FailureResult`**: Testar conversão implícita do objeto `Error` para `Result<T>`.
 
+6. `Success_Should_Set_Error_To_None`
+
+7. `Failure_Should_Reject_Error_None`
+
+8. `Failure_Should_Not_Be_Success`
+
+9. `Success_Should_Not_Be_Failure`
+
+10. `Result_Should_Be_Immutable`
+
+11. `ResultT_Should_Be_Immutable`
+
+12. `Failure_Should_Not_Expose_Value`
+
 ---
 
 ## Implementação
