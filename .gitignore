@@ -1,0 +1,13 @@
+# Build
+bin/
+obj/
+
+# IDE
+.vs/
+.idea/
+*.user
+
+# Test / quality output
+TestResults/
+StrykerOutput/
+coverage/

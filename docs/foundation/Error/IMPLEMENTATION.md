@@ -8,11 +8,15 @@ A implementação deve respeitar integralmente as regras definidas em `BUSINESS_
 
 ## Status
 
-**Specification / Design**
+**Implemented — Em Revisão**
 
-O componente ainda não está implementado.
+O componente está implementado conforme este contrato e aguarda revisão,
+auditoria independente e aprovação arquitetural (ver `CHECKLIST.md`).
 
-Este documento define o contrato esperado para a implementação.
+Arquivos:
+
+- `src/Business.Platform.Core.Domain/Shared/Errors/Error.cs`
+- `src/Business.Platform.Core.Domain/Shared/Errors/ErrorType.cs`
 
 ---
 
@@ -282,6 +286,98 @@ documentada.
 
 Status atual:
 
-`Specification / Design`
+`Implemented — Em Revisão`
 
-A implementação será realizada somente após aprovação da especificação.
+Implementação realizada em 2026-09-24:
+
+- `ErrorType` implementado com valores numéricos explícitos (0–5).
+- `Error` implementado como `sealed record` com propriedades somente leitura
+  (`get` sem `set`/`init`, o que também impede alteração via expressão `with`).
+- Construtor público valida `code` e `description` com
+  `ArgumentException.ThrowIfNullOrWhiteSpace` (`ArgumentNullException` para
+  `null`, `ArgumentException` para vazio/whitespace) e `type` com
+  `Enum.IsDefined` (`ArgumentOutOfRangeException`).
+- `Error.None` criado por construtor privado sem parâmetros, exposto como
+  instância canônica única.
+- API pública documentada com XML documentation comments.
+
+A infraestrutura de build e qualidade foi criada nesta feature, porque os
+arquivos correspondentes estavam vazios.
+
+#### Architecture Remediation — .NET 10 (2026-09-24)
+
+A implementação inicial usava .NET 8 e asserções nativas do xUnit, e essa
+escolha não estava aprovada. A decisão arquitetural oficial é **.NET 10**,
+com a stack de testes **xUnit + Shouldly + NetArchTest + Stryker.NET**.
+A remediação migrou a solução sem alterar o código de `Error`/`ErrorType`
+nem o comportamento especificado dos testes.
+
+Stack efetivamente utilizada:
+
+| Item | Versão / Configuração |
+|---|---|
+| SDK | .NET SDK 10.0.401 (`global.json`, `rollForward: latestPatch`) |
+| Target | `net10.0` (definido em `Directory.Build.props` para todos os projetos) |
+| Configuração global | `Directory.Build.props`: `Nullable`, `ImplicitUsings`, `TreatWarningsAsErrors`, `EnforceCodeStyleInBuild`, `GenerateDocumentationFile` |
+| Pacotes | Central Package Management (`Directory.Packages.props`) |
+| Test SDK / Runner | Microsoft.NET.Test.Sdk 17.14.1, xunit.runner.visualstudio 3.1.4, coverlet.collector 6.0.4 |
+| Testes | xUnit 2.9.3 |
+| Asserções | Shouldly 4.3.0 |
+| Arquitetura | NetArchTest.Rules 1.3.2 |
+| Mutação | Stryker.NET 4.8.1 (ferramenta local em `.config/dotnet-tools.json`; configuração em `stryker-config.json`; `break` = 90%) |
+
+Migração das asserções para Shouldly: `Should.Throw<T>` aceita exceções
+**derivadas** de `T`, por exemplo um `ArgumentNullException` passaria como
+`ArgumentException`. `Assert.Throws<T>` do xUnit exige o tipo **exato**.
+Para preservar a semântica original, cada `Should.Throw<T>` é seguido de
+`exception.ShouldBeOfType<T>()`, que verifica o tipo exato.
+
+#### Justificativa técnica — `coverage-analysis: perTestInIsolation`
+
+`Error.None` é uma propriedade estática com inicializador
+(`public static Error None { get; } = new();`). Ela é avaliada **uma única
+vez por processo**, na inicialização do tipo, e só então invoca o construtor
+privado.
+
+O Stryker.NET compila todos os mutantes num único assembly e ativa cada um
+em tempo de execução, trocando um identificador de mutante ativo. No modo
+padrão de análise de cobertura, o processo de teste é reutilizado entre
+mutantes. Quando um mutante do construtor privado é ativado (por exemplo,
+`string.Empty` → `"Stryker was here!"` em `Code` ou `Description`), a
+instância de `Error.None` já foi criada sem mutação e não é recriada. Os
+testes `None_ShouldHaveEmptyCode` e `None_ShouldHaveEmptyDescription`
+observam o valor original e o mutante é reportado como **Survived**, embora
+os testes sejam capazes de detectá-lo.
+
+Evidência:
+
+| Modo | Mortos | Sobreviventes | Score |
+|---|---|---|---|
+| Padrão (`perTest`) | 5 | 2 (`Error.cs` linhas do construtor privado) | 71,43% |
+| `perTestInIsolation` | 7 | 0 | 100,00% |
+
+O modo `perTestInIsolation` executa os testes de forma isolada, o que
+permite que a inicialização estática ocorra com o mutante já ativo.
+Portanto, a configuração corrige um falso positivo da ferramenta e não
+enfraquece a medição. O custo é um tempo de execução ligeiramente maior,
+desprezível para o tamanho atual da Foundation.
+
+Esta configuração deve ser mantida enquanto componentes da Foundation
+expuserem estado estático inicializado (como `Error.None`).
+
+#### Execução do Stryker com Visual Studio 2022 instalado
+
+Em máquinas Windows com Visual Studio 2022 instalado, o Stryker.NET resolve
+o `MSBuild.exe` do Visual Studio (MSBuild 17.14) para analisar a solution.
+O .NET SDK 10.0.401 exige **MSBuild 18.0.0 ou superior**. Sem ajuste, a
+análise falha: no Stryker 4.8.1 com "No project references found" e no
+5.0.0 com "Failed to analyze project builds".
+
+Nesse ambiente, execute informando o MSBuild do próprio SDK:
+
+```text
+dotnet stryker --msbuild-path "C:\Program Files\dotnet\sdk\10.0.401\MSBuild.dll"
+```
+
+O caminho depende da máquina e por isso não foi fixado em
+`stryker-config.json`.

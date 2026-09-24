@@ -9,10 +9,19 @@ e `IMPLEMENTATION.md`.
 
 ## Status
 
-**Planejado — ainda não implementado**
+**Implementado e executado — 2026-09-24**
 
 Nenhum teste deve ser marcado como concluído antes da implementação
 e execução bem-sucedida da suíte.
+
+Localização da suíte:
+
+- `tests/UnitTests/Domain/Shared/Errors/ErrorTests.cs`
+- `tests/UnitTests/Domain/Shared/Errors/ErrorTypeTests.cs`
+- `tests/ArchitectureTests/Domain/Shared/Errors/ErrorArchitectureTests.cs`
+
+Cada teste referencia o identificador `ERR-TST-XXX` correspondente
+em comentário.
 
 ---
 
@@ -285,11 +294,43 @@ definidos para o componente.
 
 ## 12. Status de Execução
 
-| Categoria | Status |
-|---|---|
-| Unit Tests | ⏳ Pendente |
-| Architecture Tests | ⏳ Pendente |
-| Mutation Tests | ⏳ Pendente |
+| Categoria | Status | Resultado |
+|---|---|---|
+| Unit Tests | ✔ Aprovado | 40/40 aprovados (ERR-TST-001 a 018, 020, 021) |
+| Architecture Tests | ✔ Aprovado | 11/11 aprovados (ERR-TST-019 e regras da seção 9) |
+| Mutation Tests | ✔ Aprovado | 100,00% — 7 mortos, 0 sobreviventes, 0 timeouts |
 
 Os status somente poderão ser alterados para `✔ Aprovado` após
 execução efetiva e registro do resultado.
+
+### Registro de execução — 2026-09-24
+
+Comandos:
+
+```text
+dotnet build Business.Platform.Core.sln -c Release   → 0 warnings, 0 errors
+dotnet test  Business.Platform.Core.sln -c Release   → 51/51 aprovados
+dotnet format Business.Platform.Core.sln --verify-no-changes → sem alterações
+dotnet stryker                                        → 100,00% (break: 90%)
+```
+
+Cenários adicionais além da matriz obrigatória:
+
+- todos os valores definidos de `ErrorType` são aceitos pelo construtor;
+- valores inválidos `-1`, `6` e `999` de `ErrorType` são rejeitados, com
+  verificação de `ParamName`, `ActualValue` e mensagem;
+- whitespace variado (`" "`, `"   "`, `"\t"`, `"\r\n"`) para `Code` e `Description`;
+- `ParamName` verificado em todas as exceções de argumento;
+- igualdade verificada por `Equals`, `==`, `!=` e `GetHashCode`;
+- um erro válido nunca é igual a `Error.None`;
+- `Error` é `sealed record` e expõe um único construtor público (o construtor de
+  `Error.None` não é público);
+- o assembly de Domain referencia somente a BCL;
+- `Error` não depende de `Result`;
+- guarda contra regra vazia: o filtro NetArchTest seleciona exatamente
+  `Error` e `ErrorType`.
+
+Mutation testing: 10 mutantes gerados. 3 foram ignorados pelo filtro
+*block already covered* (remoção de bloco cujas instruções já são mutadas
+individualmente). Os 7 testados foram mortos. O modo `perTestInIsolation` é
+necessário. Ver a observação em `IMPLEMENTATION.md` → Histórico.

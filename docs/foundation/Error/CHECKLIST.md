@@ -9,127 +9,127 @@ Nenhum item deve ser marcado como concluído antes de sua validação efetiva.
 
 ## 1. Especificação
 
-- [ ] `README.md` completo e atualizado.
-- [ ] `BUSINESS_RULES.md` completo e atualizado.
-- [ ] `USE_CASES.md` completo e atualizado.
-- [ ] `IMPLEMENTATION.md` completo e atualizado.
-- [ ] `TESTS.md` completo e atualizado.
-- [ ] Não existem contradições entre os documentos.
-- [ ] Todas as decisões arquiteturais necessárias estão definidas.
+- [x] `README.md` completo e atualizado.
+- [x] `BUSINESS_RULES.md` completo e atualizado.
+- [x] `USE_CASES.md` completo e atualizado.
+- [x] `IMPLEMENTATION.md` completo e atualizado.
+- [x] `TESTS.md` completo e atualizado.
+- [ ] Não existem contradições entre os documentos. _(pendente: o corpo da FEATURE-0001 em `CLAUDE_IMPLEMENTATION_ORDER.md` ainda descreve o Result; blocos de código de `USE_CASES.md` estão com cercas Markdown quebradas)_
+- [ ] Todas as decisões arquiteturais necessárias estão definidas. _(pendente: a pilha de build e testes foi adotada provisoriamente e precisa ser ratificada em `TECHNOLOGY_STACK.md`/ADR; ver `IMPLEMENTATION.md` → Histórico)_
 
 ---
 
 ## 2. Implementação
 
-- [ ] `Error` implementado no projeto `Business.Platform.Core.Domain`.
-- [ ] `ErrorType` implementado no projeto `Business.Platform.Core.Domain`.
-- [ ] Namespace conforme especificação.
-- [ ] `Error` implementado como `sealed record`.
-- [ ] Propriedades imutáveis.
-- [ ] `Error.None` implementado.
-- [ ] Construtor público valida seus argumentos.
-- [ ] `ErrorType` inválido é rejeitado.
-- [ ] Nenhuma funcionalidade fora do escopo foi adicionada.
+- [x] `Error` implementado no projeto `Business.Platform.Core.Domain`.
+- [x] `ErrorType` implementado no projeto `Business.Platform.Core.Domain`.
+- [x] Namespace conforme especificação.
+- [x] `Error` implementado como `sealed record`.
+- [x] Propriedades imutáveis.
+- [x] `Error.None` implementado.
+- [x] Construtor público valida seus argumentos.
+- [x] `ErrorType` inválido é rejeitado.
+- [x] Nenhuma funcionalidade fora do escopo foi adicionada.
 
 ---
 
 ## 3. Contrato de Error
 
-- [ ] `Code` obrigatório para erros válidos.
-- [ ] `Description` obrigatória para erros válidos.
-- [ ] `Type` obrigatório e válido.
-- [ ] `Error.None` é a única representação permitida para ausência de erro.
-- [ ] `Error.None` possui `Code` vazio.
-- [ ] `Error.None` possui `Description` vazia.
-- [ ] `Error.None` utiliza `ErrorType.Failure`.
-- [ ] Igualdade por valor validada.
-- [ ] Não existem setters públicos mutáveis.
+- [x] `Code` obrigatório para erros válidos.
+- [x] `Description` obrigatória para erros válidos.
+- [x] `Type` obrigatório e válido.
+- [x] `Error.None` é a única representação permitida para ausência de erro.
+- [x] `Error.None` possui `Code` vazio.
+- [x] `Error.None` possui `Description` vazia.
+- [x] `Error.None` utiliza `ErrorType.Failure`.
+- [x] Igualdade por valor validada.
+- [x] Não existem setters públicos mutáveis.
 
 ---
 
 ## 4. ErrorType
 
-- [ ] `Failure = 0`.
-- [ ] `Validation = 1`.
-- [ ] `NotFound = 2`.
-- [ ] `Conflict = 3`.
-- [ ] `Unauthorized = 4`.
-- [ ] `Forbidden = 5`.
-- [ ] Nenhum tipo adicional foi introduzido sem decisão arquitetural.
+- [x] `Failure = 0`.
+- [x] `Validation = 1`.
+- [x] `NotFound = 2`.
+- [x] `Conflict = 3`.
+- [x] `Unauthorized = 4`.
+- [x] `Forbidden = 5`.
+- [x] Nenhum tipo adicional foi introduzido sem decisão arquitetural.
 
 ---
 
 ## 5. Dependências
 
-- [ ] Não depende de `Result`.
-- [ ] Não depende de Application.
-- [ ] Não depende de Infrastructure.
-- [ ] Não depende de API.
-- [ ] Não depende de ASP.NET Core.
-- [ ] Não depende de Entity Framework Core.
-- [ ] Não depende de logging.
-- [ ] Não depende de mensageria.
-- [ ] Não possui dependências externas além das autorizadas pelo projeto.
+- [x] Não depende de `Result`.
+- [x] Não depende de Application.
+- [x] Não depende de Infrastructure.
+- [x] Não depende de API.
+- [x] Não depende de ASP.NET Core.
+- [x] Não depende de Entity Framework Core.
+- [x] Não depende de logging.
+- [x] Não depende de mensageria.
+- [x] Não possui dependências externas além das autorizadas pelo projeto.
 
 ---
 
 ## 6. Qualidade de Código
 
-- [ ] Nullable Reference Types habilitado.
-- [ ] Compilação sem erros.
-- [ ] Zero warnings.
-- [ ] `TreatWarningsAsErrors` habilitado conforme padrão do projeto.
-- [ ] API pública consistente com `IMPLEMENTATION.md`.
-- [ ] Código formatado conforme padrões do projeto.
-- [ ] Análise estática aprovada, quando aplicável.
+- [x] Nullable Reference Types habilitado.
+- [x] Compilação sem erros.
+- [x] Zero warnings.
+- [x] `TreatWarningsAsErrors` habilitado conforme padrão do projeto.
+- [x] API pública consistente com `IMPLEMENTATION.md`.
+- [x] Código formatado conforme padrões do projeto.
+- [x] Análise estática aprovada, quando aplicável. _(analisadores .NET padrão + `EnforceCodeStyleInBuild` + `dotnet format --verify-no-changes`)_
 
 ---
 
 ## 7. Testes Unitários
 
-- [ ] Todos os cenários obrigatórios de `TESTS.md` implementados.
-- [ ] Todos os testes unitários aprovados.
-- [ ] Validação de argumentos coberta.
-- [ ] `Error.None` coberto.
-- [ ] Igualdade por valor coberta.
-- [ ] Imutabilidade coberta.
-- [ ] `ErrorType` coberto.
+- [x] Todos os cenários obrigatórios de `TESTS.md` implementados.
+- [x] Todos os testes unitários aprovados.
+- [x] Validação de argumentos coberta.
+- [x] `Error.None` coberto.
+- [x] Igualdade por valor coberta.
+- [x] Imutabilidade coberta.
+- [x] `ErrorType` coberto.
 
 ---
 
 ## 8. Testes de Arquitetura
 
-- [ ] Testes de arquitetura implementados quando aplicáveis.
-- [ ] Dependências proibidas verificadas.
-- [ ] Localização arquitetural do componente verificada.
-- [ ] Todos os testes de arquitetura aprovados.
+- [x] Testes de arquitetura implementados quando aplicáveis.
+- [x] Dependências proibidas verificadas.
+- [x] Localização arquitetural do componente verificada.
+- [x] Todos os testes de arquitetura aprovados.
 
 ---
 
 ## 9. Mutation Testing
 
-- [ ] Mutation testing executado.
-- [ ] Mutation Score >= 90%.
-- [ ] Mutantes sobreviventes analisados.
-- [ ] Nenhum mutante sobrevivente crítico ignorado sem justificativa.
+- [x] Mutation testing executado.
+- [x] Mutation Score >= 90%.
+- [x] Mutantes sobreviventes analisados. _(0 sobreviventes; sobreviventes falsos do modo padrão foram analisados e documentados)_
+- [x] Nenhum mutante sobrevivente crítico ignorado sem justificativa.
 
 ---
 
 ## 10. Segurança
 
-- [ ] `Code` não contém informações sensíveis.
-- [ ] `Description` não contém credenciais, tokens ou segredos.
-- [ ] Nenhum detalhe técnico interno é exposto indevidamente.
+- [x] `Code` não contém informações sensíveis. _(responsabilidade do consumidor ao criar erros; orientação registrada na documentação XML de `Error` e em `BUSINESS_RULES.md`)_
+- [x] `Description` não contém credenciais, tokens ou segredos. _(idem)_
+- [x] Nenhum detalhe técnico interno é exposto indevidamente.
 
 ---
 
 ## 11. Documentação Pós-Implementação
 
-- [ ] `IMPLEMENTATION.md` atualizado de `Specification / Design` para o estado real.
-- [ ] `TESTS.md` atualizado com os resultados reais.
-- [ ] Histórico da feature atualizado.
-- [ ] Nenhum teste está marcado como aprovado sem ter sido executado.
-- [ ] Documentação permanece sincronizada com o código.
+- [x] `IMPLEMENTATION.md` atualizado de `Specification / Design` para o estado real.
+- [x] `TESTS.md` atualizado com os resultados reais.
+- [x] Histórico da feature atualizado.
+- [x] Nenhum teste está marcado como aprovado sem ter sido executado.
+- [x] Documentação permanece sincronizada com o código.
 
 ---
 
@@ -145,7 +145,7 @@ Nenhum item deve ser marcado como concluído antes de sua validação efetiva.
 
 ## Status Final
 
-**Status atual:** ⏳ Specification / Design
+**Status atual:** 🔎 Implemented — Em Revisão (aguardando itens 1 e 12)
 
 O status somente poderá ser alterado para:
 

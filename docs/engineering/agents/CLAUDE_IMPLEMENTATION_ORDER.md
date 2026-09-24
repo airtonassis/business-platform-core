@@ -81,8 +81,95 @@ A implementação deve seguir obrigatoriamente esta ordem:
 11. TimeProvider
 
 ---
-
 # FEATURE-0001 — Error
+
+## Objetivo
+
+Implementar o componente Error da Shared Foundation conforme
+sua especificação oficial.
+
+## Documentação obrigatória
+
+Antes de implementar, o agente deve ler:
+
+- docs/foundation/Error/README.md
+- docs/foundation/Error/BUSINESS_RULES.md
+- docs/foundation/Error/USE_CASES.md
+- docs/foundation/Error/IMPLEMENTATION.md
+- docs/foundation/Error/TESTS.md
+- docs/foundation/Error/CHECKLIST.md
+
+Além da documentação arquitetural geral aplicável ao projeto.
+
+## Escopo
+
+Implementar exclusivamente os tipos `Error` e `ErrorType`.
+
+Não implementar:
+
+- Result
+- Entity
+- AggregateRoot
+- ValueObject
+- DomainEvent
+- Repository
+- outros componentes da Foundation
+
+## Processo
+
+1. Ler toda a documentação obrigatória.
+2. Validar as dependências necessárias.
+3. Implementar o código conforme a especificação.
+4. Implementar os testes definidos.
+5. Executar os testes.
+6. Executar as verificações de qualidade definidas pelo projeto.
+7. Atualizar a documentação de implementação.
+8. Atualizar o CHECKLIST.
+9. Apresentar resumo da implementação.
+
+## Regra de parada
+
+Se existir alguma decisão arquitetural não definida,
+contradição entre documentos ou requisito ambíguo:
+
+- NÃO assumir uma decisão;
+- NÃO alterar unilateralmente a arquitetura;
+- interromper a implementação;
+- registrar a questão;
+- solicitar decisão.
+
+## Critérios de conclusão
+
+O Error somente será considerado concluído quando:
+
+- código implementado;
+- testes implementados;
+- testes aprovados;
+- verificações arquiteturais executadas;
+- documentação atualizada;
+- CHECKLIST concluído.
+
+Após a conclusão, o agente deve aguardar autorização
+antes de iniciar o próximo componente.
+
+
+Error
+   ↓
+Claude implementa
+   ↓
+Você revisa
+   ↓
+Base44 audita
+   ↓
+ChatGPT revisa arquitetura
+   ↓
+APROVADO
+   ↓
+Result
+
+---
+
+# FEATURE-0002 — Result
 
 ## Objetivo
 
@@ -93,12 +180,12 @@ sua especificação oficial.
 
 Antes de implementar, o agente deve ler:
 
-- Result/README.md
-- Result/BUSINESS_RULES.md
-- Result/USE_CASES.md
-- Result/IMPLEMENTATION.md
-- Result/TESTS.md
-- Result/CHECKLIST.md
+- docs/foundation/Result/README.md
+- docs/foundation/Result/BUSINESS_RULES.md
+- docs/foundation/Result/USE_CASES.md
+- docs/foundation/Result/IMPLEMENTATION.md
+- docs/foundation/Result/TESTS.md
+- docs/foundation/Result/CHECKLIST.md
 
 Além da documentação arquitetural geral aplicável ao projeto.
 
@@ -168,4 +255,5 @@ APROVADO
 Entity
 
 
-# FEATURE-0002 — Result
+
+# FEATURE-0003 — Entity

@@ -1,0 +1,13 @@
+{
+  "stryker-config": {
+    "solution": "Business.Platform.Core.sln",
+    "project": "Business.Platform.Core.Domain.csproj",
+    "test-projects": [
+      "tests/UnitTests/Business.Platform.Core.UnitTests.csproj",
+      "tests/ArchitectureTests/Business.Platform.Core.ArchitectureTests.csproj"
+    ],
+    "coverage-analysis": "perTestInIsolation",
+    "reporters": [ "progress", "cleartext", "html", "json" ],
+    "thresholds": { "high": 95, "low": 90, "break": 90 }
+  }
+}
