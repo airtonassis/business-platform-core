@@ -8,8 +8,8 @@ Nenhum componente deve ser construído se suas dependências diretas na sequênc
 
 ### Sequência Obrigatória:
 
-1. **`Result`**: Modelo genérico de resposta e tratamento de falhas sem exceções.
-2. **`Error`**: Estrutura padronizada de erros de domínio e infraestrutura.
+1. **`Error`**: Estrutura padronizada de erros de domínio e infraestrutura.
+2. **`Result`**: Modelo genérico para representar sucesso e falhas esperadas sem utilizar exceções como mecanismo de controle de fluxo.
 3. **`Entity`**: Abstração base de entidade com igualdade por ID.
 4. **`AggregateRoot`**: Extensão de Entity com suporte a ciclo de vida e eventos de domínio.
 5. **`ValueObject`**: Abstração de objeto de valor com igualdade estrutural por componentes.
@@ -68,8 +68,8 @@ da plataforma.
 
 A implementação deve seguir obrigatoriamente esta ordem:
 
-1. Result
-2. Error
+1. Error
+2. Result
 3. Entity
 4. AggregateRoot
 5. ValueObject
@@ -82,7 +82,7 @@ A implementação deve seguir obrigatoriamente esta ordem:
 
 ---
 
-# FEATURE-0001 — Result
+# FEATURE-0001 — Error
 
 ## Objetivo
 
@@ -166,3 +166,6 @@ ChatGPT revisa arquitetura
 APROVADO
    ↓
 Entity
+
+
+# FEATURE-0002 — Result
