@@ -223,4 +223,142 @@ public sealed class ErrorTests
 
         error.ShouldNotBe(Error.None);
     }
+
+    // ERR-TST-022 — H01: Equals(Error?) explícito
+    [Fact]
+    public void EqualsTyped_WithSameValues_ShouldReturnTrue()
+    {
+        var first = new Error(ValidCode, ValidDescription, ErrorType.NotFound);
+        var second = new Error(ValidCode, ValidDescription, ErrorType.NotFound);
+
+        first.Equals(second).ShouldBeTrue();
+        second.Equals(first).ShouldBeTrue();
+    }
+
+    // ERR-TST-023
+    [Fact]
+    public void EqualsTyped_WithNull_ShouldReturnFalse()
+    {
+        var error = new Error(ValidCode, ValidDescription);
+
+        error.Equals((Error?)null).ShouldBeFalse();
+    }
+
+    // ERR-TST-024
+    [Fact]
+    public void Equals_WithSameInstance_ShouldReturnTrue()
+    {
+        var error = new Error(ValidCode, ValidDescription);
+
+        error.Equals(error).ShouldBeTrue();
+        Error.None.Equals(Error.None).ShouldBeTrue();
+    }
+
+    // ERR-TST-025 — H01: Equals(object?) explícito
+    [Fact]
+    public void EqualsObject_WithEquivalentError_ShouldReturnTrue()
+    {
+        var first = new Error(ValidCode, ValidDescription, ErrorType.NotFound);
+        object second = new Error(ValidCode, ValidDescription, ErrorType.NotFound);
+
+        first.Equals(second).ShouldBeTrue();
+    }
+
+    // ERR-TST-026
+    [Fact]
+    public void EqualsObject_WithNull_ShouldReturnFalse()
+    {
+        var error = new Error(ValidCode, ValidDescription);
+
+        error.Equals((object?)null).ShouldBeFalse();
+    }
+
+    // ERR-TST-027
+    [Fact]
+    public void EqualsObject_WithDifferentType_ShouldReturnFalse()
+    {
+        var error = new Error(ValidCode, ValidDescription);
+
+        error.Equals((object)ValidCode).ShouldBeFalse();
+    }
+
+    // ERR-TST-028 — H01: igualdade ordinal (sensível a maiúsculas/minúsculas)
+    [Fact]
+    public void Errors_WithCodeDifferingOnlyByCase_ShouldNotBeEqual()
+    {
+        var first = new Error("User.NotFound", ValidDescription);
+        var second = new Error("user.notfound", ValidDescription);
+
+        first.Equals(second).ShouldBeFalse();
+        (first == second).ShouldBeFalse();
+    }
+
+    // ERR-TST-029
+    [Fact]
+    public void Errors_WithDescriptionDifferingOnlyByCase_ShouldNotBeEqual()
+    {
+        var first = new Error(ValidCode, "Descrição A.");
+        var second = new Error(ValidCode, "descrição a.");
+
+        first.Equals(second).ShouldBeFalse();
+        (first == second).ShouldBeFalse();
+    }
+
+    // ERR-TST-030 — H01: operadores == e != com null
+    [Fact]
+    public void EqualityOperators_WithNullOperands_ShouldFollowValueSemantics()
+    {
+        var error = new Error(ValidCode, ValidDescription);
+        Error? none = null;
+
+        (error == null).ShouldBeFalse();
+        (null == error).ShouldBeFalse();
+        (none == null).ShouldBeTrue();
+        (error != null).ShouldBeTrue();
+        (null != error).ShouldBeTrue();
+        (none != null).ShouldBeFalse();
+    }
+
+    // ERR-TST-031 — H01: GetHashCode consistente e determinístico
+    [Fact]
+    public void GetHashCode_ShouldBeStableForSameInstance()
+    {
+        var error = new Error(ValidCode, ValidDescription, ErrorType.Conflict);
+
+        error.GetHashCode().ShouldBe(error.GetHashCode());
+    }
+
+    // ERR-TST-032
+    [Fact]
+    public void GetHashCode_ShouldBeEqualForEquivalentErrorsOfEachType()
+    {
+        foreach (var type in Enum.GetValues<ErrorType>())
+        {
+            var first = new Error(ValidCode, ValidDescription, type);
+            var second = new Error(ValidCode, ValidDescription, type);
+
+            second.GetHashCode().ShouldBe(first.GetHashCode());
+        }
+    }
+
+    // ERR-TST-033
+    [Fact]
+    public void EquivalentErrors_ShouldBeTreatedAsSameKeyInHashSet()
+    {
+        var set = new HashSet<Error>
+        {
+            new(ValidCode, ValidDescription, ErrorType.NotFound),
+            new(ValidCode, ValidDescription, ErrorType.NotFound),
+            new(ValidCode, ValidDescription, ErrorType.Conflict)
+        };
+
+        set.Count.ShouldBe(2);
+    }
+
+    // ERR-TST-034 — H01: nenhum Error vazio pode ser criado por consumidores, além de Error.None
+    [Fact]
+    public void None_ShouldBeTheOnlyEmptyError()
+    {
+        Should.Throw<ArgumentException>(() => new Error(Error.None.Code, Error.None.Description, Error.None.Type));
+    }
 }

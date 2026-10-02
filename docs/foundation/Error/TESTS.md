@@ -195,6 +195,37 @@ devem ser equivalentes.
 
 ---
 
+## 6.1 Igualdade explícita — Correção Pós-Auditoria (H01)
+
+`Error` é `sealed class Error : IEquatable<Error>`. Os testes abaixo
+comprovam o contrato de igualdade explícita.
+
+| ID | Teste | Valida |
+|---|---|---|
+| ERR-TST-022 | `EqualsTyped_WithSameValues_ShouldReturnTrue` | `Equals(Error?)` simétrico |
+| ERR-TST-023 | `EqualsTyped_WithNull_ShouldReturnFalse` | `Equals(Error?)` com `null` |
+| ERR-TST-024 | `Equals_WithSameInstance_ShouldReturnTrue` | reflexividade, inclusive `Error.None` |
+| ERR-TST-025 | `EqualsObject_WithEquivalentError_ShouldReturnTrue` | `Equals(object?)` |
+| ERR-TST-026 | `EqualsObject_WithNull_ShouldReturnFalse` | `Equals(object?)` com `null` |
+| ERR-TST-027 | `EqualsObject_WithDifferentType_ShouldReturnFalse` | `Equals(object?)` com outro tipo |
+| ERR-TST-028 | `Errors_WithCodeDifferingOnlyByCase_ShouldNotBeEqual` | comparação ordinal de `Code` |
+| ERR-TST-029 | `Errors_WithDescriptionDifferingOnlyByCase_ShouldNotBeEqual` | comparação ordinal de `Description` |
+| ERR-TST-030 | `EqualityOperators_WithNullOperands_ShouldFollowValueSemantics` | `==`/`!=` com `null` |
+| ERR-TST-031 | `GetHashCode_ShouldBeStableForSameInstance` | hash determinístico |
+| ERR-TST-032 | `GetHashCode_ShouldBeEqualForEquivalentErrorsOfEachType` | hash consistente com `Equals` para todos os `ErrorType` |
+| ERR-TST-033 | `EquivalentErrors_ShouldBeTreatedAsSameKeyInHashSet` | uso como chave em `HashSet<Error>` |
+| ERR-TST-034 | `None_ShouldBeTheOnlyEmptyError` | o construtor público não recria `Error.None` |
+
+Testes de arquitetura do novo contrato:
+
+| ID | Teste | Valida |
+|---|---|---|
+| ERR-TST-035 | `Error_ShouldBeSealedClassAndNotRecord` | classe selada; sem `<Clone>$` nem `EqualityContract` |
+| ERR-TST-036 | `Error_ShouldDeclareExplicitValueEquality` | `IEquatable<Error>`; `Equals`, `GetHashCode`, `==` e `!=` declarados em `Error` |
+| ERR-TST-037 | `Error_ShouldNotExposeCloningMechanism` | exatamente 2 construtores (público validador + privado de `None`); sem construtor de cópia, sem `ICloneable`, sem métodos públicos que retornem `Error` |
+
+---
+
 ## 7. Imutabilidade
 
 ### ERR-TST-019 — Error deve ser imutável
@@ -257,6 +288,12 @@ Os testes de arquitetura devem verificar que `Error` e `ErrorType`:
 Quando aplicável, utilizar a biblioteca de testes de arquitetura
 adotada pelo projeto.
 
+Limitação conhecida (R01, dívida técnica não bloqueadora): a inspeção de
+referências lê o XML do `.csproj` do Domain e dos `Directory.*.props`, mas
+não reproduz completamente a avaliação do MSBuild para referências
+introduzidas por imports/targets. Ver `IMPLEMENTATION.md` → Riscos e dívida
+técnica.
+
 ---
 
 ## 10. Mutation Testing
@@ -296,41 +333,131 @@ definidos para o componente.
 
 | Categoria | Status | Resultado |
 |---|---|---|
-| Unit Tests | ✔ Aprovado | 40/40 aprovados (ERR-TST-001 a 018, 020, 021) |
-| Architecture Tests | ✔ Aprovado | 11/11 aprovados (ERR-TST-019 e regras da seção 9) |
-| Mutation Tests | ✔ Aprovado | 100,00% — 7 mortos, 0 sobreviventes, 0 timeouts |
+| Unit Tests | ✔ Aprovado | 53/53 aprovados (ERR-TST-001 a 018, 020 a 034) |
+| Architecture Tests | ✔ Aprovado | 16/16 aprovados (ERR-TST-019, 035 a 037 e regras da seção 9) |
+| Mutation Tests | ✔ Aprovado | 100,00% dos mutantes avaliados — 17 mortos, 1 timeout, 0 sobreviventes (18 avaliados de 23 gerados) |
 
 Os status somente poderão ser alterados para `✔ Aprovado` após
 execução efetiva e registro do resultado.
 
-### Registro de execução — 2026-09-24
+## 13. Histórico de Execução
 
-Comandos:
+Os registros estão em ordem cronológica. Cada resultado vale para o estado
+do código e da stack **em que foi obtido**.
+
+| Estado | Data | Stack | `Error` | Unit | Arquitetura | Mutação (`perTestInIsolation`) |
+|---|---|---|---|---|---|---|
+| 1 — Implementação original | 2026-09-24 | .NET 8, xUnit (asserções nativas) | `sealed record` | 40/40 | 11/11 | 100% — 7/7 avaliados (10 gerados) |
+| 2 — Remediação .NET 10 | 2026-09-24 | .NET 10, xUnit + Shouldly | `sealed record` (sem alteração) | 40/40 | 11/11 | 100% — 7/7 avaliados (10 gerados) |
+| 3 — Correção Pós-Auditoria | 2026-10-02 | .NET 10, xUnit + Shouldly | `sealed class : IEquatable<Error>` | 53/53 | 16/16 | 100% — 18/18 avaliados (23 gerados) |
+
+### Estado 1 — Implementação original em .NET 8 (2026-09-24)
+
+Ambiente: .NET SDK 8.0.423, `net8.0`, xUnit 2.9.3 com **asserções nativas**,
+NetArchTest.Rules 1.3.2, Stryker.NET 4.8.1. Estado do código: `Error` como
+**`sealed record`**.
 
 ```text
 dotnet build Business.Platform.Core.sln -c Release   → 0 warnings, 0 errors
-dotnet test  Business.Platform.Core.sln -c Release   → 51/51 aprovados
+dotnet test  Business.Platform.Core.sln -c Release   → 51/51 aprovados (40 unit + 11 arquitetura)
 dotnet format Business.Platform.Core.sln --verify-no-changes → sem alterações
-dotnet stryker                                        → 100,00% (break: 90%)
+dotnet stryker (modo padrão, perTest)                 → 71,43% — 5 mortos, 2 sobreviventes
+dotnet stryker (perTestInIsolation)                   → 100,00% — 7 mortos, 0 sobreviventes
 ```
 
-Cenários adicionais além da matriz obrigatória:
+Na primeira execução, a suíte de arquitetura tinha 10 testes. O 11º, que
+garante que o filtro NetArchTest não passa de forma vazia, foi adicionado
+antes do mutation testing.
+
+Mutation testing: 10 mutantes gerados. 3 foram ignorados pelo filtro
+*block already covered*. No modo padrão, os 2 mutantes do construtor
+privado de `Error.None` sobreviveram (71,43%, abaixo do `break` de 90%). Com
+`perTestInIsolation`, os 7 avaliados foram mortos. O score histórico de 100%
+refere-se a esses 7 mutantes efetivamente avaliados.
+
+Cenários adicionais além da matriz obrigatória, neste estado:
 
 - todos os valores definidos de `ErrorType` são aceitos pelo construtor;
 - valores inválidos `-1`, `6` e `999` de `ErrorType` são rejeitados, com
   verificação de `ParamName`, `ActualValue` e mensagem;
-- whitespace variado (`" "`, `"   "`, `"\t"`, `"\r\n"`) para `Code` e `Description`;
+- whitespace variado (`" "`, `"   "`, `"	"`, `"
+"`) para `Code` e `Description`;
 - `ParamName` verificado em todas as exceções de argumento;
-- igualdade verificada por `Equals`, `==`, `!=` e `GetHashCode`;
+- igualdade verificada por `Equals`, `==`, `!=` e `GetHashCode`, gerados pelo record;
 - um erro válido nunca é igual a `Error.None`;
-- `Error` é `sealed record` e expõe um único construtor público (o construtor de
-  `Error.None` não é público);
-- o assembly de Domain referencia somente a BCL;
+- `Error` é `sealed record` (verificado pela presença de `<Clone>$`) e expõe
+  um único construtor público (o construtor de `Error.None` não é público);
+- o assembly de Domain referencia somente a BCL. Neste estado, a regra
+  aceitava qualquer assembly com nome iniciado por `System`; foi substituída
+  no Estado 3 (M01);
 - `Error` não depende de `Result`;
 - guarda contra regra vazia: o filtro NetArchTest seleciona exatamente
   `Error` e `ErrorType`.
 
-Mutation testing: 10 mutantes gerados. 3 foram ignorados pelo filtro
-*block already covered* (remoção de bloco cujas instruções já são mutadas
-individualmente). Os 7 testados foram mortos. O modo `perTestInIsolation` é
-necessário. Ver a observação em `IMPLEMENTATION.md` → Histórico.
+### Estado 2 — Architecture Remediation: migração para .NET 10 (2026-09-24)
+
+Ambiente: .NET SDK 10.0.401, `net10.0`, runtime 10.0.0, xUnit 2.9.3,
+**Shouldly 4.3.0**, NetArchTest.Rules 1.3.2, Stryker.NET 4.8.1. Estado do
+código: `Error` **continua `sealed record`**, sem alteração de código de
+produção. Somente a plataforma e as asserções dos testes mudaram.
+
+```text
+dotnet --version                                      → 10.0.401
+dotnet restore Business.Platform.Core.sln             → sucesso
+dotnet build Business.Platform.Core.sln -c Release    → 0 warnings, 0 errors
+dotnet test  tests/UnitTests (Release)                → 40/40 aprovados
+dotnet test  tests/ArchitectureTests (Release)        → 11/11 aprovados
+dotnet format Business.Platform.Core.sln --verify-no-changes → sem alterações
+dotnet stryker --msbuild-path "<sdk>\MSBuild.dll"     → 100,00% (perTestInIsolation) — 7 mortos, 0 sobreviventes
+dotnet list package --vulnerable                      → nenhum pacote vulnerável
+```
+
+As asserções foram migradas de xUnit nativo para Shouldly. Cada
+`Should.Throw<T>` é seguido de `ShouldBeOfType<T>()` para manter a exigência
+de tipo exato do `Assert.Throws<T>` original (ver `IMPLEMENTATION.md`).
+Os cenários testados são os mesmos do Estado 1.
+
+Mutation testing: os mesmos 10 mutantes do Estado 1 (3 ignorados, 7
+avaliados e mortos). O modo padrão (`perTest`) não foi executado neste
+estado. Sem o `--msbuild-path`, o Stryker não executou neste ambiente (ver
+`IMPLEMENTATION.md`).
+
+### Estado 3 — Correção Pós-Auditoria (2026-10-02) — estado atual
+
+Estado do código: `Error` como `sealed class Error : IEquatable<Error>`
+(H01). Verificação de dependências com lista explícita de assemblies (M01).
+Testes ERR-TST-022 a 037 adicionados.
+
+Ambiente: .NET SDK 10.0.401, `net10.0`, xUnit 2.9.3, Shouldly 4.3.0,
+NetArchTest.Rules 1.3.2, Stryker.NET 4.8.1 (stack do ADR-0001). A execução
+partiu de um estado limpo, sem `bin/`, `obj/` nem `StrykerOutput/`.
+
+```text
+dotnet --version                                      → 10.0.401
+dotnet restore Business.Platform.Core.sln             → sucesso
+dotnet build Business.Platform.Core.sln -c Release    → 0 warnings, 0 errors
+dotnet test  tests/UnitTests (Release)                → 53/53 aprovados
+dotnet test  tests/ArchitectureTests (Release)        → 16/16 aprovados
+dotnet format Business.Platform.Core.sln --verify-no-changes → sem alterações
+dotnet stryker --msbuild-path "<sdk>\MSBuild.dll"     → 100,00% (break: 90%)
+```
+
+Contagem de mutantes (relatório JSON):
+
+| Status | Quantidade | Entra no score? |
+|---|---|---|
+| Killed | 17 | sim |
+| Timeout | 1 | sim, como detectado (mutação `==` → `!=` em `operator !=` causa recursão infinita) |
+| Survived | 0 | sim |
+| Ignored | 3 | não (filtro *block already covered*) |
+| CompileError | 2 | não (mutações de `Equals(object?)` que não compilam) |
+| **Total gerado** | **23** | 18 avaliados |
+
+O score de 100% refere-se aos 18 mutantes efetivamente avaliados.
+`GetHashCode()` não gerou mutantes, pois `HashCode.Combine` não oferece
+operadores mutáveis. Sua correção é coberta pelos testes ERR-TST-015 e
+ERR-TST-031 a 033, não pelo mutation testing.
+
+Evidência complementar no modo padrão (`perTest`), executado só para
+documentar o M02: 15 mortos, 1 timeout, 2 sobreviventes (construtor privado
+de `Error.None`), score de 88,89%. Ver `IMPLEMENTATION.md` → Mutation testing.

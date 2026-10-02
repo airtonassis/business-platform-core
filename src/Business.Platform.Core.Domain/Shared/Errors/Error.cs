@@ -5,10 +5,11 @@ namespace Business.Platform.Core.Domain.Shared;
 /// de uma operação de domínio ou caso de uso.
 /// </summary>
 /// <remarks>
+/// A igualdade considera exatamente <see cref="Code"/>, <see cref="Description"/> e <see cref="Type"/>.
 /// <see cref="Code"/> e <see cref="Description"/> não devem conter informações sensíveis,
 /// segredos, credenciais, tokens ou detalhes técnicos internos.
 /// </remarks>
-public sealed record Error
+public sealed class Error : IEquatable<Error>
 {
     /// <summary>
     /// Constrói exclusivamente a instância canônica de <see cref="None"/>.
@@ -57,4 +58,28 @@ public sealed record Error
 
     /// <summary>Categoria semântica da falha.</summary>
     public ErrorType Type { get; }
+
+    /// <summary>Indica se dois erros são iguais por valor.</summary>
+    public static bool operator ==(Error? left, Error? right) =>
+        left is null ? right is null : left.Equals(right);
+
+    /// <summary>Indica se dois erros são diferentes por valor.</summary>
+    public static bool operator !=(Error? left, Error? right) => !(left == right);
+
+    /// <inheritdoc />
+    public bool Equals(Error? other) =>
+        other is not null
+        && string.Equals(Code, other.Code, StringComparison.Ordinal)
+        && string.Equals(Description, other.Description, StringComparison.Ordinal)
+        && Type == other.Type;
+
+    /// <inheritdoc />
+    public override bool Equals(object? obj) => obj is Error other && Equals(other);
+
+    /// <inheritdoc />
+    public override int GetHashCode() =>
+        HashCode.Combine(
+            StringComparer.Ordinal.GetHashCode(Code),
+            StringComparer.Ordinal.GetHashCode(Description),
+            Type);
 }

@@ -14,8 +14,8 @@ Nenhum item deve ser marcado como concluído antes de sua validação efetiva.
 - [x] `USE_CASES.md` completo e atualizado.
 - [x] `IMPLEMENTATION.md` completo e atualizado.
 - [x] `TESTS.md` completo e atualizado.
-- [ ] Não existem contradições entre os documentos. _(pendente: o corpo da FEATURE-0001 em `CLAUDE_IMPLEMENTATION_ORDER.md` ainda descreve o Result; blocos de código de `USE_CASES.md` estão com cercas Markdown quebradas)_
-- [ ] Todas as decisões arquiteturais necessárias estão definidas. _(pendente: a pilha de build e testes foi adotada provisoriamente e precisa ser ratificada em `TECHNOLOGY_STACK.md`/ADR; ver `IMPLEMENTATION.md` → Histórico)_
+- [x] Não existem contradições entre os documentos. _(FEATURE-0001 em `CLAUDE_IMPLEMENTATION_ORDER.md` corrigida; Markdown de `USE_CASES.md` corrigido)_
+- [x] Todas as decisões arquiteturais necessárias estão definidas. _(stack formalizada em `docs/architecture/decisions/ADR-0001-technology-stack.md`)_
 
 ---
 
@@ -24,7 +24,8 @@ Nenhum item deve ser marcado como concluído antes de sua validação efetiva.
 - [x] `Error` implementado no projeto `Business.Platform.Core.Domain`.
 - [x] `ErrorType` implementado no projeto `Business.Platform.Core.Domain`.
 - [x] Namespace conforme especificação.
-- [x] `Error` implementado como `sealed record`.
+- [x] `Error` implementado como `sealed class Error : IEquatable<Error>`, sem ser `record`. _(H01; a exigência de `sealed record` foi removida por decisão arquitetural)_
+- [x] Não existe mecanismo de clonagem equivalente a `with`. _(sem construtor de cópia, sem `ICloneable`; ERR-TST-037)_
 - [x] Propriedades imutáveis.
 - [x] `Error.None` implementado.
 - [x] Construtor público valida seus argumentos.
@@ -43,6 +44,7 @@ Nenhum item deve ser marcado como concluído antes de sua validação efetiva.
 - [x] `Error.None` possui `Description` vazia.
 - [x] `Error.None` utiliza `ErrorType.Failure`.
 - [x] Igualdade por valor validada.
+- [x] Igualdade explícita e consistente: `Equals(Error?)`, `Equals(object?)`, `GetHashCode`, `==` e `!=`, considerando exatamente `Code`, `Description` (ordinal) e `Type`. _(ERR-TST-022 a 033, 036)_
 - [x] Não existem setters públicos mutáveis.
 
 ---
@@ -100,7 +102,7 @@ Nenhum item deve ser marcado como concluído antes de sua validação efetiva.
 ## 8. Testes de Arquitetura
 
 - [x] Testes de arquitetura implementados quando aplicáveis.
-- [x] Dependências proibidas verificadas.
+- [x] Dependências proibidas verificadas. _(M01: lista explícita de assemblies permitidos, com nome e chave pública, e ausência de referências de pacote, projeto, assembly ou framework no `.csproj` do Domain e nos `Directory.*.props`)_
 - [x] Localização arquitetural do componente verificada.
 - [x] Todos os testes de arquitetura aprovados.
 
@@ -110,7 +112,7 @@ Nenhum item deve ser marcado como concluído antes de sua validação efetiva.
 
 - [x] Mutation testing executado.
 - [x] Mutation Score >= 90%.
-- [x] Mutantes sobreviventes analisados. _(0 sobreviventes; sobreviventes falsos do modo padrão foram analisados e documentados)_
+- [x] Mutantes sobreviventes analisados. _(0 sobreviventes com `perTestInIsolation`. No modo padrão, 2 sobreviventes de `Error.None`; comportamento observado, comprovação e hipótese documentados separadamente em `IMPLEMENTATION.md`)_
 - [x] Nenhum mutante sobrevivente crítico ignorado sem justificativa.
 
 ---
@@ -135,20 +137,27 @@ Nenhum item deve ser marcado como concluído antes de sua validação efetiva.
 
 ## 12. Aprovação
 
-- [ ] Implementação revisada.
-- [ ] Auditoria independente realizada.
-- [ ] Pendências críticas resolvidas.
-- [ ] Decisões arquiteturais adicionais registradas quando necessárias.
-- [ ] FEATURE-0001 aprovada.
+- [x] Implementação revisada. _(Architecture Review da implementação técnica e revisão das correções pós-auditoria concluídas)_
+- [x] Auditoria independente realizada. _(auditoria Codex com achados H01, M01, M02, L01 e L02, todos corrigidos; reauditoria independente concluída)_
+- [x] Pendências críticas resolvidas. _(a reauditoria não encontrou bloqueador técnico remanescente)_
+- [x] Decisões arquiteturais adicionais registradas quando necessárias. _(stack no ADR-0001; decisão H01 registrada em `IMPLEMENTATION.md`; por orientação da governança, não foi criado ADR adicional para Error)_
+- [x] Architecture/QA Gate aprovado. _(aprovado pelo Solution Architect / Tech Lead)_
+- [x] FEATURE-0001 aprovada.
+
+### Dívida técnica não bloqueadora
+
+- **R01:** a inspeção arquitetural de referências não reproduz completamente
+  a avaliação do MSBuild para referências introduzidas por imports/targets.
+  Ver `IMPLEMENTATION.md` → Riscos e dívida técnica.
 
 ---
 
 ## Status Final
 
-**Status atual:** 🔎 Implemented — Em Revisão (aguardando itens 1 e 12)
+**Status atual:** ✔ APPROVED — FEATURE-0001 concluída
 
-O status somente poderá ser alterado para:
-
-**✔ APPROVED**
-
-após o cumprimento integral dos critérios aplicáveis deste checklist.
+Todas as seções do checklist foram cumpridas. A revisão das correções e a
+reauditoria independente foram concluídas sem bloqueadores técnicos
+remanescentes, e o Architecture/QA Gate foi aprovado pelo Solution
+Architect / Tech Lead. R01 permanece registrado como dívida técnica não
+bloqueadora.

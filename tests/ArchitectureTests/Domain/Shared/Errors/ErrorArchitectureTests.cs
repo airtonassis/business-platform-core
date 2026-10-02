@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Xml.Linq;
 using Business.Platform.Core.Domain.Shared;
 using NetArchTest.Rules;
 
@@ -83,27 +84,85 @@ public sealed class ErrorArchitectureTests
         result.IsSuccessful.ShouldBeTrue(FailureMessage(result));
     }
 
-    // Somente a BCL é permitida
+    // Somente a BCL é permitida: lista explícita de assemblies (nome + chave pública da Microsoft)
     [Fact]
-    public void DomainAssembly_ShouldReferenceOnlyBaseClassLibrary()
+    public void DomainAssembly_ShouldReferenceOnlyAllowedAssemblies()
     {
-        var nonBclReferences = typeof(Error).Assembly
+        var notAllowed = typeof(Error).Assembly
             .GetReferencedAssemblies()
-            .Select(reference => reference.Name!)
-            .Where(name => name != "netstandard" && name != "mscorlib" && !name.StartsWith("System", StringComparison.Ordinal))
+            .Where(reference => !IsAllowedAssembly(reference))
+            .Select(reference => reference.FullName)
             .ToArray();
 
-        nonBclReferences.ShouldBeEmpty();
+        notAllowed.ShouldBeEmpty();
     }
 
-    // Error implementado como sealed record
+    // O projeto Domain não declara referências de pacote, projeto, assembly ou framework
     [Fact]
-    public void Error_ShouldBeSealedRecord()
+    public void DomainProject_ShouldNotDeclareExternalReferences()
+    {
+        var references = ReferenceElements(Path.Combine(RepositoryRoot, "src", DomainAssemblyName, $"{DomainAssemblyName}.csproj"))
+            .ToArray();
+
+        references.ShouldBeEmpty();
+    }
+
+    // Nenhuma referência é injetada globalmente em todos os projetos (incluindo Domain)
+    [Theory]
+    [InlineData("Directory.Build.props")]
+    [InlineData("Directory.Packages.props")]
+    public void SharedBuildFiles_ShouldNotInjectReferences(string fileName)
+    {
+        var references = ReferenceElements(Path.Combine(RepositoryRoot, fileName))
+            .ToArray();
+
+        references.ShouldBeEmpty();
+    }
+
+    // ERR-TST-035 — H01: Error é uma classe selada, não um record
+    [Fact]
+    public void Error_ShouldBeSealedClassAndNotRecord()
     {
         var type = typeof(Error);
 
+        type.IsClass.ShouldBeTrue();
         type.IsSealed.ShouldBeTrue();
-        type.GetMethod("<Clone>$").ShouldNotBeNull();
+        type.GetMethod("<Clone>$", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).ShouldBeNull();
+        type.GetProperty("EqualityContract", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).ShouldBeNull();
+    }
+
+    // ERR-TST-036 — H01: igualdade por valor explícita
+    [Fact]
+    public void Error_ShouldDeclareExplicitValueEquality()
+    {
+        var type = typeof(Error);
+
+        typeof(IEquatable<Error>).IsAssignableFrom(type).ShouldBeTrue();
+        type.GetMethod(nameof(Equals), [typeof(Error)])!.DeclaringType.ShouldBe(type);
+        type.GetMethod(nameof(Equals), [typeof(object)])!.DeclaringType.ShouldBe(type);
+        type.GetMethod(nameof(GetHashCode), Type.EmptyTypes)!.DeclaringType.ShouldBe(type);
+        type.GetMethod("op_Equality", BindingFlags.Public | BindingFlags.Static).ShouldNotBeNull();
+        type.GetMethod("op_Inequality", BindingFlags.Public | BindingFlags.Static).ShouldNotBeNull();
+    }
+
+    // ERR-TST-037 — H01: não existe mecanismo de clonagem equivalente a `with`
+    [Fact]
+    public void Error_ShouldNotExposeCloningMechanism()
+    {
+        var type = typeof(Error);
+
+        var constructors = type.GetConstructors(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        constructors.Length.ShouldBe(2);
+        constructors.ShouldNotContain(constructor => constructor.GetParameters().Any(parameter => parameter.ParameterType == type));
+
+        var publicMethodsReturningError = type
+            .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly)
+            .Where(method => !method.IsSpecialName && method.ReturnType == type)
+            .Select(method => method.Name)
+            .ToArray();
+
+        publicMethodsReturningError.ShouldBeEmpty();
+        typeof(ICloneable).IsAssignableFrom(type).ShouldBeFalse();
     }
 
     // ERR-TST-019
@@ -129,6 +188,38 @@ public sealed class ErrorArchitectureTests
         constructor.GetParameters()
             .Select(parameter => parameter.ParameterType)
             .ShouldBe([typeof(string), typeof(string), typeof(ErrorType)]);
+    }
+
+    private static readonly byte[] MicrosoftPublicKeyToken = Convert.FromHexString("b03f5f7f11d50a3a");
+
+    private static readonly string[] AllowedReferencedAssemblies = ["System.Runtime"];
+
+    private static readonly string[] ReferenceItemNames =
+        ["PackageReference", "GlobalPackageReference", "ProjectReference", "Reference", "FrameworkReference"];
+
+    private static string RepositoryRoot { get; } = FindRepositoryRoot();
+
+    private static bool IsAllowedAssembly(AssemblyName reference) =>
+        AllowedReferencedAssemblies.Contains(reference.Name, StringComparer.Ordinal)
+        && (reference.GetPublicKeyToken() ?? []).SequenceEqual(MicrosoftPublicKeyToken);
+
+    private static IEnumerable<string> ReferenceElements(string projectFile) =>
+        XDocument.Load(projectFile)
+            .Descendants()
+            .Where(element => ReferenceItemNames.Contains(element.Name.LocalName, StringComparer.Ordinal))
+            .Select(element => element.ToString(SaveOptions.DisableFormatting));
+
+    private static string FindRepositoryRoot()
+    {
+        for (var directory = new DirectoryInfo(AppContext.BaseDirectory); directory is not null; directory = directory.Parent)
+        {
+            if (File.Exists(Path.Combine(directory.FullName, "Business.Platform.Core.sln")))
+            {
+                return directory.FullName;
+            }
+        }
+
+        throw new InvalidOperationException("Raiz do repositório (Business.Platform.Core.sln) não encontrada.");
     }
 
     private static string FailureMessage(TestResult result) =>
