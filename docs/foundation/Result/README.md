@@ -13,8 +13,11 @@ flowchart TD
     A[Execução da Operação] --> B{Operação bem-sucedida?}
     B -- Sim --> C[Result.Success]
     B -- Não --> D[Result.Failure]
-    C --> E[Contém Valor / Value]
-    D --> F[Contém Erro / Error]
+    C --> E[Error = Error.None]
+    D --> F[Error ≠ Error.None]
+    E --> G[Value contém resultado]
+    F --> H[Value indisponível - lança exceção]
+```
 
 ### Benefícios
 
@@ -51,3 +54,43 @@ Não utilizar `Result` para:
 - violações de invariantes internas;
 - exceções de infraestrutura que devem ser tratadas por políticas específicas;
 - situações em que a operação não possui uma falha esperada representável no contrato.
+
+---
+
+## Invariantes Fundamentais (V1)
+
+O componente `Result` garante invariantes rigorosos:
+
+| Invariante | Comportamento | Exceção |
+|---|---|---|
+| **Success nunca contém null** | `Result.Success<T>(null)` é rejeitado | `ArgumentNullException` |
+| **Success sempre tem Error.None** | Garantido internamente; consumer vê `IsSuccess ⇒ Error == Error.None` | — |
+| **Failure nunca contém Error.None** | `Result.Failure(Error.None)` é rejeitado | `ArgumentException` |
+| **Failure nunca contém null** | `Result.Failure(null)` é rejeitado | `ArgumentNullException` |
+| **Value inacessível em Failure** | Acessar `Result<T>.Value` quando `IsFailure` lança | `InvalidOperationException` |
+| **Result<T> é imutável** | Nenhuma propriedade pode mudar após construção | — |
+| **Result<T> é sealed** | Não pode ser herdada; design final | — |
+
+---
+
+## Padrão de Consumo: Match
+
+O `Result` oferece `Match` — um padrão funcional para consumir sucesso ou falha de forma segura e tipada:
+
+```csharp
+// Sucesso com valor
+var result = Result.Success(user);
+string message = result.Match(
+    onSuccess: user => $"Bem-vindo {user.Name}",
+    onFailure: error => $"Erro: {error.Code}"
+);
+
+// Sucesso sem valor
+var result = Result.Success();
+string message = result.Match(
+    onSuccess: () => "Operação concluída",
+    onFailure: error => $"Erro: {error.Code}"
+);
+```
+
+Ambas as sobrecargas exigem delegates válidos (não null) e são síncronas na V1.
