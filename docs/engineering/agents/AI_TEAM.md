@@ -38,7 +38,7 @@ Não altera código.
 
 ---
 
-## Base44
+## Codex
 
 Responsabilidades
 
