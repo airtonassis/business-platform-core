@@ -1,0 +1,67 @@
+
+[38;5;11m   _____ _              _               _   _ ______ _______  [0m
+[38;5;11m  / ____| |            | |             | \ | |  ____|__   __| [0m
+[38;5;11m | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |    [0m
+[38;5;11m  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |    [0m
+[38;5;11m  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |    [0m
+[38;5;11m |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|    [0m
+[38;5;11m                   __/ |                                      [0m
+[38;5;11m                  |___/                                       [0m
+
+
+Version: [38;5;2m4.8.1[0m
+
+[38;5;11mA new version of Stryker.NET (5.0.0) is available. Please consider upgrading [0m
+[38;5;11musing `dotnet tool update -g dotnet-stryker`[0m
+
+[21:05:33 INF] Analysis starting.
+[21:05:33 INF] Identifying projects to mutate in C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\Business.Platform.Core.sln. This can take a while.
+[21:05:36 INF] Found project C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\src\Business.Platform.Core.Domain\Business.Platform.Core.Domain.csproj to mutate.
+[21:05:36 INF] Analysis complete.
+[21:05:36 INF] Building solution Business.Platform.Core.sln
+[21:05:36 INF] Building project Business.Platform.Core.sln using dotnet build Business.Platform.Core.sln (directory C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core.)
+[21:05:58 INF] Number of tests found: 137 for project C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\src\Business.Platform.Core.Domain\Business.Platform.Core.Domain.csproj. Initial test run started.
+[21:06:04 INF] 95 mutants created
+[21:06:04 INF] Capture mutant coverage using 'CoverageBasedTest, CaptureCoveragePerTest' mode.
+[38;5;14mHint: by passing "--open-report or -o" the report will open automatically and [0m
+[38;5;14mupdate the report in real-time.[0m
+[21:07:10 INF] 2     mutants got status CompileError. Reason: Mutant caused compile errors
+[21:07:10 INF] 10    mutants got status NoCoverage.   Reason: Not covered by any test.
+[21:07:10 INF] 21    mutants got status Ignored.      Reason: Removed by block already covered filter
+[21:07:10 INF] 33    total mutants are skipped for the above mentioned reasons
+[21:07:10 INF] 62    total mutants will be tested
+
+Killed:   [38;5;13m50[0m
+Survived: [38;5;13m11[0m
+Timeout:  [38;5;13m 1[0m
+
+
+All mutants have been tested, and your mutation score has been calculated
+╭─────────────────────────────────────────────────────┬──┬───┬────┬─────┬───┬──╮
+│ File                                                │  │ # │ #  │  #  │ # │  │
+│                                                     │  │ … │ t… │ su… │ … │  │
+│                                                     │  │   │    │     │ … │  │
+├─────────────────────────────────────────────────────┼──┼───┼────┼─────┼───┼──┤
+│ C:\Users\airton.assis.POUPA\Documents\GitHub\busine │  │ 5 │  1 │  44 │ 1 │  │
+│ ss-platform-core\src                                │  │ 0 │    │     │ 0 │  │
+│ Shared\Errors\Error.cs                              │  │ 1 │  1 │   5 │ 0 │  │
+│                                                     │  │ 7 │    │     │   │  │
+│ Shared\Errors\ErrorType.cs                          │  │ 0 │  0 │   0 │ 0 │  │
+│ Shared\Results\Result.cs                            │  │ 3 │  0 │  39 │ 1 │  │
+│                                                     │  │ 3 │    │     │ 0 │  │
+╰─────────────────────────────────────────────────────┴──┴───┴────┴─────┴───┴──╯
+
+[38;5;2mYour json report has been generated at:[0m
+]8;id=2069647816;file://C:/Users/airton.assis.POUPA/Documents/GitHub/business-platform-core/StrykerOutput/2026-10-02.21-05-32/reports/mutation-report.json\[38;5;2mC:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\StrykerOutpu[0m]8;;\
+]8;id=56541279;file://C:/Users/airton.assis.POUPA/Documents/GitHub/business-platform-core/StrykerOutput/2026-10-02.21-05-32/reports/mutation-report.json\[38;5;2mt\2026-10-02.21-05-32\reports\mutation-report.json[0m]8;;\
+
+[38;5;2mYour html report has been generated at:[0m
+]8;id=996033996;file://C:/Users/airton.assis.POUPA/Documents/GitHub/business-platform-core/StrykerOutput/2026-10-02.21-05-32/reports/mutation-report.html\[38;5;2mC:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\StrykerOutpu[0m]8;;\
+]8;id=1419846025;file://C:/Users/airton.assis.POUPA/Documents/GitHub/business-platform-core/StrykerOutput/2026-10-02.21-05-32/reports/mutation-report.html\[38;5;2mt\2026-10-02.21-05-32\reports\mutation-report.html[0m]8;;\
+[38;5;2mYou can open it in your browser of choice.[0m
+[21:07:32 INF] Time Elapsed 00:01:59.7269923
+[21:07:32 INF] The final mutation score is 70.83 %
+[21:07:32 WRN] Final mutation score is below threshold break. Crashing...
+
+[38;5;9mThe mutation score is lower than the configured break threshold of 90%.[0m
+ [38;5;9mLooks like you've got some work to do 😇[0m

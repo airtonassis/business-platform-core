@@ -1,0 +1,34 @@
+﻿A versão do dotnet runtime é '10.0.12'.
+Formatação de arquivos de código no espaço de trabalho 'C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\Business.Platform.Core.sln'.
+Carregando espaço de trabalho.
+O projeto Business.Platform.Core.Domain está usando a configuração de 'C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\.editorconfig'.
+O projeto Business.Platform.Core.Domain está usando a configuração de 'C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\src\Business.Platform.Core.Domain\obj\Debug\net10.0\Business.Platform.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig'.
+O projeto Business.Platform.Core.Domain está usando a configuração de 'C:\Program Files\dotnet\sdk\10.0.401\Sdks\Microsoft.NET.Sdk\analyzers\build\config\analysislevel_10_default.globalconfig'.
+O projeto Business.Platform.Core.UnitTests está usando a configuração de 'C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\.editorconfig'.
+O projeto Business.Platform.Core.UnitTests está usando a configuração de 'C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\tests\UnitTests\obj\Debug\net10.0\Business.Platform.Core.UnitTests.GeneratedMSBuildEditorConfig.editorconfig'.
+O projeto Business.Platform.Core.UnitTests está usando a configuração de 'C:\Program Files\dotnet\sdk\10.0.401\Sdks\Microsoft.NET.Sdk\analyzers\build\config\analysislevel_10_default.globalconfig'.
+O projeto Business.Platform.Core.ArchitectureTests está usando a configuração de 'C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\.editorconfig'.
+O projeto Business.Platform.Core.ArchitectureTests está usando a configuração de 'C:\Users\airton.assis.POUPA\Documents\GitHub\business-platform-core\tests\ArchitectureTests\obj\Debug\net10.0\Business.Platform.Core.ArchitectureTests.GeneratedMSBuildEditorConfig.editorconfig'.
+O projeto Business.Platform.Core.ArchitectureTests está usando a configuração de 'C:\Program Files\dotnet\sdk\10.0.401\Sdks\Microsoft.NET.Sdk\analyzers\build\config\analysislevel_10_default.globalconfig'.
+Concluir em 5417 ms.
+Determinando arquivos formatáveis.
+Concluir em 396 ms.
+Executando formatadores.
+Executando a análise de Estilo do Código.
+Determinando os diagnósticos...
+Executando 5 analisadores em Business.Platform.Core.Domain.
+Executando 5 analisadores em Business.Platform.Core.UnitTests.
+Executando 5 analisadores em Business.Platform.Core.ArchitectureTests.
+Concluir em 2938 ms.
+Análise concluída em 2938 ms.
+Executando a análise de Referência do Analisador.
+Determinando os diagnósticos...
+Executando 156 analisadores em Business.Platform.Core.Domain.
+Executando 212 analisadores em Business.Platform.Core.UnitTests.
+Executando 212 analisadores em Business.Platform.Core.ArchitectureTests.
+Concluir em 1049 ms.
+Análise concluída em 1049 ms.
+Concluir em 5272 ms.
+0 de 19 arquivos formatados.
+Formatação concluída em 11086 ms.
+ExitCode=0
