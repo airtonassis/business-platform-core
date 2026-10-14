@@ -487,8 +487,12 @@ Auditoria independente (Codex) com achados H01, M01, M02, L01 e L02.
   de `object` (nome do tipo).
 - **M01:** a verificação arquitetural que aceitava qualquer assembly com
   nome iniciado por `System` foi substituída. Agora há uma lista explícita
-  de assemblies permitidos (`System.Runtime`, conferindo também a chave
-  pública da Microsoft). Os testes também verificam que o `.csproj` do
+  de assemblies permitidos (`System.Runtime` e `System.Collections`,
+  conferindo também a chave pública da Microsoft; `System.Collections`
+  foi incluído pela decisão ADR-0002 (histórico: ADR-ENT-006), por ser dependência legítima da
+  BCL exigida pelo contrato genérico de `Entity<TId>` —
+  `EqualityComparer<TId>.Default` —, sem relaxar a verificação do public
+  key token). Os testes também verificam que o `.csproj` do
   Domain, o `Directory.Build.props` e o `Directory.Packages.props` não
   declaram `PackageReference`, `GlobalPackageReference`, `ProjectReference`,
   `Reference` nem `FrameworkReference`. Não foi adicionada biblioteca: a
