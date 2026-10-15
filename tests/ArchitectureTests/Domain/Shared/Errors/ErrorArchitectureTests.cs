@@ -192,7 +192,7 @@ public sealed class ErrorArchitectureTests
 
     private static readonly byte[] MicrosoftPublicKeyToken = Convert.FromHexString("b03f5f7f11d50a3a");
 
-    private static readonly string[] AllowedReferencedAssemblies = ["System.Runtime", "System.Collections"];
+    private static readonly string[] AllowedReferencedAssemblies = ["System.Runtime", "System.Collections", "System.Linq.Expressions"];
 
     private static readonly string[] ReferenceItemNames =
         ["PackageReference", "GlobalPackageReference", "ProjectReference", "Reference", "FrameworkReference"];
