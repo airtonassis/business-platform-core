@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Business.Platform.Core.Domain\Business.Platform.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Business.Platform.Core.Application\Business.Platform.Core.Application.csproj" />
   </ItemGroup>
 
 </Project>

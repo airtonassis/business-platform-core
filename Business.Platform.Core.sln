@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{75E983B9-12A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Platform.Core.Domain", "src\Business.Platform.Core.Domain\Business.Platform.Core.Domain.csproj", "{7FAA5B79-C939-4495-802A-6226D7682BE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Platform.Core.Application", "src\Business.Platform.Core.Application\Business.Platform.Core.Application.csproj", "{5D77293A-0466-4926-8229-5B4E532939EC}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5F1CB4AB-A12D-450E-9F95-360E8D9592B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Platform.Core.UnitTests", "tests\UnitTests\Business.Platform.Core.UnitTests.csproj", "{A630B626-8DDF-48DA-986A-9A8975271AFA}"
@@ -26,6 +28,10 @@ Global
 		{7FAA5B79-C939-4495-802A-6226D7682BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FAA5B79-C939-4495-802A-6226D7682BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FAA5B79-C939-4495-802A-6226D7682BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D77293A-0466-4926-8229-5B4E532939EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D77293A-0466-4926-8229-5B4E532939EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D77293A-0466-4926-8229-5B4E532939EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D77293A-0466-4926-8229-5B4E532939EC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A630B626-8DDF-48DA-986A-9A8975271AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A630B626-8DDF-48DA-986A-9A8975271AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A630B626-8DDF-48DA-986A-9A8975271AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,6 +43,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7FAA5B79-C939-4495-802A-6226D7682BE5} = {75E983B9-12A4-4C68-849D-2F857682140F}
+		{5D77293A-0466-4926-8229-5B4E532939EC} = {75E983B9-12A4-4C68-849D-2F857682140F}
 		{A630B626-8DDF-48DA-986A-9A8975271AFA} = {5F1CB4AB-A12D-450E-9F95-360E8D9592B1}
 		{B10638AC-876B-4478-8252-B58F514DF81D} = {5F1CB4AB-A12D-450E-9F95-360E8D9592B1}
 	EndGlobalSection

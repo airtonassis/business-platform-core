@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Business.Platform.Core.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business.Platform.Core.Domain\Business.Platform.Core.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
