@@ -130,7 +130,7 @@ public sealed class AuditActorArchitectureTests
         var domainInterfaces = ActorType.Assembly.GetTypes().Where(t => t.IsInterface).ToArray();
 
         domainInterfaces.ShouldNotBeEmpty();
-        domainInterfaces.Select(i => i.Name).Order().ShouldBe(["IDomainEvent", "IRepository`2", "ISpecification`1"]);
+        domainInterfaces.Select(i => i.Name).Order().ShouldBe(["IDomainEvent", "IRepository`2", "ISpecification`1", "ISpecificationRepository`2"]);
         ActorType.GetNestedTypes(BindingFlags.Public | BindingFlags.NonPublic).Where(t => t.IsInterface).ShouldBeEmpty();
     }
 

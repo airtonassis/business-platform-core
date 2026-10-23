@@ -187,18 +187,19 @@ public sealed class PaginationArchitectureTests
         // Nenhuma interface declarada dentro dos componentes (independente de nome)
         componentGraph.Where(t => t.IsInterface).ShouldBeEmpty();
 
-        // Nenhuma interface do Domain referencia os tipos de Pagination em seus membros
+        // Somente o contrato Repository 2.x (ADR-0004) referencia os tipos de Pagination em seus membros
         domainInterfaces.Where(i => i.GetMethods(members)
                 .SelectMany(m => m.GetParameters().Select(p => p.ParameterType).Append(m.ReturnType))
                 .Any(ReferencesComponent))
-            .ShouldBeEmpty();
+            .Select(i => i.Name)
+            .ShouldBe(["ISpecificationRepository`2"]);
 
         // Os componentes só implementam IEquatable<PaginationRequest> (Request) e nada (PagedResult)
         RequestType.GetInterfaces().ShouldBe([typeof(IEquatable<PaginationRequest>)]);
         ResultType.GetInterfaces().ShouldBeEmpty();
 
         // Conjunto de interfaces do Domain inalterado pela feature (baseline das demais Foundations)
-        domainInterfaces.Select(i => i.Name).Order().ShouldBe(["IDomainEvent", "IRepository`2", "ISpecification`1"]);
+        domainInterfaces.Select(i => i.Name).Order().ShouldBe(["IDomainEvent", "IRepository`2", "ISpecification`1", "ISpecificationRepository`2"]);
 
         static bool ReferencesComponent(Type type) =>
             type == RequestType
