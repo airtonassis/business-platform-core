@@ -1,0 +1,26 @@
+{
+  "formatVersion": 1,
+  "purpose": "Additive documentary regularization only; original evidence.sha256.json remains immutable and authoritative for its historical 177 entries",
+  "recordedAtUtc": "2026-10-31T11:15:02.837931+00:00",
+  "historicalManifest": {
+    "path": "evidence.sha256.json",
+    "sha256": "6b004116a7a905615380aef93bfb27fba150d999c44fb75142d282a2ac106353"
+  },
+  "addedFiles": {
+    "REGISTRO_APROVACAO_E_RESSALVAS.md": "1fb8b882770be224604b1977f0e40fe1ec6bca0b9ad96d9c4727f113ebc09c3a",
+    "RASTREABILIDADE_COMPLEMENTAR.json": "b62e4a1a06448c11836c777061f54a895fe56a0f6bdf9c2a6186bf2f149455fb",
+    ".gitattributes": "730a35ae3d558080083c3103d9ac8100c3f6561678092abe341701dfa331eb1d"
+  },
+  "sourceDocuments": {
+    "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md": "f3a27f60c67f7f9d340210ba37ff0c78833b139fd7322ca324638808b6bbef2f",
+    "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md": "3bd756b31d1c92c1c81eeae408bc1407aaee427aaa641bffbd2dae39dc1e4fa5",
+    "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md": "2cdd3858dc95038156938328370b4ae067c381a00035240c9b84073d48dd9971",
+    "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md": "2c49a6dfd36704e9e9d67a4d15ab4f89f0448020acf6159e58858ba4aee5e5c6",
+    "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md": "2255c23f1303c09304c79e8a1bfa9e70885fb8c91f22d1834148beb20e1c8e71",
+    "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json": "501dc499fca3e0783b0fcdc645673ef548f67d67abfdc10a0f13fe452c883a41",
+    "tests/TechnicalValidation/ADR0009.G1/manifests/security.expected.json": "aa94c117ed13a584bfdfa6a01e06c35f44dc9d2027b4d4ea444c261a296a2504",
+    "tests/TechnicalValidation/ADR0009.G1/runtime/001-test-only.sql": "3a5e9b7bd364603accf1776236abe203e077083432eeeaedd6102de8f8aaacf0",
+    "tests/TechnicalValidation/ADR0009.G1.CI/originals.sha256.json": "e7c0c9a217534b2d22f7661a31f0dba6bc51d0df9df43d280122711ffb9dc83e"
+  },
+  "scope": "No executable changes or new experimental evidence. No self hash. Current human approval is registered separately from historical snapshots."
+}

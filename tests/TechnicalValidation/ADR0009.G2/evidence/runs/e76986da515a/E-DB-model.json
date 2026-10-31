@@ -1,0 +1,1096 @@
+{
+  "tables": 12,
+  "constraints": [
+    {
+      "relation": "audit.events",
+      "conname": "events_organization_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES tenancy.organizations(id)"
+    },
+    {
+      "relation": "audit.events",
+      "conname": "events_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "identity.enterprise_user_accounts",
+      "conname": "enterprise_user_accounts_identity_id_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (identity_id)"
+    },
+    {
+      "relation": "identity.enterprise_user_accounts",
+      "conname": "enterprise_user_accounts_identity_id_organization_id_id_fkey",
+      "contype": "f",
+      "condeferrable": true,
+      "condeferred": true,
+      "definition": "FOREIGN KEY (identity_id, organization_id, id) REFERENCES identity.identity_consumptions(identity_id, organization_id, account_id) DEFERRABLE INITIALLY DEFERRED"
+    },
+    {
+      "relation": "identity.enterprise_user_accounts",
+      "conname": "enterprise_user_accounts_organization_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES tenancy.organizations(id)"
+    },
+    {
+      "relation": "identity.enterprise_user_accounts",
+      "conname": "enterprise_user_accounts_organization_id_id_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (organization_id, id)"
+    },
+    {
+      "relation": "identity.enterprise_user_accounts",
+      "conname": "enterprise_user_accounts_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "identity.enterprise_user_accounts",
+      "conname": "enterprise_user_accounts_status_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((status = ANY (ARRAY[\u0027Active\u0027::text, \u0027Revoked\u0027::text, \u0027Archived\u0027::text])))"
+    },
+    {
+      "relation": "identity.enterprise_user_accounts",
+      "conname": "enterprise_user_accounts_version_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((version \u003E 0))"
+    },
+    {
+      "relation": "identity.enterprise_user_accounts",
+      "conname": "validate_accounts",
+      "contype": "t",
+      "condeferrable": true,
+      "condeferred": true,
+      "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+    },
+    {
+      "relation": "identity.identities",
+      "conname": "identities_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "identity.identities",
+      "conname": "identities_status_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((status = ANY (ARRAY[\u0027Active\u0027::text, \u0027Blocked\u0027::text, \u0027Archived\u0027::text])))"
+    },
+    {
+      "relation": "identity.identities",
+      "conname": "identities_version_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((version \u003E 0))"
+    },
+    {
+      "relation": "identity.identity_consumptions",
+      "conname": "identity_consumptions_account_id_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (account_id)"
+    },
+    {
+      "relation": "identity.identity_consumptions",
+      "conname": "identity_consumptions_identity_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (identity_id) REFERENCES identity.identities(id)"
+    },
+    {
+      "relation": "identity.identity_consumptions",
+      "conname": "identity_consumptions_identity_id_organization_id_account_i_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (identity_id, organization_id, account_id)"
+    },
+    {
+      "relation": "identity.identity_consumptions",
+      "conname": "identity_consumptions_organization_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES tenancy.organizations(id)"
+    },
+    {
+      "relation": "identity.identity_consumptions",
+      "conname": "identity_consumptions_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (identity_id)"
+    },
+    {
+      "relation": "identity.identity_links",
+      "conname": "identity_links_identity_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (identity_id) REFERENCES identity.identities(id)"
+    },
+    {
+      "relation": "identity.identity_links",
+      "conname": "identity_links_issuer_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((length(issuer) \u003E 0))"
+    },
+    {
+      "relation": "identity.identity_links",
+      "conname": "identity_links_issuer_subject_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (issuer, subject)"
+    },
+    {
+      "relation": "identity.identity_links",
+      "conname": "identity_links_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "identity.identity_links",
+      "conname": "identity_links_subject_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((length(subject) \u003E 0))"
+    },
+    {
+      "relation": "identity.recipient_references",
+      "conname": "recipient_references_identity_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (identity_id) REFERENCES identity.identities(id)"
+    },
+    {
+      "relation": "identity.recipient_references",
+      "conname": "recipient_references_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (secret_hash)"
+    },
+    {
+      "relation": "operation.idempotency_records",
+      "conname": "idempotency_records_actor_id_scope_key_operation_key_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (actor_id, scope_key, operation, key)"
+    },
+    {
+      "relation": "operation.idempotency_records",
+      "conname": "idempotency_records_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "sandbox.demo_records",
+      "conname": "demo_records_organization_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES tenancy.organizations(id)"
+    },
+    {
+      "relation": "sandbox.demo_records",
+      "conname": "demo_records_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "sandbox.demo_records",
+      "conname": "demo_records_title_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK (((length(title) \u003E= 1) AND (length(title) \u003C= 200)))"
+    },
+    {
+      "relation": "sandbox.demo_records",
+      "conname": "demo_records_version_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((version \u003E 0))"
+    },
+    {
+      "relation": "tenancy.invitation_slots",
+      "conname": "invitation_slots_organization_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES tenancy.organizations(id)"
+    },
+    {
+      "relation": "tenancy.invitation_slots",
+      "conname": "invitation_slots_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (organization_id, recipient_identity_id)"
+    },
+    {
+      "relation": "tenancy.invitation_slots",
+      "conname": "invitation_slots_recipient_identity_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (recipient_identity_id) REFERENCES identity.identities(id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((expires_at \u003E created_at))"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_check1",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK (((status \u003C\u003E \u0027Accepted\u0027::text) OR (accepted_account_id IS NOT NULL)))"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_organization_id_accepted_account_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id, accepted_account_id) REFERENCES identity.enterprise_user_accounts(organization_id, id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_organization_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES tenancy.organizations(id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_organization_id_id_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (organization_id, id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_organization_id_issuer_membership_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id, issuer_membership_id) REFERENCES tenancy.memberships(organization_id, id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_organization_id_predecessor_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id, predecessor_id) REFERENCES tenancy.invitations(organization_id, id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_organization_id_successor_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id, successor_id) REFERENCES tenancy.invitations(organization_id, id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_predecessor_id_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (predecessor_id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_recipient_identity_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (recipient_identity_id) REFERENCES identity.identities(id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_secret_hash_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (secret_hash)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_status_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((status = ANY (ARRAY[\u0027Pending\u0027::text, \u0027Accepted\u0027::text, \u0027Expired\u0027::text, \u0027Cancelled\u0027::text, \u0027Replaced\u0027::text])))"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_successor_id_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (successor_id)"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "invitations_version_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((version \u003E 0))"
+    },
+    {
+      "relation": "tenancy.invitations",
+      "conname": "validate_invitation_chain",
+      "contype": "t",
+      "condeferrable": true,
+      "condeferred": true,
+      "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+    },
+    {
+      "relation": "tenancy.memberships",
+      "conname": "memberships_account_id_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (account_id)"
+    },
+    {
+      "relation": "tenancy.memberships",
+      "conname": "memberships_organization_id_account_id_fkey",
+      "contype": "f",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (organization_id, account_id) REFERENCES identity.enterprise_user_accounts(organization_id, id)"
+    },
+    {
+      "relation": "tenancy.memberships",
+      "conname": "memberships_organization_id_id_key",
+      "contype": "u",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "UNIQUE (organization_id, id)"
+    },
+    {
+      "relation": "tenancy.memberships",
+      "conname": "memberships_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "tenancy.memberships",
+      "conname": "memberships_role_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((role = ANY (ARRAY[\u0027Owner\u0027::text, \u0027Admin\u0027::text, \u0027Member\u0027::text])))"
+    },
+    {
+      "relation": "tenancy.memberships",
+      "conname": "memberships_status_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((status = ANY (ARRAY[\u0027Active\u0027::text, \u0027Revoked\u0027::text])))"
+    },
+    {
+      "relation": "tenancy.memberships",
+      "conname": "memberships_version_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((version \u003E 0))"
+    },
+    {
+      "relation": "tenancy.memberships",
+      "conname": "validate_members",
+      "contype": "t",
+      "condeferrable": true,
+      "condeferred": true,
+      "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+    },
+    {
+      "relation": "tenancy.organizations",
+      "conname": "organizations_name_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK (((length(name) \u003E= 1) AND (length(name) \u003C= 200)))"
+    },
+    {
+      "relation": "tenancy.organizations",
+      "conname": "organizations_pkey",
+      "contype": "p",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "relation": "tenancy.organizations",
+      "conname": "organizations_status_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((status = ANY (ARRAY[\u0027Active\u0027::text, \u0027Blocked\u0027::text, \u0027Archived\u0027::text])))"
+    },
+    {
+      "relation": "tenancy.organizations",
+      "conname": "organizations_version_check",
+      "contype": "c",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "CHECK ((version \u003E 0))"
+    },
+    {
+      "relation": "tenancy.organizations",
+      "conname": "validate_org",
+      "contype": "t",
+      "condeferrable": true,
+      "condeferred": true,
+      "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+    }
+  ],
+  "columns": [
+    {
+      "table_schema": "audit",
+      "table_name": "events",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "audit",
+      "table_name": "events",
+      "column_name": "organization_id",
+      "is_nullable": "YES",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "audit",
+      "table_name": "events",
+      "column_name": "actor_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "audit",
+      "table_name": "events",
+      "column_name": "action",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "audit",
+      "table_name": "events",
+      "column_name": "operation_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "audit",
+      "table_name": "events",
+      "column_name": "occurred_at",
+      "is_nullable": "NO",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "enterprise_user_accounts",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "enterprise_user_accounts",
+      "column_name": "identity_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "enterprise_user_accounts",
+      "column_name": "organization_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "enterprise_user_accounts",
+      "column_name": "status",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "enterprise_user_accounts",
+      "column_name": "version",
+      "is_nullable": "NO",
+      "data_type": "bigint"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identities",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identities",
+      "column_name": "status",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identities",
+      "column_name": "version",
+      "is_nullable": "NO",
+      "data_type": "bigint"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identity_consumptions",
+      "column_name": "identity_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identity_consumptions",
+      "column_name": "organization_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identity_consumptions",
+      "column_name": "account_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identity_consumptions",
+      "column_name": "consumed_at",
+      "is_nullable": "NO",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identity_links",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identity_links",
+      "column_name": "identity_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identity_links",
+      "column_name": "issuer",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "identity_links",
+      "column_name": "subject",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "recipient_references",
+      "column_name": "identity_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "recipient_references",
+      "column_name": "secret_hash",
+      "is_nullable": "NO",
+      "data_type": "bytea"
+    },
+    {
+      "table_schema": "identity",
+      "table_name": "recipient_references",
+      "column_name": "expires_at",
+      "is_nullable": "NO",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_schema": "operation",
+      "table_name": "idempotency_records",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "operation",
+      "table_name": "idempotency_records",
+      "column_name": "actor_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "operation",
+      "table_name": "idempotency_records",
+      "column_name": "scope_key",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "operation",
+      "table_name": "idempotency_records",
+      "column_name": "operation",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "operation",
+      "table_name": "idempotency_records",
+      "column_name": "key",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "operation",
+      "table_name": "idempotency_records",
+      "column_name": "request_hash",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "operation",
+      "table_name": "idempotency_records",
+      "column_name": "result_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "sandbox",
+      "table_name": "demo_records",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "sandbox",
+      "table_name": "demo_records",
+      "column_name": "organization_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "sandbox",
+      "table_name": "demo_records",
+      "column_name": "title",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "sandbox",
+      "table_name": "demo_records",
+      "column_name": "version",
+      "is_nullable": "NO",
+      "data_type": "bigint"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitation_slots",
+      "column_name": "organization_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitation_slots",
+      "column_name": "recipient_identity_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitation_slots",
+      "column_name": "version",
+      "is_nullable": "NO",
+      "data_type": "bigint"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "organization_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "recipient_identity_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "issuer_membership_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "secret_hash",
+      "is_nullable": "NO",
+      "data_type": "bytea"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "status",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "created_at",
+      "is_nullable": "NO",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "expires_at",
+      "is_nullable": "NO",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "accepted_account_id",
+      "is_nullable": "YES",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "version",
+      "is_nullable": "NO",
+      "data_type": "bigint"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "predecessor_id",
+      "is_nullable": "YES",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "invitations",
+      "column_name": "successor_id",
+      "is_nullable": "YES",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "memberships",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "memberships",
+      "column_name": "organization_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "memberships",
+      "column_name": "account_id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "memberships",
+      "column_name": "role",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "memberships",
+      "column_name": "status",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "memberships",
+      "column_name": "version",
+      "is_nullable": "NO",
+      "data_type": "bigint"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "organizations",
+      "column_name": "id",
+      "is_nullable": "NO",
+      "data_type": "uuid"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "organizations",
+      "column_name": "name",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "organizations",
+      "column_name": "status",
+      "is_nullable": "NO",
+      "data_type": "text"
+    },
+    {
+      "table_schema": "tenancy",
+      "table_name": "organizations",
+      "column_name": "version",
+      "is_nullable": "NO",
+      "data_type": "bigint"
+    }
+  ],
+  "indexes": [
+    {
+      "schemaname": "sandbox",
+      "tablename": "demo_records",
+      "indexname": "demo_records_pkey",
+      "indexdef": "CREATE UNIQUE INDEX demo_records_pkey ON sandbox.demo_records USING btree (id)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "enterprise_user_accounts",
+      "indexname": "enterprise_user_accounts_identity_id_key",
+      "indexdef": "CREATE UNIQUE INDEX enterprise_user_accounts_identity_id_key ON identity.enterprise_user_accounts USING btree (identity_id)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "enterprise_user_accounts",
+      "indexname": "enterprise_user_accounts_organization_id_id_key",
+      "indexdef": "CREATE UNIQUE INDEX enterprise_user_accounts_organization_id_id_key ON identity.enterprise_user_accounts USING btree (organization_id, id)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "enterprise_user_accounts",
+      "indexname": "enterprise_user_accounts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX enterprise_user_accounts_pkey ON identity.enterprise_user_accounts USING btree (id)"
+    },
+    {
+      "schemaname": "audit",
+      "tablename": "events",
+      "indexname": "events_pkey",
+      "indexdef": "CREATE UNIQUE INDEX events_pkey ON audit.events USING btree (id)"
+    },
+    {
+      "schemaname": "operation",
+      "tablename": "idempotency_records",
+      "indexname": "idempotency_records_actor_id_scope_key_operation_key_key",
+      "indexdef": "CREATE UNIQUE INDEX idempotency_records_actor_id_scope_key_operation_key_key ON operation.idempotency_records USING btree (actor_id, scope_key, operation, key)"
+    },
+    {
+      "schemaname": "operation",
+      "tablename": "idempotency_records",
+      "indexname": "idempotency_records_pkey",
+      "indexdef": "CREATE UNIQUE INDEX idempotency_records_pkey ON operation.idempotency_records USING btree (id)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "identities",
+      "indexname": "identities_pkey",
+      "indexdef": "CREATE UNIQUE INDEX identities_pkey ON identity.identities USING btree (id)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "identity_consumptions",
+      "indexname": "identity_consumptions_account_id_key",
+      "indexdef": "CREATE UNIQUE INDEX identity_consumptions_account_id_key ON identity.identity_consumptions USING btree (account_id)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "identity_consumptions",
+      "indexname": "identity_consumptions_identity_id_organization_id_account_i_key",
+      "indexdef": "CREATE UNIQUE INDEX identity_consumptions_identity_id_organization_id_account_i_key ON identity.identity_consumptions USING btree (identity_id, organization_id, account_id)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "identity_consumptions",
+      "indexname": "identity_consumptions_pkey",
+      "indexdef": "CREATE UNIQUE INDEX identity_consumptions_pkey ON identity.identity_consumptions USING btree (identity_id)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "identity_links",
+      "indexname": "identity_links_issuer_subject_key",
+      "indexdef": "CREATE UNIQUE INDEX identity_links_issuer_subject_key ON identity.identity_links USING btree (issuer, subject)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "identity_links",
+      "indexname": "identity_links_pkey",
+      "indexdef": "CREATE UNIQUE INDEX identity_links_pkey ON identity.identity_links USING btree (id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "invitations",
+      "indexname": "invitation_one_pending",
+      "indexdef": "CREATE UNIQUE INDEX invitation_one_pending ON tenancy.invitations USING btree (organization_id, recipient_identity_id) WHERE (status = \u0027Pending\u0027::text)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "invitation_slots",
+      "indexname": "invitation_slots_pkey",
+      "indexdef": "CREATE UNIQUE INDEX invitation_slots_pkey ON tenancy.invitation_slots USING btree (organization_id, recipient_identity_id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "invitations",
+      "indexname": "invitations_organization_id_id_key",
+      "indexdef": "CREATE UNIQUE INDEX invitations_organization_id_id_key ON tenancy.invitations USING btree (organization_id, id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "invitations",
+      "indexname": "invitations_pkey",
+      "indexdef": "CREATE UNIQUE INDEX invitations_pkey ON tenancy.invitations USING btree (id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "invitations",
+      "indexname": "invitations_predecessor_id_key",
+      "indexdef": "CREATE UNIQUE INDEX invitations_predecessor_id_key ON tenancy.invitations USING btree (predecessor_id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "invitations",
+      "indexname": "invitations_secret_hash_key",
+      "indexdef": "CREATE UNIQUE INDEX invitations_secret_hash_key ON tenancy.invitations USING btree (secret_hash)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "invitations",
+      "indexname": "invitations_successor_id_key",
+      "indexdef": "CREATE UNIQUE INDEX invitations_successor_id_key ON tenancy.invitations USING btree (successor_id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "memberships",
+      "indexname": "memberships_account_id_key",
+      "indexdef": "CREATE UNIQUE INDEX memberships_account_id_key ON tenancy.memberships USING btree (account_id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "memberships",
+      "indexname": "memberships_organization_id_id_key",
+      "indexdef": "CREATE UNIQUE INDEX memberships_organization_id_id_key ON tenancy.memberships USING btree (organization_id, id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "memberships",
+      "indexname": "memberships_organization_id_status_role_id_idx",
+      "indexdef": "CREATE INDEX memberships_organization_id_status_role_id_idx ON tenancy.memberships USING btree (organization_id, status, role, id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "memberships",
+      "indexname": "memberships_pkey",
+      "indexdef": "CREATE UNIQUE INDEX memberships_pkey ON tenancy.memberships USING btree (id)"
+    },
+    {
+      "schemaname": "tenancy",
+      "tablename": "organizations",
+      "indexname": "organizations_pkey",
+      "indexdef": "CREATE UNIQUE INDEX organizations_pkey ON tenancy.organizations USING btree (id)"
+    },
+    {
+      "schemaname": "identity",
+      "tablename": "recipient_references",
+      "indexname": "recipient_references_pkey",
+      "indexdef": "CREATE UNIQUE INDEX recipient_references_pkey ON identity.recipient_references USING btree (secret_hash)"
+    }
+  ]
+}

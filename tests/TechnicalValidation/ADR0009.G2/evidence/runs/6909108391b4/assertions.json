@@ -1,0 +1,253 @@
+[
+  {
+    "proof": "preflight",
+    "assertion": "Pinned local Linux image identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Run label.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Container image.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Loopback only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Dedicated network only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Dedicated run-owned network with exactly one container.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "pid": 65,
+    "role": "core_platform",
+    "identity": "130d4776-fd6a-46f3-bac6-670e262ba7d8",
+    "account": null,
+    "org": null,
+    "context": "SET LOCAL within transaction"
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "pid": 66,
+    "role": "core_platform",
+    "identity": "130d4776-fd6a-46f3-bac6-670e262ba7d8",
+    "account": null,
+    "org": null,
+    "context": "SET LOCAL within transaction"
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K09",
+    "fixture": "Privileged insertion of second initial Owner, not succession or runtime provisioning"
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "phase": "before",
+    "observerRole": "postgres read-only observation, not runtime authorization",
+    "pid": 71,
+    "state": {
+      "identity.identity_consumptions": 3,
+      "identity.enterprise_user_accounts": 3,
+      "tenancy.organizations": 2,
+      "tenancy.memberships": 3,
+      "tenancy.invitations": 0,
+      "audit.events": 2,
+      "operation.idempotency_records": 2,
+      "demo": "[{\u0022id\u0022:\u00221da508b4-d340-4e5f-a956-fdbdff83b0f5\u0022,\u0022organization_id\u0022:\u0022ba10dd23-9331-489e-b0de-073851eca974\u0022,\u0022title\u0022:\u0022A-canary\u0022,\u0022version\u0022:1}, \n {\u0022id\u0022:\u00223541ab7b-4d0e-4665-bd73-692731145dcf\u0022,\u0022organization_id\u0022:\u0022b39fe082-bac1-4b58-9673-5360484413d2\u0022,\u0022title\u0022:\u0022B-canary\u0022,\u0022version\u0022:1}]"
+    }
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Synthetic persistent baseline exposes only exact A under trusted SQL fixture.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Same physical backend reused after session baseline injection.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Npgsql reset clears all persisted context before first business read.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "No tenant data after reset and before explicit transaction context.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "pid": 72,
+    "role": "core_tenant",
+    "identity": "eab94b55-bd5e-41cf-9731-daf9a5498dbe",
+    "account": "b2919b0e-9739-42df-8bc5-054fcaa4121b",
+    "org": "b39fe082-bac1-4b58-9673-5360484413d2",
+    "context": "SET LOCAL within transaction"
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Next transaction sees exact B only.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "role": "core_tenant",
+    "pid": 72,
+    "baseline": "SET SESSION synthetic A; no external authentication claim",
+    "reset": "Npgsql default reset enabled; same PID, empty context then B",
+    "transaction": "B rolled back"
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "phase": "after",
+    "observerRole": "postgres read-only observation, not runtime authorization",
+    "pid": 73,
+    "state": {
+      "identity.identity_consumptions": 3,
+      "identity.enterprise_user_accounts": 3,
+      "tenancy.organizations": 2,
+      "tenancy.memberships": 3,
+      "tenancy.invitations": 0,
+      "audit.events": 2,
+      "operation.idempotency_records": 2,
+      "demo": "[{\u0022id\u0022:\u00221da508b4-d340-4e5f-a956-fdbdff83b0f5\u0022,\u0022organization_id\u0022:\u0022ba10dd23-9331-489e-b0de-073851eca974\u0022,\u0022title\u0022:\u0022A-canary\u0022,\u0022version\u0022:1}, \n {\u0022id\u0022:\u00223541ab7b-4d0e-4665-bd73-692731145dcf\u0022,\u0022organization_id\u0022:\u0022b39fe082-bac1-4b58-9673-5360484413d2\u0022,\u0022title\u0022:\u0022B-canary\u0022,\u0022version\u0022:1}]"
+    }
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Cleanup identity must match this run.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "No run container remains.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-session-baseline-reset",
+    "assertion": "Network cleanup label",
+    "observed": true
+  }
+]

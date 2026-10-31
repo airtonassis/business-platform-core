@@ -1,0 +1,23 @@
+{
+  "gitHead": "6c957200c436c06a243ac2a1aae57d8ef1efc268",
+  "dockerResourcesBefore": [
+    "eecc911a6140 fleet-homolog-android-api-1",
+    "08198cb0d780 fleet-homolog-android-migrate-1",
+    "9f597c048bbc fleet-homolog-android-postgres-1",
+    "fd5ff95594ab fleet-development-api-1",
+    "4c03584ba9a8 fleet-development-migrate-1",
+    "24ab6443bb94 fleet-development-postgres-1",
+    "05e1fbb38450 flamboyant_gauss",
+    "52cf7dfd3cbe bold_turing"
+  ],
+  "image": [
+    "postgres@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24"
+  ],
+  "sourceHashes": {
+    "prepare_g2.py": "8acd91eeb8cec3bf12de18080349a9a9dd3ccc5a0829de190b0429c775f1eb01",
+    "selection.json": "c497369665822e6ab927618732810a3f73d075fa51181d3b8abbc3feafe1a2b2",
+    "test_selection.py": "2e83027832f299fa5351ba2b2db88afe5dc638001fc8cc69cb9bc3390bdabe9e",
+    "runtime\\G2.Validation.csproj": "4caaaae6ff661f1e3e2f98aead90930f6ab3ba564b441690b6093e48ea644f50",
+    "runtime\\G2Proofs.cs": "32a121552727e06fda9b1da4a05dfd8d9197b855305c90632d32f12b41c65d37"
+  }
+}

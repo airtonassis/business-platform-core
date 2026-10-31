@@ -1,0 +1,369 @@
+{
+  "run": "5c56afedf9e5",
+  "gate": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "schemaInstalled": true,
+  "stoppedForP0": true,
+  "counts": {
+    "NOT_EXECUTED": 52,
+    "FAIL": 1,
+    "BLOQUEADO": 1
+  },
+  "cases": {
+    "Q01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q12": {
+      "Status": "FAIL",
+      "Detail": "Unexpected oracle violation; affected stage stopped, no post-failure security weakening."
+    },
+    "V01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V08": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V13": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V14": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    }
+  },
+  "subproofs": [
+    {
+      "caseId": "V08",
+      "variant": "G2-technical-context-components-and-rollback",
+      "status": "PASS",
+      "milliseconds": 333,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q12",
+      "variant": "G2-savepoint-restores-previous-context",
+      "status": "FAIL",
+      "exceptionType": "SafetyFailure",
+      "stack": "   at ValidationRun.Require(Boolean ok, String message) in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 1084\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_4() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 85\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_4() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 86\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_4() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 86\r\n   at ValidationRun.Proof(String caseId, String variant, Func\u00601 action, Boolean complete, Boolean characterization) in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 970",
+      "sqlstate": null,
+      "constraint": null,
+      "table": null,
+      "routine": null,
+      "assertion": "Rollback restores A, not B."
+    }
+  ],
+  "timeline": [
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 63,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 64,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 65,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 66,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 67,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 68,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 69,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 70,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/G2-technical-context-components-and-rollback",
+      "role": "postgres",
+      "pid": 71,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/G2-technical-context-components-and-rollback",
+      "role": "postgres",
+      "pid": 72,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/G2-technical-context-components-and-rollback",
+      "role": "g1_probe",
+      "pid": 73,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/G2-technical-context-components-and-rollback",
+      "role": "g1_probe",
+      "pid": 74,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/G2-technical-context-components-and-rollback",
+      "role": "g1_probe",
+      "pid": 75,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/G2-technical-context-components-and-rollback",
+      "role": "postgres",
+      "pid": 76,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q12/G2-savepoint-restores-previous-context",
+      "role": "postgres",
+      "pid": 77,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q12/G2-savepoint-restores-previous-context",
+      "role": "core_tenant",
+      "pid": 78,
+      "eventName": "physical connection opened"
+    }
+  ]
+}

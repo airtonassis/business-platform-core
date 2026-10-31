@@ -1,0 +1,149 @@
+{
+  "gate": "G2_NOT_HUMAN_APPROVED",
+  "selected": {
+    "selected": [
+      {
+        "id": "Q12",
+        "variant": "G2-session-baseline-reset",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      }
+    ],
+    "exclusions": [
+      {
+        "id": "Q10",
+        "variant": "compromised-credential-characterization-only",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "K01",
+        "variant": "accept-A-B-two-physical-connections",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K04",
+        "variant": "same-version-two-writers",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K08",
+        "variant": "audit-failure-rolls-back-demo",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K07",
+        "variant": "confirmed-commit-lost-response-bootstrap-replay",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "V13",
+        "variant": "real-deadlock-in-dedicated-probe",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K05",
+        "variant": "concurrent-replace-and-authorized-replay",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K02",
+        "variant": "bootstrap-versus-accept-both-orders",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K03",
+        "variant": "revoke-versus-command-both-orders",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K06",
+        "variant": "expiry-revalidated-after-real-lock-wait",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K09",
+        "variant": "Owner-and-self-revocation-denied",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K10",
+        "variant": "pool-after-actual-SQL-abort",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "V11",
+        "variant": "revocation-versus-owner-reactivation-after-wait",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "F01",
+        "variant": "G1-runtime-table-operation-matrix",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "F02",
+        "variant": "G1-DDL-TRUNCATE-protections-denied",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "F03",
+        "variant": "G1-every-ungranted-function-runtime-call",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "F04",
+        "variant": "G1-SET-ROLE-and-self-grant-denied",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "V09",
+        "variant": "G1-validators-no-explicit-locks-or-repair",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "F10",
+        "variant": "G1-semantic-capability-subtraction-probe",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "F11",
+        "variant": "G1-reduced-grants-real-runtime-ports-and-replay",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      }
+    ],
+    "reusedRun": "f31a6617ed85",
+    "reason": "Reuse 30 passing subproofs; execute only persistent session baseline reset",
+    "gate": "G2_NOT_HUMAN_APPROVED"
+  },
+  "executed": [
+    {
+      "caseId": "Q12",
+      "variant": "G2-session-baseline-reset",
+      "status": "PASS",
+      "milliseconds": 293,
+      "evidence": "assertions.json plus observer and timeline"
+    }
+  ],
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "stoppedForP0": false
+}

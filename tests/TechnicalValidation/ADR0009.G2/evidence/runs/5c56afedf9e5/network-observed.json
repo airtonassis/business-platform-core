@@ -1,0 +1,45 @@
+{
+  "Bridge": "",
+  "SandboxID": "30434bf0a4cc83947b6b15071f6c7909c83dcc85076783e431f52a31c36e79af",
+  "HairpinMode": false,
+  "LinkLocalIPv6Address": "",
+  "LinkLocalIPv6PrefixLen": 0,
+  "Ports": {
+    "5432/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "62602"
+      }
+    ]
+  },
+  "SandboxKey": "/var/run/docker/netns/30434bf0a4cc",
+  "SecondaryIPAddresses": null,
+  "SecondaryIPv6Addresses": null,
+  "EndpointID": "",
+  "Gateway": "",
+  "GlobalIPv6Address": "",
+  "GlobalIPv6PrefixLen": 0,
+  "IPAddress": "",
+  "IPPrefixLen": 0,
+  "IPv6Gateway": "",
+  "MacAddress": "",
+  "Networks": {
+    "bpc-adr0009-g1-5c56afedf9e5-net": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "31e1902af8b1"
+      ],
+      "NetworkID": "bcc7ced9eb4ebf98dd68b8e3d42ce251afa15571d9a773306e11dafb5e6abdad",
+      "EndpointID": "c79cbd4b1b213544c54f0060c1d225c2f84d024d767da3938d17dac72c770ef6",
+      "Gateway": "172.24.0.1",
+      "IPAddress": "172.24.0.2",
+      "IPPrefixLen": 16,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "MacAddress": "02:42:ac:18:00:02",
+      "DriverOpts": null
+    }
+  }
+}

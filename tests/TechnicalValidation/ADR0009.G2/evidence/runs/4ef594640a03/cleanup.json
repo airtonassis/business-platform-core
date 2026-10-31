@@ -1,0 +1,6 @@
+{
+  "run": "4ef594640a03",
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "networkRemoved": true,
+  "remaining": ""
+}

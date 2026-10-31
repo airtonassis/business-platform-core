@@ -1,0 +1,11 @@
+{
+  "category": "P0_STOP",
+  "stage": "catalog-and-proofs",
+  "exceptionType": "SafetyFailure",
+  "stack": "   at ValidationRun.Require(Boolean ok, String message) in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 1084\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_4() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 85\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_4() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 86\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_4() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 86\r\n   at ValidationRun.Proof(String caseId, String variant, Func\u00601 action, Boolean complete, Boolean characterization) in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 970\r\n   at ValidationRun.G2Proofs() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 82\r\n   at ValidationRun.Execute() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 189",
+  "sqlstate": null,
+  "functionContext": null,
+  "setupMessage": null,
+  "position": 0,
+  "detail": "Rollback restores A, not B."
+}

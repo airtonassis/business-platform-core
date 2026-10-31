@@ -1,0 +1,19 @@
+{
+  "run": "e76986da515a",
+  "database": "bpc_adr0009_g1_e76986da515a",
+  "host": "127.0.0.1",
+  "port": 62431,
+  "image": "sha256:79bd7c99e923138f136f8009d6bffa66e21e9d4fda5c0c561b00fc9c90cfe537",
+  "postgres": "PostgreSQL 17.11 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+  "dotnet": "10.0.12",
+  "npgsql": "10.0.3.0",
+  "operationalChoices": {
+    "statementTimeoutMs": 8000,
+    "lockTimeoutMs": 4000,
+    "concurrencyDeadlineMs": 10000,
+    "deadlockTimeoutMs": 200,
+    "isolation": "READ COMMITTED",
+    "automaticRetries": 0,
+    "disposableOnly": true
+  }
+}

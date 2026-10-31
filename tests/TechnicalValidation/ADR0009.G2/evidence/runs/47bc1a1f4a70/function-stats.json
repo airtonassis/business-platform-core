@@ -1,0 +1,22 @@
+[
+  {
+    "schemaname": "authz",
+    "funcname": "ctx",
+    "calls": 109
+  },
+  {
+    "schemaname": "authz",
+    "funcname": "validate_integrity",
+    "calls": 8
+  },
+  {
+    "schemaname": "operation",
+    "funcname": "bootstrap",
+    "calls": 2
+  },
+  {
+    "schemaname": "pg_catalog",
+    "funcname": "obj_description",
+    "calls": 1
+  }
+]

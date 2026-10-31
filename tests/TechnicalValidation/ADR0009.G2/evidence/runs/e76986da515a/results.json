@@ -1,0 +1,1778 @@
+{
+  "run": "e76986da515a",
+  "gate": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "schemaInstalled": true,
+  "stoppedForP0": true,
+  "counts": {
+    "NOT_EXECUTED": 34,
+    "BLOQUEADO": 19,
+    "FAIL": 1
+  },
+  "cases": {
+    "Q01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q07": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q08": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q11": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q12": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V02": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V03": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V04": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V05": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V06": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V07": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V08": {
+      "Status": "FAIL",
+      "Detail": "Unexpected oracle violation; affected stage stopped, no post-failure security weakening."
+    },
+    "V09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V13": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V14": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F02": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F03": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F04": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F05": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F06": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F09": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "H02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    }
+  },
+  "subproofs": [
+    {
+      "caseId": "Q08",
+      "variant": "tenant-sql-isolation",
+      "status": "PASS",
+      "milliseconds": 219,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q07",
+      "variant": "missing-mismatched-malformed-context",
+      "status": "PASS",
+      "milliseconds": 218,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q11",
+      "variant": "npgsql-pool-commit-rollback-exception",
+      "status": "PASS",
+      "milliseconds": 265,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q12",
+      "variant": "savepoint-context-rollback",
+      "status": "PASS",
+      "milliseconds": 164,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V01",
+      "variant": "active-account-without-member-commit",
+      "status": "PASS",
+      "milliseconds": 338,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V05",
+      "variant": "organization-without-owner-at-commit",
+      "status": "PASS",
+      "milliseconds": 217,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V08",
+      "variant": "missing-integrity-context-rejects",
+      "status": "PASS",
+      "milliseconds": 159,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V04",
+      "variant": "partial-revocation-rejected",
+      "status": "PASS",
+      "milliseconds": 230,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V07",
+      "variant": "immutable-org-and-historical-consumption",
+      "status": "PASS",
+      "milliseconds": 156,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F01",
+      "variant": "runtime-direct-dml-denied",
+      "status": "PASS",
+      "milliseconds": 217,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F04",
+      "variant": "no-set-role-or-owner-escalation",
+      "status": "PASS",
+      "milliseconds": 242,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F03",
+      "variant": "public-execute-and-wrong-port-denied",
+      "status": "PASS",
+      "milliseconds": 174,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F02",
+      "variant": "owners-and-runtime-not-bypass",
+      "status": "PASS",
+      "milliseconds": 146,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V02",
+      "variant": "split-rls-not-null-catalog-and-rollback",
+      "status": "PASS",
+      "milliseconds": 312,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V03",
+      "variant": "cross-organization-foreign-key",
+      "status": "PASS",
+      "milliseconds": 239,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F06",
+      "variant": "fixed-path-and-denied-shadow-object",
+      "status": "PASS",
+      "milliseconds": 293,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F09",
+      "variant": "private-audit-receipts-direct-denials",
+      "status": "PASS",
+      "milliseconds": 286,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "H01",
+      "variant": "revoked-identity-cannot-accept-other-enterprise",
+      "status": "PASS",
+      "milliseconds": 376,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V04",
+      "variant": "owner-transitions-and-role-promotion-denied",
+      "status": "PASS",
+      "milliseconds": 430,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F01",
+      "variant": "minimal-grants-and-secret-read-denied",
+      "status": "PASS",
+      "milliseconds": 208,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V07",
+      "variant": "two-active-Owners-direct-owner-revocation-denied",
+      "status": "PASS",
+      "milliseconds": 313,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F09",
+      "variant": "invalid-invitation-inserts-issuer-and-chain",
+      "status": "PASS",
+      "milliseconds": 584,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F05",
+      "variant": "G1-installed-T-SELF-REC-BOOT-boundaries",
+      "status": "PASS",
+      "milliseconds": 385,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V06",
+      "variant": "G1-event-coverage-multiple-updates-and-immediate-check",
+      "status": "PASS",
+      "milliseconds": 427,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F02",
+      "variant": "G2-physical-model-catalog",
+      "status": "PASS",
+      "milliseconds": 230,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q07",
+      "variant": "G2-each-context-field-read-write-denials",
+      "status": "PASS",
+      "milliseconds": 526,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q08",
+      "variant": "G2-cross-tenant-target-write-and-own-positive",
+      "status": "PASS",
+      "milliseconds": 208,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V08",
+      "variant": "G2-technical-context-components-and-rollback",
+      "status": "FAIL",
+      "exceptionType": "SafetyFailure",
+      "stack": "   at ValidationRun.\u003CG2Proofs\u003Eb__2_3() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 70\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__2_3() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 71\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__2_3()\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__2_3() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 73\r\n   at ValidationRun.Proof(String caseId, String variant, Func\u00601 action, Boolean complete, Boolean characterization) in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 969",
+      "sqlstate": null,
+      "constraint": null,
+      "table": null,
+      "routine": null,
+      "assertion": "Invalid integrity context unexpectedly committed"
+    }
+  ],
+  "timeline": [
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 63,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 64,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 65,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 66,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 67,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 68,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q08/tenant-sql-isolation",
+      "role": "postgres",
+      "pid": 69,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q08/tenant-sql-isolation",
+      "role": "core_tenant",
+      "pid": 70,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q08/tenant-sql-isolation",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q08/tenant-sql-isolation",
+      "role": "postgres",
+      "pid": 71,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/missing-mismatched-malformed-context",
+      "role": "postgres",
+      "pid": 72,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/missing-mismatched-malformed-context",
+      "role": "core_tenant",
+      "pid": 73,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/missing-mismatched-malformed-context",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q07/missing-mismatched-malformed-context",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q07/missing-mismatched-malformed-context",
+      "role": "postgres",
+      "pid": 74,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q11/npgsql-pool-commit-rollback-exception",
+      "role": "postgres",
+      "pid": 75,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q11/npgsql-pool-commit-rollback-exception",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "Q11/npgsql-pool-commit-rollback-exception",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q11/npgsql-pool-commit-rollback-exception",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q11/npgsql-pool-commit-rollback-exception",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q11/npgsql-pool-commit-rollback-exception",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q11/npgsql-pool-commit-rollback-exception",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "pool",
+      "pid": 76,
+      "modes": [
+        "commit",
+        "rollback",
+        "exception"
+      ]
+    },
+    {
+      "proof": "Q11/npgsql-pool-commit-rollback-exception",
+      "role": "postgres",
+      "pid": 77,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q12/savepoint-context-rollback",
+      "role": "postgres",
+      "pid": 78,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q12/savepoint-context-rollback",
+      "role": "core_tenant",
+      "pid": 79,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q12/savepoint-context-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q12/savepoint-context-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "Q12/savepoint-context-rollback",
+      "role": "postgres",
+      "pid": 80,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "postgres",
+      "pid": 81,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "postgres",
+      "pid": 82,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "g1_probe",
+      "pid": 83,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "postgres",
+      "pid": 84,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "postgres",
+      "pid": 85,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V05/organization-without-owner-at-commit",
+      "role": "postgres",
+      "pid": 86,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V05/organization-without-owner-at-commit",
+      "role": "g1_probe",
+      "pid": 87,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V05/organization-without-owner-at-commit",
+      "role": "postgres",
+      "pid": 88,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V05/organization-without-owner-at-commit",
+      "role": "postgres",
+      "pid": 89,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/missing-integrity-context-rejects",
+      "role": "postgres",
+      "pid": 90,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/missing-integrity-context-rejects",
+      "role": "g1_probe",
+      "pid": 91,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/missing-integrity-context-rejects",
+      "role": "postgres",
+      "pid": 92,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/partial-revocation-rejected",
+      "role": "postgres",
+      "pid": 93,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/partial-revocation-rejected",
+      "role": "g1_probe",
+      "pid": 94,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/partial-revocation-rejected",
+      "role": "postgres",
+      "pid": 95,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/immutable-org-and-historical-consumption",
+      "role": "postgres",
+      "pid": 96,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/immutable-org-and-historical-consumption",
+      "role": "postgres",
+      "pid": 97,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/immutable-org-and-historical-consumption",
+      "role": "postgres",
+      "pid": 98,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "postgres",
+      "pid": 99,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "core_tenant",
+      "pid": 100,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "core_identity",
+      "pid": 101,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "core_platform",
+      "pid": 102,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "postgres",
+      "pid": 103,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F04/no-set-role-or-owner-escalation",
+      "role": "postgres",
+      "pid": 104,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F04/no-set-role-or-owner-escalation",
+      "role": "core_tenant",
+      "pid": 105,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F04/no-set-role-or-owner-escalation",
+      "role": "core_identity",
+      "pid": 106,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F04/no-set-role-or-owner-escalation",
+      "role": "core_platform",
+      "pid": 107,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F04/no-set-role-or-owner-escalation",
+      "role": "postgres",
+      "pid": 108,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/public-execute-and-wrong-port-denied",
+      "role": "postgres",
+      "pid": 109,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/public-execute-and-wrong-port-denied",
+      "role": "postgres",
+      "pid": 110,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/public-execute-and-wrong-port-denied",
+      "role": "core_identity",
+      "pid": 111,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/public-execute-and-wrong-port-denied",
+      "role": "postgres",
+      "pid": 112,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/owners-and-runtime-not-bypass",
+      "role": "postgres",
+      "pid": 113,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/owners-and-runtime-not-bypass",
+      "role": "postgres",
+      "pid": 114,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/owners-and-runtime-not-bypass",
+      "role": "postgres",
+      "pid": 115,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "role": "postgres",
+      "pid": 116,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "role": "postgres",
+      "pid": 117,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "role": "core_tenant",
+      "pid": 118,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "transaction": "denied",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "role": "g1_probe",
+      "pid": 119,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "role": "postgres",
+      "pid": 120,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V03/cross-organization-foreign-key",
+      "role": "postgres",
+      "pid": 121,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V03/cross-organization-foreign-key",
+      "role": "postgres",
+      "pid": 122,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V03/cross-organization-foreign-key",
+      "role": "g1_probe",
+      "pid": 123,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V03/cross-organization-foreign-key",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V03/cross-organization-foreign-key",
+      "role": "postgres",
+      "pid": 124,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "postgres",
+      "pid": 125,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "postgres",
+      "pid": 126,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "core_identity",
+      "pid": 127,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "core_tenant",
+      "pid": 128,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "core_platform",
+      "pid": 129,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "postgres",
+      "pid": 130,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "role": "postgres",
+      "pid": 131,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "role": "core_identity",
+      "pid": 132,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "role": "core_tenant",
+      "pid": 133,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "role": "core_platform",
+      "pid": 134,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "role": "postgres",
+      "pid": 135,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "postgres",
+      "pid": 136,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "postgres",
+      "pid": 137,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "transaction": "fixtureTx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "core_identity",
+      "pid": 138,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "core_tenant",
+      "pid": 139,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "transaction": "fixtureTx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "core_identity",
+      "pid": 140,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "postgres",
+      "pid": 141,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 142,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 143,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "transaction": "fixtureTx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "core_identity",
+      "pid": 144,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 145,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "g1_probe",
+      "pid": 146,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "core_tenant",
+      "pid": 147,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 148,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 149,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 150,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 151,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/minimal-grants-and-secret-read-denied",
+      "role": "postgres",
+      "pid": 152,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/minimal-grants-and-secret-read-denied",
+      "role": "postgres",
+      "pid": 153,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/minimal-grants-and-secret-read-denied",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F01/minimal-grants-and-secret-read-denied",
+      "role": "postgres",
+      "pid": 154,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/minimal-grants-and-secret-read-denied",
+      "role": "postgres",
+      "pid": 155,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/minimal-grants-and-secret-read-denied",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "V07/two-active-Owners-direct-owner-revocation-denied",
+      "role": "postgres",
+      "pid": 156,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/two-active-Owners-direct-owner-revocation-denied",
+      "role": "postgres",
+      "pid": 157,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/two-active-Owners-direct-owner-revocation-denied",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V07/two-active-Owners-direct-owner-revocation-denied",
+      "role": "postgres",
+      "pid": 158,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/two-active-Owners-direct-owner-revocation-denied",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V07/two-active-Owners-direct-owner-revocation-denied",
+      "role": "core_tenant",
+      "pid": 159,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/two-active-Owners-direct-owner-revocation-denied",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V07/two-active-Owners-direct-owner-revocation-denied",
+      "role": "postgres",
+      "pid": 160,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/two-active-Owners-direct-owner-revocation-denied",
+      "role": "postgres",
+      "pid": 161,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 162,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 163,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "transaction": "fixtureTx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 164,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 165,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 166,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 167,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 168,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 169,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 170,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 171,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 172,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 173,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 174,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "postgres",
+      "pid": 175,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "postgres",
+      "pid": 176,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "transaction": "fixtureTx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "core_identity",
+      "pid": 177,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "core_tenant",
+      "pid": 178,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "core_tenant",
+      "pid": 179,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "core_tenant",
+      "pid": 180,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "postgres",
+      "pid": 181,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "postgres",
+      "pid": 182,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "postgres",
+      "pid": 183,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "postgres",
+      "pid": 184,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "postgres",
+      "pid": 185,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "transaction": "fixtureTx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "core_identity",
+      "pid": 186,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "g1_probe",
+      "pid": 187,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "g1_probe",
+      "pid": 188,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "postgres",
+      "pid": 189,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "postgres",
+      "pid": 190,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/G2-physical-model-catalog",
+      "role": "postgres",
+      "pid": 191,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/G2-physical-model-catalog",
+      "role": "postgres",
+      "pid": 192,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/G2-physical-model-catalog",
+      "role": "postgres",
+      "pid": 193,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "postgres",
+      "pid": 194,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "core_tenant",
+      "pid": 195,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "core_tenant",
+      "pid": 196,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "core_tenant",
+      "pid": 197,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "core_tenant",
+      "pid": 198,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "core_tenant",
+      "pid": 199,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "core_tenant",
+      "pid": 200,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "core_tenant",
+      "pid": 201,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "core_tenant",
+      "pid": 202,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "core_tenant",
+      "pid": 203,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "postgres",
+      "pid": 204,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/G2-each-context-field-read-write-denials",
+      "role": "postgres",
+      "pid": 205,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q08/G2-cross-tenant-target-write-and-own-positive",
+      "role": "postgres",
+      "pid": 206,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q08/G2-cross-tenant-target-write-and-own-positive",
+      "role": "postgres",
+      "pid": 207,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q08/G2-cross-tenant-target-write-and-own-positive",
+      "role": "core_tenant",
+      "pid": 208,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q08/G2-cross-tenant-target-write-and-own-positive",
+      "role": "postgres",
+      "pid": 209,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/G2-technical-context-components-and-rollback",
+      "role": "postgres",
+      "pid": 210,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/G2-technical-context-components-and-rollback",
+      "role": "postgres",
+      "pid": 211,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/G2-technical-context-components-and-rollback",
+      "role": "g1_probe",
+      "pid": 212,
+      "eventName": "physical connection opened"
+    }
+  ]
+}

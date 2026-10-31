@@ -1,0 +1,2057 @@
+{
+  "formatVersion": 1,
+  "purpose": "Documentary complement to immutable coverage.json; no new execution or result reclassification",
+  "recordedAtUtc": "2026-10-31T11:13:14.171416+00:00",
+  "historicalCoverage": {
+    "path": "tests/TechnicalValidation/ADR0009.G2/coverage.json",
+    "sha256": "62fb06aabb2480273407717ccbc28092c2e04c9c156a723940e4472194e54ca6"
+  },
+  "scope": "31 SQL/driver subproofs only; no full parent protocol approval",
+  "variants": [
+    {
+      "coveragePointer": "/variants/0",
+      "id": "F01",
+      "variant": "minimal-grants-and-secret-read-denied",
+      "requirements": [
+        {
+          "protocolId": "F01",
+          "title": "Grants efetivos por papel",
+          "protectionAndTraceability": "ADR-0009; N8; R1/R3/F1/F2; C08; I02/I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/26/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 530,
+            "heading": "F01 — Grants efetivos por papel"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/19"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/356",
+          "/357",
+          "/358",
+          "/359",
+          "/360",
+          "/361",
+          "/362",
+          "/363",
+          "/364",
+          "/365",
+          "/366",
+          "/367",
+          "/368",
+          "/369",
+          "/370",
+          "/371",
+          "/372",
+          "/373",
+          "/374",
+          "/375"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F01/minimal-grants-and-secret-read-denied"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/1",
+      "id": "F01",
+      "variant": "runtime-direct-dml-denied",
+      "requirements": [
+        {
+          "protocolId": "F01",
+          "title": "Grants efetivos por papel",
+          "protectionAndTraceability": "ADR-0009; N8; R1/R3/F1/F2; C08; I02/I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/26/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 530,
+            "heading": "F01 — Grants efetivos por papel"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/9"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/137",
+          "/138",
+          "/139",
+          "/140",
+          "/141",
+          "/142",
+          "/143",
+          "/144",
+          "/145",
+          "/146",
+          "/147",
+          "/148",
+          "/149",
+          "/150",
+          "/151",
+          "/152",
+          "/153"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F01/runtime-direct-dml-denied"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/2",
+      "id": "F02",
+      "variant": "G2-physical-model-catalog",
+      "requirements": [
+        {
+          "protocolId": "F02",
+          "title": "Ownership e bypass",
+          "protectionAndTraceability": "ADR-0009; N8; R1/F1; C08; I02/I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/27/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 542,
+            "heading": "F02 — Ownership e bypass"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        },
+        {
+          "protocolId": "V02",
+          "title": "Exatamente um membro",
+          "protectionAndTraceability": "ADR-0009; N4; M2/M3/V2; C04; I06",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/13/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 372,
+            "heading": "V02 — Exatamente um membro"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        },
+        {
+          "protocolId": "V03",
+          "title": "Referências cruzadas",
+          "protectionAndTraceability": "ADR-0009; N3/N4; M2/V2; C08; I02",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/14/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 384,
+            "heading": "V03 — Referências cruzadas"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/25"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/549",
+          "/550",
+          "/551",
+          "/552",
+          "/553",
+          "/554",
+          "/555",
+          "/556",
+          "/557",
+          "/558",
+          "/559",
+          "/560",
+          "/561",
+          "/562",
+          "/563",
+          "/564",
+          "/565",
+          "/566",
+          "/567",
+          "/568",
+          "/569",
+          "/570",
+          "/571"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F02/G2-physical-model-catalog"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/3",
+      "id": "F02",
+      "variant": "owners-and-runtime-not-bypass",
+      "requirements": [
+        {
+          "protocolId": "F02",
+          "title": "Ownership e bypass",
+          "protectionAndTraceability": "ADR-0009; N8; R1/F1; C08; I02/I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/27/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 542,
+            "heading": "F02 — Ownership e bypass"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/12"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/199",
+          "/200",
+          "/201",
+          "/202",
+          "/203",
+          "/204",
+          "/205",
+          "/206",
+          "/207",
+          "/208"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F02/owners-and-runtime-not-bypass"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/4",
+      "id": "F03",
+      "variant": "public-execute-and-wrong-port-denied",
+      "requirements": [
+        {
+          "protocolId": "F03",
+          "title": "EXECUTE e PUBLIC",
+          "protectionAndTraceability": "ADR-0009; N8; F1/F2; C01/C08; I02/I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/28/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 554,
+            "heading": "F03 — EXECUTE e PUBLIC"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/11"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/187",
+          "/188",
+          "/189",
+          "/190",
+          "/191",
+          "/192",
+          "/193",
+          "/194",
+          "/195",
+          "/196",
+          "/197",
+          "/198"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F03/public-execute-and-wrong-port-denied"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/5",
+      "id": "F04",
+      "variant": "no-set-role-or-owner-escalation",
+      "requirements": [
+        {
+          "protocolId": "F04",
+          "title": "Herança e SET ROLE",
+          "protectionAndTraceability": "ADR-0009; N8; R1/F1; C08; I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/29/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 566,
+            "heading": "F04 — Herança e SET ROLE"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/10"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/154",
+          "/155",
+          "/156",
+          "/157",
+          "/158",
+          "/159",
+          "/160",
+          "/161",
+          "/162",
+          "/163",
+          "/164",
+          "/165",
+          "/166",
+          "/167",
+          "/168",
+          "/169",
+          "/170",
+          "/171",
+          "/172",
+          "/173",
+          "/174",
+          "/175",
+          "/176",
+          "/177",
+          "/178",
+          "/179",
+          "/180",
+          "/181",
+          "/182",
+          "/183",
+          "/184",
+          "/185",
+          "/186"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F04/no-set-role-or-owner-escalation"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/6",
+      "id": "F05",
+      "variant": "G1-installed-T-SELF-REC-BOOT-boundaries",
+      "requirements": [
+        {
+          "protocolId": "F05",
+          "title": "RLS por executor e composição",
+          "protectionAndTraceability": "ADR-0009; N2/N8; R2/R3/Q3; C08; I02",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/30/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 578,
+            "heading": "F05 — RLS por executor e composição"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/22"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/458",
+          "/459",
+          "/460",
+          "/461",
+          "/462",
+          "/463",
+          "/464",
+          "/465",
+          "/466",
+          "/467",
+          "/468",
+          "/469",
+          "/470",
+          "/471",
+          "/472",
+          "/473",
+          "/474",
+          "/475",
+          "/476",
+          "/477",
+          "/478",
+          "/479",
+          "/480",
+          "/481",
+          "/482",
+          "/483",
+          "/484",
+          "/485"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F05/G1-installed-T-SELF-REC-BOOT-boundaries"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/7",
+      "id": "F06",
+      "variant": "fixed-path-and-denied-shadow-object",
+      "requirements": [
+        {
+          "protocolId": "F06",
+          "title": "search_path e shadowing",
+          "protectionAndTraceability": "ADR-0009; N8; F1; C01/C08; I02",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/31/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 590,
+            "heading": "F06 — search_path e shadowing"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/15"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/252",
+          "/253",
+          "/254",
+          "/255",
+          "/256",
+          "/257",
+          "/258",
+          "/259",
+          "/260",
+          "/261",
+          "/262",
+          "/263",
+          "/264",
+          "/265",
+          "/266",
+          "/267",
+          "/268",
+          "/269",
+          "/270",
+          "/271",
+          "/272"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F06/fixed-path-and-denied-shadow-object"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/8",
+      "id": "F09",
+      "variant": "invalid-invitation-inserts-issuer-and-chain",
+      "requirements": [
+        {
+          "protocolId": "F09",
+          "title": "Auditoria e recibo privados",
+          "protectionAndTraceability": "ADR-0009; N8/N10/N11; F2/M-AUDIT/M-IDEM; C06/C08; I02/I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/34/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 626,
+            "heading": "F09 — Auditoria e recibo privados"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        },
+        {
+          "protocolId": "Q05",
+          "title": "REC sem Membership",
+          "protectionAndTraceability": "ADR-0009; N2/N3/N6; Q2/F2; C02/C03/C04; I03/I04/I05",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/4/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 262,
+            "heading": "Q05 — REC sem Membership"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        },
+        {
+          "protocolId": "F08",
+          "title": "Provas por função",
+          "protectionAndTraceability": "ADR-0009; N1/N2/N8; F2; C02/C04/C08/C09; I03/I04/I08/I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/33/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 614,
+            "heading": "F08 — Provas por função"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/21"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/401",
+          "/402",
+          "/403",
+          "/404",
+          "/405",
+          "/406",
+          "/407",
+          "/408",
+          "/409",
+          "/410",
+          "/411",
+          "/412",
+          "/413",
+          "/414",
+          "/415",
+          "/416",
+          "/417",
+          "/418",
+          "/419",
+          "/420",
+          "/421",
+          "/422",
+          "/423",
+          "/424",
+          "/425",
+          "/426",
+          "/427",
+          "/428",
+          "/429",
+          "/430",
+          "/431",
+          "/432",
+          "/433",
+          "/434",
+          "/435",
+          "/436",
+          "/437",
+          "/438",
+          "/439",
+          "/440",
+          "/441",
+          "/442",
+          "/443",
+          "/444",
+          "/445",
+          "/446",
+          "/447",
+          "/448",
+          "/449",
+          "/450",
+          "/451",
+          "/452",
+          "/453",
+          "/454",
+          "/455",
+          "/456",
+          "/457"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F09/invalid-invitation-inserts-issuer-and-chain"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/9",
+      "id": "F09",
+      "variant": "private-audit-receipts-direct-denials",
+      "requirements": [
+        {
+          "protocolId": "F09",
+          "title": "Auditoria e recibo privados",
+          "protectionAndTraceability": "ADR-0009; N8/N10/N11; F2/M-AUDIT/M-IDEM; C06/C08; I02/I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/34/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 626,
+            "heading": "F09 — Auditoria e recibo privados"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/16"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/273",
+          "/274",
+          "/275",
+          "/276",
+          "/277",
+          "/278",
+          "/279",
+          "/280",
+          "/281",
+          "/282",
+          "/283",
+          "/284",
+          "/285",
+          "/286",
+          "/287",
+          "/288",
+          "/289",
+          "/290",
+          "/291",
+          "/292",
+          "/293",
+          "/294",
+          "/295",
+          "/296",
+          "/297",
+          "/298",
+          "/299",
+          "/300",
+          "/301",
+          "/302"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "F09/private-audit-receipts-direct-denials"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/10",
+      "id": "H01",
+      "variant": "revoked-identity-cannot-accept-other-enterprise",
+      "requirements": [
+        {
+          "protocolId": "H01",
+          "title": "Consumo permanente e novo emprego",
+          "protectionAndTraceability": "ADR-0009; N3; M-HIST/H; ADR-0008; C02/C04/C09; I03/I04/I05",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/48/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 798,
+            "heading": "H01 — Consumo permanente e novo emprego"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/17"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/303",
+          "/304",
+          "/305",
+          "/306",
+          "/307",
+          "/308",
+          "/309",
+          "/310",
+          "/311",
+          "/312",
+          "/313",
+          "/314",
+          "/315",
+          "/316",
+          "/317",
+          "/318",
+          "/319",
+          "/320",
+          "/321",
+          "/322"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "H01/revoked-identity-cannot-accept-other-enterprise"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/11",
+      "id": "Q07",
+      "variant": "G2-each-context-field-read-write-denials",
+      "requirements": [
+        {
+          "protocolId": "Q07",
+          "title": "Contexto ausente e inválido",
+          "protectionAndTraceability": "ADR-0009; N2; R2/R4/Q3; C01/C08; I02",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/6/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 286,
+            "heading": "Q07 — Contexto ausente e inválido"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/26"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/572",
+          "/573",
+          "/574",
+          "/575",
+          "/576",
+          "/577",
+          "/578",
+          "/579",
+          "/580",
+          "/581",
+          "/582",
+          "/583",
+          "/584",
+          "/585",
+          "/586",
+          "/587",
+          "/588",
+          "/589",
+          "/590",
+          "/591",
+          "/592",
+          "/593",
+          "/594",
+          "/595",
+          "/596",
+          "/597",
+          "/598",
+          "/599",
+          "/600",
+          "/601",
+          "/602",
+          "/603",
+          "/604",
+          "/605",
+          "/606",
+          "/607",
+          "/608",
+          "/609",
+          "/610",
+          "/611",
+          "/612",
+          "/613",
+          "/614",
+          "/615",
+          "/616",
+          "/617",
+          "/618",
+          "/619",
+          "/620",
+          "/621",
+          "/622",
+          "/623",
+          "/624",
+          "/625",
+          "/626",
+          "/627",
+          "/628",
+          "/629",
+          "/630",
+          "/631",
+          "/632",
+          "/633",
+          "/634",
+          "/635",
+          "/636",
+          "/637"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "Q07/G2-each-context-field-read-write-denials"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/12",
+      "id": "Q07",
+      "variant": "missing-mismatched-malformed-context",
+      "requirements": [
+        {
+          "protocolId": "Q07",
+          "title": "Contexto ausente e inválido",
+          "protectionAndTraceability": "ADR-0009; N2; R2/R4/Q3; C01/C08; I02",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/6/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 286,
+            "heading": "Q07 — Contexto ausente e inválido"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/1"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/33",
+          "/34",
+          "/35",
+          "/36",
+          "/37",
+          "/38",
+          "/39",
+          "/40",
+          "/41",
+          "/42",
+          "/43",
+          "/44"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "Q07/missing-mismatched-malformed-context"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/13",
+      "id": "Q08",
+      "variant": "G2-cross-tenant-target-write-and-own-positive",
+      "requirements": [
+        {
+          "protocolId": "Q08",
+          "title": "Isolamento SQL e predicados",
+          "protectionAndTraceability": "ADR-0009; N2/N8; R3; C08/C09; I02",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/7/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 298,
+            "heading": "Q08 — Isolamento SQL e predicados"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/27"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/638",
+          "/639",
+          "/640",
+          "/641",
+          "/642",
+          "/643",
+          "/644",
+          "/645",
+          "/646",
+          "/647",
+          "/648",
+          "/649",
+          "/650",
+          "/651",
+          "/652",
+          "/653",
+          "/654"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "Q08/G2-cross-tenant-target-write-and-own-positive"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/14",
+      "id": "Q08",
+      "variant": "tenant-sql-isolation",
+      "requirements": [
+        {
+          "protocolId": "Q08",
+          "title": "Isolamento SQL e predicados",
+          "protectionAndTraceability": "ADR-0009; N2/N8; R3; C08/C09; I02",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/7/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 298,
+            "heading": "Q08 — Isolamento SQL e predicados"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/0"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/22",
+          "/23",
+          "/24",
+          "/25",
+          "/26",
+          "/27",
+          "/28",
+          "/29",
+          "/30",
+          "/31",
+          "/32"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "Q08/tenant-sql-isolation"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/15",
+      "id": "Q11",
+      "variant": "npgsql-pool-commit-rollback-exception",
+      "requirements": [
+        {
+          "protocolId": "Q11",
+          "title": "Commit/rollback e pool físico",
+          "protectionAndTraceability": "ADR-0009; N2; R4/Q3; C07/C09; I02; K10",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/10/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 334,
+            "heading": "Q11 — Commit/rollback e pool físico"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/2"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/45",
+          "/46",
+          "/47",
+          "/48",
+          "/49",
+          "/50",
+          "/51",
+          "/52",
+          "/53",
+          "/54",
+          "/55",
+          "/56",
+          "/57",
+          "/58",
+          "/59",
+          "/60",
+          "/61",
+          "/62",
+          "/63",
+          "/64",
+          "/65",
+          "/66",
+          "/67",
+          "/68",
+          "/69",
+          "/70",
+          "/71"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "Q11/npgsql-pool-commit-rollback-exception"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/16",
+      "id": "Q12",
+      "variant": "G2-savepoint-restores-previous-context",
+      "requirements": [
+        {
+          "protocolId": "Q12",
+          "title": "Savepoint, cancelamento e contaminação",
+          "protectionAndTraceability": "ADR-0009; N2; R4/Q3/V3; C07; I02/I10; K10",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/11/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 346,
+            "heading": "Q12 — Savepoint, cancelamento e contaminação"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/29"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/679",
+          "/680",
+          "/681",
+          "/682",
+          "/683",
+          "/684",
+          "/685",
+          "/686",
+          "/687",
+          "/688",
+          "/689",
+          "/690",
+          "/691",
+          "/692",
+          "/693",
+          "/694"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "Q12/G2-savepoint-restores-previous-context"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/17",
+      "id": "Q12",
+      "variant": "G2-session-baseline-reset",
+      "requirements": [
+        {
+          "protocolId": "Q12",
+          "title": "Savepoint, cancelamento e contaminação",
+          "protectionAndTraceability": "ADR-0009; N2; R4/Q3/V3; C07; I02/I10; K10",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/11/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 346,
+            "heading": "Q12 — Savepoint, cancelamento e contaminação"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "6909108391b4",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/6909108391b4/results.json",
+        "jsonPointer": "/subproofs/0"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/6909108391b4/assertions.json",
+        "jsonPointers": [
+          "/27",
+          "/28",
+          "/29",
+          "/30",
+          "/31",
+          "/32",
+          "/33",
+          "/34",
+          "/35",
+          "/36",
+          "/37",
+          "/38",
+          "/39",
+          "/40",
+          "/41",
+          "/42"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/6909108391b4/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "Q12/G2-session-baseline-reset"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/18",
+      "id": "Q12",
+      "variant": "savepoint-context-rollback",
+      "requirements": [
+        {
+          "protocolId": "Q12",
+          "title": "Savepoint, cancelamento e contaminação",
+          "protectionAndTraceability": "ADR-0009; N2; R4/Q3/V3; C07; I02/I10; K10",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/11/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 346,
+            "heading": "Q12 — Savepoint, cancelamento e contaminação"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/3"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/72",
+          "/73",
+          "/74",
+          "/75",
+          "/76",
+          "/77",
+          "/78",
+          "/79",
+          "/80",
+          "/81"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "Q12/savepoint-context-rollback"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/19",
+      "id": "V01",
+      "variant": "active-account-without-member-commit",
+      "requirements": [
+        {
+          "protocolId": "V01",
+          "title": "Active sem Membership",
+          "protectionAndTraceability": "ADR-0009; N4; M3/V2; C04/C09; I05/I09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/12/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 360,
+            "heading": "V01 — Active sem Membership"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/4"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/82",
+          "/83",
+          "/84",
+          "/85",
+          "/86",
+          "/87",
+          "/88",
+          "/89",
+          "/90",
+          "/91",
+          "/92",
+          "/93",
+          "/94",
+          "/95",
+          "/96"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V01/active-account-without-member-commit"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/20",
+      "id": "V02",
+      "variant": "G2-native-keys-and-checks",
+      "requirements": [
+        {
+          "protocolId": "V02",
+          "title": "Exatamente um membro",
+          "protectionAndTraceability": "ADR-0009; N4; M2/M3/V2; C04; I06",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/13/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 372,
+            "heading": "V02 — Exatamente um membro"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/24"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/520",
+          "/521",
+          "/522",
+          "/523",
+          "/524",
+          "/525",
+          "/526",
+          "/527",
+          "/528",
+          "/529",
+          "/530",
+          "/531",
+          "/532",
+          "/533",
+          "/534",
+          "/535",
+          "/536",
+          "/537",
+          "/538",
+          "/539",
+          "/540",
+          "/541",
+          "/542",
+          "/543",
+          "/544",
+          "/545",
+          "/546",
+          "/547",
+          "/548"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V02/G2-native-keys-and-checks"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/21",
+      "id": "V02",
+      "variant": "split-rls-not-null-catalog-and-rollback",
+      "requirements": [
+        {
+          "protocolId": "V02",
+          "title": "Exatamente um membro",
+          "protectionAndTraceability": "ADR-0009; N4; M2/M3/V2; C04; I06",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/13/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 372,
+            "heading": "V02 — Exatamente um membro"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/13"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/209",
+          "/210",
+          "/211",
+          "/212",
+          "/213",
+          "/214",
+          "/215",
+          "/216",
+          "/217",
+          "/218",
+          "/219",
+          "/220",
+          "/221",
+          "/222",
+          "/223",
+          "/224",
+          "/225",
+          "/226",
+          "/227",
+          "/228",
+          "/229",
+          "/230",
+          "/231",
+          "/232",
+          "/233",
+          "/234",
+          "/235",
+          "/236",
+          "/237",
+          "/238",
+          "/239",
+          "/240"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V02/split-rls-not-null-catalog-and-rollback"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/22",
+      "id": "V03",
+      "variant": "cross-organization-foreign-key",
+      "requirements": [
+        {
+          "protocolId": "V03",
+          "title": "Referências cruzadas",
+          "protectionAndTraceability": "ADR-0009; N3/N4; M2/V2; C08; I02",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/14/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 384,
+            "heading": "V03 — Referências cruzadas"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/14"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/241",
+          "/242",
+          "/243",
+          "/244",
+          "/245",
+          "/246",
+          "/247",
+          "/248",
+          "/249",
+          "/250",
+          "/251"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V03/cross-organization-foreign-key"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/23",
+      "id": "V04",
+      "variant": "owner-transitions-and-role-promotion-denied",
+      "requirements": [
+        {
+          "protocolId": "V04",
+          "title": "Estados Account/Membership",
+          "protectionAndTraceability": "ADR-0009; N4/N6; M3/V2/V3; C07/C08; I10",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/15/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 396,
+            "heading": "V04 — Estados Account/Membership"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/18"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/323",
+          "/324",
+          "/325",
+          "/326",
+          "/327",
+          "/328",
+          "/329",
+          "/330",
+          "/331",
+          "/332",
+          "/333",
+          "/334",
+          "/335",
+          "/336",
+          "/337",
+          "/338",
+          "/339",
+          "/340",
+          "/341",
+          "/342",
+          "/343",
+          "/344",
+          "/345",
+          "/346",
+          "/347",
+          "/348",
+          "/349",
+          "/350",
+          "/351",
+          "/352",
+          "/353",
+          "/354",
+          "/355"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V04/owner-transitions-and-role-promotion-denied"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/24",
+      "id": "V04",
+      "variant": "partial-revocation-rejected",
+      "requirements": [
+        {
+          "protocolId": "V04",
+          "title": "Estados Account/Membership",
+          "protectionAndTraceability": "ADR-0009; N4/N6; M3/V2/V3; C07/C08; I10",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/15/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 396,
+            "heading": "V04 — Estados Account/Membership"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/7"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/118",
+          "/119",
+          "/120",
+          "/121",
+          "/122",
+          "/123",
+          "/124",
+          "/125",
+          "/126"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V04/partial-revocation-rejected"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/25",
+      "id": "V05",
+      "variant": "organization-without-owner-at-commit",
+      "requirements": [
+        {
+          "protocolId": "V05",
+          "title": "Owner válido por organização",
+          "protectionAndTraceability": "ADR-0009; N5; M3/V2; C08/C09; I09; K09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/16/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 408,
+            "heading": "V05 — Owner válido por organização"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/5"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/97",
+          "/98",
+          "/99",
+          "/100",
+          "/101",
+          "/102",
+          "/103",
+          "/104",
+          "/105",
+          "/106",
+          "/107",
+          "/108"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V05/organization-without-owner-at-commit"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/26",
+      "id": "V06",
+      "variant": "G1-event-coverage-multiple-updates-and-immediate-check",
+      "requirements": [
+        {
+          "protocolId": "V06",
+          "title": "Cobertura de eventos",
+          "protectionAndTraceability": "ADR-0009; N4/N5; V2; C04/C08/C09; I09/I10",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/17/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 420,
+            "heading": "V06 — Cobertura de eventos"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/23"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/486",
+          "/487",
+          "/488",
+          "/489",
+          "/490",
+          "/491",
+          "/492",
+          "/493",
+          "/494",
+          "/495",
+          "/496",
+          "/497",
+          "/498",
+          "/499",
+          "/500",
+          "/501",
+          "/502",
+          "/503",
+          "/504",
+          "/505",
+          "/506",
+          "/507",
+          "/508",
+          "/509",
+          "/510",
+          "/511",
+          "/512",
+          "/513",
+          "/514",
+          "/515",
+          "/516",
+          "/517",
+          "/518",
+          "/519"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V06/G1-event-coverage-multiple-updates-and-immediate-check"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/27",
+      "id": "V07",
+      "variant": "immutable-org-and-historical-consumption",
+      "requirements": [
+        {
+          "protocolId": "V07",
+          "title": "Imutabilidade e guard de exclusão",
+          "protectionAndTraceability": "ADR-0009; N3; M2/V2; C04/C08; I03/I04",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/18/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 432,
+            "heading": "V07 — Imutabilidade e guard de exclusão"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/8"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/127",
+          "/128",
+          "/129",
+          "/130",
+          "/131",
+          "/132",
+          "/133",
+          "/134",
+          "/135",
+          "/136"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V07/immutable-org-and-historical-consumption"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/28",
+      "id": "V07",
+      "variant": "two-active-Owners-direct-owner-revocation-denied",
+      "requirements": [
+        {
+          "protocolId": "V07",
+          "title": "Imutabilidade e guard de exclusão",
+          "protectionAndTraceability": "ADR-0009; N3; M2/V2; C04/C08; I03/I04",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/18/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 432,
+            "heading": "V07 — Imutabilidade e guard de exclusão"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        },
+        {
+          "protocolId": "V05",
+          "title": "Owner válido por organização",
+          "protectionAndTraceability": "ADR-0009; N5; M3/V2; C08/C09; I09; K09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/16/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 408,
+            "heading": "V05 — Owner válido por organização"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        },
+        {
+          "protocolId": "K09",
+          "title": "Último Owner (K09)",
+          "protectionAndTraceability": "ADR-0009; N5/N7; C08/V2; I09/I10; K09",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/46/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 772,
+            "heading": "K09 — Último Owner (K09)"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/20"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/377",
+          "/378",
+          "/379",
+          "/380",
+          "/381",
+          "/382",
+          "/383",
+          "/384",
+          "/385",
+          "/386",
+          "/387",
+          "/388",
+          "/389",
+          "/390",
+          "/391",
+          "/392",
+          "/393",
+          "/394",
+          "/395",
+          "/396",
+          "/397",
+          "/398",
+          "/399",
+          "/400"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V07/two-active-Owners-direct-owner-revocation-denied"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/29",
+      "id": "V08",
+      "variant": "G2-technical-context-components-and-rollback",
+      "requirements": [
+        {
+          "protocolId": "V08",
+          "title": "Contexto técnico de integridade e visibilidade final",
+          "protectionAndTraceability": "ADR-0009; N4/N5/N7; V3 e 3.8 deste plano; C08/C09; I09/I10",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/19/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 444,
+            "heading": "V08 — Contexto técnico de integridade e visibilidade final"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/28"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/655",
+          "/656",
+          "/657",
+          "/658",
+          "/659",
+          "/660",
+          "/661",
+          "/662",
+          "/663",
+          "/664",
+          "/665",
+          "/666",
+          "/667",
+          "/668",
+          "/669",
+          "/670",
+          "/671",
+          "/672",
+          "/673",
+          "/674",
+          "/675",
+          "/676",
+          "/677",
+          "/678"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V08/G2-technical-context-components-and-rollback"
+      },
+      "historicalCoverageResultUnchanged": true
+    },
+    {
+      "coveragePointer": "/variants/30",
+      "id": "V08",
+      "variant": "missing-integrity-context-rejects",
+      "requirements": [
+        {
+          "protocolId": "V08",
+          "title": "Contexto técnico de integridade e visibilidade final",
+          "protectionAndTraceability": "ADR-0009; N4/N5/N7; V3 e 3.8 deste plano; C08/C09; I09/I10",
+          "scenarioSource": {
+            "path": "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json",
+            "jsonPointer": "/cases/19/fields/Proteção ~1 rastreabilidade"
+          },
+          "currentPlan": {
+            "path": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+            "line": 444,
+            "heading": "V08 — Contexto técnico de integridade e visibilidade final"
+          },
+          "qualification": "Existing requirement mapping for this SQL subproof only; not completion or execution of the parent protocol"
+        }
+      ],
+      "run": "f31a6617ed85",
+      "result": "PASS",
+      "resultReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/subproofs/6"
+      },
+      "assertionReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/assertions.json",
+        "jsonPointers": [
+          "/109",
+          "/110",
+          "/111",
+          "/112",
+          "/113",
+          "/114",
+          "/115",
+          "/116",
+          "/117"
+        ]
+      },
+      "timelineReference": {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/results.json",
+        "jsonPointer": "/timeline",
+        "proofFilter": "V08/missing-integrity-context-rejects"
+      },
+      "historicalCoverageResultUnchanged": true
+    }
+  ],
+  "V09Erratum": {
+    "historicalPointer": "/excluded/17",
+    "variant": "G1-validators-no-explicit-locks-or-repair",
+    "historicalClassification": "DEFERRED / G3 concurrency/failure protocol",
+    "documentaryTreatment": "Specific G1 body/surface proof already covered and approved; not rerun in G2. Remaining structural V09 protocols stay in G3. Original counts 7 NOT RUN and 13 DEFERRED are preserved as history.",
+    "approvedEvidence": {
+      "path": "tests/TechnicalValidation/ADR0009.G1/evidence/runs/ece79aa930df/results.json",
+      "caseId": "V09",
+      "variant": "G1-validators-no-explicit-locks-or-repair"
+    }
+  },
+  "tableInventoryAddendum": {
+    "purpose": "Documentary expected-table inventory only; not a replacement SQL security allowlist, grant or observed-to-expected privilege generation",
+    "frozenExpectedSource": {
+      "path": "tests/TechnicalValidation/ADR0009.G1/manifests/security.expected.json",
+      "sha256": "aa94c117ed13a584bfdfa6a01e06c35f44dc9d2027b4d4ea444c261a296a2504",
+      "jsonPointer": "/tables"
+    },
+    "omittedName": "identity.identity_links",
+    "normativeSources": [
+      "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+      "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+      "tests/TechnicalValidation/ADR0009.G1/runtime/001-test-only.sql"
+    ],
+    "documentaryExpectedNames": [
+      "audit.events",
+      "identity.enterprise_user_accounts",
+      "identity.identities",
+      "identity.identity_consumptions",
+      "identity.identity_links",
+      "identity.recipient_references",
+      "operation.idempotency_records",
+      "sandbox.demo_records",
+      "tenancy.invitation_slots",
+      "tenancy.invitations",
+      "tenancy.memberships",
+      "tenancy.organizations"
+    ],
+    "observedCorrespondence": [
+      {
+        "path": "tests/TechnicalValidation/ADR0009.G1/evidence/runs/ece79aa930df/catalog.jsonl",
+        "jsonlLine": 23,
+        "name": "identity.identity_links",
+        "owner": "ddl_owner",
+        "rls": true,
+        "forceRls": true
+      },
+      {
+        "path": "tests/TechnicalValidation/ADR0009.G2/evidence/runs/f31a6617ed85/catalog.jsonl",
+        "jsonlLine": 23,
+        "name": "identity.identity_links",
+        "owner": "ddl_owner",
+        "rls": true,
+        "forceRls": true
+      }
+    ],
+    "treatment": "Documentary omission regularized by this addendum; original expected snapshot and historical comparisons remain untouched"
+  }
+}
