@@ -1,0 +1,32 @@
+[
+  {
+    "proof": "preflight",
+    "assertion": "Pinned local Linux image identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Run label.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Container image.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Cleanup identity must match this run.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "No run container remains.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Network cleanup label",
+    "observed": true
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "run": "5c56afedf9e5",
+  "name": "bpc-adr0009-g1-5c56afedf9e5",
+  "database": "bpc_adr0009_g1_5c56afedf9e5",
+  "image": "sha256:79bd7c99e923138f136f8009d6bffa66e21e9d4fda5c0c561b00fc9c90cfe537",
+  "network": "bpc-adr0009-g1-5c56afedf9e5-net",
+  "internalNetwork": false,
+  "mounts": [],
+  "binding": {
+    "HostIp": "127.0.0.1",
+    "HostPort": "62602"
+  },
+  "externalTarget": false,
+  "credentials": "ephemeral random memory only"
+}

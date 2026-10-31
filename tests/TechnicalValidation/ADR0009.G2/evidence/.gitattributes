@@ -1,0 +1,2 @@
+# Historical PostgreSQL output is immutable, including its final blank line.
+runs/*/postgres.log whitespace=cr-at-eol,-blank-at-eof

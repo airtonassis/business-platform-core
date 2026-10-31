@@ -1,0 +1,337 @@
+{
+  "run": "3ed87d94f5a1",
+  "gate": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "schemaInstalled": true,
+  "stoppedForP0": true,
+  "counts": {
+    "NOT_EXECUTED": 53,
+    "FAIL": 1
+  },
+  "cases": {
+    "Q01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V02": {
+      "Status": "FAIL",
+      "Detail": "Unexpected oracle violation; affected stage stopped, no post-failure security weakening."
+    },
+    "V03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V13": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V14": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    }
+  },
+  "subproofs": [
+    {
+      "caseId": "V02",
+      "variant": "G2-native-keys-and-checks",
+      "status": "FAIL",
+      "exceptionType": "SafetyFailure",
+      "stack": "   at ValidationRun.Require(Boolean ok, String message) in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 1085\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_0()\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_0() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 43\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_0()\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__3_0() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 45\r\n   at ValidationRun.Proof(String caseId, String variant, Func\u00601 action, Boolean complete, Boolean characterization) in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 971",
+      "sqlstate": null,
+      "constraint": null,
+      "table": null,
+      "routine": null,
+      "assertion": "Native diagnosis matches exact SQLSTATE, constraint and table."
+    }
+  ],
+  "timeline": [
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 63,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 64,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 65,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 66,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 67,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 68,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "RollbackAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 69,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "transaction": "tx",
+      "eventName": "CommitAsync completed"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 70,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/G2-native-keys-and-checks",
+      "role": "postgres",
+      "pid": 71,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/G2-native-keys-and-checks",
+      "role": "postgres",
+      "pid": 72,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/G2-native-keys-and-checks",
+      "role": "g1_probe",
+      "pid": 73,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/G2-native-keys-and-checks",
+      "role": "g1_probe",
+      "pid": 74,
+      "eventName": "physical connection opened"
+    }
+  ]
+}

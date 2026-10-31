@@ -1,0 +1,75 @@
+{
+  "createdUtc": "2026-10-31T11:04:34.791381+00:00",
+  "gate": "G2_PENDING_HUMAN_REVIEW",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "tests\\TechnicalValidation\\ADR0009.G2\\test_selection.py"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "tests\\TechnicalValidation\\ADR0009.G2\\verify_evidence.py"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"runs\": [\"f31a6617ed85\", \"6909108391b4\"], \"selectedPass\": 31, \"failed\": 0, \"g1FilesIntact\": 272, \"columnPrivileges\": 178, \"functionDefinitionsMatchApprovedG1\": 11, \"tableSetMatchesApprovedG1\": 12, \"knownManifestOmission\": \"identity.identity_links already present in approved G1; no new drift\", \"cleanup\": \"all run containers and networks absent; preexisting inventory unchanged\", \"jsonAndSecretChecks\": \"PASS; pattern scan is bounded, not a proof of absence of every possible secret\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--exit-code"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "frozenHashes": {
+    "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md": "f3a27f60c67f7f9d340210ba37ff0c78833b139fd7322ca324638808b6bbef2f",
+    "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md": "3bd756b31d1c92c1c81eeae408bc1407aaee427aaa641bffbd2dae39dc1e4fa5",
+    "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md": "2cdd3858dc95038156938328370b4ae067c381a00035240c9b84073d48dd9971"
+  },
+  "G1Originals": "272 byte-for-byte intact",
+  "selected": {
+    "PASS": 31,
+    "FAIL": 0,
+    "BLOCKED": 0,
+    "NOT RUN": 0
+  },
+  "excluded": {
+    "NOT RUN": 7,
+    "DEFERRED": 13
+  },
+  "historicalProbeFailuresPreserved": 3,
+  "historicalSetupBlocksPreserved": 2,
+  "noTrackedChanges": true,
+  "noCommitPushOrPublication": true
+}

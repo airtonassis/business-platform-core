@@ -1,0 +1,514 @@
+{
+  "gate": "G2_NOT_HUMAN_APPROVED",
+  "selected": {
+    "selected": [
+      {
+        "id": "F01",
+        "variant": "minimal-grants-and-secret-read-denied",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "F01",
+        "variant": "runtime-direct-dml-denied",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "F02",
+        "variant": "G2-physical-model-catalog",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "F02",
+        "variant": "owners-and-runtime-not-bypass",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "F03",
+        "variant": "public-execute-and-wrong-port-denied",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "F04",
+        "variant": "no-set-role-or-owner-escalation",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "F05",
+        "variant": "G1-installed-T-SELF-REC-BOOT-boundaries",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "F06",
+        "variant": "fixed-path-and-denied-shadow-object",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "F09",
+        "variant": "invalid-invitation-inserts-issuer-and-chain",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "F09",
+        "variant": "private-audit-receipts-direct-denials",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "H01",
+        "variant": "revoked-identity-cannot-accept-other-enterprise",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "Q07",
+        "variant": "G2-each-context-field-read-write-denials",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "Q07",
+        "variant": "missing-mismatched-malformed-context",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "Q08",
+        "variant": "G2-cross-tenant-target-write-and-own-positive",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "Q08",
+        "variant": "tenant-sql-isolation",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "Q11",
+        "variant": "npgsql-pool-commit-rollback-exception",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "Q12",
+        "variant": "G2-savepoint-restores-previous-context",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "Q12",
+        "variant": "savepoint-context-rollback",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V01",
+        "variant": "active-account-without-member-commit",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V02",
+        "variant": "split-rls-not-null-catalog-and-rollback",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V03",
+        "variant": "cross-organization-foreign-key",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V04",
+        "variant": "owner-transitions-and-role-promotion-denied",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V04",
+        "variant": "partial-revocation-rejected",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V05",
+        "variant": "organization-without-owner-at-commit",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V06",
+        "variant": "G1-event-coverage-multiple-updates-and-immediate-check",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V07",
+        "variant": "immutable-org-and-historical-consumption",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V07",
+        "variant": "two-active-Owners-direct-owner-revocation-denied",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V08",
+        "variant": "G2-technical-context-components-and-rollback",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      },
+      {
+        "id": "V08",
+        "variant": "missing-integrity-context-rejects",
+        "gate": "G2",
+        "reason": "Deterministic SQL/driver validation; no concurrent writer protocol"
+      }
+    ],
+    "excluded": [
+      {
+        "id": "Q10",
+        "variant": "compromised-credential-characterization-only",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "K01",
+        "variant": "accept-A-B-two-physical-connections",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K04",
+        "variant": "same-version-two-writers",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K08",
+        "variant": "audit-failure-rolls-back-demo",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K07",
+        "variant": "confirmed-commit-lost-response-bootstrap-replay",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "V13",
+        "variant": "real-deadlock-in-dedicated-probe",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K05",
+        "variant": "concurrent-replace-and-authorized-replay",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K02",
+        "variant": "bootstrap-versus-accept-both-orders",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K03",
+        "variant": "revoke-versus-command-both-orders",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K06",
+        "variant": "expiry-revalidated-after-real-lock-wait",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K09",
+        "variant": "Owner-and-self-revocation-denied",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "K10",
+        "variant": "pool-after-actual-SQL-abort",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "V11",
+        "variant": "revocation-versus-owner-reactivation-after-wait",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "F01",
+        "variant": "G1-runtime-table-operation-matrix",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "F02",
+        "variant": "G1-DDL-TRUNCATE-protections-denied",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "F03",
+        "variant": "G1-every-ungranted-function-runtime-call",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "F04",
+        "variant": "G1-SET-ROLE-and-self-grant-denied",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "V09",
+        "variant": "G1-validators-no-explicit-locks-or-repair",
+        "result": "DEFERRED",
+        "reason": "G3 concurrency/failure protocol"
+      },
+      {
+        "id": "F10",
+        "variant": "G1-semantic-capability-subtraction-probe",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      },
+      {
+        "id": "F11",
+        "variant": "G1-reduced-grants-real-runtime-ports-and-replay",
+        "result": "NOT RUN",
+        "reason": "Approved G1 surface reused; not a G2 variant"
+      }
+    ],
+    "deferred": [
+      "Application/API/OIDC/session/recovery protocols: G4",
+      "V11 structural: G3"
+    ],
+    "trace": "Static two-Owner negative reuses original K09 variant as V07 G2 regression; no V11/write skew execution",
+    "sourceSha256": "0e9773e92d78e5431927226c708439780c99c4ee07bca8f2b8c47f9ab776d02d"
+  },
+  "executed": [
+    {
+      "caseId": "Q08",
+      "variant": "tenant-sql-isolation",
+      "status": "PASS",
+      "milliseconds": 219,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q07",
+      "variant": "missing-mismatched-malformed-context",
+      "status": "PASS",
+      "milliseconds": 218,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q11",
+      "variant": "npgsql-pool-commit-rollback-exception",
+      "status": "PASS",
+      "milliseconds": 265,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q12",
+      "variant": "savepoint-context-rollback",
+      "status": "PASS",
+      "milliseconds": 164,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V01",
+      "variant": "active-account-without-member-commit",
+      "status": "PASS",
+      "milliseconds": 338,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V05",
+      "variant": "organization-without-owner-at-commit",
+      "status": "PASS",
+      "milliseconds": 217,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V08",
+      "variant": "missing-integrity-context-rejects",
+      "status": "PASS",
+      "milliseconds": 159,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V04",
+      "variant": "partial-revocation-rejected",
+      "status": "PASS",
+      "milliseconds": 230,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V07",
+      "variant": "immutable-org-and-historical-consumption",
+      "status": "PASS",
+      "milliseconds": 156,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F01",
+      "variant": "runtime-direct-dml-denied",
+      "status": "PASS",
+      "milliseconds": 217,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F04",
+      "variant": "no-set-role-or-owner-escalation",
+      "status": "PASS",
+      "milliseconds": 242,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F03",
+      "variant": "public-execute-and-wrong-port-denied",
+      "status": "PASS",
+      "milliseconds": 174,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F02",
+      "variant": "owners-and-runtime-not-bypass",
+      "status": "PASS",
+      "milliseconds": 146,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V02",
+      "variant": "split-rls-not-null-catalog-and-rollback",
+      "status": "PASS",
+      "milliseconds": 312,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V03",
+      "variant": "cross-organization-foreign-key",
+      "status": "PASS",
+      "milliseconds": 239,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F06",
+      "variant": "fixed-path-and-denied-shadow-object",
+      "status": "PASS",
+      "milliseconds": 293,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F09",
+      "variant": "private-audit-receipts-direct-denials",
+      "status": "PASS",
+      "milliseconds": 286,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "H01",
+      "variant": "revoked-identity-cannot-accept-other-enterprise",
+      "status": "PASS",
+      "milliseconds": 376,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V04",
+      "variant": "owner-transitions-and-role-promotion-denied",
+      "status": "PASS",
+      "milliseconds": 430,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F01",
+      "variant": "minimal-grants-and-secret-read-denied",
+      "status": "PASS",
+      "milliseconds": 208,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V07",
+      "variant": "two-active-Owners-direct-owner-revocation-denied",
+      "status": "PASS",
+      "milliseconds": 313,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F09",
+      "variant": "invalid-invitation-inserts-issuer-and-chain",
+      "status": "PASS",
+      "milliseconds": 584,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F05",
+      "variant": "G1-installed-T-SELF-REC-BOOT-boundaries",
+      "status": "PASS",
+      "milliseconds": 385,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V06",
+      "variant": "G1-event-coverage-multiple-updates-and-immediate-check",
+      "status": "PASS",
+      "milliseconds": 427,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F02",
+      "variant": "G2-physical-model-catalog",
+      "status": "PASS",
+      "milliseconds": 230,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q07",
+      "variant": "G2-each-context-field-read-write-denials",
+      "status": "PASS",
+      "milliseconds": 526,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q08",
+      "variant": "G2-cross-tenant-target-write-and-own-positive",
+      "status": "PASS",
+      "milliseconds": 208,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V08",
+      "variant": "G2-technical-context-components-and-rollback",
+      "status": "FAIL",
+      "exceptionType": "SafetyFailure",
+      "stack": "   at ValidationRun.\u003CG2Proofs\u003Eb__2_3() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 70\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__2_3() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 71\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__2_3()\r\n   at ValidationRun.\u003CG2Proofs\u003Eb__2_3() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\G2Proofs.cs:line 73\r\n   at ValidationRun.Proof(String caseId, String variant, Func\u00601 action, Boolean complete, Boolean characterization) in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 969",
+      "sqlstate": null,
+      "constraint": null,
+      "table": null,
+      "routine": null,
+      "assertion": "Invalid integrity context unexpectedly committed"
+    }
+  ],
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "stoppedForP0": true
+}

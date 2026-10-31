@@ -1,0 +1,237 @@
+[
+  {
+    "proof": "preflight",
+    "assertion": "Pinned local Linux image identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Run label.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Container image.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Loopback only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Dedicated network only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Dedicated run-owned network with exactly one container.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "pid": 65,
+    "role": "core_platform",
+    "identity": "5ecdf1ae-2782-4c87-90ef-4aa450f3099b",
+    "account": null,
+    "org": null,
+    "context": "SET LOCAL within transaction"
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "pid": 66,
+    "role": "core_platform",
+    "identity": "5ecdf1ae-2782-4c87-90ef-4aa450f3099b",
+    "account": null,
+    "org": null,
+    "context": "SET LOCAL within transaction"
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K09",
+    "fixture": "Privileged insertion of second initial Owner, not succession or runtime provisioning"
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "phase": "before",
+    "observerRole": "postgres read-only observation, not runtime authorization",
+    "pid": 71,
+    "state": {
+      "identity.identity_consumptions": 3,
+      "identity.enterprise_user_accounts": 3,
+      "tenancy.organizations": 2,
+      "tenancy.memberships": 3,
+      "tenancy.invitations": 0,
+      "audit.events": 2,
+      "operation.idempotency_records": 2,
+      "demo": "[{\u0022id\u0022:\u0022ccddaed5-9bf6-4e55-84f2-9f6309a605fe\u0022,\u0022organization_id\u0022:\u0022a419d5d7-acfc-42d5-bbd5-dff1c2bbabe6\u0022,\u0022title\u0022:\u0022A-canary\u0022,\u0022version\u0022:1}, \n {\u0022id\u0022:\u0022f2cb4761-8dc7-423e-9f9d-0efdc98289e1\u0022,\u0022organization_id\u0022:\u0022717338e4-0751-4068-bbe0-ec5b8f2f3b55\u0022,\u0022title\u0022:\u0022B-canary\u0022,\u0022version\u0022:1}]"
+    }
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Native diagnosis matches exact SQLSTATE, constraint and table.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "role": "g1_probe",
+    "pid": 73,
+    "organization": "a419d5d7-acfc-42d5-bbd5-dff1c2bbabe6",
+    "operation": "INSERT INTO tenancy.organizations(id,name,status) VALUES(@org,\u0027duplicate\u0027,\u0027Active\u0027)",
+    "expected": "23505",
+    "observed": "23505",
+    "ConstraintName": "organizations_pkey",
+    "TableName": "organizations",
+    "Routine": "_bt_check_unique"
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Native diagnosis matches exact SQLSTATE, constraint and table.",
+    "observed": false
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Cleanup identity must match this run.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "No run container remains.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Network cleanup label",
+    "observed": true
+  }
+]

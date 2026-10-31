@@ -1,0 +1,615 @@
+[
+  {
+    "proof": "preflight",
+    "assertion": "Pinned local Linux image identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Run label.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Container image.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Loopback only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Dedicated network only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Dedicated run-owned network with exactly one container.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "pid": 65,
+    "role": "core_platform",
+    "identity": "4f7a2447-d593-4f14-b13f-18beba30092e",
+    "account": null,
+    "org": null,
+    "context": "SET LOCAL within transaction"
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "pid": 66,
+    "role": "core_platform",
+    "identity": "4f7a2447-d593-4f14-b13f-18beba30092e",
+    "account": null,
+    "org": null,
+    "context": "SET LOCAL within transaction"
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K09",
+    "fixture": "Privileged insertion of second initial Owner, not succession or runtime provisioning"
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "phase": "before",
+    "observerRole": "postgres read-only observation, not runtime authorization",
+    "pid": 71,
+    "state": {
+      "identity.identity_consumptions": 3,
+      "identity.enterprise_user_accounts": 3,
+      "tenancy.organizations": 2,
+      "tenancy.memberships": 3,
+      "tenancy.invitations": 0,
+      "audit.events": 2,
+      "operation.idempotency_records": 2,
+      "demo": "[{\u0022id\u0022:\u0022e72b281e-cc60-45e4-a584-8e94d0f900d3\u0022,\u0022organization_id\u0022:\u00229f4283b9-edd8-4064-a37a-b018b5913157\u0022,\u0022title\u0022:\u0022A-canary\u0022,\u0022version\u0022:1}, \n {\u0022id\u0022:\u0022ea0addc6-4dfd-46ec-b758-fbb110f31f83\u0022,\u0022organization_id\u0022:\u0022ae1237df-b51e-43a3-a813-b65d7435921f\u0022,\u0022title\u0022:\u0022B-canary\u0022,\u0022version\u0022:1}]"
+    }
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "role": "g1_probe",
+    "pid": 73,
+    "organization": "9f4283b9-edd8-4064-a37a-b018b5913157",
+    "operation": "INSERT INTO tenancy.organizations(id,name,status) VALUES(@org,\u0027duplicate\u0027,\u0027Active\u0027)",
+    "expected": "23505",
+    "observed": "23505",
+    "ConstraintName": "organizations_pkey",
+    "TableName": "organizations",
+    "Routine": "_bt_check_unique",
+    "MessageText": "duplicate key value violates unique constraint \u0022organizations_pkey\u0022"
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Native diagnosis matches exact SQLSTATE, constraint and table.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "role": "g1_probe",
+    "pid": 74,
+    "organization": "735302c5-e0a0-4d4b-a5d5-1335e30b78cc",
+    "operation": "INSERT INTO tenancy.organizations(id,name,status) VALUES(@id,\u0027invalid\u0027,\u0027Unknown\u0027)",
+    "expected": "23514",
+    "observed": "23514",
+    "ConstraintName": "organizations_status_check",
+    "TableName": "organizations",
+    "Routine": "ExecConstraints",
+    "MessageText": "new row for relation \u0022organizations\u0022 violates check constraint \u0022organizations_status_check\u0022"
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Native diagnosis matches exact SQLSTATE, constraint and table.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "role": "g1_probe",
+    "pid": 75,
+    "organization": "9f4283b9-edd8-4064-a37a-b018b5913157",
+    "operation": "INSERT INTO tenancy.memberships(id,organization_id,account_id,role,status) VALUES(@id,@org,@account,\u0027Unknown\u0027,\u0027Active\u0027)",
+    "expected": "23514",
+    "observed": "23514",
+    "ConstraintName": "memberships_role_check",
+    "TableName": "memberships",
+    "Routine": "ExecConstraints",
+    "MessageText": "new row for relation \u0022memberships\u0022 violates check constraint \u0022memberships_role_check\u0022"
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Native diagnosis matches exact SQLSTATE, constraint and table.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "role": "g1_probe",
+    "pid": 76,
+    "organization": "9f4283b9-edd8-4064-a37a-b018b5913157",
+    "operation": "INSERT INTO identity.enterprise_user_accounts(id,identity_id,organization_id,status) VALUES(@id,@identity,@org,\u0027Active\u0027)",
+    "expected": "23505",
+    "observed": "23505",
+    "ConstraintName": "enterprise_user_accounts_identity_id_key",
+    "TableName": "enterprise_user_accounts",
+    "Routine": "_bt_check_unique",
+    "MessageText": "duplicate key value violates unique constraint \u0022enterprise_user_accounts_identity_id_key\u0022"
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Native diagnosis matches exact SQLSTATE, constraint and table.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "role": "g1_probe",
+    "pid": 77,
+    "organization": "9f4283b9-edd8-4064-a37a-b018b5913157",
+    "operation": "INSERT INTO identity.identity_consumptions(identity_id,organization_id,account_id) VALUES(@identity,@org,@id)",
+    "expected": "23505",
+    "observed": "23505",
+    "ConstraintName": "identity_consumptions_pkey",
+    "TableName": "identity_consumptions",
+    "Routine": "_bt_check_unique",
+    "MessageText": "duplicate key value violates unique constraint \u0022identity_consumptions_pkey\u0022"
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Native diagnosis matches exact SQLSTATE, constraint and table.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "No duplicate account persisted after native rejections.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/G2-native-keys-and-checks",
+    "phase": "after",
+    "observerRole": "postgres read-only observation, not runtime authorization",
+    "pid": 78,
+    "state": {
+      "identity.identity_consumptions": 3,
+      "identity.enterprise_user_accounts": 3,
+      "tenancy.organizations": 2,
+      "tenancy.memberships": 3,
+      "tenancy.invitations": 0,
+      "audit.events": 2,
+      "operation.idempotency_records": 2,
+      "demo": "[{\u0022id\u0022:\u0022e72b281e-cc60-45e4-a584-8e94d0f900d3\u0022,\u0022organization_id\u0022:\u00229f4283b9-edd8-4064-a37a-b018b5913157\u0022,\u0022title\u0022:\u0022A-canary\u0022,\u0022version\u0022:1}, \n {\u0022id\u0022:\u0022ea0addc6-4dfd-46ec-b758-fbb110f31f83\u0022,\u0022organization_id\u0022:\u0022ae1237df-b51e-43a3-a813-b65d7435921f\u0022,\u0022title\u0022:\u0022B-canary\u0022,\u0022version\u0022:1}]"
+    }
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "phase": "before",
+    "observerRole": "postgres read-only observation, not runtime authorization",
+    "pid": 79,
+    "state": {
+      "identity.identity_consumptions": 3,
+      "identity.enterprise_user_accounts": 3,
+      "tenancy.organizations": 2,
+      "tenancy.memberships": 3,
+      "tenancy.invitations": 0,
+      "audit.events": 2,
+      "operation.idempotency_records": 2,
+      "demo": "[{\u0022id\u0022:\u0022e72b281e-cc60-45e4-a584-8e94d0f900d3\u0022,\u0022organization_id\u0022:\u00229f4283b9-edd8-4064-a37a-b018b5913157\u0022,\u0022title\u0022:\u0022A-canary\u0022,\u0022version\u0022:1}, \n {\u0022id\u0022:\u0022ea0addc6-4dfd-46ec-b758-fbb110f31f83\u0022,\u0022organization_id\u0022:\u0022ae1237df-b51e-43a3-a813-b65d7435921f\u0022,\u0022title\u0022:\u0022B-canary\u0022,\u0022version\u0022:1}]"
+    }
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Probe actually updated anchor before stripping validator context.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Exact deferred validator context rejection: app.integrity_org",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "key": "app.integrity_org",
+    "role": "g1_probe",
+    "pid": 81,
+    "sqlstate": "P1001",
+    "message": "Integrity.ContextInvalid",
+    "transaction": "COMMIT rejected; server rollback"
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Probe actually updated anchor before stripping validator context.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Exact deferred validator context rejection: app.integrity_tx",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "key": "app.integrity_tx",
+    "role": "g1_probe",
+    "pid": 82,
+    "sqlstate": "P1001",
+    "message": "Integrity.ContextInvalid",
+    "transaction": "COMMIT rejected; server rollback"
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Probe actually updated anchor before stripping validator context.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Exact deferred validator context rejection: app.operation_id",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "key": "app.operation_id",
+    "role": "g1_probe",
+    "pid": 83,
+    "sqlstate": "P1001",
+    "message": "Integrity.ContextInvalid",
+    "transaction": "COMMIT rejected; server rollback"
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "All failed COMMITs leave organization version unchanged.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V08/G2-technical-context-components-and-rollback",
+    "phase": "after",
+    "observerRole": "postgres read-only observation, not runtime authorization",
+    "pid": 84,
+    "state": {
+      "identity.identity_consumptions": 3,
+      "identity.enterprise_user_accounts": 3,
+      "tenancy.organizations": 2,
+      "tenancy.memberships": 3,
+      "tenancy.invitations": 0,
+      "audit.events": 2,
+      "operation.idempotency_records": 2,
+      "demo": "[{\u0022id\u0022:\u0022e72b281e-cc60-45e4-a584-8e94d0f900d3\u0022,\u0022organization_id\u0022:\u00229f4283b9-edd8-4064-a37a-b018b5913157\u0022,\u0022title\u0022:\u0022A-canary\u0022,\u0022version\u0022:1}, \n {\u0022id\u0022:\u0022ea0addc6-4dfd-46ec-b758-fbb110f31f83\u0022,\u0022organization_id\u0022:\u0022ae1237df-b51e-43a3-a813-b65d7435921f\u0022,\u0022title\u0022:\u0022B-canary\u0022,\u0022version\u0022:1}]"
+    }
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "phase": "before",
+    "observerRole": "postgres read-only observation, not runtime authorization",
+    "pid": 85,
+    "state": {
+      "identity.identity_consumptions": 3,
+      "identity.enterprise_user_accounts": 3,
+      "tenancy.organizations": 2,
+      "tenancy.memberships": 3,
+      "tenancy.invitations": 0,
+      "audit.events": 2,
+      "operation.idempotency_records": 2,
+      "demo": "[{\u0022id\u0022:\u0022e72b281e-cc60-45e4-a584-8e94d0f900d3\u0022,\u0022organization_id\u0022:\u00229f4283b9-edd8-4064-a37a-b018b5913157\u0022,\u0022title\u0022:\u0022A-canary\u0022,\u0022version\u0022:1}, \n {\u0022id\u0022:\u0022ea0addc6-4dfd-46ec-b758-fbb110f31f83\u0022,\u0022organization_id\u0022:\u0022ae1237df-b51e-43a3-a813-b65d7435921f\u0022,\u0022title\u0022:\u0022B-canary\u0022,\u0022version\u0022:1}]"
+    }
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "pid": 86,
+    "role": "core_tenant",
+    "identity": "9b1b7856-0f37-4558-957f-985adbd50a52",
+    "account": "0c6166df-af49-4524-bd70-e978fb2ca91a",
+    "org": "9f4283b9-edd8-4064-a37a-b018b5913157",
+    "context": "SET LOCAL within transaction"
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "pid": 86,
+    "role": "core_tenant",
+    "identity": "d1513926-2d3c-492d-b8d1-86d7c7833be8",
+    "account": "7b653b15-63c8-4c48-ba61-3f4933c742bf",
+    "org": "ae1237df-b51e-43a3-a813-b65d7435921f",
+    "context": "SET LOCAL within transaction"
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "B context set within savepoint.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "Rollback restores exact A record, not B, independent of earlier write fixture.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "COMMIT clears restored context too.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "phase": "after",
+    "observerRole": "postgres read-only observation, not runtime authorization",
+    "pid": 87,
+    "state": {
+      "identity.identity_consumptions": 3,
+      "identity.enterprise_user_accounts": 3,
+      "tenancy.organizations": 2,
+      "tenancy.memberships": 3,
+      "tenancy.invitations": 0,
+      "audit.events": 2,
+      "operation.idempotency_records": 2,
+      "demo": "[{\u0022id\u0022:\u0022e72b281e-cc60-45e4-a584-8e94d0f900d3\u0022,\u0022organization_id\u0022:\u00229f4283b9-edd8-4064-a37a-b018b5913157\u0022,\u0022title\u0022:\u0022A-canary\u0022,\u0022version\u0022:1}, \n {\u0022id\u0022:\u0022ea0addc6-4dfd-46ec-b758-fbb110f31f83\u0022,\u0022organization_id\u0022:\u0022ae1237df-b51e-43a3-a813-b65d7435921f\u0022,\u0022title\u0022:\u0022B-canary\u0022,\u0022version\u0022:1}]"
+    }
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "Cleanup identity must match this run.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "No run container remains.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/G2-savepoint-restores-previous-context",
+    "assertion": "Network cleanup label",
+    "observed": true
+  }
+]

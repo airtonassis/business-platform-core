@@ -1,0 +1,11 @@
+{
+  "category": "SETUP_OR_OPERATIONAL_BLOCK",
+  "stage": "inspect-disposable-port",
+  "exceptionType": "KeyNotFoundException",
+  "stack": "   at System.Text.Json.JsonElement.GetProperty(String propertyName)\r\n   at ValidationRun.Execute() in C:\\Users\\airton.assis.POUPA\\Documents\\GitHub\\business-platform-core\\tests\\TechnicalValidation\\ADR0009.G2\\runtime\\obj\\G2.Program.g.cs:line 72",
+  "sqlstate": null,
+  "functionContext": null,
+  "setupMessage": null,
+  "position": 0,
+  "detail": "Failure recorded without SQL, payload or credential; inspect stage and sanitized proof evidence."
+}
