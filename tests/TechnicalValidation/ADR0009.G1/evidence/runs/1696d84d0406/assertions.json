@@ -1,0 +1,112 @@
+[
+  {
+    "proof": "preflight",
+    "assertion": "Pinned local Linux image identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Run label.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Container image.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Loopback only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "Cleanup identity must match this run.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "No run container remains.",
+    "observed": true
+  }
+]

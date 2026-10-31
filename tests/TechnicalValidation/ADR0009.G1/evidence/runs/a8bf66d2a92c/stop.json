@@ -1,0 +1,9 @@
+{
+  "category": "SETUP_OR_OPERATIONAL_BLOCK",
+  "stage": "001-test-only.sql",
+  "exceptionType": "PostgresException",
+  "sqlstate": "42703",
+  "setupMessage": "column \u0022role\u0022 of relation \u0022enterprise_user_accounts\u0022 does not exist",
+  "position": 0,
+  "detail": "Failure recorded without SQL, payload or credential; inspect stage and sanitized proof evidence."
+}

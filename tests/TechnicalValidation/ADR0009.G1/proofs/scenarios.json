@@ -1,0 +1,3086 @@
+{
+  "formatVersion": 1,
+  "status": "PARTIAL_EXECUTION_G1_BLOCKED",
+  "count": 54,
+  "sourcePlanSha256": "4EA76769D5923803FA6FC87699DA4470294F6D55608411B4E7EE69DAF2B5DA2B",
+  "cases": [
+    {
+      "id": "Q01",
+      "title": "Autenticação e schemes",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N1/N2; C01/C08/C09; I01/I02",
+        "Gate, modo, fixture, papéis/conexões": "G4; A+H; IA/IP/IN; CT/CI/CP",
+        "Sequência, além de S0–S7": "Autenticar IA validamente e variar separadamente assinatura, issuer, audience, expiração, ID token como bearer e cookie isolado na API; tentar scheme Tenant em Platform; executar POST web sem/errado antiforgery e chamar caso de uso via adapter não HTTP.",
+        "Resultado DB/API e transação": "Válido resolve A; variantes inválidas 401 API sem HTML; scheme/policy administrativo nega sem bootstrap. POST web sem prova antiforgery retorna 400 antes do comando. Nenhum DML empresarial ou consumo novo nas negativas. SQLSTATE não aplicável.",
+        "Evidência, dependência e risco específico": "E-API/E-DB/E-TRACE; decisão D1 e adapters aprovados.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "Q01",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q02",
+      "title": "Autoridade do escopo",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N1/N2; C01/C08/C09; I02",
+        "Gate, modo, fixture, papéis/conexões": "G4; A; IA/IB; CT",
+        "Sequência, além de S0–S7": "Com IA, adulterar org em rota, payload, header e claim empresarial; repetir para item/lista/comando e comparar com pedido legítimo A.",
+        "Resultado DB/API e transação": "Nada de B, inclusive contagem/IDs; rota/recurso inacessível 404 genérico, ação proibida 403 conforme C09. Nenhum commit cruzado; não trocar contexto para B. SQLSTATE N/A na API.",
+        "Evidência, dependência e risco específico": "E-API/E-DB/E-TRACE; endpoint/DTO candidato aprovado.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "Q02",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q03",
+      "title": "SELF e resolução somente própria",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N1/N3; M-ID/LINK/HIST; Q1/Q2; C02/C09; I01/I08",
+        "Gate, modo, fixture, papéis/conexões": "G2+G4; A; IA/IN; CI",
+        "Sequência, além de S0–S7": "Resolver SELF IA e IN; tentar parâmetro de outra identidade e recuperar cadastro através de e-mail; repetir consulta e comparar estado persistido.",
+        "Resultado DB/API e transação": "IA Linked A; IN 200 NotLinked proposto sem org/conta/papel; outra identidade não é selecionável. GET não cria identidade/conta/membro/evento de mutação. SQLSTATE N/A.",
+        "Evidência, dependência e risco específico": "E-DB/E-API; mapeamento UserId/IdentityId e NotLinked dependem D1.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "Q03",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q04",
+      "title": "NotLinked e acesso perdido",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2/N3; Q2; C04/C07/C09; I04/I08/I10",
+        "Gate, modo, fixture, papéis/conexões": "G2+G4; A; IN/IR/IX; CI/CT",
+        "Sequência, além de S0–S7": "Resolver IN sem histórico, IR revogada e IX com consumo sem conta; tentar DemoRecord e geração de referência com IR; simular dependência indisponível.",
+        "Resultado DB/API e transação": "Só IN recebe NotLinked/preparação; IR 403 sem novo vínculo; IX 500 sanitizado, dependência conhecida 503, nunca vazio/NotLinked. Nenhuma mutação de sucesso. SQLSTATE interno registrado sem vazamento.",
+        "Evidência, dependência e risco específico": "E-DB/E-API/E-TRACE; IX via fixture excepcional aprovada, não estado normal.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "Q04",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q05",
+      "title": "REC sem Membership",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2/N3/N6; Q2/F2; C02/C03/C04; I03/I04/I05",
+        "Gate, modo, fixture, papéis/conexões": "G2+G4; A; IN e convite A; CI",
+        "Sequência, além de S0–S7": "Com IN provar código/destinatário; repetir com código errado, outro destinatário e identidade consumida; preview válido antes de aceite; tentar usar REC para ler dados de A.",
+        "Resultado DB/API e transação": "Preview autorizado mínimo, sem commit de aceite; provas inválidas 404 indistinguível; consumida após prova 403 conforme C04. REC não cria T nem libera membros/DemoRecord. SQLSTATE N/A.",
+        "Evidência, dependência e risco específico": "E-API/E-DB e ausência de segredo em E-TRACE; código só fixture sintética.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "Q05",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q06",
+      "title": "BOOT sem acesso Tenant",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2/N5/N6; Q2/F2; C02/C08/C09; I09",
+        "Gate, modo, fixture, papéis/conexões": "G2+G4; A; IP+IN2; CP",
+        "Sequência, além de S0–S7": "Conferir proprietário com referência; criar org C pelo comando autorizado; tentar ler membros, DemoRecord e auditoria C como IP; variar MFA/scheme e referência.",
+        "Resultado DB/API e transação": "Commit atômico autorizado com Owner IN2; zero Membership IP; leituras Tenant negadas e provas inválidas sem efeito. Retorno só comprovante C09; SQLSTATE N/A para negativas de API.",
+        "Evidência, dependência e risco específico": "E-API/E-DB/E-ACL; decisão de atestação Platform D1.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "Q06",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q07",
+      "title": "Contexto ausente e inválido",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2; R2/R4/Q3; C01/C08; I02",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; CT e IA; D",
+        "Sequência, além de S0–S7": "Abrir transação limpa sem contexto; omitir um ID por variante, usar vazio, UUID malformado e IDs IA/AccountB/orgA; tentar leituras sem filtro e chamada gravadora.",
+        "Resultado DB/API e transação": "Zero linha ou negação conforme oracle G1 por superfície; conversão inválida aborta unidade, sem retorno ao contexto anterior. Sem commit empresarial. SQLSTATE 22P02 só se conversão UUID chegar ao PostgreSQL; ACL negada 42501; nenhum erro arbitrário conta como aprovação.",
+        "Evidência, dependência e risco específico": "E-DB/E-TRACE; D2 fixa negação por operação antes de executar.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "missing-mismatched-malformed-context"
+        ]
+      },
+      "sourceSection": "Q07",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "SQL absent/mismatched/malformed context executed; complete Application attestation/API unavailable.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Faltam matriz completa de contexto e atestacao pela Application; executados ausente, divergente e UUID invalido.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. Faltam matriz completa de contexto e atestacao pela Application; executados ausente, divergente e UUID invalido.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q08",
+      "title": "Isolamento SQL e predicados",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2/N8; R3; C08/C09; I02",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; todos papéis runtime; IA/IB; D",
+        "Sequência, além de S0–S7": "Com T A, ler coleção/item e contagem sem filtro; tentar DML direto proibido; nas portas, tentar inserir/referenciar org B e mover org de recurso; repetir SELECT/INSERT/UPDATE por tabela concedida e Owner/Admin/Member, incluindo negativa de leitura de membros/auditoria para Member.",
+        "Resultado DB/API e transação": "Leituras só A; DML sem grant 42501; violações de escopo pela porta rejeitadas sem B. Contraste USING/WITH CHECK inspecionado; zero dado/commit cruzado. FK 23503 somente quando alcançada pelo probe autorizado.",
+        "Evidência, dependência e risco específico": "E-DB/E-ACL; inventário completo de tabelas/colunas e D2.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "tenant-sql-isolation"
+        ]
+      },
+      "sourceSection": "Q08",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Actual core_tenant SQL DemoRecord isolation executed; complete all-query/API matrix unavailable.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "SQL de DemoRecord isolado; faltam demais leituras/escritas e consultas sem predicado via Application.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. SQL de DemoRecord isolado; faltam demais leituras/escritas e consultas sem predicado via Application.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q09",
+      "title": "Helper e grafo sem recursão",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2/N8; R2/Q3/F2; C08; I02/I10",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A+H; CT, exec_context por chamada real",
+        "Sequência, além de S0–S7": "Inspecionar policy Tenant→helper→policies-base; executar leituras próprias e cruzadas, alterar papel/revogar em outra transação e consultar novamente; tentar chamar helper para alvo arbitrário.",
+        "Resultado DB/API e transação": "Somente booleano próprio, sem recursão/DTO/lista; nova instrução observa direitos atuais. Sem cache global de T; helper não substitui locks. Nenhuma alteração por consulta; SQLSTATE de erro de recursão é reprovação.",
+        "Evidência, dependência e risco específico": "E-ACL/E-TRACE/E-DB; não testar como owner da tabela.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "Q09",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q10",
+      "title": "Application legítima versus contexto SQL integralmente forjado",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "Q10.a: P0 de isolamento; Q10.b: caracterização de limite com D1 APROVADA e comprometimento da credencial SQL como risco residual explícito, sem isolamento comprovado. NÃO EXECUTADO em ambas",
+        "Proteção / rastreabilidade": "ADR-0009; N1/N8; Q1/F3; C01/C08; I02; exceção interpretativa expressa em 3.6",
+        "Gate, modo, fixture, papéis/conexões": "Q10.a G4 A: adapter legítimo IA, CT, alvo B; Q10.b G1+G2 A+H: credencial CT comprometida simulada em ambiente isolado, contexto coerente completo IB/AccountB/orgB, D+O",
+        "Sequência, além de S0–S7": "a: autenticar IA pelo middleware real, adulterar identificadores/claims empresariais de B e observar entrada/contexto derivado no servidor e acesso final. b: fora da Application legítima, usar credencial CT de ensaio e forjar todo contexto de IB; executar só superfície concedida CT, registrar SQLSTATE quando houver, dados/efeitos alcançáveis e comparar com matriz 3.9. Não chamar b de autenticação OIDC",
+        "Resultado DB/API e transação": "a: negar B conforme C09, zero leitura/contagem/efeito B; vazamento = FAIL P0, nunca aceitação D1. b: registrar se CT alcança B dentro dos privilégios/policies do papel; modelo não garante negar identidade consistentemente forjada. Se uma mutação concedida confirmar, registrar e comparar estado final, sem promover legitimidade da ação. Excesso sobre a superfície CT aprovada ou acesso a bootstrap/migrator continua falha de privilégios F. SET LOCAL não é prova criptográfica",
+        "Evidência, dependência e risco específico": "E-DB/E-API/E-ACL/E-REVIEW; manifesto e ambiente D5. D1 APROVADA formalmente pelo responsável quanto à fronteira Application e risco residual; aprovação não inferida de G0, não dispensa prova de Q10.a/b",
+        "Aprovação/reprovação": "a: PASS só com isolamento integral demonstrado; qualquer acesso B é FAIL P0. b: registrar CARACTERIZADO quando alcance/limites forem reproduzidos com evidência; CARACTERIZADO não é PASS de segurança nem prova de isolamento. D1 aprovada encerra a pendência decisória da fronteira, não a execução deste cenário. G1 permanece BLOQUEADO pelas comprovações de grants/grafo e D3/D5. Instrumentação/evidência insuficiente = INCONCLUSIVO; não reabrir decisão aprovada sem contradição P0 concreta"
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "compromised-credential-characterization-only"
+        ]
+      },
+      "sourceSection": "Q10",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Parte b caracteriza D1; parte a depende da Application/OIDC/API legitima inexistente.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Parte b caracteriza D1; parte a depende da Application/OIDC/API legitima inexistente.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. Parte b caracteriza D1; parte a depende da Application/OIDC/API legitima inexistente.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q11",
+      "title": "Commit/rollback e pool físico",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2; R4/Q3; C07/C09; I02; K10",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; CT; IA/IB; D+O",
+        "Sequência, além de S0–S7": "Fixar lease física e registrar pg_backend_pid(); configurar A e terminar com commit, rollback e exceção em variantes; checkout seguinte sem contexto e depois B; observar baseline e conjunto de linhas.",
+        "Resultado DB/API e transação": "Sem contexto não vê A; B só B; mesmo PID exigido nas variantes de reuso. Onde descarte é requerido, novo PID e evidência de descarte. Sem transação aberta no retorno ao pool; SQLSTATE capturado se existir, não fixado para falha de rede.",
+        "Evidência, dependência e risco específico": "E-POOL/E-DB/E-TRACE; pool real do provedor aprovado, não conexão nova disfarçada.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "npgsql-pool-commit-rollback-exception"
+        ]
+      },
+      "sourceSection": "Q11",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Pool Npgsql real testado; falta unidade de trabalho/conexao da Application.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Pool Npgsql real testado; falta unidade de trabalho/conexao da Application.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. Pool Npgsql real testado; falta unidade de trabalho/conexao da Application.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "Q12",
+      "title": "Savepoint, cancelamento e contaminação",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2; R4/Q3/V3; C07; I02/I10; K10",
+        "Gate, modo, fixture, papéis/conexões": "G2+G3; A; CT; IA/IB; D+O",
+        "Sequência, além de S0–S7": "Criar savepoint antes de contexto/locks, reverter até ele e tentar continuar; injetar cancelamento e falha de rollback/reset; repetir com baseline de sessão indevido sintético.",
+        "Resultado DB/API e transação": "Abortar unidade por padrão; nenhuma continuação com prova/locks perdidos. Baseline indevido rejeitado/limpo antes de dados; reset incerto descarta backend. Consulta posterior B nunca mostra A; estado pendente não é devolvido ao pool.",
+        "Evidência, dependência e risco específico": "E-POOL/E-TRACE/E-DB; falhas somente por instrumentação isolada aprovada D5.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "savepoint-context-rollback"
+        ]
+      },
+      "sourceSection": "Q12",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Savepoint testado; cancelamento de comando e protocolo completo de timeout nao exercitados.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Savepoint testado; cancelamento de comando e protocolo completo de timeout nao exercitados.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. Savepoint testado; cancelamento de comando e protocolo completo de timeout nao exercitados.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V01",
+      "title": "Active sem Membership",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N4; M3/V2; C04/C09; I05/I09",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; IN; probe autorizado P; D+O",
+        "Sequência, além de S0–S7": "No probe com triggers/RLS preservadas, construir Account Active/consumo coerente sem Membership; observar que estado intermediário não é confirmação; tentar COMMIT.",
+        "Resultado DB/API e transação": "COMMIT recusado e zero Account/consumo/evento/recibo novos visíveis em O; erro de trigger conforme D3, não necessariamente 23503. Controle completo Account+Member confirma. API não deve ter rota que crie conta parcial.",
+        "Evidência, dependência e risco específico": "E-DB/E-TRACE; D3 e D5, sem ampliar grants runtime.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "active-account-without-member-commit"
+        ]
+      },
+      "sourceSection": "V01",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Invariante SQL testada; faltam assertivas evento/recibo e superficie API sem criacao parcial.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Invariante SQL testada; faltam assertivas evento/recibo e superficie API sem criacao parcial.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Invariante SQL testada; faltam assertivas evento/recibo e superficie API sem criacao parcial.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V02",
+      "title": "Exatamente um membro",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N4; M2/M3/V2; C04; I06",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; conta A; P",
+        "Sequência, além de S0–S7": "Tentar segundo Membership para mesmo AccountId; testar campos obrigatórios nulos e um membro único válido.",
+        "Resultado DB/API e transação": "Duplicação 23505 e nulidade 23502 quando essas constraints são alcançadas; unidade aborta sem segundo membro. Controle válido mantém cardinalidade 1; API não aceita adição arbitrária.",
+        "Evidência, dependência e risco específico": "E-DB/E-ACL; identificar constraint específica, não aceitar qualquer 23505.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "unique-and-not-null-membership"
+        ]
+      },
+      "sourceSection": "V02",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Strict 42501 origin/session/effective role, expected NOT NULL column and UNIQUE constraint checked; runtime INSERT denied and rollback verified. API arbitrary-add negative still absent.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Unicidade, NOT NULL, RLS e rollback testados; falta negativa API de adicao arbitraria.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Strict 42501 origin/session/effective role, expected NOT NULL column and UNIQUE constraint checked; runtime INSERT denied and rollback verified. API arbitrary-add negative still absent.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V03",
+      "title": "Referências cruzadas",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N3/N4; M2/V2; C08; I02",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; contas A/B; P",
+        "Sequência, além de S0–S7": "Tentar Membership orgB→AccountA, Account→consumo de outra identidade/org/AccountId e convite Accepted referindo conta de outra empresa; variar estado/papel inválido, versão não positiva e campos obrigatórios; inspecionar nullability e FKs.",
+        "Resultado DB/API e transação": "FK conhecida 23503 ou CHECK 23514 identificado; nulidade 23502 quando alcançada; nunca aceitar NULL que burle par composto. ROLLBACK deixa todas referências originais; erro API sanitizado.",
+        "Evidência, dependência e risco específico": "E-DB/E-ACL; lista de constraints congelada em G1.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "V03",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "FK composta testada; faltam todas as referencias cruzadas e portas do protocolo completo.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "FK composta testada; faltam todas as referencias cruzadas e portas do protocolo completo.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "FK composta testada; faltam todas as referencias cruzadas e portas do protocolo completo.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V04",
+      "title": "Estados Account/Membership",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N4/N6; M3/V2/V3; C07/C08; I10",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; Member A; P/CT",
+        "Sequência, além de S0–S7": "Revogar só Membership e, em variante, só Account no probe; testar Membership Active com Account Revoked/Archived; executar revogação completa pela porta.",
+        "Resultado DB/API e transação": "Parciais falham no COMMIT com erro D3; comando autorizado revoga os dois no mesmo commit e mantém consumo. Sem reativação. Auditoria/recibo conforme operação; próximas requisições negam.",
+        "Evidência, dependência e risco específico": "E-DB/E-API; não permitir status compensatório fora de contrato.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "partial-revocation-rejected"
+        ]
+      },
+      "sourceSection": "V04",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "OLD/NEW terminal-status and immutable-role negative proofs passed, including direct exec_tenant. Full archival/restoration state matrix not implemented.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Revogacao parcial rejeitada; faltam todas as combinacoes de estados/arquivamento.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "OLD/NEW terminal-status and immutable-role negative proofs passed, including direct exec_tenant. Full archival/restoration state matrix not implemented.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V05",
+      "title": "Owner válido por organização",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N5; M3/V2; C08/C09; I09; K09",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; org nova e org A; P/CP",
+        "Sequência, além de S0–S7": "Criar Organization Active sem Owner, com Owner revogado ou Account Owner revogada; repetir organização com Owner/Account Active completos.",
+        "Resultado DB/API e transação": "Invalidos falham no COMMIT, nenhum órfão; completo confirma. Alterar Owner pela API sempre nega C08, mesmo existindo outro; probe estrutural não cria função de transferência.",
+        "Evidência, dependência e risco específico": "E-DB/E-API; estados de organização/erro D3.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "organization-without-owner-at-commit"
+        ]
+      },
+      "sourceSection": "V05",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Organizacao sem Owner rejeitada; faltam estados e variantes de Owner desativado.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Organizacao sem Owner rejeitada; faltam estados e variantes de Owner desativado.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Organizacao sem Owner rejeitada; faltam estados e variantes de Owner desativado.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V06",
+      "title": "Cobertura de eventos",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N4/N5; V2; C04/C08/C09; I09/I10",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A+H; P; fixtures isoladas",
+        "Sequência, além de S0–S7": "Inventariar triggers por tabela/evento; variar INSERT/UPDATE/DELETE, role/status, OLD/NEW e múltiplas mudanças na mesma linha; antecipar constraints em estado intermediário; repetir estado final válido.",
+        "Resultado DB/API e transação": "Toda mudança relevante enfileira validação; estado final relido, não NEW antigo/WHEN que suprima checagem. Antecipação inválida aborta; não capturar erro para prosseguir. DELETE runtime segue guard; probe alternativo exige D5.",
+        "Evidência, dependência e risco específico": "E-ACL/E-TRACE/E-DB; não desabilitar trigger para depois declarar que foi testada.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "V06",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V07",
+      "title": "Imutabilidade e guard de exclusão",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N3; M2/V2; C04/C08; I03/I04",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; A e consumo/link; CT/CI/CP/P",
+        "Sequência, além de S0–S7": "Tentar mudar org/identity/account IDs, par OIDC e reassociação de link; tentar apagar consumo/Account/Membership/Organization por runtime e por probe com guard ativo.",
+        "Resultado DB/API e transação": "Runtime sem grant 42501 ou guard específico D3 no probe; nenhum ID/histórico modificado. UPDATE de estado permitido não libera consumo; SQLSTATE inesperado reprova oracle.",
+        "Evidência, dependência e risco específico": "E-DB/E-ACL; manutenção excepcional não é caminho de produto.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "immutable-org-and-historical-consumption"
+        ]
+      },
+      "sourceSection": "V07",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Imutabilidade e exclusao do consumo testadas; faltam todos os objetos/colunas e restore.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Imutabilidade e exclusao do consumo testadas; faltam todos os objetos/colunas e restore.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Imutabilidade e exclusao do consumo testadas; faltam todos os objetos/colunas e restore.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V08",
+      "title": "Contexto técnico de integridade e visibilidade final",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N4/N5/N7; V3 e 3.8 deste plano; C08/C09; I09/I10",
+        "Gate, modo, fixture, papéis/conexões": "G2+G3; A+H; CP bootstrap e CT revogação; funções de trigger sob exec_integrity NOLOGIN; D+O e probe D5",
+        "Sequência, além de S0–S7": "Instalar contexto técnico 3.8 pela porta autorizada, manter até COMMIT e confrontar escopo com OLD/NEW. Variantes: bootstrap sem Membership IP; revogação completa Account/Member; ator sem T no disparo via probe; org/operation/identificação de transação ausente ou divergente; Account/membro/Owner inexistentes; troca de contexto/savepoint; tentativa de filtrar fatos pelo ator. Comparar conjunto técnico completo visto pelo validator com O, inclusive linhas Revoked, e revisar grafo/policies",
+        "Resultado DB/API e transação": "Validação usa organização afetada e fatos finais, não autorização do ator. Policies técnicas não chamam T/SELF/REC/BOOT/helper nem escondem estados/Owner. Org e contas esperadas devem existir; ausência de contexto/âncora/conjunto obrigatório invalida COMMIT, não retorna integridade válida. Account Active tem exatamente um Member Active coerente; Member Active exige Account Active; org Active tem Owner válido. Inválido desfaz mutação/evento/recibo, sem resposta de sucesso antes do commit; erro D3 sanitizado. Sem novos locks explícitos, escrita ou reparo no validator",
+        "Evidência, dependência e risco específico": "E-TRACE/E-DB/E-ACL/E-LOCK/E-REVIEW; conjunto esperado versus observado, escopo técnico até COMMIT e instruções sem locks tardios. D3/D5; contexto local não é segredo/prova criptográfica nem marcador de lock adquirido",
+        "Aprovação/reprovação": "Todas variantes obrigatórias obedecem 3.8; ocultar uma linha relevante, aprovar conjunto vazio, depender de T do ator, perder contexto antes do commit ou adquirir lock explícito tardio = FAIL P0. Resto conforme 3.6; nenhuma prova executada nesta rodada"
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "missing-integrity-context-rejects"
+        ]
+      },
+      "sourceSection": "V08",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Contexto tecnico ausente rejeitado; faltam todas as variantes finais de visibilidade e escritor.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Contexto tecnico ausente rejeitado; faltam todas as variantes finais de visibilidade e escritor.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Contexto tecnico ausente rejeitado; faltam todas as variantes finais de visibilidade e escritor.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V09",
+      "title": "Sem locks explícitos tardios",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N7; C1/V1/V3; C05/C08; K01–K09",
+        "Gate, modo, fixture, papéis/conexões": "G1+G3; A+H; portas gravadoras e trigger bodies; D1/D2/O",
+        "Sequência, além de S0–S7": "Revisar corpo/grafo de triggers; executar cada mutação instrumentada até pré-commit e commit; correlacionar ordem de chamadas e instruções com bloqueios observados.",
+        "Resultado DB/API e transação": "Triggers só consultam, sem FOR UPDATE/SHARE/advisory lock/reparo/comando aninhado. Locks internos FK/UNIQUE não são classificados como violação dessa regra. Não inferir locks de linha só de pg_locks.",
+        "Evidência, dependência e risco específico": "E-TRACE/E-ACL/E-LOCK; inspeção humana obrigatória, nenhuma prova só por ausência de espera.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "V09",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V10",
+      "title": "Snapshot depois da espera",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N7; C1/V1; C05/C08; I10; K03",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; CT; Member A; D1/D2/O; B-L",
+        "Sequência, além de S0–S7": "D1 adquire org e muda papel/estado; D2 inicia comando e bloqueia; provar espera; D1 confirma; D2 adquire lock e executa instrução nova de revalidação; inverter ordem.",
+        "Resultado DB/API e transação": "D2 enxerga commit anterior à nova leitura e nega comando se perdeu direito. Sem reuso de snapshot STABLE pré-espera; não escreve com decisão velha. Ganho legítimo anterior mantém semântica C05.",
+        "Evidência, dependência e risco específico": "E-LOCK/E-TRACE/E-DB/E-API; D4, duas sessões físicas diferentes.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "V10",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V11",
+      "title": "Write skew e Owner concorrente",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N5/N7; V1/V2; C08; I10; K09",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; org com dois Owners apenas fixture; P1/P2/O; B-L",
+        "Sequência, além de S0–S7": "API tenta alterar Owner e deve negar; no probe estrutural aprovado, duas transações tentam remover/rebaixar Owners diferentes; serializar por org; testar ambas as ordens.",
+        "Resultado DB/API e transação": "API nunca habilita operação proibida; no probe, não confirmam ambas deixando zero Owner. Segunda valida estado atual e aborta; trigger não tenta lock tardio. Sem novo endpoint Owner.",
+        "Evidência, dependência e risco específico": "E-LOCK/E-DB/E-TRACE; D5 explícita, teste estrutural distinto de C08.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "V11",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Previous revoke/terminal reactivation races regressed; does NOT constitute full two-Owner concurrent write-skew protocol or all writers/C1.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "New direct-owner reactivation races for Account and Membership passed after real runtime revocation. Full two-Owner write-skew/last-Owner protocol and all writers remain unexecuted; this does not prove attacker follows C1.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V12",
+      "title": "Todos os escritores e C1",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N6/N7/N11; F2/V1; C02–C09; I03–I10",
+        "Gate, modo, fixture, papéis/conexões": "G1+G3; A+H; CT/CI/CP; todas portas",
+        "Sequência, além de S0–S7": "Inventariar funções/casos de uso/handlers/rotas, triggers e jobs efetivamente existentes no futuro; ligar cada escrita a lock/revalidação/evento/commit; exercitar cada caminho e tentar DML direto.",
+        "Resultado DB/API e transação": "100% dos escritores enumerados cobertos; nenhuma rota lateral, grant direto ou chamado aninhado inverte C1. Ausência de código hoje = pendência, não aprovação. Writes observados correspondem ao inventário.",
+        "Evidência, dependência e risco específico": "E-ACL/E-TRACE/E-REVIEW; novo escritor reabre G1/G3.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "V12",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V13",
+      "title": "Deadlock, aborto e retry",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N6/N7/N10; C3/V3; C06/C09; K07/K08",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; P1/P2/O e porta com recibo; B-D",
+        "Sequência, além de S0–S7": "Produzir deadlock controlado em fixture/probe, observar vítima; testar falha 40001 somente se caminho/isolamento aprovado puder produzi-la; tentar reutilizar transação abortada; refazer comando permitido.",
+        "Resultado DB/API e transação": "40P01 (ou 40001 na variante própria) causa rollback integral; nenhum retry só de COMMIT ou efeito duplicado. Retry completo limitado por D4, com nova autorização; sem política definida, cenário bloqueado.",
+        "Evidência, dependência e risco específico": "E-LOCK/E-TRACE/E-DB; não inverter ordem em código de produto para gerar falha.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "real-deadlock-in-dedicated-probe"
+        ]
+      },
+      "sourceSection": "V13",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Deadlock real do probe; faltam retry/reconciliacao da Application e inversoes de todos escritores.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Deadlock real do probe; faltam retry/reconciliacao da Application e inversoes de todos escritores.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. Deadlock real do probe; faltam retry/reconciliacao da Application e inversoes de todos escritores.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "V14",
+      "title": "Falha diferida no COMMIT",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N4/N6/N11; V2/V3; C06/C09; I09",
+        "Gate, modo, fixture, papéis/conexões": "G2+G3; A; operação composta; P/D+O",
+        "Sequência, além de S0–S7": "Injetar estado inválido que passe etapa intermediária e só falhe na validação diferida; coletar retorno do COMMIT; observar Account/Member/org/evento/recibo de outra conexão.",
+        "Resultado DB/API e transação": "Erro D3 aborta todos os efeitos; resposta de sucesso não sai após SaveChanges antes do commit. Se transporte do commit for cortado, classificar desconhecido e usar K07, sem afirmar rollback.",
+        "Evidência, dependência e risco específico": "E-DB/E-TRACE/E-API; failpoint D5 sem liberar DML ao runtime.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "V14",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F01",
+      "title": "Grants efetivos por papel",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N8; R1/R3/F1/F2; C08; I02/I09",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A+H; todos logins/owners; O e D",
+        "Sequência, além de S0–S7": "Extrair owners, ACL por tabela/coluna/schema, privilégios indiretos e atributos de papéis; tentar cada operação permitida/negada com login real.",
+        "Resultado DB/API e transação": "ACL efetiva corresponde à allowlist aprovada; nenhuma leitura/escrita empresarial ampla em Identity/Platform; negativas de privilégio 42501. Não provar isolamento usando migrator. Sem DML nas inspeções.",
+        "Evidência, dependência e risco específico": "E-ACL/E-DB; D2 e inventário de assinaturas.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "runtime-direct-dml-denied"
+        ]
+      },
+      "sourceSection": "F01",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Non-observational manual candidate frozen before database creation; table/column/schema/EXECUTE/owner/mode compared. Candidate still requires independent approval and full operation matrix.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "ACLs capturadas e negativas reais; allowlist exata por coluna nao congelada e revisao independente pendente.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Five-owner table/column test allowlist frozen and compared; independent schema/EXECUTE/implicit graph review and complete operation matrix remain pending.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F02",
+      "title": "Ownership e bypass",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N8; R1/F1; C08; I02/I09",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A+H; todos runtime/owners",
+        "Sequência, além de S0–S7": "Inspecionar superuser, BYPASSRLS, ownership de tabela, login e opções de role; verificar migrator fora das credenciais/processo runtime e FORCE/ENABLE por tabela.",
+        "Resultado DB/API e transação": "Runtime/owners de função sem ownership/bypass; NOLOGIN nos executores; migrator segregado. Tentativas de DDL/TRUNCATE e desligar RLS/trigger negadas, sem alteração. SQLSTATE 42501 quando aplicável.",
+        "Evidência, dependência e risco específico": "E-ACL/E-REVIEW; não usar FORCE como defesa contra superuser.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "owners-and-runtime-not-bypass"
+        ]
+      },
+      "sourceSection": "F02",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Atributos/ownership/FORCE capturados; faltam todas as negativas DDL/TRUNCATE/RLS/trigger e revisao.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Atributos/ownership/FORCE capturados; faltam todas as negativas DDL/TRUNCATE/RLS/trigger e revisao.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Atributos/ownership/FORCE capturados; faltam todas as negativas DDL/TRUNCATE/RLS/trigger e revisao.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F03",
+      "title": "EXECUTE e PUBLIC",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N8; F1/F2; C01/C08; I02/I09",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A; usuário sem grant e CT/CI/CP",
+        "Sequência, além de S0–S7": "Enumerar todas assinaturas/overloads e default privileges; tentar EXECUTE não concedido e chamada manual de helper privado/validator; repetir após atualização candidata.",
+        "Resultado DB/API e transação": "PUBLIC sem EXECUTE nas privilegiadas; apenas cadeia nominal permitida; validators sem chamada externa. Negativas 42501 ou inacessibilidade de schema conforme D2. Sem efeito persistido.",
+        "Evidência, dependência e risco específico": "E-ACL/E-DB; incluir privilégios novos por default, não só funções conhecidas.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "public-execute-and-wrong-port-denied"
+        ]
+      },
+      "sourceSection": "F03",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "PUBLIC EXECUTE e porta inesperada negados; revisao da allowlist e de todas assinaturas pendente.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "PUBLIC EXECUTE e porta inesperada negados; revisao da allowlist e de todas assinaturas pendente.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "PUBLIC EXECUTE e porta inesperada negados; revisao da allowlist e de todas assinaturas pendente.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F04",
+      "title": "Herança e SET ROLE",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N8; R1/F1; C08; I09",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A; todos runtime; D",
+        "Sequência, além de S0–S7": "Inspecionar grafo de membership, INHERIT/SET e privilégios de administração conforme versão aprovada; tentar SET ROLE para executores, owner e migrator e concessão a si próprio.",
+        "Resultado DB/API e transação": "Nenhum caminho permitido para elevação; NOINHERIT sozinho não é prova. Negativa 42501; effective/current/session user registrados; sem mudança persistida.",
+        "Evidência, dependência e risco específico": "E-ACL/E-DB; D2 e versão de catálogo aprovada.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "no-set-role-or-owner-escalation"
+        ]
+      },
+      "sourceSection": "F04",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. SET ROLE para owners/migrator negado; falta revisao independente de toda cadeia de role.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "SET ROLE para owners/migrator negado; falta revisao independente de toda cadeia de role.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. SET ROLE para owners/migrator negado; falta revisao independente de toda cadeia de role.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F05",
+      "title": "RLS por executor e composição",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2/N8; R2/R3/Q3; C08; I02",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A+H; owners via chamadas reais",
+        "Sequência, além de S0–S7": "Extrair policies, roles, USING/WITH CHECK e combinação permissiva/restritiva; exercitar Tenant, SELF, REC, BOOT e integridade; comparar grafo com saída real.",
+        "Resultado DB/API e transação": "SELF/BOOT não tornam leitura Tenant permissiva; helper/validator sem recursão; owners sem bypass; INSERT/UPDATE checam linha nova. Cenários negados sem dado/commit; SQLSTATE conforme superfície D2.",
+        "Evidência, dependência e risco específico": "E-ACL/E-TRACE/E-DB; não aceitar policy textual como evidência suficiente.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "F05",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F06",
+      "title": "search_path e shadowing",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N8; F1; C01/C08; I02",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A+H; runtime em DB efêmero aprovado",
+        "Sequência, além de S0–S7": "Inspecionar search_path/config de funções, schemas graváveis e nomes qualificados; tentar objeto sintético homônimo em namespace/temp ao qual atacante de teste tenha acesso; chamar porta.",
+        "Resultado DB/API e transação": "Nenhum objeto atacante é usado, nenhum código fora do grafo executa. CREATE negado onde proibido; teste de shadow não exige conceder CREATE no schema confiável. Resultado legítimo inalterado ou acesso negado; 42501 quando pertinente.",
+        "Evidência, dependência e risco específico": "E-ACL/E-TRACE/E-DB; D5 para objetos temporários de ensaio, nenhum criado nesta rodada.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "F06",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "search_path fixo e CREATE public/temp negados; revisao semantica de corpos e grafo pendente.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "search_path fixo e CREATE public/temp negados; revisao semantica de corpos e grafo pendente.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "search_path fixo e CREATE public/temp negados; revisao semantica de corpos e grafo pendente.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F07",
+      "title": "Grafo de chamadas privilegiadas",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N8; F1/F2; C08; I02/I09",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A+H; funções e owners",
+        "Sequência, além de S0–S7": "Construir grafo de chamadas estáticas e dependências e revisar o que catálogo não captura; registrar current_user em ensaio de cadeia; tentar cadeia não autorizada e examinar SQL dinâmico.",
+        "Resultado DB/API e transação": "Só arestas aprovadas; sem salto para executor mais amplo, overload oculto ou SQL dinâmico por dado externo. Sem parâmetro SQL/tabela/filtro livre. Negativa sem efeito; SQLSTATE D2.",
+        "Evidência, dependência e risco específico": "E-ACL/E-TRACE/E-REVIEW; inspeção humana de bodies obrigatória.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "F07",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F08",
+      "title": "Provas por função",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N1/N2/N8; F2; C02/C04/C08/C09; I03/I04/I08/I09",
+        "Gate, modo, fixture, papéis/conexões": "G2+G4; A; CT/CI/CP; fixtures de referência/convite",
+        "Sequência, além de S0–S7": "Para cada linha F2, omitir e adulterar uma prova: SELF, referência, código, destinatário, estado, autorização de papel, scheme/MFA no adapter, alvo e versão; chamar também função diretamente com login permitido.",
+        "Resultado DB/API e transação": "Função não trata flags do cliente como prova; SQL não autentica MFA, conforme Q1. Negativas C/ACL sem dados alheios/efeito; provas válidas produzem só projeção autorizada. Cada assinatura vira variante identificada.",
+        "Evidência, dependência e risco específico": "E-API/E-DB/E-TRACE; bloqueia se assinatura não tiver prova mapeada.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "F08",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F09",
+      "title": "Auditoria e recibo privados",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N8/N10/N11; F2/M-AUDIT/M-IDEM; C06/C08; I02/I09",
+        "Gate, modo, fixture, papéis/conexões": "G2; A; CT/CI/CP; recibos A/B",
+        "Sequência, além de S0–S7": "Tentar chamar helpers privados e alterar/excluir eventos; ler recibo de outro ator/scope/operação, e replay depois de revogação; verificar owners permitidos de append.",
+        "Resultado DB/API e transação": "Sem engine público ou acesso global; eventos append-only; recibo protegido por autorização atual; negativa 42501 ou contrato 403/404 sem segredo. Nenhuma alteração/replay de efeito.",
+        "Evidência, dependência e risco específico": "E-ACL/E-DB/E-API; resultado de operação não inclui código reconstruível.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "F09",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Invalid invitation INSERT/issuer/consumption/chain/privilege negatives and private audit/receipt negatives executed. Initial issuance port, API, all revoked replay scopes remain absent.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "DML/leitura direta de audit/recibo e validator negados; faltam replay apos revogacao, scopes e API.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "DML/leitura direta de audit/recibo e validator negados; faltam replay apos revogacao, scopes e API.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F10",
+      "title": "União efetiva de privilégios e owners compartilhados",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 para freeze/deriva de privilégios / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N8; R1/F1/F2; C08; I02/I09; matriz objetiva 3.9",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A+H; exec_identity/exec_tenant/exec_bootstrap/exec_context/exec_integrity; CT/CI/CP por chamadas reais; observer segregado",
+        "Sequência, além de S0–S7": "Calcular por owner união de ACL de tabela/coluna/schema/função, memberships/SET ROLE, policies aplicáveis e arestas EXECUTE; comparar 3.9 com bodies e catálogo futuro. Revisar se cada capacidade excedente relativa a uma função é necessária a outra do mesmo owner e contida por entrada/prova/policy/grafo. Registrar desvio concreto antes de propor separação",
+        "Resultado DB/API e transação": "D2 APROVADA: manter exec_identity/exec_tenant/exec_bootstrap compartilhados nos grupos atuais e exec_context/exec_integrity distintos como já desenhados, sem owner por função. Mesmo owner tem mesma união SQL; função somente de consulta pode possuir capacidade SQL de escrita do owner, que seu corpo aprovado não usa. Não alegar negação SQL por função. D2 congela união justificada e controles, não implementa grants",
+        "Evidência, dependência e risco específico": "E-ACL/E-REVIEW/E-TRACE; 3.9; matriz candidata, ainda não catálogo observado. D2 aprovada no desenho; comprovação de grants efetivos/grafo pendente antes da liberação de G1. Se controle insuficiente demonstrar capacidade excessiva concreta, propor redução de grant/policy/aresta e só depois separação mínima necessária",
+        "Aprovação/reprovação": "Em G1a aprovar documentalmente apenas união necessária com controles verificáveis e decisão D2; em G1b/G2 exigir igualdade ao catálogo e provas F/Q/V. Owner compartilhado por si só não é FAIL; grant sem necessidade/controle, bypass, aresta lateral ou promessa de segregação por função = FAIL P0. D2 aprovada não comprova ACL/grafo: G1 continua BLOQUEADO até evidência exigida e D3/D5; resto conforme 3.6"
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "F10",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F11",
+      "title": "Locks sem grants amplos",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N7/N8; R3/C1/F2; C05; K03",
+        "Gate, modo, fixture, papéis/conexões": "G1+G2; A; executores através das portas",
+        "Sequência, além de S0–S7": "Comparar colunas UPDATE necessárias aos locks e DML permitido por owner; realizar lock autorizado e tentar alterar campos imutáveis/segredos/role Owner pelos caminhos disponíveis.",
+        "Resultado DB/API e transação": "Locks funcionam com menor privilégio; sem grant UPDATE irrestrito só para lock. Guard mantém IDs; controles de função C08 permanecem. Falta de grant no caminho válido reprova, não justificar BYPASSRLS.",
+        "Evidência, dependência e risco específico": "E-ACL/E-TRACE/E-DB; D2, considerar união F10.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "F11",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "F12",
+      "title": "Regressão arquitetural e superfície",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P1 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N8/N12; ADR-0009 Repository/Foundation; C01/C10; I02",
+        "Gate, modo, fixture, papéis/conexões": "G1+G4; A+H; solution/assemblies e catálogo futuro",
+        "Sequência, além de S0–S7": "Comparar assinaturas/dependências Foundation/ADRs aceitos com baseline; verificar ausência de motor genérico novo e migração automática na inicialização; repetir inventário de funções após atualização.",
+        "Resultado DB/API e transação": "Sem mudança Foundation não aprovada, IQueryable exposto ou dependência indevida; guards existentes preservados. Gates MaxOffset/M1–M5 somente se Repository 2.x consumido, sem fallback; ausência de prova aplicável bloqueia.",
+        "Evidência, dependência e risco específico": "E-REVIEW/E-ACL e relatório de regressão; testes executáveis futuros somente sob autorização.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "F12",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K01",
+      "title": "Aceites A/B (K01)",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N3/N6/N7; C1/C2; C04/C05/C06; I06; K01",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; IN+convites A/B válidos; CI em D1/D2/O; B-L",
+        "Sequência, além de S0–S7": "D1 aceita A e pausa após lock Identity; D2 tenta B e deve esperar; confirmar D1 e liberar D2; inverter A/B; observar histórico e registros.",
+        "Resultado DB/API e transação": "Um consumo/Account/Member e um aceite com sucesso; perdedor não transfere nem cria órfão e segue C04 (403 após prova de inelegibilidade). Se UNIQUE 23505 for alcançada internamente, traduzir só constraint conhecida. COMMIT só vencedor.",
+        "Evidência, dependência e risco específico": "E-LOCK/E-DB/E-API/E-TRACE; D4 e cronologia completa.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "accept-A-B-two-physical-connections"
+        ]
+      },
+      "sourceSection": "K01",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Ambas ordens SQL A/B; falta C04/API, traducao de erros e variantes integrais de replay.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Ambas ordens SQL A/B; falta C04/API, traducao de erros e variantes integrais de replay.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Ambas ordens SQL A/B; falta C04/API, traducao de erros e variantes integrais de replay.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K02",
+      "title": "Bootstrap × aceite (K02)",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N3/N5/N6; C1/C2; C04/C06/C09; I06/I09; K02",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; IN+convite A e BOOT novo B; CI/CP em D1/D2; B-L",
+        "Sequência, além de S0–S7": "Disputar mesma identidade com bootstrap e accept; pausar vencedor após lock Identity, comprovar espera e executar ambas ordens; repetir recibo autorizado do vencedor.",
+        "Resultado DB/API e transação": "Um consome; bootstrap perdedor não deixa org/Owner/auditoria de sucesso/recibo; accept perdedor sem Accepted. Retry bootstrap confirmado só retorna mesmo comprovante, sem novo consumo.",
+        "Evidência, dependência e risco específico": "E-LOCK/E-DB/E-API; sem lock de org prévio à identidade.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "K02",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Ambas ordens bootstrap/aceite SQL; falta fluxo HTTP/idempotencia integral do protocolo.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Ambas ordens bootstrap/aceite SQL; falta fluxo HTTP/idempotencia integral do protocolo.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Ambas ordens bootstrap/aceite SQL; falta fluxo HTTP/idempotencia integral do protocolo.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K03",
+      "title": "Revogação × comando (K03)",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N4/N6/N7; C2/V3; C05/C07/C08; I10; K03",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; Admin ator de Demo e Owner revogador; CT em D1/D2/O; B-L",
+        "Sequência, além de S0–S7": "Pausar comando após locks e disputar revogação; depois inverter, com revogação confirmando primeiro; executar nova requisição em ambos casos.",
+        "Resultado DB/API e transação": "Comando primeiro pode confirmar antes de revogação; revogação primeiro bloqueia comando depois de revalidar. Próxima requisição negada; Account+Membership revogados; sem promessa de invalidar JWT de produtos.",
+        "Evidência, dependência e risco específico": "E-LOCK/E-DB/E-API/E-TRACE; observar versão/eventos uma vez por efeito.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "K03",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Ambas ordens revogar/comando SQL; falta request/response autorizada da Application.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Ambas ordens revogar/comando SQL; falta request/response autorizada da Application.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Ambas ordens revogar/comando SQL; falta request/response autorizada da Application.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K04",
+      "title": "Versão concorrente (K04)",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N9; C05/C08; I02/I10; K04",
+        "Gate, modo, fixture, papéis/conexões": "G3+G4; A; DemoRecord e Membership; CT; D1/D2; B-V",
+        "Sequência, além de S0–S7": "Ler mesma versão por dois clientes; competir PATCH autorizado para cada tipo; variar If-Match ausente, malformado, wildcard e outro recurso; repetir após perda de acesso.",
+        "Resultado DB/API e transação": "Uma gravação incrementa versão; outra 412. Ausente 428, malformado/wildcard 400; sem direito precede revelação de versão (403/404). Sem overwrite ou retry automático; SQLSTATE de optimistic check pode não existir.",
+        "Evidência, dependência e risco específico": "E-API/E-DB/E-TRACE; versão e hash do conteúdo antes/depois.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "same-version-two-writers"
+        ]
+      },
+      "sourceSection": "K04",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "DemoRecord concorrente testado; falta Membership concorrente e ETag HTTP.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "DemoRecord concorrente testado; falta Membership concorrente e ETag HTTP.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "DemoRecord concorrente testado; falta Membership concorrente e ETag HTTP.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K05",
+      "title": "Replace concorrente (K05)",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N6/N9/N10; C04/C05/C06; I06; K05",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; convite Pending, duas chaves; CT; D1/D2; B-L",
+        "Sequência, além de S0–S7": "Disputar replace com mesmo ETag e chaves diferentes; repetir com mesma chave/payload; inspecionar cadeia old/new e material de segredo.",
+        "Resultado DB/API e transação": "Uma substituição; outra 412 se ainda autorizada. Mesma chave retorna replay C06 sem código; um Pending/sucessor, predecessor Replaced, segredo antigo inválido. Constraints 23505 só salvaguarda interna conhecida.",
+        "Evidência, dependência e risco específico": "E-LOCK/E-DB/E-API; sem reparo por job.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "concurrent-replace-and-authorized-replay"
+        ]
+      },
+      "sourceSection": "K05",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Replace concorrente/ETag SQL/replay testados; faltam transporte/HTTP e variantes de reemissao.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Replace concorrente/ETag SQL/replay testados; faltam transporte/HTTP e variantes de reemissao.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Replace concorrente/ETag SQL/replay testados; faltam transporte/HTTP e variantes de reemissao.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K06",
+      "title": "Pending vencido (K06)",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N6/N9; C04/C05; I03/I06; K06",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; convite Pending que expira durante espera; CI/CT; B-T",
+        "Sequência, além de S0–S7": "Ler preview/ETag antes do prazo; manter lock em outra sessão até relógio controlado ultrapassar expiresAt; soltar; aceitar e depois emitir/substituir no slot conforme operação permitida.",
+        "Resultado DB/API e transação": "Aceite 409 Expired mesmo ETag igual; GET não grava/incrementa; mutação materializa Expired auditado e libera Pending único. Sem validade por timestamp pré-espera ou índice com now().",
+        "Evidência, dependência e risco específico": "E-LOCK/E-DB/E-API/E-TRACE; D4 relógio e ponto de transição aprovados.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "K06",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Prazo revalidado apos espera; falta GET sem escrita/materializacao e API.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Prazo revalidado apos espera; falta GET sem escrita/materializacao e API.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Prazo revalidado apos espera; falta GET sem escrita/materializacao e API.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K07",
+      "title": "Resposta perdida/commit incerto (K07)",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N6/N10; C06/C09; I09; K07",
+        "Gate, modo, fixture, papéis/conexões": "G3+G4; A; create org/convite/demo, replace e accept; D+O; B-C",
+        "Sequência, além de S0–S7": "Variante 1 confirmar commit e suprimir resposta; variante 2 cortar transporte durante commit sem saber resultado; consultar via nova requisição e observer; replay exato autorizado; revogar ator e repetir.",
+        "Resultado DB/API e transação": "Um efeito no máximo; caso incerto não é chamado rollback. Recibo/Accepted reconcilia estado; replay create 200 vs primeiro 201, sem segredo; accept só direito atual. Nova chave não é mecanismo automático de retry.",
+        "Evidência, dependência e risco específico": "E-DB/E-API/E-TRACE; D5 failpoint e observação independente do commit.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "confirmed-commit-lost-response-bootstrap-replay"
+        ]
+      },
+      "sourceSection": "K07",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Replay apos commit com resposta descartada; corte real do transporte durante COMMIT e reconciliacao nao implementados.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Replay apos commit com resposta descartada; corte real do transporte durante COMMIT e reconciliacao nao implementados.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Replay apos commit com resposta descartada; corte real do transporte durante COMMIT e reconciliacao nao implementados.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K08",
+      "title": "Falha da auditoria (K08)",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N6/N11; C06/C09; I09/I10; K08",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; cada mutação de F2; papéis reais; D+O; B-A",
+        "Sequência, além de S0–S7": "Provocar falha determinística no append antes do commit, incluindo hipótese de falha diferida; observar alterações/eventos/recibos; executar controle válido e falha de rede no commit separada.",
+        "Resultado DB/API e transação": "Rollback confirmado remove todos efeitos de sucesso; nenhum sucesso parcial. Rede incerta segue K07; não classificar toda falha como 409/412. SQLSTATE é o da injeção D5, sanitizado; não criar evento de sucesso em outra transação.",
+        "Evidência, dependência e risco específico": "E-DB/E-TRACE/E-API; revisão de cobertura de escritores V12.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": {
+        "file": "runtime/Program.cs",
+        "variants": [
+          "audit-failure-rolls-back-demo"
+        ]
+      },
+      "sourceSection": "K08",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Falha CHECK de auditoria reverte mutacao; faltam caminhos restantes e resposta API.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Falha CHECK de auditoria reverte mutacao; faltam caminhos restantes e resposta API.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Falha CHECK de auditoria reverte mutacao; faltam caminhos restantes e resposta API.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K09",
+      "title": "Último Owner (K09)",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N5/N7; C08/V2; I09/I10; K09",
+        "Gate, modo, fixture, papéis/conexões": "G3+G4; A; um/dois Owners por fixture; CT/P1/P2/O",
+        "Sequência, além de S0–S7": "Tentar revogar/rebaixar Owner e si próprio via API; exercitar proteção final de zero Owner no probe V11, sem usar esse probe como função de produto.",
+        "Resultado DB/API e transação": "API nega todas alterações de Owner, mesmo com dois. Probe não confirma zero Owner; rollback preserva composição anterior. Nenhuma licença/permissão nova; erro de trigger D3 separado de autorização HTTP.",
+        "Evidência, dependência e risco específico": "E-API/E-DB/E-LOCK; compartilha prova V11, execução não contabilizada duas vezes.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "K09",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Two Active Owners: direct exec_tenant UPDATE and real runtime revoke SQL port rejected, account-first rollback proven. Complete concurrent last-Owner protocol not proven.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Auto-revogacao/Owner negadas; faltam dois Owners concorrentes e operacoes de role/ultimo Owner.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Auto-revogacao/Owner negadas; faltam dois Owners concorrentes e operacoes de role/ultimo Owner.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "K10",
+      "title": "Reuso após falha (K10)",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N2/N6; R4/Q3; C07/C09; I02; K10",
+        "Gate, modo, fixture, papéis/conexões": "G3; A; CT; IA/IB; D+O",
+        "Sequência, além de S0–S7": "Executar sequência Q11/Q12 depois de abortos reais K03/K06/K08/V14; identificar PID e operação anterior; tentar consulta sem contexto e nova transação B.",
+        "Resultado DB/API e transação": "Backend reutilizável só após estado limpo; sem A em B nem transação abortada retornada ao pool. Se reset incerto, descarte comprovado. Falha de obtenção de mesmo PID não prova reuso e deixa variante inconclusiva.",
+        "Evidência, dependência e risco específico": "E-POOL/E-TRACE/E-DB; reutiliza cenários, mantém referência e evidência vinculada.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "K10",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Pool real apos aborto SQL; faltam cancelamento e reinicio operacional/Application.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Pool real apos aborto SQL; faltam cancelamento e reinicio operacional/Application.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. Pool real apos aborto SQL; faltam cancelamento e reinicio operacional/Application.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "H01",
+      "title": "Consumo permanente e novo emprego",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N3; M-HIST/H; ADR-0008; C02/C04/C09; I03/I04/I05",
+        "Gate, modo, fixture, papéis/conexões": "G2+G4; A; IR consumida A e IN novo login; CI/CT",
+        "Sequência, além de S0–S7": "Revogar/arquivar A; tentar referência/emissão/aceite B para IR; usar nova identidade IN e convite B; comparar histórico antes/depois.",
+        "Resultado DB/API e transação": "IR nunca elegível/NotLinked, nem após arquivamento; novo login IN cria conta B sem tocar consumo A. Nenhuma fusão por e-mail; tentativa antiga não confirma vínculo. SQLSTATE de UNIQUE só quando alcançada pelo probe.",
+        "Evidência, dependência e risco específico": "E-DB/E-API; política de estado e IdP D1/D6.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "H01",
+      "latestResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Consumo apos revogacao impede aceite B; faltam arquivamento, referencia/emissao, nova identidade B e OIDC/API.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Consumo apos revogacao impede aceite B; faltam arquivamento, referencia/emissao, nova identidade B e OIDC/API.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "BLOQUEADO",
+        "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs.",
+        "remaining": "Consumo apos revogacao impede aceite B; faltam arquivamento, referencia/emissao, nova identidade B e OIDC/API.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "H02",
+      "title": "Recuperação, e-mail e subject",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P1 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N1/N3; H/Q1; ADR-0008; C01/C02/C07; I07/I11",
+        "Gate, modo, fixture, papéis/conexões": "G4; A+H; IdP de homologação aprovado; IR/IN",
+        "Sequência, além de S0–S7": "Recuperar senha/MFA da identidade A; mudar e-mail; testar mesma pessoa com identidades distintas e e-mail repetido se suportado; simular política IdP que proíbe repetição e subject reciclado.",
+        "Resultado DB/API e transação": "Recuperação preserva sujeito/empresa e não reativa; e-mail não faz linking. Proibição do IdP é informada sem bypass. Subject reciclado requer rejeição/quarentena conforme procedimento aprovado, não acesso à conta antiga.",
+        "Evidência, dependência e risco específico": "E-API/E-DB/E-REVIEW; não simular IdP e declarar política real comprovada.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "H02",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "H03",
+      "title": "Perfil expurgado e ledger",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P1 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N3/N11; H-A–H-D/V2; C09/C10; I04/I08",
+        "Gate, modo, fixture, papéis/conexões": "G4; A+H+O; cópia descartável; IR; operador segregado",
+        "Sequência, além de S0–S7": "Revisar alternativa de retenção aprovada; executar expurgo sintético só de campos autorizados, preservar prova mínima/alias; tentar reutilização; testar perda da prova como ensaio negativo.",
+        "Resultado DB/API e transação": "Ledger impede reciclagem; prova perdida não é NotLinked e impede retorno ao tráfego. Sem afirmar anonimização/LGPD. Descarte e restauração do teste seguem autorização; SQLSTATE por ação aprovada, não predeterminado.",
+        "Evidência, dependência e risco específico": "E-DB/E-OPS/E-REVIEW; D6 privacidade/retenção/keys antes do ensaio.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "H03",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "H04",
+      "title": "Restore anterior ao consumo",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P1 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N3/N12; H; C09/C10; I04/I08; K07",
+        "Gate, modo, fixture, papéis/conexões": "G4; O+H; backup sintético antes de consumo e fonte posterior aprovada",
+        "Sequência, além de S0–S7": "Criar marco backup; consumir identidade depois; restaurar em destino separado; iniciar modo sem tráfego; reconciliar consumo posterior; testar fonte ausente/corrompida e repetir login.",
+        "Resultado DB/API e transação": "Sem fonte confiável, destino não volta ao tráfego nem libera identidade. Com reconciliação validada, marca/AccountId/org originais preservados. Medir RPO/RTO, não inventar metas; nenhuma operação no banco de origem.",
+        "Evidência, dependência e risco específico": "E-OPS/E-DB/E-REVIEW; D6 RPO/RTO/fonte/reconciliação e autorização operacional específica.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "H04",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "H05",
+      "title": "Migração IdP e aliases",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P1 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N1/N3; H/M-LINK; ADR-0008; C01/C09; I07/I11",
+        "Gate, modo, fixture, papéis/conexões": "G4; O+H+A; dois emissores sintéticos/aprovados; IR",
+        "Sequência, além de S0–S7": "Inventariar mapeamento antigo→novo com prova; migrar alias no ensaio mantendo IdentityId/consumo; tentar vincular pelo e-mail, reatribuir sujeito e importar org/AccountId conflitantes; cobrir pairwise.",
+        "Resultado DB/API e transação": "Só mapeamento aprovado preserva conta original; aliases antigos não são reciclados; negativos rejeitados sem novo consumo. Novo emprego é nova identidade, não alias. Sem contrato pairwise, variante fica bloqueada.",
+        "Evidência, dependência e risco específico": "E-OPS/E-DB/E-REVIEW; D1/D6 prova e rollback de migração.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "H05",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    },
+    {
+      "id": "H06",
+      "title": "Indisponibilidade, sessão e retomada",
+      "status": "NOT_EXECUTED",
+      "executionReady": false,
+      "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+      "fields": {
+        "Prioridade / estado": "P0 / NÃO EXECUTADO",
+        "Proteção / rastreabilidade": "ADR-0009; N1/N2/N6/N12; Q2/H; C01/C03/C07/C09; I10/I12",
+        "Gate, modo, fixture, papéis/conexões": "G4; A+H; IdP/session store/DB de homologação; dois fluxos/abas",
+        "Sequência, além de S0–S7": "Interromper IdP em login/refresh/retomada; interromper store/DB; expirar continuation e sessão conforme parâmetros aprovados; relogar outra identidade, atrasar resposta A e tentar replay/rascunho.",
+        "Resultado DB/API e transação": "Sem fallback, nova autorização ou POST automático; 503 conhecido/estado desconhecido C06, não falso vazio. Fluxo/token/código não cruza usuário/aba/org; logout local não promete global. Sem dados protegidos em URL/log/recibo.",
+        "Evidência, dependência e risco específico": "E-API/E-TRACE/E-OPS; D1/D4/D6 e metas UX separadas; ensaio não valida todos critérios WCAG.",
+        "Aprovação/reprovação": "Aplicar 3.6: todas as assertions acima verificadas e evidências completas; divergência = FAIL; dependência/instrumentação ausente = BLOQUEADO/INCONCLUSIVO, sem aprovação presumida."
+      },
+      "dependencies": [
+        "D3-oracle-freeze",
+        "D5-isolated-environment-and-probes",
+        "approved-schema-and-signature-bindings"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "evidence": [
+        "runId",
+        "variantId",
+        "session_user",
+        "current_user",
+        "backendPids",
+        "barrierTimeline",
+        "commitOutcome",
+        "independentPostState",
+        "sanitizedApiResult",
+        "sqlstateAndConstraintWhenApplicable"
+      ],
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "runnerBinding": null,
+      "sourceSection": "H06",
+      "latestResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/9ba11b81e986/results.json"
+      },
+      "priorResultBeforeAuditCorrections": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not started; original protocol and prerequisites preserved.",
+        "evidence": "evidence/runs/e792ea797e94/results.json"
+      },
+      "previousExecutionResult": {
+        "Status": "NOT_EXECUTED",
+        "Detail": "Not started.",
+        "remaining": "Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json.",
+        "evidence": "evidence/runs/7dad9c5a2703/results.json"
+      }
+    }
+  ],
+  "latestRun": "9ba11b81e986",
+  "executionEvidence": "evidence/runs/9ba11b81e986/results.json",
+  "frozenFieldsNotice": "fields retain original documentary specification, not runtime status. Outer status and evidence are actual latest run."
+}

@@ -1,0 +1,1244 @@
+{
+  "run": "15a36f6b1584",
+  "gate": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "schemaInstalled": true,
+  "stoppedForP0": false,
+  "counts": {
+    "NOT_EXECUTED": 29,
+    "BLOQUEADO": 25
+  },
+  "cases": {
+    "Q01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q07": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q08": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V02": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V03": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V04": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V05": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V07": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V08": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V11": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V13": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V14": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F02": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F03": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F06": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F09": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "K02": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "K03": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "K04": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "K05": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "K06": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "K07": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "K08": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "K09": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "K10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "H02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    }
+  },
+  "subproofs": [
+    {
+      "caseId": "Q08",
+      "variant": "tenant-sql-isolation",
+      "status": "PASS",
+      "milliseconds": 69,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q07",
+      "variant": "missing-mismatched-malformed-context",
+      "status": "PASS",
+      "milliseconds": 77,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V01",
+      "variant": "active-account-without-member-commit",
+      "status": "PASS",
+      "milliseconds": 174,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V05",
+      "variant": "organization-without-owner-at-commit",
+      "status": "PASS",
+      "milliseconds": 87,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V08",
+      "variant": "missing-integrity-context-rejects",
+      "status": "PASS",
+      "milliseconds": 55,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V04",
+      "variant": "partial-revocation-rejected",
+      "status": "PASS",
+      "milliseconds": 62,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V07",
+      "variant": "immutable-org-and-historical-consumption",
+      "status": "PASS",
+      "milliseconds": 152,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F01",
+      "variant": "runtime-direct-dml-denied",
+      "status": "PASS",
+      "milliseconds": 205,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F03",
+      "variant": "public-execute-and-wrong-port-denied",
+      "status": "PASS",
+      "milliseconds": 91,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F02",
+      "variant": "owners-and-runtime-not-bypass",
+      "status": "PASS",
+      "milliseconds": 44,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K01",
+      "variant": "accept-A-B-two-physical-connections",
+      "status": "PASS",
+      "milliseconds": 725,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K04",
+      "variant": "same-version-two-writers",
+      "status": "PASS",
+      "milliseconds": 200,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K08",
+      "variant": "audit-failure-rolls-back-demo",
+      "status": "PASS",
+      "milliseconds": 106,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K07",
+      "variant": "confirmed-commit-lost-response-bootstrap-replay",
+      "status": "PASS",
+      "milliseconds": 197,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K05",
+      "variant": "concurrent-replace-and-authorized-replay",
+      "status": "PASS",
+      "milliseconds": 378,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V02",
+      "variant": "split-rls-not-null-catalog-and-rollback",
+      "status": "PASS",
+      "milliseconds": 268,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V03",
+      "variant": "cross-organization-foreign-key",
+      "status": "PASS",
+      "milliseconds": 95,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K02",
+      "variant": "bootstrap-versus-accept-both-orders",
+      "status": "PASS",
+      "milliseconds": 505,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K03",
+      "variant": "revoke-versus-command-both-orders",
+      "status": "PASS",
+      "milliseconds": 791,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K06",
+      "variant": "expiry-revalidated-after-real-lock-wait",
+      "status": "PASS",
+      "milliseconds": 596,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K09",
+      "variant": "Owner-and-self-revocation-denied",
+      "status": "PASS",
+      "milliseconds": 84,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F06",
+      "variant": "fixed-path-and-denied-shadow-object",
+      "status": "PASS",
+      "milliseconds": 149,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F09",
+      "variant": "private-audit-receipts-direct-denials",
+      "status": "PASS",
+      "milliseconds": 235,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "H01",
+      "variant": "revoked-identity-cannot-accept-other-enterprise",
+      "status": "PASS",
+      "milliseconds": 320,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V04",
+      "variant": "owner-transitions-and-role-promotion-denied",
+      "status": "PASS",
+      "milliseconds": 695,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F01",
+      "variant": "minimal-grants-and-secret-read-denied",
+      "status": "PASS",
+      "milliseconds": 255,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V11",
+      "variant": "revocation-versus-owner-reactivation-after-wait",
+      "status": "PASS",
+      "milliseconds": 798,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K09",
+      "variant": "two-active-Owners-direct-owner-revocation-denied",
+      "status": "PASS",
+      "milliseconds": 233,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F09",
+      "variant": "invalid-invitation-inserts-issuer-and-chain",
+      "status": "PASS",
+      "milliseconds": 685,
+      "evidence": "assertions.json plus observer and timeline"
+    }
+  ],
+  "timeline": [
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 63,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 64,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 65,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 66,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 67,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 68,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q08/tenant-sql-isolation",
+      "role": "core_tenant",
+      "pid": 69,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/missing-mismatched-malformed-context",
+      "role": "core_tenant",
+      "pid": 70,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "postgres",
+      "pid": 71,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "g1_probe",
+      "pid": 72,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "postgres",
+      "pid": 73,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V05/organization-without-owner-at-commit",
+      "role": "g1_probe",
+      "pid": 74,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V05/organization-without-owner-at-commit",
+      "role": "postgres",
+      "pid": 75,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/missing-integrity-context-rejects",
+      "role": "g1_probe",
+      "pid": 76,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/partial-revocation-rejected",
+      "role": "g1_probe",
+      "pid": 77,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/immutable-org-and-historical-consumption",
+      "role": "postgres",
+      "pid": 78,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "core_tenant",
+      "pid": 79,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "core_identity",
+      "pid": 80,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "core_platform",
+      "pid": 81,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/public-execute-and-wrong-port-denied",
+      "role": "postgres",
+      "pid": 82,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/public-execute-and-wrong-port-denied",
+      "role": "core_identity",
+      "pid": 83,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/owners-and-runtime-not-bypass",
+      "role": "postgres",
+      "pid": 84,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "postgres",
+      "pid": 85,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "core_identity",
+      "pid": 86,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "core_identity",
+      "pid": 87,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "postgres",
+      "pid": 88,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01",
+      "pid1": 86,
+      "pid2": 87,
+      "eventName": "D2 blocked by D1 identity; barrier observed"
+    },
+    {
+      "proof": "K01",
+      "aFirst": true,
+      "eventName": "both organization orderings covered"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "postgres",
+      "pid": 89,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "core_identity",
+      "pid": 90,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "core_identity",
+      "pid": 91,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "postgres",
+      "pid": 92,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01",
+      "pid1": 90,
+      "pid2": 91,
+      "eventName": "D2 blocked by D1 identity; barrier observed"
+    },
+    {
+      "proof": "K01",
+      "aFirst": false,
+      "eventName": "both organization orderings covered"
+    },
+    {
+      "proof": "K04/same-version-two-writers",
+      "role": "core_tenant",
+      "pid": 93,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K04/same-version-two-writers",
+      "role": "core_tenant",
+      "pid": 94,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K04/same-version-two-writers",
+      "role": "postgres",
+      "pid": 95,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K04",
+      "pid1": 93,
+      "pid2": 94,
+      "eventName": "wait observed before release"
+    },
+    {
+      "proof": "K08/audit-failure-rolls-back-demo",
+      "role": "postgres",
+      "pid": 96,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K08/audit-failure-rolls-back-demo",
+      "role": "core_tenant",
+      "pid": 97,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+      "role": "postgres",
+      "pid": 98,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+      "role": "core_platform",
+      "pid": 99,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+      "role": "core_platform",
+      "pid": 100,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+      "role": "postgres",
+      "pid": 101,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K05/concurrent-replace-and-authorized-replay",
+      "role": "postgres",
+      "pid": 102,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K05/concurrent-replace-and-authorized-replay",
+      "role": "core_tenant",
+      "pid": 103,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K05/concurrent-replace-and-authorized-replay",
+      "role": "core_tenant",
+      "pid": 104,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K05/concurrent-replace-and-authorized-replay",
+      "role": "postgres",
+      "pid": 105,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K05/concurrent-replace-and-authorized-replay",
+      "role": "core_tenant",
+      "pid": 106,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K05",
+      "pid1": 103,
+      "pid2": 104,
+      "eventName": "blocking observed, old ETag rejected, authorized receipt replay"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "role": "postgres",
+      "pid": 107,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "role": "core_tenant",
+      "pid": 108,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V02/split-rls-not-null-catalog-and-rollback",
+      "role": "g1_probe",
+      "pid": 109,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V03/cross-organization-foreign-key",
+      "role": "postgres",
+      "pid": 110,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V03/cross-organization-foreign-key",
+      "role": "g1_probe",
+      "pid": 111,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K02/bootstrap-versus-accept-both-orders",
+      "role": "postgres",
+      "pid": 112,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K02/bootstrap-versus-accept-both-orders",
+      "role": "core_platform",
+      "pid": 113,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K02/bootstrap-versus-accept-both-orders",
+      "role": "core_identity",
+      "pid": 114,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K02/bootstrap-versus-accept-both-orders",
+      "role": "postgres",
+      "pid": 115,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K02",
+      "bootstrapFirst": true,
+      "bootstrapPid": 113,
+      "acceptPid": 114,
+      "eventName": "real blocking, one commit and loser rollback"
+    },
+    {
+      "proof": "K02/bootstrap-versus-accept-both-orders",
+      "role": "postgres",
+      "pid": 116,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K02/bootstrap-versus-accept-both-orders",
+      "role": "core_platform",
+      "pid": 117,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K02/bootstrap-versus-accept-both-orders",
+      "role": "core_identity",
+      "pid": 118,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K02/bootstrap-versus-accept-both-orders",
+      "role": "postgres",
+      "pid": 119,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K02",
+      "bootstrapFirst": false,
+      "bootstrapPid": 117,
+      "acceptPid": 118,
+      "eventName": "real blocking, one commit and loser rollback"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "postgres",
+      "pid": 120,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "postgres",
+      "pid": 121,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "core_tenant",
+      "pid": 122,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "core_tenant",
+      "pid": 123,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "postgres",
+      "pid": 124,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "core_tenant",
+      "pid": 125,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03",
+      "revokeFirst": false,
+      "actorPid": 122,
+      "revokerPid": 123,
+      "eventName": "observed lock ordering and atomic revocation"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "postgres",
+      "pid": 126,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "postgres",
+      "pid": 127,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "core_tenant",
+      "pid": 128,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "core_tenant",
+      "pid": 129,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "postgres",
+      "pid": 130,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03/revoke-versus-command-both-orders",
+      "role": "core_tenant",
+      "pid": 131,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K03",
+      "revokeFirst": true,
+      "actorPid": 128,
+      "revokerPid": 129,
+      "eventName": "observed lock ordering and atomic revocation"
+    },
+    {
+      "proof": "K06/expiry-revalidated-after-real-lock-wait",
+      "role": "postgres",
+      "pid": 132,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K06/expiry-revalidated-after-real-lock-wait",
+      "role": "core_identity",
+      "pid": 133,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K06/expiry-revalidated-after-real-lock-wait",
+      "role": "core_identity",
+      "pid": 134,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K06/expiry-revalidated-after-real-lock-wait",
+      "role": "postgres",
+      "pid": 135,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K06",
+      "waiterPid": 134,
+      "blockerPid": 135,
+      "eventName": "blocking observed; server clock crossed expiry before lock release"
+    },
+    {
+      "proof": "K09/Owner-and-self-revocation-denied",
+      "role": "core_tenant",
+      "pid": 136,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K09/Owner-and-self-revocation-denied",
+      "role": "postgres",
+      "pid": 137,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "postgres",
+      "pid": 138,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "core_identity",
+      "pid": 139,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "core_tenant",
+      "pid": 140,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F06/fixed-path-and-denied-shadow-object",
+      "role": "core_platform",
+      "pid": 141,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "role": "core_identity",
+      "pid": 142,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "role": "core_tenant",
+      "pid": 143,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/private-audit-receipts-direct-denials",
+      "role": "core_platform",
+      "pid": 144,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "postgres",
+      "pid": 145,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "core_identity",
+      "pid": 146,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "core_tenant",
+      "pid": 147,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+      "role": "core_identity",
+      "pid": 148,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 149,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "core_identity",
+      "pid": 150,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 151,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "g1_probe",
+      "pid": 152,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "core_tenant",
+      "pid": 153,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 154,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 155,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/owner-transitions-and-role-promotion-denied",
+      "role": "postgres",
+      "pid": 156,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/minimal-grants-and-secret-read-denied",
+      "role": "postgres",
+      "pid": 157,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "postgres",
+      "pid": 158,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "core_identity",
+      "pid": 159,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "core_tenant",
+      "pid": 160,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "postgres",
+      "pid": 161,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "postgres",
+      "pid": 162,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11",
+      "membershipTarget": false,
+      "runtimePid": 160,
+      "ownerProbePid": 161,
+      "eventName": "Real runtime revoke versus direct owner-row mutation; not proof of complete C1/last-Owner protocol"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "postgres",
+      "pid": 163,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "core_identity",
+      "pid": 164,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "core_tenant",
+      "pid": 165,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "postgres",
+      "pid": 166,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "postgres",
+      "pid": 167,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V11",
+      "membershipTarget": true,
+      "runtimePid": 165,
+      "ownerProbePid": 166,
+      "eventName": "Real runtime revoke versus direct owner-row mutation; not proof of complete C1/last-Owner protocol"
+    },
+    {
+      "proof": "V11/revocation-versus-owner-reactivation-after-wait",
+      "role": "postgres",
+      "pid": 168,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K09/two-active-Owners-direct-owner-revocation-denied",
+      "role": "postgres",
+      "pid": 169,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K09/two-active-Owners-direct-owner-revocation-denied",
+      "role": "postgres",
+      "pid": 170,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K09/two-active-Owners-direct-owner-revocation-denied",
+      "role": "core_tenant",
+      "pid": 171,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K09/two-active-Owners-direct-owner-revocation-denied",
+      "role": "postgres",
+      "pid": 172,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 173,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 174,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 175,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 176,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 177,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 178,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 179,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 180,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 181,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 182,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F09/invalid-invitation-inserts-issuer-and-chain",
+      "role": "postgres",
+      "pid": 183,
+      "eventName": "physical connection opened"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+name: ADR-0009 G1 offline validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/TechnicalValidation/ADR0009.G1/**'
+      - 'tests/TechnicalValidation/ADR0009.G1.CI/**'
+      - '.github/workflows/adr0009-g1.yml'
+      - '.gitattributes'
+      - 'global.json'
+      - 'Directory.Build.props'
+      - 'Directory.Packages.props'
+      - 'docs/architecture/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-validation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_NOLOGO: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Test offline validators (positive and negative fixtures)
+        run: python3 -B -m unittest discover -s tests/TechnicalValidation/ADR0009.G1.CI -p test_validate_g1.py -v
+      - name: Validate original evidence without rewriting it
+        run: python3 -B tests/TechnicalValidation/ADR0009.G1.CI/validate_g1.py
+      - uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          global-json-file: global.json
+      - name: Restore isolated harness
+        run: dotnet restore tests/TechnicalValidation/ADR0009.G1/runtime/G1.Validation.csproj
+      - name: Build isolated harness (never execute it)
+        run: dotnet build tests/TechnicalValidation/ADR0009.G1/runtime/G1.Validation.csproj --configuration Release --no-restore
+      - name: Verify originals remain intact after build
+        run: python3 -B tests/TechnicalValidation/ADR0009.G1.CI/validate_g1.py

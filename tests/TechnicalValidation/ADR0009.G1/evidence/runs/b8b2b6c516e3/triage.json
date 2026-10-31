@@ -1,0 +1,12 @@
+{
+  "originalEvidencePreserved": true,
+  "case": "K01",
+  "rawHarnessClassification": "FAIL/P0_STOP",
+  "reviewedClassification": "INCONCLUSIVO",
+  "observedSqlstate": "23502",
+  "cause": "The Invite fixture omitted required status; INSERT failed before the concurrency operation/barrier began.",
+  "securityControlResult": "NOT NULL correctly rejected the fixture. No observed P0 cross-tenant/integrity violation.",
+  "correction": "Fixture INSERT now explicitly supplies approved state Pending. No constraint, policy, grant or expected business oracle weakened.",
+  "q10SubproofNote": "The raw PASS means the assertion matched the documented residual model; it does not validate security/OIDC. Subsequent runs label this subproof CARACTERIZADO; parent Q10 remains BLOQUEADO.",
+  "rerunScope": "Fresh disposable run, original evidence retained, no reuse of prior database."
+}

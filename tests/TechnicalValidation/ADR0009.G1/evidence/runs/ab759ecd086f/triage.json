@@ -1,0 +1,8 @@
+{
+  "run": "ab759ecd086f",
+  "rawEvidencePreserved": true,
+  "finalReference": "9ba11b81e986",
+  "finding": "Owner guard was initially located in deferred validator, while the new negative expected immediate rejection. UPDATE returned before COMMIT; test stopped and rolled back.",
+  "correction": "Moved OLD Owner Active->Revoked guard to BEFORE guard_immutable; final direct-owner and account-first negatives pass.",
+  "classification": "FAIL_PRESERVED_NO_SUCCESSFUL_INVALID_COMMIT_DEMONSTRATED"
+}

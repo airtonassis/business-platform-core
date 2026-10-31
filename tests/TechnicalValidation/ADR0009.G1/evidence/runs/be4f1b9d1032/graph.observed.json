@@ -1,0 +1,89 @@
+{
+  "run": "be4f1b9d1032",
+  "status": "LEXICAL_FIXED_CALLS_NOT_COMPLETE_SEMANTIC_GRAPH",
+  "functions": [
+    {
+      "signature": "authz.ctx(text)",
+      "owner": "ddl_owner",
+      "calls": [],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "173f090b6f1a4f80f7898502358fc1375ae1f741e1dc9c4b5fc37e2e262079dd"
+    },
+    {
+      "signature": "authz.guard_immutable()",
+      "owner": "exec_integrity",
+      "calls": [],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "c2e46ea011cb200342ea2ab2de56936586424e4383f0e1c01bb5c7c5a9227bb7"
+    },
+    {
+      "signature": "authz.own_tenant_allowed(boolean)",
+      "owner": "exec_context",
+      "calls": [
+        "authz.ctx"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "33222b8f7abdfce112382a976d2fa40fa02e95a955d4dd0ce23e2d674ccc02ab"
+    },
+    {
+      "signature": "authz.validate_integrity()",
+      "owner": "exec_integrity",
+      "calls": [
+        "authz.ctx"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "e1dc0df10c2413a1785d4940d9dc84fa6eec10cc7c7cddc6aa3c1cee14d9a4d2"
+    },
+    {
+      "signature": "operation.accept_invitation(uuid,text,bigint)",
+      "owner": "exec_identity",
+      "calls": [
+        "authz.ctx"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "c8e710ee1fb7945a129d265003e73fe1e7c8298e09e8e420e615b37a7773321e"
+    },
+    {
+      "signature": "operation.bootstrap(uuid,uuid,text,text,text)",
+      "owner": "exec_bootstrap",
+      "calls": [
+        "authz.ctx"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "bd11e9ff36a7540d3800b9f969ff68a3096f3df603fe0f451e13ad003ec0e9cc"
+    },
+    {
+      "signature": "operation.replace_invitation(uuid,bigint,text,text)",
+      "owner": "exec_tenant",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "280eac96fb62fe4e566185a89f059b509048a530b59f49d12656983c67a201a4"
+    },
+    {
+      "signature": "operation.revoke_membership(uuid,bigint)",
+      "owner": "exec_tenant",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "e8e6c792651cdd21d852638706016ef89df29d5b7c389bfed267e038e11dc022"
+    },
+    {
+      "signature": "operation.update_demo(uuid,bigint,text)",
+      "owner": "exec_tenant",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "4bc1c7a345801e09459e7fa97ec06512f21aedc21b80417c70f8f0fd8ca613b5"
+    }
+  ],
+  "implicitEdges": "Catalog policies and triggers invoke helpers/validators; inspect catalog.jsonl, not only lexical calls.",
+  "completePrivilegeGraphApproved": false,
+  "independentReview": "PENDING"
+}

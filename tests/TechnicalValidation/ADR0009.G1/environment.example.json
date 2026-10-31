@@ -1,0 +1,26 @@
+{
+  "formatVersion": 1,
+  "executionAuthorized": false,
+  "authorizationReference": null,
+  "purpose": "inspection-only, no provisioning and no scenario execution",
+  "host": "127.0.0.1",
+  "port": null,
+  "database": null,
+  "isolationMarker": null,
+  "observerUser": null,
+  "serverVersionNum": null,
+  "statementTimeoutMs": null,
+  "lockTimeoutMs": null,
+  "psqlExecutable": null,
+  "pgpassFile": null,
+  "expectedPsqlSha256": null,
+  "outputDirectory": null,
+  "forbiddenTargets": [
+    "production",
+    "shared database",
+    "IdP database",
+    "any non-loopback host"
+  ],
+  "runtimeCredentials": "Separate pgpass entries outside repository; never supplied to inspection runner",
+  "D3D5": "PENDING"
+}

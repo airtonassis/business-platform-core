@@ -1,0 +1,12 @@
+{
+  "run": "8db7a67ce01b",
+  "executionMode": "Isolated superuser transaction locally revokes four SELECT columns and SET LOCAL SESSION AUTHORIZATION simulates command session; NOT real runtime credential proof",
+  "columns": [
+    "exec_identity:tenancy.invitations.predecessor_id:SELECT",
+    "exec_identity:tenancy.invitations.successor_id:SELECT",
+    "exec_tenant:identity.enterprise_user_accounts.organization_id:SELECT",
+    "exec_tenant:identity.enterprise_user_accounts.status:SELECT"
+  ],
+  "operations": "accept/replay, update_demo, revoke_membership, replace and immediate final validation succeeded; entire changes rolled back",
+  "classification": "Current bodies do not require these four READ capabilities; no escalation or cross-tenant leak demonstrated"
+}

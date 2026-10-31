@@ -1,0 +1,1151 @@
+{
+  "run": "15a36f6b1584",
+  "status": "EXPLICIT_FIXED_CALLS_AND_CATALOG_IMPLICIT_EDGES_PENDING_REVIEW",
+  "functions": [
+    {
+      "signature": "authz.ctx(text)",
+      "owner": "ddl_owner",
+      "calls": [],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "173f090b6f1a4f80f7898502358fc1375ae1f741e1dc9c4b5fc37e2e262079dd"
+    },
+    {
+      "signature": "authz.guard_immutable()",
+      "owner": "exec_integrity",
+      "calls": [],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "d762afffd54494d4f7f6a21c6b9df95884ca62a0aa96520098a762060e31aa01"
+    },
+    {
+      "signature": "authz.guard_invitation()",
+      "owner": "exec_integrity",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "fe8848d5a79de92bd7ca8815d435ec222ae5ac0f81baae02372eb167e1bb2f73"
+    },
+    {
+      "signature": "authz.own_tenant_allowed(boolean)",
+      "owner": "exec_context",
+      "calls": [
+        "authz.ctx"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "33222b8f7abdfce112382a976d2fa40fa02e95a955d4dd0ce23e2d674ccc02ab"
+    },
+    {
+      "signature": "authz.validate_integrity()",
+      "owner": "exec_integrity",
+      "calls": [
+        "authz.ctx"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "e1dc0df10c2413a1785d4940d9dc84fa6eec10cc7c7cddc6aa3c1cee14d9a4d2"
+    },
+    {
+      "signature": "authz.validate_invitation_chain()",
+      "owner": "exec_integrity",
+      "calls": [
+        "authz.ctx"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "a6d0ad0fcef9fcac40feb84d7c018f731488021237231946eef26d4ff4e819f9"
+    },
+    {
+      "signature": "operation.accept_invitation(uuid,text,bigint)",
+      "owner": "exec_identity",
+      "calls": [
+        "authz.ctx"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "be569653f2bdf127044ec70ac52b14ed659295d389f2fd64f57c13864f61b8fd"
+    },
+    {
+      "signature": "operation.bootstrap(uuid,uuid,text,text,text)",
+      "owner": "exec_bootstrap",
+      "calls": [
+        "authz.ctx"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "46bf624e088fbf1c6acd7cf6f2bd751bdf7905777c15d5a886f43293aec0a59e"
+    },
+    {
+      "signature": "operation.replace_invitation(uuid,bigint,text,text)",
+      "owner": "exec_tenant",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "a25458d032401fe795344ae3521deef3a71d12d20522a9fd191000f0d252c0d9"
+    },
+    {
+      "signature": "operation.revoke_membership(uuid,bigint)",
+      "owner": "exec_tenant",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "70da163e55d4329a4c6efa68c8c3baa62f8d8b3d280efe8d8c8cec83ace300bc"
+    },
+    {
+      "signature": "operation.update_demo(uuid,bigint,text)",
+      "owner": "exec_tenant",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "dynamicSqlDetected": false,
+      "definitionSha256": "d2a003e4052744f412e2468227dcbf55701c3ce3e82181db1da75734dfe91e6f"
+    }
+  ],
+  "implicitEdges": [
+    {
+      "from": "audit.events:RI_ConstraintTrigger_c_16613",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16613\" AFTER UPDATE ON audit.events FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "audit.events:RI_ConstraintTrigger_c_16612",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16612\" AFTER INSERT ON audit.events FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:validate_accounts",
+      "to": "authz.validate_integrity()",
+      "type": "trigger/validator",
+      "deferrable": true,
+      "definition": "CREATE CONSTRAINT TRIGGER validate_accounts AFTER INSERT OR UPDATE ON identity.enterprise_user_accounts DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION authz.validate_integrity()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:guard_accounts",
+      "to": "authz.guard_immutable()",
+      "type": "trigger/validator",
+      "deferrable": false,
+      "definition": "CREATE TRIGGER guard_accounts BEFORE DELETE OR UPDATE ON identity.enterprise_user_accounts FOR EACH ROW EXECUTE FUNCTION authz.guard_immutable()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:RI_ConstraintTrigger_a_16571",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16571\" AFTER UPDATE ON identity.enterprise_user_accounts FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:RI_ConstraintTrigger_a_16570",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16570\" AFTER DELETE ON identity.enterprise_user_accounts FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:RI_ConstraintTrigger_a_16501",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16501\" AFTER UPDATE ON identity.enterprise_user_accounts FROM tenancy.memberships NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:RI_ConstraintTrigger_a_16500",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16500\" AFTER DELETE ON identity.enterprise_user_accounts FROM tenancy.memberships NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:RI_ConstraintTrigger_c_16483",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": true,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16483\" AFTER UPDATE ON identity.enterprise_user_accounts FROM identity.identity_consumptions DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:RI_ConstraintTrigger_c_16482",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": true,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16482\" AFTER INSERT ON identity.enterprise_user_accounts FROM identity.identity_consumptions DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:RI_ConstraintTrigger_c_16478",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16478\" AFTER UPDATE ON identity.enterprise_user_accounts FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:RI_ConstraintTrigger_c_16477",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16477\" AFTER INSERT ON identity.enterprise_user_accounts FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16561",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16561\" AFTER UPDATE ON identity.identities FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16560",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16560\" AFTER DELETE ON identity.identities FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16530",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16530\" AFTER UPDATE ON identity.identities FROM identity.recipient_references NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16529",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16529\" AFTER DELETE ON identity.identities FROM identity.recipient_references NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16518",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16518\" AFTER UPDATE ON identity.identities FROM tenancy.invitation_slots NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16517",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16517\" AFTER DELETE ON identity.identities FROM tenancy.invitation_slots NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16452",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16452\" AFTER UPDATE ON identity.identities FROM identity.identity_consumptions NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16451",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16451\" AFTER DELETE ON identity.identities FROM identity.identity_consumptions NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16426",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16426\" AFTER UPDATE ON identity.identities FROM identity.identity_links NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:RI_ConstraintTrigger_a_16425",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16425\" AFTER DELETE ON identity.identities FROM identity.identity_links NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_links:guard_links",
+      "to": "authz.guard_immutable()",
+      "type": "trigger/validator",
+      "deferrable": false,
+      "definition": "CREATE TRIGGER guard_links BEFORE DELETE OR UPDATE ON identity.identity_links FOR EACH ROW EXECUTE FUNCTION authz.guard_immutable()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_links:RI_ConstraintTrigger_c_16428",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16428\" AFTER UPDATE ON identity.identity_links FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_links:RI_ConstraintTrigger_c_16427",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16427\" AFTER INSERT ON identity.identity_links FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_consumptions:guard_consumptions",
+      "to": "authz.guard_immutable()",
+      "type": "trigger/validator",
+      "deferrable": false,
+      "definition": "CREATE TRIGGER guard_consumptions BEFORE DELETE OR UPDATE ON identity.identity_consumptions FOR EACH ROW EXECUTE FUNCTION authz.guard_immutable()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_consumptions:RI_ConstraintTrigger_a_16481",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": true,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16481\" AFTER UPDATE ON identity.identity_consumptions FROM identity.enterprise_user_accounts DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_consumptions:RI_ConstraintTrigger_a_16480",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": true,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16480\" AFTER DELETE ON identity.identity_consumptions FROM identity.enterprise_user_accounts DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_consumptions:RI_ConstraintTrigger_c_16459",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16459\" AFTER UPDATE ON identity.identity_consumptions FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_consumptions:RI_ConstraintTrigger_c_16458",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16458\" AFTER INSERT ON identity.identity_consumptions FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_consumptions:RI_ConstraintTrigger_c_16454",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16454\" AFTER UPDATE ON identity.identity_consumptions FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identity_consumptions:RI_ConstraintTrigger_c_16453",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16453\" AFTER INSERT ON identity.identity_consumptions FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.recipient_references:RI_ConstraintTrigger_c_16532",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16532\" AFTER UPDATE ON identity.recipient_references FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.recipient_references:RI_ConstraintTrigger_c_16531",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16531\" AFTER INSERT ON identity.recipient_references FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "sandbox.demo_records:RI_ConstraintTrigger_c_16599",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16599\" AFTER UPDATE ON sandbox.demo_records FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "sandbox.demo_records:RI_ConstraintTrigger_c_16598",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16598\" AFTER INSERT ON sandbox.demo_records FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitation_slots:RI_ConstraintTrigger_c_16520",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16520\" AFTER UPDATE ON tenancy.invitation_slots FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitation_slots:RI_ConstraintTrigger_c_16519",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16519\" AFTER INSERT ON tenancy.invitation_slots FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitation_slots:RI_ConstraintTrigger_c_16515",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16515\" AFTER UPDATE ON tenancy.invitation_slots FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitation_slots:RI_ConstraintTrigger_c_16514",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16514\" AFTER INSERT ON tenancy.invitation_slots FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:validate_invitation_chain",
+      "to": "authz.validate_invitation_chain()",
+      "type": "trigger/validator",
+      "deferrable": true,
+      "definition": "CREATE CONSTRAINT TRIGGER validate_invitation_chain AFTER INSERT OR UPDATE ON tenancy.invitations DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION authz.validate_invitation_chain()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:guard_invitation",
+      "to": "authz.guard_invitation()",
+      "type": "trigger/validator",
+      "deferrable": false,
+      "definition": "CREATE TRIGGER guard_invitation BEFORE INSERT OR UPDATE ON tenancy.invitations FOR EACH ROW EXECUTE FUNCTION authz.guard_invitation()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16583",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16583\" AFTER UPDATE ON tenancy.invitations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16582",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16582\" AFTER INSERT ON tenancy.invitations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_a_16581",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16581\" AFTER UPDATE ON tenancy.invitations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_a_16580",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16580\" AFTER DELETE ON tenancy.invitations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16578",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16578\" AFTER UPDATE ON tenancy.invitations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16577",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16577\" AFTER INSERT ON tenancy.invitations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_a_16576",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16576\" AFTER UPDATE ON tenancy.invitations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_a_16575",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16575\" AFTER DELETE ON tenancy.invitations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16573",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16573\" AFTER UPDATE ON tenancy.invitations FROM identity.enterprise_user_accounts NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16572",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16572\" AFTER INSERT ON tenancy.invitations FROM identity.enterprise_user_accounts NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16568",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16568\" AFTER UPDATE ON tenancy.invitations FROM tenancy.memberships NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16567",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16567\" AFTER INSERT ON tenancy.invitations FROM tenancy.memberships NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16563",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16563\" AFTER UPDATE ON tenancy.invitations FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16562",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16562\" AFTER INSERT ON tenancy.invitations FROM identity.identities NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16558",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16558\" AFTER UPDATE ON tenancy.invitations FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.invitations:RI_ConstraintTrigger_c_16557",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16557\" AFTER INSERT ON tenancy.invitations FROM tenancy.organizations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.memberships:validate_members",
+      "to": "authz.validate_integrity()",
+      "type": "trigger/validator",
+      "deferrable": true,
+      "definition": "CREATE CONSTRAINT TRIGGER validate_members AFTER INSERT OR UPDATE ON tenancy.memberships DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION authz.validate_integrity()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.memberships:guard_members",
+      "to": "authz.guard_immutable()",
+      "type": "trigger/validator",
+      "deferrable": false,
+      "definition": "CREATE TRIGGER guard_members BEFORE DELETE OR UPDATE ON tenancy.memberships FOR EACH ROW EXECUTE FUNCTION authz.guard_immutable()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.memberships:RI_ConstraintTrigger_a_16566",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16566\" AFTER UPDATE ON tenancy.memberships FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.memberships:RI_ConstraintTrigger_a_16565",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16565\" AFTER DELETE ON tenancy.memberships FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.memberships:RI_ConstraintTrigger_c_16503",
+      "to": "\"RI_FKey_check_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16503\" AFTER UPDATE ON tenancy.memberships FROM identity.enterprise_user_accounts NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.memberships:RI_ConstraintTrigger_c_16502",
+      "to": "\"RI_FKey_check_ins\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_c_16502\" AFTER INSERT ON tenancy.memberships FROM identity.enterprise_user_accounts NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_check_ins\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:validate_org",
+      "to": "authz.validate_integrity()",
+      "type": "trigger/validator",
+      "deferrable": true,
+      "definition": "CREATE CONSTRAINT TRIGGER validate_org AFTER INSERT OR UPDATE ON tenancy.organizations DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION authz.validate_integrity()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:guard_organizations",
+      "to": "authz.guard_immutable()",
+      "type": "trigger/validator",
+      "deferrable": false,
+      "definition": "CREATE TRIGGER guard_organizations BEFORE DELETE OR UPDATE ON tenancy.organizations FOR EACH ROW EXECUTE FUNCTION authz.guard_immutable()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16611",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16611\" AFTER UPDATE ON tenancy.organizations FROM audit.events NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16610",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16610\" AFTER DELETE ON tenancy.organizations FROM audit.events NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16597",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16597\" AFTER UPDATE ON tenancy.organizations FROM sandbox.demo_records NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16596",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16596\" AFTER DELETE ON tenancy.organizations FROM sandbox.demo_records NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16556",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16556\" AFTER UPDATE ON tenancy.organizations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16555",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16555\" AFTER DELETE ON tenancy.organizations FROM tenancy.invitations NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16513",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16513\" AFTER UPDATE ON tenancy.organizations FROM tenancy.invitation_slots NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16512",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16512\" AFTER DELETE ON tenancy.organizations FROM tenancy.invitation_slots NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16476",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16476\" AFTER UPDATE ON tenancy.organizations FROM identity.enterprise_user_accounts NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16475",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16475\" AFTER DELETE ON tenancy.organizations FROM identity.enterprise_user_accounts NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16457",
+      "to": "\"RI_FKey_noaction_upd\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16457\" AFTER UPDATE ON tenancy.organizations FROM identity.identity_consumptions NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_upd\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "tenancy.organizations:RI_ConstraintTrigger_a_16456",
+      "to": "\"RI_FKey_noaction_del\"()",
+      "type": "trigger/internal-FK",
+      "deferrable": false,
+      "definition": "CREATE CONSTRAINT TRIGGER \"RI_ConstraintTrigger_a_16456\" AFTER DELETE ON tenancy.organizations FROM identity.identity_consumptions NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION \"RI_FKey_noaction_del\"()",
+      "execution": "SECURITY DEFINER switches to function owner; INVOKER keeps triggering context, deferred INVOKER would use outer runtime at COMMIT"
+    },
+    {
+      "from": "identity.identities:ctx_identity",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16390}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:ctx_account",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16390}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.memberships:ctx_member",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16390}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.organizations:ctx_org",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16390}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.organizations:integrity_org",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16391}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:integrity_account",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16391}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.memberships:integrity_member",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16391}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.invitations:integrity_invitation",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16391}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.identity_consumptions:integrity_consumption",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16391}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.identities:bootstrap_identity",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16389}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.recipient_references:bootstrap_reference",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16389}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.organizations:bootstrap_org",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16389}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.identity_consumptions:bootstrap_hist",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16389}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:bootstrap_account",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16389}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.memberships:bootstrap_member",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16389}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "audit.events:bootstrap_audit",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16389}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "operation.idempotency_records:bootstrap_receipt",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16389}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.identities:identity_self",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16387}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.organizations:identity_org",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16387}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.identity_consumptions:identity_hist",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16387}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "sandbox.demo_records:tenant_read",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16393}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "sandbox.demo_records:tenant_read",
+      "to": "authz.own_tenant_allowed",
+      "type": "RLS-policy",
+      "roles": "{16393}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:identity_account",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16387}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.memberships:identity_member",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16387}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.invitations:identity_invite",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16387}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.invitation_slots:identity_slot",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16387}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "audit.events:identity_audit",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16387}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.identities:tenant_identity",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.organizations:tenant_org",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:tenant_account",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.memberships:tenant_member",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "sandbox.demo_records:tenant_demo",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "audit.events:tenant_audit",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "operation.idempotency_records:tenant_receipt",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.identity_consumptions:probe_org",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16395}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.enterprise_user_accounts:probe_org",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16395}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.memberships:probe_org",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16395}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.organizations:probe_org",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16395}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.invitations:tenant_invitation",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "tenancy.invitation_slots:tenant_slot",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    },
+    {
+      "from": "identity.identity_consumptions:tenant_recipient_history",
+      "to": "authz.ctx",
+      "type": "RLS-policy",
+      "roles": "{16388}",
+      "execution": "Policy caller context, then callee SECURITY DEFINER if declared"
+    }
+  ],
+  "catalogFunctionEdges": [],
+  "ownershipCapabilities": [
+    {
+      "owner": "exec_integrity",
+      "object": "authz.validate_integrity()",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": true
+    },
+    {
+      "owner": "exec_integrity",
+      "object": "authz.guard_immutable()",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": false
+    },
+    {
+      "owner": "exec_integrity",
+      "object": "authz.guard_invitation()",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": false
+    },
+    {
+      "owner": "exec_integrity",
+      "object": "authz.validate_invitation_chain()",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": true
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "authz.ctx(text)",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": false
+    },
+    {
+      "owner": "exec_context",
+      "object": "authz.own_tenant_allowed(boolean)",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": true
+    },
+    {
+      "owner": "exec_bootstrap",
+      "object": "operation.bootstrap(uuid,uuid,text,text,text)",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": true
+    },
+    {
+      "owner": "exec_tenant",
+      "object": "operation.revoke_membership(uuid,bigint)",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": true
+    },
+    {
+      "owner": "exec_identity",
+      "object": "operation.accept_invitation(uuid,text,bigint)",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": true
+    },
+    {
+      "owner": "exec_tenant",
+      "object": "operation.update_demo(uuid,bigint,text)",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": true
+    },
+    {
+      "owner": "exec_tenant",
+      "object": "operation.replace_invitation(uuid,bigint,text,text)",
+      "privilege": "Owner can administer function and intrinsically execute; EXECUTE ACL observed separately",
+      "securityDefiner": true
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "audit.events",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "identity.enterprise_user_accounts",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "identity.identities",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "identity.identity_links",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "identity.identity_consumptions",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "identity.recipient_references",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "operation.idempotency_records",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "sandbox.demo_records",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "tenancy.invitation_slots",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "tenancy.invitations",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "tenancy.memberships",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    },
+    {
+      "owner": "ddl_owner",
+      "object": "tenancy.organizations",
+      "privilege": "Table owner can alter/disable RLS/triggers; FORCE does not constrain owner DDL. Never a runtime capability."
+    }
+  ],
+  "inheritanceEdges": [],
+  "limitation": "Lexical bodies and catalog edges require human semantic review, including system functions and trusted DDL owner. No claim of independent approval.",
+  "completePrivilegeGraphApproved": false,
+  "independentReview": "PENDING"
+}

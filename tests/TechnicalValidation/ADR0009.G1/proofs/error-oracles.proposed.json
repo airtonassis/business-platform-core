@@ -1,0 +1,117 @@
+{
+  "status": "PROPOSED_ORACLES_NOT_NEW_APPROVED_CONTRACTS",
+  "categories": [
+    {
+      "category": "authorization",
+      "sqlstate": "42501",
+      "when": "SQL privilege denial is actually reached; Application 401/403/404 may not issue SQL"
+    },
+    {
+      "category": "integrity.unique",
+      "sqlstate": "23505",
+      "when": "Name must match frozen known constraint; unexpected constraint is defect"
+    },
+    {
+      "category": "integrity.foreign_key",
+      "sqlstate": "23503"
+    },
+    {
+      "category": "integrity.not_null",
+      "sqlstate": "23502"
+    },
+    {
+      "category": "integrity.check",
+      "sqlstate": "23514"
+    },
+    {
+      "category": "integrity.deferred_trigger",
+      "sqlstate": null,
+      "status": "D3_CUSTOM_ERROR_PENDING",
+      "when": "Failure must be observed at COMMIT and all effects absent from observer"
+    },
+    {
+      "category": "concurrency.deadlock",
+      "sqlstate": "40P01",
+      "when": "Complete transaction rollback and bounded approved retry, not retry COMMIT"
+    },
+    {
+      "category": "concurrency.serialization",
+      "sqlstate": "40001",
+      "when": "Only applicable if chosen implementation/isolation can produce this"
+    },
+    {
+      "category": "concurrency.version",
+      "http": [
+        412,
+        428,
+        400
+      ],
+      "sqlstate": null,
+      "when": "Application version/precondition check; authorization precedes version disclosure"
+    },
+    {
+      "category": "business.invitation_state",
+      "http": [
+        409
+      ],
+      "sqlstate": null
+    },
+    {
+      "category": "business.ineligible_after_proof",
+      "http": [
+        403
+      ],
+      "sqlstate": null
+    },
+    {
+      "category": "unproved_secret_or_recipient",
+      "http": [
+        404
+      ],
+      "sqlstate": null
+    },
+    {
+      "category": "operational.commit_unknown",
+      "sqlstate": null,
+      "when": "Do not assert rollback; reconcile via C06 and fresh observer before retry"
+    },
+    {
+      "category": "operational.infrastructure",
+      "http": [
+        500,
+        503
+      ],
+      "sqlstate": null,
+      "when": "Known dependency unavailable versus unexpected defect, sanitize"
+    }
+  ],
+  "comparison": "Matching any exception does not pass a case; compare category, exact frozen constraint/proposed custom code, layer, timing, persisted state and response.",
+  "V02ObservedRefinement": {
+    "run": "7dad9c5a2703",
+    "authorization": "core_tenant SELECT with mismatched context: zero rows under RLS; no INSERT grants added",
+    "nullOrganizationProbe": "g1_probe: 42501 / ExecWithCheckOptions / new row violates row-level security policy for memberships",
+    "notNull": "pg_attribute.attnotnull true for all six mandatory columns; other null fields reach 23502 / ExecConstraints",
+    "uniqueness": "23505 / memberships_account_id_key",
+    "rollback": "observer confirms total count unchanged and no nullable membership persisted",
+    "historicalFail": "5efad327c7d7 unchanged",
+    "scope": "No PostgreSQL OIDC authentication claim; no approved HTTP contract change",
+    "runtimeInsert": "core_tenant INSERT Membership: 42501 / aclcheck_error / permission denied for table memberships, effective role pinned; no new grants."
+  },
+  "transitionGuardOracle": {
+    "sqlstate": "P1006",
+    "messages": [
+      "Integrity.TransitionDenied",
+      "Integrity.RoleImmutable"
+    ],
+    "scope": "Test-only candidate diagnostics, not new approved HTTP/domain contracts",
+    "origin": "PostgreSQL 17.11 exec_stmt_raise; pinned effective exec_tenant or g1_probe and attempted operation; observer poststate unchanged",
+    "evidence": "evidence/runs/7dad9c5a2703/assertions.json"
+  },
+  "P1ClosureOracles": {
+    "run": "9ba11b81e986",
+    "owner": "P1007 / Integrity.OwnerRevocationDenied / exec_stmt_raise / effective exec_tenant; exact statement and observer state",
+    "invitation": "P1010..P1014 exact diagnostic + effective executor + operation identity; forbidden accepted_account_id/successor INSERT grants yield exact ACL 42501",
+    "scope": "PostgreSQL 17.11 test diagnostics only, not new approved API/domain contracts",
+    "historicalV02": "Unchanged original FAIL and prior split evidence retained"
+  }
+}

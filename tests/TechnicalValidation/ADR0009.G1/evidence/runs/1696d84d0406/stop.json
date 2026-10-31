@@ -1,0 +1,9 @@
+{
+  "category": "P0_STOP",
+  "stage": "catalog-and-proofs",
+  "exceptionType": "PostgresException",
+  "sqlstate": "42501",
+  "setupMessage": "permission denied for table identities",
+  "position": 0,
+  "detail": "Failure recorded without SQL, payload or credential; inspect stage and sanitized proof evidence."
+}

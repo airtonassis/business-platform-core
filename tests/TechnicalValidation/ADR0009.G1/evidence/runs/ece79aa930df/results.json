@@ -1,0 +1,729 @@
+{
+  "run": "ece79aa930df",
+  "gate": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "schemaInstalled": true,
+  "stoppedForP0": false,
+  "counts": {
+    "NOT_EXECUTED": 45,
+    "BLOQUEADO": 9
+  },
+  "cases": {
+    "Q01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V06": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V09": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V13": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V14": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F02": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F03": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F04": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F05": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F10": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F11": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    }
+  },
+  "subproofs": [
+    {
+      "caseId": "F01",
+      "variant": "G1-runtime-table-operation-matrix",
+      "status": "PASS",
+      "milliseconds": 2974,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F02",
+      "variant": "G1-DDL-TRUNCATE-protections-denied",
+      "status": "PASS",
+      "milliseconds": 326,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F03",
+      "variant": "G1-every-ungranted-function-runtime-call",
+      "status": "PASS",
+      "milliseconds": 1653,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F04",
+      "variant": "G1-SET-ROLE-and-self-grant-denied",
+      "status": "PASS",
+      "milliseconds": 741,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F05",
+      "variant": "G1-installed-T-SELF-REC-BOOT-boundaries",
+      "status": "PASS",
+      "milliseconds": 878,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V06",
+      "variant": "G1-event-coverage-multiple-updates-and-immediate-check",
+      "status": "PASS",
+      "milliseconds": 627,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V09",
+      "variant": "G1-validators-no-explicit-locks-or-repair",
+      "status": "PASS",
+      "milliseconds": 490,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F10",
+      "variant": "G1-semantic-capability-subtraction-probe",
+      "status": "PASS",
+      "milliseconds": 839,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F11",
+      "variant": "G1-reduced-grants-real-runtime-ports-and-replay",
+      "status": "PASS",
+      "milliseconds": 853,
+      "evidence": "assertions.json plus observer and timeline"
+    }
+  ],
+  "timeline": [
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 63,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 64,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 65,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 66,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 67,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 68,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/G1-runtime-table-operation-matrix",
+      "role": "postgres",
+      "pid": 69,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/G1-runtime-table-operation-matrix",
+      "role": "core_identity",
+      "pid": 70,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/G1-runtime-table-operation-matrix",
+      "role": "core_tenant",
+      "pid": 71,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/G1-runtime-table-operation-matrix",
+      "role": "core_platform",
+      "pid": 72,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+      "role": "core_identity",
+      "pid": 73,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+      "role": "core_tenant",
+      "pid": 74,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+      "role": "core_platform",
+      "pid": 75,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "postgres",
+      "pid": 76,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_identity",
+      "pid": 77,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_identity",
+      "pid": 78,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_identity",
+      "pid": 79,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_identity",
+      "pid": 80,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_identity",
+      "pid": 81,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_identity",
+      "pid": 82,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_identity",
+      "pid": 83,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_identity",
+      "pid": 84,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_identity",
+      "pid": 85,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_platform",
+      "pid": 86,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_platform",
+      "pid": 87,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_platform",
+      "pid": 88,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_platform",
+      "pid": 89,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_platform",
+      "pid": 90,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_platform",
+      "pid": 91,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_platform",
+      "pid": 92,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_platform",
+      "pid": 93,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_platform",
+      "pid": 94,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_tenant",
+      "pid": 95,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_tenant",
+      "pid": 96,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_tenant",
+      "pid": 97,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_tenant",
+      "pid": 98,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_tenant",
+      "pid": 99,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "core_tenant",
+      "pid": 100,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/G1-every-ungranted-function-runtime-call",
+      "role": "postgres",
+      "pid": 101,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+      "role": "core_identity",
+      "pid": 102,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+      "role": "core_tenant",
+      "pid": 103,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+      "role": "core_platform",
+      "pid": 104,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "postgres",
+      "pid": 105,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "core_identity",
+      "pid": 106,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "core_tenant",
+      "pid": 107,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "core_tenant",
+      "pid": 108,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "core_tenant",
+      "pid": 109,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+      "role": "postgres",
+      "pid": 110,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "postgres",
+      "pid": 111,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "postgres",
+      "pid": 112,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "core_identity",
+      "pid": 113,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "g1_probe",
+      "pid": 114,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+      "role": "g1_probe",
+      "pid": 115,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+      "role": "postgres",
+      "pid": 116,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+      "role": "postgres",
+      "pid": 117,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+      "role": "core_identity",
+      "pid": 118,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+      "role": "core_tenant",
+      "pid": 119,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+      "role": "postgres",
+      "pid": 120,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+      "phase": "before COMMIT",
+      "writerPid": 119,
+      "observerPid": 116,
+      "eventName": "Organization lock already held by command before deferred validators"
+    },
+    {
+      "proof": "F10/G1-semantic-capability-subtraction-probe",
+      "role": "postgres",
+      "pid": 121,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F10/G1-semantic-capability-subtraction-probe",
+      "role": "postgres",
+      "pid": 122,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F10/G1-semantic-capability-subtraction-probe",
+      "role": "postgres",
+      "pid": 123,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F10/G1-semantic-capability-subtraction-probe",
+      "role": "core_identity",
+      "pid": 124,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F10/G1-semantic-capability-subtraction-probe",
+      "role": "postgres",
+      "pid": 125,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F10/G1-semantic-capability-subtraction-probe",
+      "role": "postgres",
+      "pid": 126,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F11/G1-reduced-grants-real-runtime-ports-and-replay",
+      "role": "postgres",
+      "pid": 127,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F11/G1-reduced-grants-real-runtime-ports-and-replay",
+      "role": "core_tenant",
+      "pid": 128,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F11/G1-reduced-grants-real-runtime-ports-and-replay",
+      "role": "core_tenant",
+      "pid": 129,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F11/G1-reduced-grants-real-runtime-ports-and-replay",
+      "role": "core_identity",
+      "pid": 130,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F11/G1-reduced-grants-real-runtime-ports-and-replay",
+      "role": "core_identity",
+      "pid": 131,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F11/G1-reduced-grants-real-runtime-ports-and-replay",
+      "role": "postgres",
+      "pid": 132,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F11/G1-reduced-grants-real-runtime-ports-and-replay",
+      "role": "postgres",
+      "pid": 133,
+      "eventName": "physical connection opened"
+    }
+  ]
+}

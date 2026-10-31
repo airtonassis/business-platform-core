@@ -1,0 +1,10 @@
+{
+  "originalEvidencePreserved": true,
+  "case": "V03",
+  "rawHarnessClassification": "FAIL/P0_STOP",
+  "reviewedClassification": "INCONCLUSIVO",
+  "observedSqlstate": "23505",
+  "cause": "The FK probe reused an account that already had Membership. UNIQUE(account_id) correctly rejected first, so the intended FK oracle was not reached.",
+  "correction": "Use a new account constructed in the same probe transaction, then attempt the cross-organization member and roll back everything. No expected SQLSTATE changed, no constraint or policy weakened.",
+  "securityConclusion": "No observed cross-tenant or integrity acceptance; fixture did not isolate the intended constraint. All raw evidence retained."
+}

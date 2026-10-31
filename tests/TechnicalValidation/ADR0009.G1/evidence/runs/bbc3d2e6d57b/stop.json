@@ -1,0 +1,9 @@
+{
+  "category": "SETUP_OR_OPERATIONAL_BLOCK",
+  "stage": "preflight",
+  "exceptionType": "SafetyFailure",
+  "sqlstate": null,
+  "setupMessage": null,
+  "position": 0,
+  "detail": "Docker operation failed: image; no credential or raw stderr emitted."
+}

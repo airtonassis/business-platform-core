@@ -1,0 +1,29 @@
+{
+  "status": "NOT_EXECUTED",
+  "runId": null,
+  "caseId": null,
+  "variantId": null,
+  "authorizationReference": null,
+  "approvedEnvironmentManifestHash": null,
+  "sourceDocumentHashes": {},
+  "effectiveUsers": [],
+  "backendPids": [],
+  "barriers": [],
+  "commitOutcome": "NOT_ATTEMPTED",
+  "observedSqlstate": null,
+  "observedConstraint": null,
+  "expectedBeforeAndAfter": null,
+  "observedBeforeAndAfter": null,
+  "apiEvidence": null,
+  "catalogEvidence": null,
+  "bodyReview": null,
+  "classification": "NOT_EXECUTED",
+  "reviewer": null,
+  "redaction": "No JWT/cookies/passwords/invitation codes/recipient references/connection strings",
+  "cleanup": {
+    "status": "NOT_STARTED",
+    "commitReconciled": false,
+    "openSessionsClosed": false,
+    "approvedCleanupReference": null
+  }
+}

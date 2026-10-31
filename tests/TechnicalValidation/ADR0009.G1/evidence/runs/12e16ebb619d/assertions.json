@@ -1,0 +1,2257 @@
+[
+  {
+    "proof": "preflight",
+    "assertion": "Pinned local Linux image identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Run label.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Container image.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Loopback only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "Only one own row.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "No B canary.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "assertion": "Absent context denies.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "assertion": "Mismatched tuple denies.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "expectedSqlstate": "22P02",
+    "observedSqlstate": "22P02",
+    "table": null,
+    "column": null,
+    "routine": "string_to_uuid",
+    "message": "invalid input syntax for type uuid: \u0022invalid-uuid\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "A visible.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "Reused backend.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "No context residue.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "B only.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "Same physical PID.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "A visible.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "Reused backend.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "No context residue.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "B only.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "Same physical PID.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "A visible.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "expectedSqlstate": "22012",
+    "observedSqlstate": "22012",
+    "table": null,
+    "column": null,
+    "routine": "int4div",
+    "message": "division by zero",
+    "check": "matched"
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "Reused backend.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "No context residue.",
+    "observed": true
+  },
+  {
+    "proof": "Q11/npgsql-pool-commit-rollback-exception",
+    "assertion": "B only.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/savepoint-context-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/savepoint-context-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q12/savepoint-context-rollback",
+    "assertion": "Savepoint removes local context.",
+    "observed": true
+  },
+  {
+    "proof": "Q10/compromised-credential-characterization-only",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q10/compromised-credential-characterization-only",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q10/compromised-credential-characterization-only",
+    "assertion": "D1 residual characterized, not OIDC proof.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "expectedSqlstate": "P1003",
+    "observedSqlstate": "P1003",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.AccountMembership",
+    "check": "matched"
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "No consumed identity persisted.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "No partial account.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "expectedSqlstate": "P1004",
+    "observedSqlstate": "P1004",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.OwnerMissing",
+    "check": "matched"
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "No orphan org.",
+    "observed": true
+  },
+  {
+    "proof": "V08/missing-integrity-context-rejects",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V08/missing-integrity-context-rejects",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V08/missing-integrity-context-rejects",
+    "expectedSqlstate": "P1001",
+    "observedSqlstate": "P1001",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.ContextInvalid",
+    "check": "matched"
+  },
+  {
+    "proof": "V04/partial-revocation-rejected",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V04/partial-revocation-rejected",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V04/partial-revocation-rejected",
+    "expectedSqlstate": "P1003",
+    "observedSqlstate": "P1003",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.AccountMembership",
+    "check": "matched"
+  },
+  {
+    "proof": "V07/immutable-org-and-historical-consumption",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V07/immutable-org-and-historical-consumption",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V07/immutable-org-and-historical-consumption",
+    "expectedSqlstate": "P1005",
+    "observedSqlstate": "P1005",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.Immutable",
+    "check": "matched"
+  },
+  {
+    "proof": "V07/immutable-org-and-historical-consumption",
+    "expectedSqlstate": "P1005",
+    "observedSqlstate": "P1005",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.Immutable",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_identity\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_tenant\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_bootstrap\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_context\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_integrity\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022ddl_owner\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022core_migrator\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_identity\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_tenant\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_bootstrap\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_context\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_integrity\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022ddl_owner\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022core_migrator\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_identity\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_tenant\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_bootstrap\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_context\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022exec_integrity\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022ddl_owner\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F04/no-set-role-or-owner-escalation",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "call_string_check_hook",
+    "message": "permission denied to set role \u0022core_migrator\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "No PUBLIC execute.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for function bootstrap",
+    "check": "matched"
+  },
+  {
+    "proof": "F02/owners-and-runtime-not-bypass",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F02/owners-and-runtime-not-bypass",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F02/owners-and-runtime-not-bypass",
+    "assertion": "No unsafe role attributes.",
+    "observed": true
+  },
+  {
+    "proof": "F02/owners-and-runtime-not-bypass",
+    "assertion": "All tables forced and segregated.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Distinct physical connections.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "expectedSqlstate": "P2002",
+    "observedSqlstate": "P2002",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Account.Ineligible",
+    "check": "matched"
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "One account.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "One accepted.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Winner organization matches committed invitation, both orders.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Distinct physical connections.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "expectedSqlstate": "P2002",
+    "observedSqlstate": "P2002",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Account.Ineligible",
+    "check": "matched"
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "One account.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "One accepted.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Winner organization matches committed invitation, both orders.",
+    "observed": true
+  },
+  {
+    "proof": "K04/same-version-two-writers",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K04/same-version-two-writers",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K04/same-version-two-writers",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K04/same-version-two-writers",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K04/same-version-two-writers",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K04/same-version-two-writers",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K04/same-version-two-writers",
+    "expectedSqlstate": "P2007",
+    "observedSqlstate": "P2007",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Version.Stale",
+    "check": "matched"
+  },
+  {
+    "proof": "K04/same-version-two-writers",
+    "assertion": "Only one update.",
+    "observed": true
+  },
+  {
+    "proof": "K08/audit-failure-rolls-back-demo",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K08/audit-failure-rolls-back-demo",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K08/audit-failure-rolls-back-demo",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K08/audit-failure-rolls-back-demo",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K08/audit-failure-rolls-back-demo",
+    "expectedSqlstate": "23514",
+    "observedSqlstate": "23514",
+    "table": "events",
+    "column": null,
+    "routine": "ExecConstraints",
+    "message": "new row for relation \u0022events\u0022 violates check constraint \u0022g1_fault_audit\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "K08/audit-failure-rolls-back-demo",
+    "assertion": "Demo rollback with failed event.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "No duplicate after replay.",
+    "observed": true
+  },
+  {
+    "proof": "K07/confirmed-commit-lost-response-bootstrap-replay",
+    "assertion": "No repeated success event.",
+    "observed": true
+  },
+  {
+    "proof": "V13/real-deadlock-in-dedicated-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V13/real-deadlock-in-dedicated-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V13/real-deadlock-in-dedicated-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V13/real-deadlock-in-dedicated-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V13/real-deadlock-in-dedicated-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V13/real-deadlock-in-dedicated-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V13/real-deadlock-in-dedicated-probe",
+    "assertion": "One real deadlock victim, one released waiter.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "expectedSqlstate": "P2007",
+    "observedSqlstate": "P2007",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Version.Stale",
+    "check": "matched"
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Same receipt returns successor without secret recovery.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Exactly one Pending successor.",
+    "observed": true
+  },
+  {
+    "proof": "K05/concurrent-replace-and-authorized-replay",
+    "assertion": "Old code cannot accept replaced invitation.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Catalog NOT NULL: tenancy.memberships.id",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Catalog NOT NULL: tenancy.memberships.organization_id",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Catalog NOT NULL: tenancy.memberships.account_id",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Catalog NOT NULL: tenancy.memberships.role",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Catalog NOT NULL: tenancy.memberships.status",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Catalog NOT NULL: tenancy.memberships.version",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Runtime mismatched organization: RLS returns no rows.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "expectedSqlstate": "23505",
+    "observedSqlstate": "23505",
+    "table": "memberships",
+    "column": null,
+    "routine": "_bt_check_unique",
+    "message": "duplicate key value violates unique constraint \u0022memberships_account_id_key\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "expectedSqlstate": "23502",
+    "observedSqlstate": "23502",
+    "table": "memberships",
+    "column": "id",
+    "routine": "ExecConstraints",
+    "message": "null value in column \u0022id\u0022 of relation \u0022memberships\u0022 violates not-null constraint",
+    "check": "matched"
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Mandatory Membership column rejected: id",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "ExecWithCheckOptions",
+    "message": "new row violates row-level security policy for table \u0022memberships\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Mandatory Membership column rejected: organization_id",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "expectedSqlstate": "23502",
+    "observedSqlstate": "23502",
+    "table": "memberships",
+    "column": "account_id",
+    "routine": "ExecConstraints",
+    "message": "null value in column \u0022account_id\u0022 of relation \u0022memberships\u0022 violates not-null constraint",
+    "check": "matched"
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Mandatory Membership column rejected: account_id",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "expectedSqlstate": "23502",
+    "observedSqlstate": "23502",
+    "table": "memberships",
+    "column": "role",
+    "routine": "ExecConstraints",
+    "message": "null value in column \u0022role\u0022 of relation \u0022memberships\u0022 violates not-null constraint",
+    "check": "matched"
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Mandatory Membership column rejected: role",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "expectedSqlstate": "23502",
+    "observedSqlstate": "23502",
+    "table": "memberships",
+    "column": "status",
+    "routine": "ExecConstraints",
+    "message": "null value in column \u0022status\u0022 of relation \u0022memberships\u0022 violates not-null constraint",
+    "check": "matched"
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Mandatory Membership column rejected: status",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "expectedSqlstate": "23502",
+    "observedSqlstate": "23502",
+    "table": "memberships",
+    "column": "version",
+    "routine": "ExecConstraints",
+    "message": "null value in column \u0022version\u0022 of relation \u0022memberships\u0022 violates not-null constraint",
+    "check": "matched"
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Mandatory Membership column rejected: version",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "Exactly one valid membership retained.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "All rejected inserts rolled back; total membership count unchanged.",
+    "observed": true
+  },
+  {
+    "proof": "V02/split-rls-not-null-catalog-and-rollback",
+    "assertion": "No invalid nullable membership persisted.",
+    "observed": true
+  },
+  {
+    "proof": "V03/cross-organization-foreign-key",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V03/cross-organization-foreign-key",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V03/cross-organization-foreign-key",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V03/cross-organization-foreign-key",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V03/cross-organization-foreign-key",
+    "expectedSqlstate": "23503",
+    "observedSqlstate": "23503",
+    "table": "memberships",
+    "column": null,
+    "routine": "ri_ReportViolation",
+    "message": "insert or update on table \u0022memberships\u0022 violates foreign key constraint \u0022memberships_organization_id_account_id_fkey\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "expectedSqlstate": "P2002",
+    "observedSqlstate": "P2002",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Account.Ineligible",
+    "check": "matched"
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Single consumption in both orderings.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "expectedSqlstate": "P2002",
+    "observedSqlstate": "P2002",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Account.Ineligible",
+    "check": "matched"
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Losing bootstrap leaves no org.",
+    "observed": true
+  },
+  {
+    "proof": "K02/bootstrap-versus-accept-both-orders",
+    "assertion": "Single consumption in both orderings.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Account revoked atomically.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Member revoked atomically.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "New request loses Tenant authorization.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Access.Denied",
+    "check": "matched"
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Account revoked atomically.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Member revoked atomically.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K03/revoke-versus-command-both-orders",
+    "assertion": "New request loses Tenant authorization.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Server-clock expiry deadline.",
+    "observed": true
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "expectedSqlstate": "P2005",
+    "observedSqlstate": "P2005",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Invitation.Expired",
+    "check": "matched"
+  },
+  {
+    "proof": "K06/expiry-revalidated-after-real-lock-wait",
+    "assertion": "Expired invitation never consumes identity.",
+    "observed": true
+  },
+  {
+    "proof": "K09/Owner-and-self-revocation-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K09/Owner-and-self-revocation-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K09/Owner-and-self-revocation-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Access.Denied",
+    "check": "matched"
+  },
+  {
+    "proof": "K09/Owner-and-self-revocation-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K09/Owner-and-self-revocation-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K09/Owner-and-self-revocation-denied",
+    "assertion": "Owner unchanged.",
+    "observed": true
+  },
+  {
+    "proof": "K10/pool-after-actual-SQL-abort",
+    "expectedSqlstate": "P2007",
+    "observedSqlstate": "P2007",
+    "table": null,
+    "column": null,
+    "routine": "exec_stmt_raise",
+    "message": "Version.Stale",
+    "check": "matched"
+  },
+  {
+    "proof": "K10/pool-after-actual-SQL-abort",
+    "assertion": "Actual failed command backend reused.",
+    "observed": true
+  },
+  {
+    "proof": "K10/pool-after-actual-SQL-abort",
+    "assertion": "No context after real command rollback.",
+    "observed": true
+  },
+  {
+    "proof": "K10/pool-after-actual-SQL-abort",
+    "assertion": "B isolated on same failed-command backend.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "assertion": "All test functions pin search_path.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for schema public",
+    "check": "matched"
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "InitTempTableNamespace",
+    "message": "permission denied to create temporary tables in database \u0022bpc_adr0009_g1_12e16ebb619d\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for schema public",
+    "check": "matched"
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "InitTempTableNamespace",
+    "message": "permission denied to create temporary tables in database \u0022bpc_adr0009_g1_12e16ebb619d\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for schema public",
+    "check": "matched"
+  },
+  {
+    "proof": "F06/fixed-path-and-denied-shadow-object",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "InitTempTableNamespace",
+    "message": "permission denied to create temporary tables in database \u0022bpc_adr0009_g1_12e16ebb619d\u0022",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table events",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table events",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table events",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table idempotency_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table idempotency_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for function validate_integrity",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table events",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table events",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table events",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table idempotency_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table idempotency_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for function validate_integrity",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table events",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table events",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table events",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table idempotency_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table idempotency_records",
+    "check": "matched"
+  },
+  {
+    "proof": "F09/private-audit-receipts-direct-denials",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for function validate_integrity",
+    "check": "matched"
+  },
+  {
+    "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+    "assertion": "Cleanup identity must match this run.",
+    "observed": true
+  },
+  {
+    "proof": "H01/revoked-identity-cannot-accept-other-enterprise",
+    "assertion": "No run container remains.",
+    "observed": true
+  }
+]

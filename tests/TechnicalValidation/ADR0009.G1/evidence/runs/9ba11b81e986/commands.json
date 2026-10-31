@@ -1,0 +1,36 @@
+{
+  "commands": [
+    {
+      "command": "Source/ADR/C04/D03 reads; SHA-256 baseline; git status; rg searches",
+      "result": "Existing changes preserved; TTL proposal distinguished from approved bound"
+    },
+    {
+      "command": "python tests/TechnicalValidation/ADR0009.G1/harness/freeze_candidate.py",
+      "result": "Manual operation model only; per-privilege justifications; full old manifest archived; each candidate frozen before new database/observation"
+    },
+    {
+      "command": "dotnet run --project tests/TechnicalValidation/ADR0009.G1/runtime/G1.Validation.csproj -- --execute-disposable",
+      "runs": [
+        "1696d84d0406",
+        "278c7b089faa",
+        "ab759ecd086f",
+        "15a36f6b1584",
+        "9ba11b81e986"
+      ],
+      "result": "Historical FAILs/triages preserved; final 29 subproof PASS; all five containers removed"
+    },
+    {
+      "command": "docker exec bpc-adr0009-g1-278c7b089faa psql ... pg_stat_activity / pg_terminate_backend(87)",
+      "result": "Only owned disposable run; diagnostic session inspection and bounded intervention to release failed-run cleanup, not runtime authorization evidence"
+    },
+    {
+      "command": "python tests/TechnicalValidation/ADR0009.G1/harness/compare_observed.py 9ba11b81e986",
+      "result": "Reads preflight.expected.json only; table/column, schema, EXECUTE, owner flags/signatures/modes compare; explicit/implicit graph and offline sensitivity evidence"
+    },
+    {
+      "command": "git diff --check; docker ps -a --filter label=bpc.adr0009.run --format {{.Names}}",
+      "result": "Final checks recorded separately"
+    }
+  ],
+  "limits": "No production/Foundation/approved contracts/ADR change, no Application/API/OIDC, no commit/push/merge/deploy/monday writes"
+}

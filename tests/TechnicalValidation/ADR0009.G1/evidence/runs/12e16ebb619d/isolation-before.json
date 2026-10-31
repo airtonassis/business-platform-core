@@ -1,0 +1,11 @@
+{
+  "run": "12e16ebb619d",
+  "name": "bpc-adr0009-g1-12e16ebb619d",
+  "database": "bpc_adr0009_g1_12e16ebb619d",
+  "image": "sha256:79bd7c99e923138f136f8009d6bffa66e21e9d4fda5c0c561b00fc9c90cfe537",
+  "host": "127.0.0.1",
+  "storage": "new tmpfs, no host or named volume",
+  "authorization": "User instruction: minimal implementation and disposable execution",
+  "credentials": "random in memory; never serialized",
+  "targetInputAccepted": false
+}

@@ -1,0 +1,444 @@
+{
+  "run": "e792ea797e94",
+  "independentReview": false,
+  "cases": [
+    {
+      "id": "Q01",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q02",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q03",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q04",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q05",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q06",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q07",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "missing-mismatched-malformed-context"
+      ],
+      "remaining": "Faltam matriz completa de contexto e atestacao pela Application; executados ausente, divergente e UUID invalido."
+    },
+    {
+      "id": "Q08",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "tenant-sql-isolation"
+      ],
+      "remaining": "SQL de DemoRecord isolado; faltam demais leituras/escritas e consultas sem predicado via Application."
+    },
+    {
+      "id": "Q09",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q10",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "compromised-credential-characterization-only"
+      ],
+      "remaining": "Parte b caracteriza D1; parte a depende da Application/OIDC/API legitima inexistente."
+    },
+    {
+      "id": "Q11",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "npgsql-pool-commit-rollback-exception"
+      ],
+      "remaining": "Pool Npgsql real testado; falta unidade de trabalho/conexao da Application."
+    },
+    {
+      "id": "Q12",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "savepoint-context-rollback"
+      ],
+      "remaining": "Savepoint testado; cancelamento de comando e protocolo completo de timeout nao exercitados."
+    },
+    {
+      "id": "V01",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "active-account-without-member-commit"
+      ],
+      "remaining": "Invariante SQL testada; faltam assertivas evento/recibo e superficie API sem criacao parcial."
+    },
+    {
+      "id": "V02",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "split-rls-not-null-catalog-and-rollback"
+      ],
+      "remaining": "Unicidade, NOT NULL, RLS e rollback testados; falta negativa API de adicao arbitraria."
+    },
+    {
+      "id": "V03",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "cross-organization-foreign-key"
+      ],
+      "remaining": "FK composta testada; faltam todas as referencias cruzadas e portas do protocolo completo."
+    },
+    {
+      "id": "V04",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "partial-revocation-rejected"
+      ],
+      "remaining": "Revogacao parcial rejeitada; faltam todas as combinacoes de estados/arquivamento."
+    },
+    {
+      "id": "V05",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "organization-without-owner-at-commit"
+      ],
+      "remaining": "Organizacao sem Owner rejeitada; faltam estados e variantes de Owner desativado."
+    },
+    {
+      "id": "V06",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "V07",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "immutable-org-and-historical-consumption"
+      ],
+      "remaining": "Imutabilidade e exclusao do consumo testadas; faltam todos os objetos/colunas e restore."
+    },
+    {
+      "id": "V08",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "missing-integrity-context-rejects"
+      ],
+      "remaining": "Contexto tecnico ausente rejeitado; faltam todas as variantes finais de visibilidade e escritor."
+    },
+    {
+      "id": "V09",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "V10",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "V11",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "V12",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "V13",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "real-deadlock-in-dedicated-probe"
+      ],
+      "remaining": "Deadlock real do probe; faltam retry/reconciliacao da Application e inversoes de todos escritores."
+    },
+    {
+      "id": "V14",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F01",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "runtime-direct-dml-denied"
+      ],
+      "remaining": "ACLs capturadas e negativas reais; allowlist exata por coluna nao congelada e revisao independente pendente."
+    },
+    {
+      "id": "F02",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "owners-and-runtime-not-bypass"
+      ],
+      "remaining": "Atributos/ownership/FORCE capturados; faltam todas as negativas DDL/TRUNCATE/RLS/trigger e revisao."
+    },
+    {
+      "id": "F03",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "public-execute-and-wrong-port-denied"
+      ],
+      "remaining": "PUBLIC EXECUTE e porta inesperada negados; revisao da allowlist e de todas assinaturas pendente."
+    },
+    {
+      "id": "F04",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "no-set-role-or-owner-escalation"
+      ],
+      "remaining": "SET ROLE para owners/migrator negado; falta revisao independente de toda cadeia de role."
+    },
+    {
+      "id": "F05",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F06",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "fixed-path-and-denied-shadow-object"
+      ],
+      "remaining": "search_path fixo e CREATE public/temp negados; revisao semantica de corpos e grafo pendente."
+    },
+    {
+      "id": "F07",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F08",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F09",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "private-audit-receipts-direct-denials"
+      ],
+      "remaining": "DML/leitura direta de audit/recibo e validator negados; faltam replay apos revogacao, scopes e API."
+    },
+    {
+      "id": "F10",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F11",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F12",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "K01",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "accept-A-B-two-physical-connections"
+      ],
+      "remaining": "Ambas ordens SQL A/B; falta C04/API, traducao de erros e variantes integrais de replay."
+    },
+    {
+      "id": "K02",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "bootstrap-versus-accept-both-orders"
+      ],
+      "remaining": "Ambas ordens bootstrap/aceite SQL; falta fluxo HTTP/idempotencia integral do protocolo."
+    },
+    {
+      "id": "K03",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "revoke-versus-command-both-orders"
+      ],
+      "remaining": "Ambas ordens revogar/comando SQL; falta request/response autorizada da Application."
+    },
+    {
+      "id": "K04",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "same-version-two-writers"
+      ],
+      "remaining": "DemoRecord concorrente testado; falta Membership concorrente e ETag HTTP."
+    },
+    {
+      "id": "K05",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "concurrent-replace-and-authorized-replay"
+      ],
+      "remaining": "Replace concorrente/ETag SQL/replay testados; faltam transporte/HTTP e variantes de reemissao."
+    },
+    {
+      "id": "K06",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "expiry-revalidated-after-real-lock-wait"
+      ],
+      "remaining": "Prazo revalidado apos espera; falta GET sem escrita/materializacao e API."
+    },
+    {
+      "id": "K07",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "confirmed-commit-lost-response-bootstrap-replay"
+      ],
+      "remaining": "Replay apos commit com resposta descartada; corte real do transporte durante COMMIT e reconciliacao nao implementados."
+    },
+    {
+      "id": "K08",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "audit-failure-rolls-back-demo"
+      ],
+      "remaining": "Falha CHECK de auditoria reverte mutacao; faltam caminhos restantes e resposta API."
+    },
+    {
+      "id": "K09",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "Owner-and-self-revocation-denied"
+      ],
+      "remaining": "Auto-revogacao/Owner negadas; faltam dois Owners concorrentes e operacoes de role/ultimo Owner."
+    },
+    {
+      "id": "K10",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "pool-after-actual-SQL-abort"
+      ],
+      "remaining": "Pool real apos aborto SQL; faltam cancelamento e reinicio operacional/Application."
+    },
+    {
+      "id": "H01",
+      "status": "BLOQUEADO",
+      "evidence": "results.json",
+      "subproofs": [
+        "revoked-identity-cannot-accept-other-enterprise"
+      ],
+      "remaining": "Consumo apos revogacao impede aceite B; faltam arquivamento, referencia/emissao, nova identidade B e OIDC/API."
+    },
+    {
+      "id": "H02",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "H03",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "H04",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "H05",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "H06",
+      "status": "NOT_EXECUTED",
+      "evidence": "results.json",
+      "subproofs": [],
+      "remaining": "NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    }
+  ]
+}

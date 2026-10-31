@@ -1,0 +1,6 @@
+{
+  "category": "SETUP_OR_OPERATIONAL_BLOCK",
+  "exceptionType": "PostgresException",
+  "sqlstate": "42703",
+  "detail": "Failure recorded without SQL, payload or credential; inspect stage and sanitized proof evidence."
+}

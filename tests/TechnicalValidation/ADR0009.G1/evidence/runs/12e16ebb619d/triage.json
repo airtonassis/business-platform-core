@@ -1,0 +1,8 @@
+{
+  "classification": "INCONCLUSIVO_FIXTURE_PREPARATION_NOT_DEMONSTRATED_SECURITY_BREACH",
+  "rawFailPreserved": true,
+  "cause": "H01 reused identical invitation secret; Invite hashes it into globally UNIQUE invitations.secret_hash; second invitation fixture insert failed 23505 before acceptance B. Raw stop did not capture constraint name, so exact attribution there is source-based.",
+  "correction": "New random secret for invitation B only; no SQL, grants or policy change.",
+  "newExecution": "e792ea797e94",
+  "newResult": "H01 SQL subproof passed; full H01 remains BLOQUEADO."
+}

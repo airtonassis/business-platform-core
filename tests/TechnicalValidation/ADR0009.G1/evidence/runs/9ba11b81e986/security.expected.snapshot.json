@@ -1,0 +1,1562 @@
+{
+  "formatVersion": 2,
+  "status": "PRE_OBSERVATION_MANUAL_CAPABILITY_CANDIDATE_PENDING_INDEPENDENT_APPROVAL",
+  "decisions": {
+    "D1": "APPROVED_TRUST_BOUNDARY_RESIDUAL_UNCHANGED",
+    "D2": "APPROVED_FIVE_GROUPS_CANDIDATE_CAPABILITIES_REQUIRE_INDEPENDENT_APPROVAL"
+  },
+  "schemas": [
+    "identity",
+    "tenancy",
+    "sandbox",
+    "audit",
+    "operation",
+    "authz"
+  ],
+  "runtimeLogins": [
+    "core_identity",
+    "core_tenant",
+    "core_platform"
+  ],
+  "tables": [
+    {
+      "name": "audit.events",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "identity.enterprise_user_accounts",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "identity.identities",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "identity.identity_consumptions",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "identity.recipient_references",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "operation.idempotency_records",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "sandbox.demo_records",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "tenancy.invitation_slots",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "tenancy.invitations",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "tenancy.memberships",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    },
+    {
+      "name": "tenancy.organizations",
+      "rlsRequired": true,
+      "forceRlsRequired": true
+    }
+  ],
+  "owners": [
+    {
+      "name": "exec_identity",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "candidateFunctions": [
+        "operation.accept_invitation(uuid,text,bigint)"
+      ],
+      "effectiveGrants": [
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "action",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=action"
+        },
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "actor_id",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=actor_id"
+        },
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "operation_id",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=operation_id"
+        },
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "id",
+          "privilege": "INSERT",
+          "justification": "C04 accept INSERT and authorized Accepted replay; invitation guard verifies account recipient/org/Active; version default, no account lock/update; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "C04 accept INSERT and authorized Accepted replay; invitation guard verifies account recipient/org/Active; version default, no account lock/update; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "identity_id",
+          "privilege": "INSERT",
+          "justification": "C04 accept INSERT and authorized Accepted replay; invitation guard verifies account recipient/org/Active; version default, no account lock/update; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "identity_id",
+          "privilege": "SELECT",
+          "justification": "C04 accept INSERT and authorized Accepted replay; invitation guard verifies account recipient/org/Active; version default, no account lock/update; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C04 accept INSERT and authorized Accepted replay; invitation guard verifies account recipient/org/Active; version default, no account lock/update; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "C04 accept INSERT and authorized Accepted replay; invitation guard verifies account recipient/org/Active; version default, no account lock/update; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "status",
+          "privilege": "INSERT",
+          "justification": "C04 accept INSERT and authorized Accepted replay; invitation guard verifies account recipient/org/Active; version default, no account lock/update; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "C04 accept INSERT and authorized Accepted replay; invitation guard verifies account recipient/org/Active; version default, no account lock/update; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 C1; command actor/recipient eligibility predicates and Identity FOR UPDATE; version UPDATE permits row lock, not a lifecycle port; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 C1; command actor/recipient eligibility predicates and Identity FOR UPDATE; version UPDATE permits row lock, not a lifecycle port; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "ADR-0009 C1; command actor/recipient eligibility predicates and Identity FOR UPDATE; version UPDATE permits row lock, not a lifecycle port; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identity_consumptions",
+          "column": "account_id",
+          "privilege": "INSERT",
+          "justification": "ADR-0008/C04 accept records permanent binding atomically; column=account_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identity_consumptions",
+          "column": "identity_id",
+          "privilege": "INSERT",
+          "justification": "ADR-0008/C04 accept records permanent binding atomically; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identity_consumptions",
+          "column": "identity_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0008 lifetime consumption; C04 reject historical recipient, existence predicate by identity only; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identity_consumptions",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "ADR-0008/C04 accept records permanent binding atomically; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "recipient_identity_id",
+          "privilege": "INSERT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=recipient_identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "recipient_identity_id",
+          "privilege": "SELECT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=recipient_identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "version",
+          "privilege": "SELECT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "accepted_account_id",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=accepted_account_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "accepted_account_id",
+          "privilege": "UPDATE",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=accepted_account_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "expires_at",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=expires_at"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "predecessor_id",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=predecessor_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "recipient_identity_id",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=recipient_identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "secret_hash",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=secret_hash"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "status",
+          "privilege": "UPDATE",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "successor_id",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=successor_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "version",
+          "privilege": "SELECT",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "C04 secret/destination proof, fresh version/expiry after locks, Accepted account result; INVOKER chain validator reads predecessor/successor; no invite INSERT or metadata edits; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "account_id",
+          "privilege": "INSERT",
+          "justification": "C04 accept creates Member; replay checks active member by account; guards use row images; no role/status UPDATE; column=account_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "account_id",
+          "privilege": "SELECT",
+          "justification": "C04 accept creates Member; replay checks active member by account; guards use row images; no role/status UPDATE; column=account_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "id",
+          "privilege": "INSERT",
+          "justification": "C04 accept creates Member; replay checks active member by account; guards use row images; no role/status UPDATE; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C04 accept creates Member; replay checks active member by account; guards use row images; no role/status UPDATE; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "role",
+          "privilege": "INSERT",
+          "justification": "C04 accept creates Member; replay checks active member by account; guards use row images; no role/status UPDATE; column=role"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "status",
+          "privilege": "INSERT",
+          "justification": "C04 accept creates Member; replay checks active member by account; guards use row images; no role/status UPDATE; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "C04 accept creates Member; replay checks active member by account; guards use row images; no role/status UPDATE; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 C1; lock organization by id; accept also checks Active; UPDATE version needed for FOR UPDATE; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 C1; lock organization by id; accept also checks Active; UPDATE version needed for FOR UPDATE; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "ADR-0009 C1; lock organization by id; accept also checks Active; UPDATE version needed for FOR UPDATE; column=version"
+        }
+      ],
+      "exactFunctionSignatures": [
+        "operation.accept_invitation(uuid,text,bigint)"
+      ],
+      "grantsStatus": "MANUAL_OPERATION_INTENT_NOT_OBSERVED_OR_DDL_EXTRACTION",
+      "expectedSchemaUsage": [
+        "authz",
+        "identity",
+        "tenancy",
+        "audit",
+        "public"
+      ],
+      "schemaJustification": "USAGE only for qualified relations/helpers accessed by these bodies; public USAGE comes from standard PUBLIC ACL, never CREATE",
+      "expectedExecute": [
+        "operation.accept_invitation(uuid,text,bigint)",
+        "authz.ctx(text)"
+      ],
+      "executeJustification": "Owner intrinsically executes own functions; explicit ctx helper grant; tenant invokes authorization helper. No other execution allowed in authz/operation."
+    },
+    {
+      "name": "exec_tenant",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "candidateFunctions": [
+        "operation.update_demo(uuid,bigint,text)",
+        "operation.revoke_membership(uuid,bigint)",
+        "operation.replace_invitation(uuid,bigint,text,text)"
+      ],
+      "effectiveGrants": [
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "action",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=action"
+        },
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "actor_id",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=actor_id"
+        },
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "operation_id",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=operation_id"
+        },
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "C08/C09 revoke exact member's account and actor account locks; invitation guard checks accepted-account identity/org/status; terminal trigger forbids resurrection; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "identity_id",
+          "privilege": "SELECT",
+          "justification": "C08/C09 revoke exact member's account and actor account locks; invitation guard checks accepted-account identity/org/status; terminal trigger forbids resurrection; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "C08/C09 revoke exact member's account and actor account locks; invitation guard checks accepted-account identity/org/status; terminal trigger forbids resurrection; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "C08/C09 revoke exact member's account and actor account locks; invitation guard checks accepted-account identity/org/status; terminal trigger forbids resurrection; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "status",
+          "privilege": "UPDATE",
+          "justification": "C08/C09 revoke exact member's account and actor account locks; invitation guard checks accepted-account identity/org/status; terminal trigger forbids resurrection; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "version",
+          "privilege": "SELECT",
+          "justification": "C08/C09 revoke exact member's account and actor account locks; invitation guard checks accepted-account identity/org/status; terminal trigger forbids resurrection; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "C08/C09 revoke exact member's account and actor account locks; invitation guard checks accepted-account identity/org/status; terminal trigger forbids resurrection; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 C1; command actor/recipient eligibility predicates and Identity FOR UPDATE; version UPDATE permits row lock, not a lifecycle port; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 C1; command actor/recipient eligibility predicates and Identity FOR UPDATE; version UPDATE permits row lock, not a lifecycle port; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "ADR-0009 C1; command actor/recipient eligibility predicates and Identity FOR UPDATE; version UPDATE permits row lock, not a lifecycle port; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identity_consumptions",
+          "column": "identity_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0008 lifetime consumption; C04 reject historical recipient, existence predicate by identity only; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "actor_id",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=actor_id"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "actor_id",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=actor_id"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "key",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=key"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "key",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=key"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "operation",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=operation"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "operation",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=operation"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "request_hash",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=request_hash"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "request_hash",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=request_hash"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "result_id",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=result_id"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "result_id",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=result_id"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "scope_key",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=scope_key"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "scope_key",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=scope_key"
+        },
+        {
+          "kind": "column",
+          "table": "sandbox.demo_records",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "C08 demonstrative update selects exact id/org/version, no creation, no title read needed by this port; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "sandbox.demo_records",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "C08 demonstrative update selects exact id/org/version, no creation, no title read needed by this port; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "sandbox.demo_records",
+          "column": "title",
+          "privilege": "UPDATE",
+          "justification": "C08 demonstrative update selects exact id/org/version, no creation, no title read needed by this port; column=title"
+        },
+        {
+          "kind": "column",
+          "table": "sandbox.demo_records",
+          "column": "version",
+          "privilege": "SELECT",
+          "justification": "C08 demonstrative update selects exact id/org/version, no creation, no title read needed by this port; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "sandbox.demo_records",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "C08 demonstrative update selects exact id/org/version, no creation, no title read needed by this port; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "recipient_identity_id",
+          "privilege": "INSERT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=recipient_identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "recipient_identity_id",
+          "privilege": "SELECT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=recipient_identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "version",
+          "privilege": "SELECT",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitation_slots",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "C04/C1; unique recipient slot insert and row lock/version predicate; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "expires_at",
+          "privilege": "INSERT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=expires_at"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "expires_at",
+          "privilege": "SELECT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=expires_at"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "id",
+          "privilege": "INSERT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "issuer_membership_id",
+          "privilege": "INSERT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=issuer_membership_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "issuer_membership_id",
+          "privilege": "SELECT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=issuer_membership_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "predecessor_id",
+          "privilege": "INSERT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=predecessor_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "predecessor_id",
+          "privilege": "SELECT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=predecessor_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "recipient_identity_id",
+          "privilege": "INSERT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=recipient_identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "recipient_identity_id",
+          "privilege": "SELECT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=recipient_identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "secret_hash",
+          "privilege": "INSERT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=secret_hash"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "status",
+          "privilege": "INSERT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "status",
+          "privilege": "UPDATE",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "successor_id",
+          "privilege": "SELECT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=successor_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "successor_id",
+          "privilege": "UPDATE",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=successor_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "version",
+          "privilege": "SELECT",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "C04 replace only: metadata and locked predecessor; INSERT new Pending hash, no accepted_account_id/successor/version/created_at input; trigger guards actor, eligibility and reciprocal chain; no SELECT hash; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "account_id",
+          "privilege": "SELECT",
+          "justification": "C08 revoke role/version predicates, actor locks and issuer binding; no UPDATE role, Owner revocation denied by trigger; column=account_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "C08 revoke role/version predicates, actor locks and issuer binding; no UPDATE role, Owner revocation denied by trigger; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "C08 revoke role/version predicates, actor locks and issuer binding; no UPDATE role, Owner revocation denied by trigger; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "role",
+          "privilege": "SELECT",
+          "justification": "C08 revoke role/version predicates, actor locks and issuer binding; no UPDATE role, Owner revocation denied by trigger; column=role"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "C08 revoke role/version predicates, actor locks and issuer binding; no UPDATE role, Owner revocation denied by trigger; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "status",
+          "privilege": "UPDATE",
+          "justification": "C08 revoke role/version predicates, actor locks and issuer binding; no UPDATE role, Owner revocation denied by trigger; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "version",
+          "privilege": "SELECT",
+          "justification": "C08 revoke role/version predicates, actor locks and issuer binding; no UPDATE role, Owner revocation denied by trigger; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "C08 revoke role/version predicates, actor locks and issuer binding; no UPDATE role, Owner revocation denied by trigger; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 C1; lock organization by id; accept also checks Active; UPDATE version needed for FOR UPDATE; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "ADR-0009 C1; lock organization by id; accept also checks Active; UPDATE version needed for FOR UPDATE; column=version"
+        }
+      ],
+      "exactFunctionSignatures": [
+        "operation.update_demo(uuid,bigint,text)",
+        "operation.revoke_membership(uuid,bigint)",
+        "operation.replace_invitation(uuid,bigint,text,text)"
+      ],
+      "grantsStatus": "MANUAL_OPERATION_INTENT_NOT_OBSERVED_OR_DDL_EXTRACTION",
+      "expectedSchemaUsage": [
+        "authz",
+        "identity",
+        "tenancy",
+        "audit",
+        "operation",
+        "sandbox",
+        "public"
+      ],
+      "schemaJustification": "USAGE only for qualified relations/helpers accessed by these bodies; public USAGE comes from standard PUBLIC ACL, never CREATE",
+      "expectedExecute": [
+        "operation.update_demo(uuid,bigint,text)",
+        "operation.revoke_membership(uuid,bigint)",
+        "operation.replace_invitation(uuid,bigint,text,text)",
+        "authz.ctx(text)",
+        "authz.own_tenant_allowed(boolean)"
+      ],
+      "executeJustification": "Owner intrinsically executes own functions; explicit ctx helper grant; tenant invokes authorization helper. No other execution allowed in authz/operation."
+    },
+    {
+      "name": "exec_bootstrap",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "candidateFunctions": [
+        "operation.bootstrap(uuid,uuid,text,text,text)"
+      ],
+      "effectiveGrants": [
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "action",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=action"
+        },
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "actor_id",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=actor_id"
+        },
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "operation_id",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=operation_id"
+        },
+        {
+          "kind": "column",
+          "table": "audit.events",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C06/C09; command appends scoped actor/action/operation atomically; id/time default, no read/update/delete; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "id",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap account id generated locally; no SELECT/UPDATE required, validator uses separate context; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "identity_id",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap account id generated locally; no SELECT/UPDATE required, validator uses separate context; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap account id generated locally; no SELECT/UPDATE required, validator uses separate context; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "status",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap account id generated locally; no SELECT/UPDATE required, validator uses separate context; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 C1; command actor/recipient eligibility predicates and Identity FOR UPDATE; version UPDATE permits row lock, not a lifecycle port; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 C1; command actor/recipient eligibility predicates and Identity FOR UPDATE; version UPDATE permits row lock, not a lifecycle port; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "version",
+          "privilege": "UPDATE",
+          "justification": "ADR-0009 C1; command actor/recipient eligibility predicates and Identity FOR UPDATE; version UPDATE permits row lock, not a lifecycle port; column=version"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identity_consumptions",
+          "column": "account_id",
+          "privilege": "INSERT",
+          "justification": "ADR-0008/C09 bootstrap eligibility and permanent consumption INSERT; column=account_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identity_consumptions",
+          "column": "identity_id",
+          "privilege": "INSERT",
+          "justification": "ADR-0008/C09 bootstrap eligibility and permanent consumption INSERT; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identity_consumptions",
+          "column": "identity_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0008/C09 bootstrap eligibility and permanent consumption INSERT; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identity_consumptions",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "ADR-0008/C09 bootstrap eligibility and permanent consumption INSERT; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.recipient_references",
+          "column": "expires_at",
+          "privilege": "SELECT",
+          "justification": "C02/C09 bootstrap verifies exact owner reference hash and expiry; column=expires_at"
+        },
+        {
+          "kind": "column",
+          "table": "identity.recipient_references",
+          "column": "identity_id",
+          "privilege": "SELECT",
+          "justification": "C02/C09 bootstrap verifies exact owner reference hash and expiry; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.recipient_references",
+          "column": "secret_hash",
+          "privilege": "SELECT",
+          "justification": "C02/C09 bootstrap verifies exact owner reference hash and expiry; column=secret_hash"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "actor_id",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=actor_id"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "actor_id",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=actor_id"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "key",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=key"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "key",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=key"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "operation",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=operation"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "operation",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=operation"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "request_hash",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=request_hash"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "request_hash",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=request_hash"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "result_id",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=result_id"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "result_id",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=result_id"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "scope_key",
+          "privilege": "INSERT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=scope_key"
+        },
+        {
+          "kind": "column",
+          "table": "operation.idempotency_records",
+          "column": "scope_key",
+          "privilege": "SELECT",
+          "justification": "C06; exact actor/scope/operation/key predicate and payload/result receipt, INSERT ON CONFLICT, no receipt id needed; column=scope_key"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "account_id",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap initial Owner INSERT; no SELECT/UPDATE, role immutable afterward; column=account_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "id",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap initial Owner INSERT; no SELECT/UPDATE, role immutable afterward; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "organization_id",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap initial Owner INSERT; no SELECT/UPDATE, role immutable afterward; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "role",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap initial Owner INSERT; no SELECT/UPDATE, role immutable afterward; column=role"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "status",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap initial Owner INSERT; no SELECT/UPDATE, role immutable afterward; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "id",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap creates org and checks prior receipt result exists; no org UPDATE; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "C09 bootstrap creates org and checks prior receipt result exists; no org UPDATE; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "name",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap creates org and checks prior receipt result exists; no org UPDATE; column=name"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "status",
+          "privilege": "INSERT",
+          "justification": "C09 bootstrap creates org and checks prior receipt result exists; no org UPDATE; column=status"
+        }
+      ],
+      "exactFunctionSignatures": [
+        "operation.bootstrap(uuid,uuid,text,text,text)"
+      ],
+      "grantsStatus": "MANUAL_OPERATION_INTENT_NOT_OBSERVED_OR_DDL_EXTRACTION",
+      "expectedSchemaUsage": [
+        "authz",
+        "identity",
+        "tenancy",
+        "audit",
+        "operation",
+        "public"
+      ],
+      "schemaJustification": "USAGE only for qualified relations/helpers accessed by these bodies; public USAGE comes from standard PUBLIC ACL, never CREATE",
+      "expectedExecute": [
+        "operation.bootstrap(uuid,uuid,text,text,text)",
+        "authz.ctx(text)"
+      ],
+      "executeJustification": "Owner intrinsically executes own functions; explicit ctx helper grant; tenant invokes authorization helper. No other execution allowed in authz/operation."
+    },
+    {
+      "name": "exec_context",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "candidateFunctions": [
+        "authz.own_tenant_allowed(boolean)"
+      ],
+      "effectiveGrants": [
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 context tuple resolution or final Active Account/Member invariant; no mutation; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "identity_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 context tuple resolution or final Active Account/Member invariant; no mutation; column=identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 context tuple resolution or final Active Account/Member invariant; no mutation; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 context tuple resolution or final Active Account/Member invariant; no mutation; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 T/SELF: own_tenant_allowed joins Identity by id and requires Active; no identity mutation; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.identities",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 T/SELF: own_tenant_allowed joins Identity by id and requires Active; no identity mutation; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "account_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 actor authorization or final Owner/member invariant; no mutation; column=account_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 actor authorization or final Owner/member invariant; no mutation; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "role",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 actor authorization or final Owner/member invariant; no mutation; column=role"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 actor authorization or final Owner/member invariant; no mutation; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 technical Active anchor; integrity reads affected org independent of actor; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 technical Active anchor; integrity reads affected org independent of actor; column=status"
+        }
+      ],
+      "exactFunctionSignatures": [
+        "authz.own_tenant_allowed(boolean)"
+      ],
+      "grantsStatus": "MANUAL_OPERATION_INTENT_NOT_OBSERVED_OR_DDL_EXTRACTION",
+      "expectedSchemaUsage": [
+        "authz",
+        "identity",
+        "tenancy",
+        "public"
+      ],
+      "schemaJustification": "USAGE only for qualified relations/helpers accessed by these bodies; public USAGE comes from standard PUBLIC ACL, never CREATE",
+      "expectedExecute": [
+        "authz.own_tenant_allowed(boolean)",
+        "authz.ctx(text)"
+      ],
+      "executeJustification": "Owner intrinsically executes own functions; explicit ctx helper grant; tenant invokes authorization helper. No other execution allowed in authz/operation."
+    },
+    {
+      "name": "exec_integrity",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "candidateFunctions": [
+        "authz.validate_integrity()",
+        "authz.guard_immutable()",
+        "authz.guard_invitation()",
+        "authz.validate_invitation_chain()"
+      ],
+      "effectiveGrants": [
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 context tuple resolution or final Active Account/Member invariant; no mutation; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 context tuple resolution or final Active Account/Member invariant; no mutation; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "identity.enterprise_user_accounts",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 context tuple resolution or final Active Account/Member invariant; no mutation; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "C04 reciprocal replacement invariant at COMMIT; deferred validator must run in technical context, not outer runtime role; requires scoped RLS and explicit org/transaction anchor; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "C04 reciprocal replacement invariant at COMMIT; deferred validator must run in technical context, not outer runtime role; requires scoped RLS and explicit org/transaction anchor; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "predecessor_id",
+          "privilege": "SELECT",
+          "justification": "C04 reciprocal replacement invariant at COMMIT; deferred validator must run in technical context, not outer runtime role; requires scoped RLS and explicit org/transaction anchor; column=predecessor_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "recipient_identity_id",
+          "privilege": "SELECT",
+          "justification": "C04 reciprocal replacement invariant at COMMIT; deferred validator must run in technical context, not outer runtime role; requires scoped RLS and explicit org/transaction anchor; column=recipient_identity_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "C04 reciprocal replacement invariant at COMMIT; deferred validator must run in technical context, not outer runtime role; requires scoped RLS and explicit org/transaction anchor; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.invitations",
+          "column": "successor_id",
+          "privilege": "SELECT",
+          "justification": "C04 reciprocal replacement invariant at COMMIT; deferred validator must run in technical context, not outer runtime role; requires scoped RLS and explicit org/transaction anchor; column=successor_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "account_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 actor authorization or final Owner/member invariant; no mutation; column=account_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "organization_id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 actor authorization or final Owner/member invariant; no mutation; column=organization_id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "role",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 actor authorization or final Owner/member invariant; no mutation; column=role"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.memberships",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 actor authorization or final Owner/member invariant; no mutation; column=status"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "id",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 technical Active anchor; integrity reads affected org independent of actor; column=id"
+        },
+        {
+          "kind": "column",
+          "table": "tenancy.organizations",
+          "column": "status",
+          "privilege": "SELECT",
+          "justification": "ADR-0009 technical Active anchor; integrity reads affected org independent of actor; column=status"
+        }
+      ],
+      "exactFunctionSignatures": [
+        "authz.validate_integrity()",
+        "authz.guard_immutable()",
+        "authz.guard_invitation()",
+        "authz.validate_invitation_chain()"
+      ],
+      "grantsStatus": "MANUAL_OPERATION_INTENT_NOT_OBSERVED_OR_DDL_EXTRACTION",
+      "expectedSchemaUsage": [
+        "authz",
+        "identity",
+        "tenancy",
+        "public"
+      ],
+      "schemaJustification": "USAGE only for qualified relations/helpers accessed by these bodies; public USAGE comes from standard PUBLIC ACL, never CREATE",
+      "expectedExecute": [
+        "authz.validate_integrity()",
+        "authz.guard_immutable()",
+        "authz.guard_invitation()",
+        "authz.validate_invitation_chain()",
+        "authz.ctx(text)"
+      ],
+      "executeJustification": "Owner intrinsically executes own functions; explicit ctx helper grant; tenant invokes authorization helper. No other execution allowed in authz/operation."
+    }
+  ],
+  "callGraph": {
+    "status": "CANDIDATE_REQUIRES_INDEPENDENT_REVIEW",
+    "approvedEdges": []
+  },
+  "functionModes": {
+    "operation.accept_invitation(uuid,text,bigint)": true,
+    "operation.update_demo(uuid,bigint,text)": true,
+    "operation.revoke_membership(uuid,bigint)": true,
+    "operation.replace_invitation(uuid,bigint,text,text)": true,
+    "operation.bootstrap(uuid,uuid,text,text,text)": true,
+    "authz.own_tenant_allowed(boolean)": true,
+    "authz.validate_integrity()": true,
+    "authz.guard_immutable()": false,
+    "authz.guard_invitation()": false,
+    "authz.validate_invitation_chain()": true
+  },
+  "helperFunction": {
+    "signature": "authz.ctx(text)",
+    "owner": "ddl_owner",
+    "securityDefiner": false
+  },
+  "controls": {
+    "publicExecuteAllowed": false,
+    "membershipOrSetRoleToOwnersAllowed": false,
+    "runtimeDdlAllowed": false,
+    "schemaCreateByExecutorsAllowed": false
+  },
+  "note": "Constructed entirely from manual contract/operation model; old file only archived, never parsed as expectation input.",
+  "allowlistScope": {
+    "frozenAtUtc": "2026-10-30T22:00:44.610411+00:00",
+    "basis": "Manual per-operation capabilities with per-privilege justification; no observed evidence or SQL GRANT parsing input",
+    "authoringScriptSha256": "0cb95cfb5be6e73bbb8c5c0f847eb0f8ee7dc7f6288eec590acb1d58802ae138",
+    "approvedSources": {
+      "docs\\architecture\\decisions\\ADR-0008-organization-membership-and-context.md": "f3a27f60c67f7f9d340210ba37ff0c78833b139fd7322ca324638808b6bbef2f",
+      "docs\\architecture\\decisions\\ADR-0009-persistence-isolation-and-concurrency.md": "3bd756b31d1c92c1c81eeae408bc1407aaee427aaa641bffbd2dae39dc1e4fa5",
+      "docs\\architecture\\SPRINT_1_CONTRATOS_FLUXOS.md": "2cdd3858dc95038156938328370b4ae067c381a00035240c9b84073d48dd9971"
+    },
+    "status": "CANDIDATE_NOT_APPROVED_BY_EXECUTOR",
+    "historicalBaseline": "manifests\\history\\baseline-1fbde700886b1bb393a1ae60850df8e5ad81a59f8dd61ceafe7abf8e94515db3.json",
+    "scope": "All table/column privileges for five owners; schema/EXECUTE/ownership/inheritance checked separately"
+  }
+}

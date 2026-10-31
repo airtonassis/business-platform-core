@@ -1,0 +1,21 @@
+{
+  "run": "15a36f6b1584",
+  "mode": "OFFLINE_COMPARATOR_SENSITIVITY_NOT_DATABASE_AUTHORIZATION_TEST",
+  "hypotheticalUnexpectedPrivilegeDetected": [
+    [
+      "column",
+      "tenancy.invitations",
+      "secret_hash",
+      "SELECT"
+    ]
+  ],
+  "hypotheticalMissingPrivilegeDetected": [
+    [
+      "column",
+      "tenancy.memberships",
+      "role",
+      "SELECT"
+    ]
+  ],
+  "expectedOrDatabaseModified": false
+}

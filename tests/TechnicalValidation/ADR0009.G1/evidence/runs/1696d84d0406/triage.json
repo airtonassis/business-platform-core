@@ -1,0 +1,8 @@
+{
+  "run": "1696d84d0406",
+  "rawEvidencePreserved": true,
+  "finalReference": "9ba11b81e986",
+  "finding": "Candidate omitted Identity.id/status SELECT for exec_context; real Q08 helper read denied 42501.",
+  "correction": "Added explicitly justified ADR-0009 context join capability, froze new candidate before next execution.",
+  "classification": "P1_MODEL_COMPLETENESS_AVAILABILITY_NOT_DEMONSTRATED_ISOLATION_BREACH"
+}

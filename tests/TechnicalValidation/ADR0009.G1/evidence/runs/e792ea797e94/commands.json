@@ -1,0 +1,42 @@
+{
+  "scope": "Continuation; read-only discovery commands summarized, execution commands exact; no shell transcript with secrets",
+  "commands": [
+    {
+      "command": "git status --short; rg --files; source/catalog/report reads",
+      "result": "Preexisting untracked changes preserved; no tracked modifications"
+    },
+    {
+      "command": "dotnet run --project tests/TechnicalValidation/ADR0009.G1/runtime/G1.Validation.csproj -- --execute-disposable",
+      "runs": [
+        {
+          "id": "bbc3d2e6d57b",
+          "result": "SETUP_OR_OPERATIONAL_BLOCK; Docker engine absent; NOT_CREATED; 54 NOT_EXECUTED"
+        },
+        {
+          "id": "be4f1b9d1032",
+          "result": "V02 split passed; 27 subproofs; 2 SQL-only parent PASS labels subsequently tightened for missing API; historical output preserved"
+        },
+        {
+          "id": "12e16ebb619d",
+          "result": "H01 fixture FAIL 23505, security unchanged; triage separate; container removed"
+        },
+        {
+          "id": "e792ea797e94",
+          "result": "30 subproofs: 29 PASS, 1 CARACTERIZADO; 30 BLOQUEADO, 24 NOT_EXECUTED; container removed"
+        }
+      ]
+    },
+    {
+      "command": "Start-Process Docker Desktop.exe -WindowStyle Hidden",
+      "result": "Existing local Docker engine started; no configuration, image pull or infrastructure provisioning"
+    },
+    {
+      "command": "python tests/TechnicalValidation/ADR0009.G1/harness/compare_observed.py e792ea797e94",
+      "result": "5 owners / 9 functions / 12 tables; no PUBLIC execute, unexpected implemented-port runtime execute or unsafe role flags; comparison partial"
+    },
+    {
+      "command": "docker ps -a --filter label=bpc.adr0009.run --format {{.Names}}",
+      "result": "Empty; all run containers removed"
+    }
+  ]
+}

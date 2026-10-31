@@ -1,0 +1,12 @@
+{
+  "rawFailPreserved": true,
+  "assessment": "INCONCLUSIVO_FIXTURE_VERSION_NOT_DEMONSTRATED_P0",
+  "cause": "K03 previously promoted accepted Member to Admin, incrementing version to 2. New immutable-role guard requires inserting initial Admin fixture at version 1; revoke fixture still expected version 2, raising P2007.",
+  "correction": "K03 expected_version=1 only; no weakened grants/policies/guard",
+  "subsequentRuns": [
+    "b6d9b294dd92",
+    "0e053ebdb26e",
+    "7dad9c5a2703"
+  ],
+  "limitations": "Initial Admin fixture uses isolated operator, not proof of runtime Admin provisioning authorization."
+}

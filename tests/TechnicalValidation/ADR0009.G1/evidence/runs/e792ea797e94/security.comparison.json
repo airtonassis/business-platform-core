@@ -1,0 +1,55 @@
+{
+  "run": "e792ea797e94",
+  "expectedSha256": "387fa9d9bbdaf721b723faa7cdcf44ccb79b8b31001fbdfb27496f6bbf47d412",
+  "status": "PARTIAL_OBJECTIVE_COMPARISON_NOT_G1_APPROVAL",
+  "ownerGroups": [
+    {
+      "owner": "exec_identity",
+      "functionCount": 1,
+      "effectiveTableCount": 12,
+      "effectiveColumnCount": 69,
+      "exactGrantComparison": "UNDETERMINED: expected effectiveGrants is not frozen"
+    },
+    {
+      "owner": "exec_tenant",
+      "functionCount": 3,
+      "effectiveTableCount": 14,
+      "effectiveColumnCount": 93,
+      "exactGrantComparison": "UNDETERMINED: expected effectiveGrants is not frozen"
+    },
+    {
+      "owner": "exec_bootstrap",
+      "functionCount": 1,
+      "effectiveTableCount": 13,
+      "effectiveColumnCount": 65,
+      "exactGrantComparison": "UNDETERMINED: expected effectiveGrants is not frozen"
+    },
+    {
+      "owner": "exec_context",
+      "functionCount": 1,
+      "effectiveTableCount": 0,
+      "effectiveColumnCount": 12,
+      "exactGrantComparison": "UNDETERMINED: expected effectiveGrants is not frozen"
+    },
+    {
+      "owner": "exec_integrity",
+      "functionCount": 2,
+      "effectiveTableCount": 0,
+      "effectiveColumnCount": 12,
+      "exactGrantComparison": "UNDETERMINED: expected effectiveGrants is not frozen"
+    }
+  ],
+  "missingExpectedTables": [],
+  "additionalObservedTables": [
+    "identity.recipient_references"
+  ],
+  "publicExecute": [],
+  "unexpectedRuntimeExecuteAgainstImplementedPorts": [],
+  "unsafeRoleAttributes": [],
+  "memberships": [],
+  "rlsOrOwnershipViolations": [],
+  "missingOrExcessExactGrants": "UNDETERMINED: all five effectiveGrants arrays are empty; absence is not equivalence",
+  "approvedGraphComparison": "UNDETERMINED: approvedEdges is empty; fixed-call extraction excludes implicit trigger/policy/system-function edges",
+  "D1": "SQL credential plus fully forged context is accepted residual trust boundary, not a demonstrated legitimate-Application breach",
+  "independentReview": "PENDING"
+}

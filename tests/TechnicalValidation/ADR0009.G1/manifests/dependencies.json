@@ -1,0 +1,35 @@
+{
+  "status": "PARTIAL_EXECUTION_NOT_PRODUCTION_APPROVAL",
+  "existing": {
+    "targetFramework": "net10.0",
+    "sdk": "10.0.401",
+    "rollForward": "latestPatch",
+    "xunit": "2.9.3",
+    "Microsoft.NET.Test.Sdk": "17.14.1",
+    "Shouldly": "4.3.0"
+  },
+  "pending": {
+    "postgresqlServerVersion": null,
+    "psqlVersion": null,
+    "Npgsql": null,
+    "EFCoreProvider": null,
+    "testIsolationEnvironment": null,
+    "clockAndRetryPolicy": null,
+    "mutationProbeContract": null,
+    "customTriggerSqlstates": null
+  },
+  "reuse": "xUnit and architecture guards remain untouched; no csproj or solution change, no new package reference",
+  "inspectionClient": "psql executable separately approved and hash-pinned in target config; no installation or --version invocation this round",
+  "findings": "No SQL/migrations/containers/PostgreSQL provider found under inspected src/tests; this is repository evidence, not proof about external environments.",
+  "testExecution": {
+    "sdk": "10.0.401",
+    "dotnetRuntime": "10.0.12",
+    "Npgsql": "10.0.3",
+    "PostgreSQL": "17.11",
+    "DockerEngine": "20.10.22",
+    "imageId": "sha256:79bd7c99e923138f136f8009d6bffa66e21e9d4fda5c0c561b00fc9c90cfe537",
+    "scope": "disposable technical test only, no production dependency decision",
+    "psql": "Not used; catalog queries executed by Npgsql",
+    "latestRun": "9ba11b81e986"
+  }
+}
