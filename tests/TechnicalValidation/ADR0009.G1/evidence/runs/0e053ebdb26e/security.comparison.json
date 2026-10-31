@@ -1,0 +1,81 @@
+{
+  "run": "0e053ebdb26e",
+  "expectedSha256": "be43764b16913662f89a73a75abcea150cffcc3308e91d564c1a8c4bed2cdbf8",
+  "status": "PARTIAL_OBJECTIVE_COMPARISON_NOT_G1_APPROVAL",
+  "ownerGroups": [
+    {
+      "owner": "exec_identity",
+      "functionCount": 1,
+      "effectiveTableCount": 12,
+      "effectiveColumnCount": 67,
+      "exactGrantComparison": "MATCH_TEST_ALLOWLIST_NOT_HUMAN_APPROVAL"
+    },
+    {
+      "owner": "exec_tenant",
+      "functionCount": 3,
+      "effectiveTableCount": 12,
+      "effectiveColumnCount": 83,
+      "exactGrantComparison": "MATCH_TEST_ALLOWLIST_NOT_HUMAN_APPROVAL"
+    },
+    {
+      "owner": "exec_bootstrap",
+      "functionCount": 1,
+      "effectiveTableCount": 11,
+      "effectiveColumnCount": 54,
+      "exactGrantComparison": "MATCH_TEST_ALLOWLIST_NOT_HUMAN_APPROVAL"
+    },
+    {
+      "owner": "exec_context",
+      "functionCount": 1,
+      "effectiveTableCount": 0,
+      "effectiveColumnCount": 12,
+      "exactGrantComparison": "MATCH_TEST_ALLOWLIST_NOT_HUMAN_APPROVAL"
+    },
+    {
+      "owner": "exec_integrity",
+      "functionCount": 2,
+      "effectiveTableCount": 0,
+      "effectiveColumnCount": 9,
+      "exactGrantComparison": "MATCH_TEST_ALLOWLIST_NOT_HUMAN_APPROVAL"
+    }
+  ],
+  "missingExpectedTables": [],
+  "additionalObservedTables": [
+    "identity.recipient_references"
+  ],
+  "publicExecute": [],
+  "unexpectedRuntimeExecuteAgainstImplementedPorts": [],
+  "unsafeRoleAttributes": [],
+  "memberships": [],
+  "rlsOrOwnershipViolations": [],
+  "missingOrExcessExactGrants": [
+    {
+      "owner": "exec_identity",
+      "missing": [],
+      "excess": []
+    },
+    {
+      "owner": "exec_tenant",
+      "missing": [],
+      "excess": []
+    },
+    {
+      "owner": "exec_bootstrap",
+      "missing": [],
+      "excess": []
+    },
+    {
+      "owner": "exec_context",
+      "missing": [],
+      "excess": []
+    },
+    {
+      "owner": "exec_integrity",
+      "missing": [],
+      "excess": []
+    }
+  ],
+  "approvedGraphComparison": "UNDETERMINED: approvedEdges is empty; fixed-call extraction excludes implicit trigger/policy/system-function edges",
+  "D1": "SQL credential plus fully forged context is accepted residual trust boundary, not a demonstrated legitimate-Application breach",
+  "independentReview": "PENDING"
+}

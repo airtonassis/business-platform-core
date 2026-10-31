@@ -1,0 +1,185 @@
+{
+  "status": "SCAFFOLD_NOT_EXECUTED",
+  "cases": [
+    {
+      "scenario": "F01",
+      "caller": "core_identity/core_platform",
+      "steps": "Attempt direct reads/writes to DemoRecord, another tenant's members/audit after signature bindings exist",
+      "oracle": "Denied by ACL 42501 or scoped policy; no rows/effects; layer-specific oracle frozen first",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F02",
+      "caller": "all runtime",
+      "steps": "Attempt DDL/TRUNCATE/RLS-disable/trigger-disable using real login",
+      "oracle": "Denied, no object/config change; do not mistake statement failure due to missing object for privilege denial",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F03",
+      "caller": "ungranted login/PUBLIC/CT/CI/CP",
+      "steps": "Invoke each actual exact privileged signature and private helper not granted to caller",
+      "oracle": "42501/schema denial according to D2; no payload/effect; PUBLIC tested through dedicated unprivileged login",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F04",
+      "caller": "each runtime login",
+      "steps": "Attempt SET ROLE for every executor, owner and migrator and self-grant",
+      "oracle": "Denied; NOINHERIT alone is not evidence",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F05",
+      "caller": "each login through real functions",
+      "steps": "Probe SELF/REC/BOOT versus Tenant with actual role policies",
+      "oracle": "No permissive-policy union bypass; no cross-tenant output",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F06",
+      "caller": "runtime in isolated sandbox",
+      "steps": "Try shadowing referenced objects in allowed temp/untrusted namespace only",
+      "oracle": "Fixed qualified objects resolved; no granting CREATE on trusted schemas to make test run",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F07",
+      "caller": "real callers",
+      "steps": "Attempt non-allowlisted EXECUTE edges and overloaded signatures",
+      "oracle": "Denied; inspect nested effective current_user and fixed bodies",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F08",
+      "caller": "per function caller",
+      "steps": "Omit/forge each proof: subject mapping/reference/code/recipient/role/etag; Application scheme proof tested at adapter",
+      "oracle": "Negative according to original C contracts; SQL credential is not OIDC proof",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F09",
+      "caller": "runtime",
+      "steps": "Read another actor receipt; replay after revocation; alter/delete event; call private append helper",
+      "oracle": "Denied, no protected result, append-only preserved",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F10",
+      "caller": "owner via real call chain",
+      "steps": "Compare same-owner function union including extra schema/column/EXECUTE rights",
+      "oracle": "Shared owner alone is not failure; unjustified capability or edge is P0 review; no per-function DML ACL fiction",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "F11",
+      "caller": "executor via real call chain",
+      "steps": "Obtain required lock then attempt unneeded field/org/Owner mutation via available surface",
+      "oracle": "Valid lock works without wide grants; immutable/role change denied",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    },
+    {
+      "scenario": "Q10",
+      "caller": "legitimate adapter and compromised CT separately",
+      "steps": "a: IA asks for B; b: synthetic CT sets full coherent IB context",
+      "oracle": "a cross-access FAIL P0; b characterize approved residual boundary, never PASS security or implied OIDC authentication",
+      "status": "NOT_EXECUTED",
+      "requires": [
+        "approved exact signature/object binding",
+        "isolated target authorization",
+        "D3 error oracle when applicable"
+      ],
+      "setup": "Separate fresh fixture and observer baseline",
+      "cleanup": "Rollback, reconcile and use approved per-run cleanup",
+      "executableSql": null
+    }
+  ]
+}

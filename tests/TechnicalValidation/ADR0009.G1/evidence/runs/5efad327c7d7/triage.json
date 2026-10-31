@@ -1,0 +1,12 @@
+{
+  "run": "5efad327c7d7",
+  "originalEvidencePreserved": true,
+  "case": "V02",
+  "rawClassification": "FAIL",
+  "observedSqlstate": "42501",
+  "expectedSqlstate": "23502",
+  "cause": "RLS WITH CHECK rejects organization_id NULL before NOT NULL is reached by the dedicated probe.",
+  "securityConclusion": "Rejection occurred; no observed acceptance or cross-tenant data leak. This execution does not prove the intended NOT NULL variant.",
+  "severity": "P1 oracle/probe mismatch; blocking P0 proof completion",
+  "action": "Stop affected execution, preserve raw FAIL, do not grant bypass or weaken RLS to reach constraint; human review of D3/D5 oracle/scope before rerun."
+}

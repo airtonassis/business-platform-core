@@ -1,0 +1,349 @@
+{
+  "run": "b8b2b6c516e3",
+  "gate": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "schemaInstalled": true,
+  "stoppedForP0": true,
+  "counts": {
+    "BLOQUEADO": 52,
+    "PASS": 1,
+    "FAIL": 1
+  },
+  "cases": {
+    "Q01": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "Q02": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "Q03": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "Q04": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "Q05": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "Q06": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "Q07": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q08": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q09": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "Q10": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q11": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q12": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V01": {
+      "Status": "PASS",
+      "Detail": "Complete SQL invariant and positive fixture control executed."
+    },
+    "V02": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "V03": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "V04": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V05": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V06": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "V07": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V08": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V09": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "V10": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "V11": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "V12": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "V13": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "V14": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "F01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F02": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F03": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F04": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F05": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "F06": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "F07": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "F08": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "F09": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "F10": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "F11": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "F12": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "K01": {
+      "Status": "FAIL",
+      "Detail": "Unexpected oracle violation; affected stage stopped, no post-failure security weakening."
+    },
+    "K02": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "K03": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "K04": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "K05": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "K06": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "K07": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "K08": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "K09": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "K10": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "H01": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "H02": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "H03": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "H04": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "H05": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    },
+    "H06": {
+      "Status": "BLOQUEADO",
+      "Detail": "Prerequisite not implemented: complete Application/OIDC/contract variants, command binding, operational review or stage interrupted. See executed subproofs; no static proof counted PASS."
+    }
+  },
+  "subproofs": [
+    {
+      "caseId": "Q08",
+      "variant": "tenant-sql-isolation",
+      "status": "PASS",
+      "milliseconds": 106,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "Q07",
+      "variant": "missing-mismatched-malformed-context",
+      "status": "PASS",
+      "milliseconds": 48,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "Q11",
+      "variant": "npgsql-pool-commit-rollback-exception",
+      "status": "PASS",
+      "milliseconds": 124,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "Q12",
+      "variant": "savepoint-context-rollback",
+      "status": "PASS",
+      "milliseconds": 69,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "Q10",
+      "variant": "compromised-credential-characterization-only",
+      "status": "PASS",
+      "milliseconds": 44,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "V01",
+      "variant": "active-account-without-member-commit",
+      "status": "PASS",
+      "milliseconds": 161,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "V05",
+      "variant": "organization-without-owner-at-commit",
+      "status": "PASS",
+      "milliseconds": 72,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "V08",
+      "variant": "missing-integrity-context-rejects",
+      "status": "PASS",
+      "milliseconds": 42,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "V04",
+      "variant": "partial-revocation-rejected",
+      "status": "PASS",
+      "milliseconds": 41,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "V07",
+      "variant": "immutable-org-and-historical-consumption",
+      "status": "PASS",
+      "milliseconds": 33,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "F01",
+      "variant": "runtime-direct-dml-denied",
+      "status": "PASS",
+      "milliseconds": 89,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "F04",
+      "variant": "no-set-role-or-owner-escalation",
+      "status": "PASS",
+      "milliseconds": 82,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "F03",
+      "variant": "public-execute-and-wrong-port-denied",
+      "status": "PASS",
+      "milliseconds": 52,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "F02",
+      "variant": "owners-and-runtime-not-bypass",
+      "status": "PASS",
+      "milliseconds": 29,
+      "evidence": "assertions plus observer and timeline"
+    },
+    {
+      "caseId": "K01",
+      "variant": "accept-A-B-two-physical-connections",
+      "status": "FAIL",
+      "exceptionType": "PostgresException",
+      "sqlstate": "23502",
+      "assertion": "Unexpected execution error; sanitized."
+    }
+  ],
+  "timeline": [
+    {
+      "proof": "pool",
+      "pid": 71,
+      "modes": [
+        "commit",
+        "rollback",
+        "exception"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "status": "IMPLEMENTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+  "authorization": "Current user attached instruction: minimal implementation and controlled disposable validation",
+  "D1": "APPROVED_TRUST_APPLICATION_WITH_EXPLICIT_RESIDUAL_RISK",
+  "D2": "APPROVED_EXISTING_FIVE_OWNER_GROUPS",
+  "D3": {
+    "scope": "test-only mechanisms, not approved HTTP changes",
+    "states": {
+      "Account": [
+        "Active",
+        "Revoked",
+        "Archived"
+      ],
+      "Organization": [
+        "Active",
+        "Blocked",
+        "Archived"
+      ],
+      "Membership": [
+        "Active",
+        "Revoked"
+      ]
+    },
+    "transitions": "No runtime reactivation/transfer. Owner is protected by port and final invariant. Revocation updates account and member atomically.",
+    "customCodes": {
+      "P1001": "Integrity.ContextInvalid",
+      "P1002": "Integrity.AnchorMissing",
+      "P1003": "Integrity.AccountMembership",
+      "P1004": "Integrity.OwnerMissing",
+      "P1005": "Integrity.Immutable",
+      "P2001": "Idempotency.PayloadMismatch",
+      "P2002": "Account.Ineligible",
+      "P2003": "Resource/Invitation/Recipient.Unavailable by exact port",
+      "P2004": "Invitation.StateConflict",
+      "P2005": "Invitation.Expired",
+      "P2006": "Version.Required",
+      "P2007": "Version.Stale"
+    },
+    "classification": "Codes implemented in this disposable test schema only. No API adapter mapping is implemented or declared approved."
+  },
+  "D5": {
+    "imageId": "sha256:79bd7c99e923138f136f8009d6bffa66e21e9d4fda5c0c561b00fc9c90cfe537",
+    "imageSource": "already local postgres:17-alpine, no production container used",
+    "databasePattern": "bpc_adr0009_g1_<12 lowercase hex>",
+    "containerLabel": "bpc.adr0009.run=<same unique runId>",
+    "marker": "bpc-adr0009-g1:disposable",
+    "network": "ephemeral port bound only to 127.0.0.1",
+    "storage": "tmpfs only, no host/named volumes",
+    "runtimeCredentials": "random 32-byte secrets in memory, separate SQL logins, never evidence",
+    "probe": "g1_probe NOINHERIT/NOBYPASSRLS with bounded org-scoped DML for invariant probes, not runtime",
+    "auditFailpoint": "temporary additional CHECK(false) NOT VALID on audit.events; only tightens writes, removed in finally; no existing protection disabled",
+    "clock": "real PostgreSQL clock_timestamp; expiration variants not implemented until clock barrier exists",
+    "statementTimeoutMs": 8000,
+    "lockTimeoutMs": 4000,
+    "deadlockTimeoutMs": 200,
+    "blockingObservationDeadlineMs": 3000,
+    "samplingIntervalMs": 20,
+    "retryCount": 0,
+    "barrier": "Observe pg_blocking_pids relationship before releasing first transaction; sampling delay is not oracle",
+    "cleanup": "Validate unique run label/name then docker rm --force only that container; clears pools and verifies no matching container remains"
+  },
+  "limitations": [
+    "No OIDC/MFA/Application/API implementation",
+    "Only bootstrap, accept, revoke, demo update SQL ports; other F2 operations remain unimplemented",
+    "Fixture setup by isolated cluster operator is not runtime privilege evidence",
+    "Partial SQL proofs do not upgrade an entire original scenario with missing variants to PASS",
+    "First unexpected P0 proof failure stops affected stage; no opportunistic security weakening"
+  ]
+}

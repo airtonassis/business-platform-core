@@ -1,0 +1,4772 @@
+[
+  {
+    "proof": "preflight",
+    "assertion": "Pinned local Linux image identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Run label.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Container image.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Loopback only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM audit.events LIMIT 0",
+    "expectedObject": "events",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO audit.events DEFAULT VALUES",
+    "expectedObject": "events",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE audit.events SET id=id WHERE false",
+    "expectedObject": "events",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM audit.events WHERE false",
+    "expectedObject": "events",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.enterprise_user_accounts LIMIT 0",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.enterprise_user_accounts DEFAULT VALUES",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.enterprise_user_accounts SET id=id WHERE false",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.enterprise_user_accounts WHERE false",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.identities LIMIT 0",
+    "expectedObject": "identities",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.identities DEFAULT VALUES",
+    "expectedObject": "identities",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.identities SET id=id WHERE false",
+    "expectedObject": "identities",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.identities WHERE false",
+    "expectedObject": "identities",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.identity_consumptions LIMIT 0",
+    "expectedObject": "identity_consumptions",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.identity_consumptions DEFAULT VALUES",
+    "expectedObject": "identity_consumptions",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.identity_consumptions SET identity_id=identity_id WHERE false",
+    "expectedObject": "identity_consumptions",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.identity_consumptions WHERE false",
+    "expectedObject": "identity_consumptions",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.identity_links LIMIT 0",
+    "expectedObject": "identity_links",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.identity_links DEFAULT VALUES",
+    "expectedObject": "identity_links",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.identity_links SET id=id WHERE false",
+    "expectedObject": "identity_links",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.identity_links WHERE false",
+    "expectedObject": "identity_links",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.recipient_references LIMIT 0",
+    "expectedObject": "recipient_references",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.recipient_references DEFAULT VALUES",
+    "expectedObject": "recipient_references",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.recipient_references SET identity_id=identity_id WHERE false",
+    "expectedObject": "recipient_references",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.recipient_references WHERE false",
+    "expectedObject": "recipient_references",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM operation.idempotency_records LIMIT 0",
+    "expectedObject": "idempotency_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO operation.idempotency_records DEFAULT VALUES",
+    "expectedObject": "idempotency_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE operation.idempotency_records SET id=id WHERE false",
+    "expectedObject": "idempotency_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM operation.idempotency_records WHERE false",
+    "expectedObject": "idempotency_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM sandbox.demo_records LIMIT 0",
+    "expectedObject": "demo_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO sandbox.demo_records DEFAULT VALUES",
+    "expectedObject": "demo_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE sandbox.demo_records SET id=id WHERE false",
+    "expectedObject": "demo_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM sandbox.demo_records WHERE false",
+    "expectedObject": "demo_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.invitation_slots LIMIT 0",
+    "expectedObject": "invitation_slots",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.invitation_slots DEFAULT VALUES",
+    "expectedObject": "invitation_slots",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.invitation_slots SET organization_id=organization_id WHERE false",
+    "expectedObject": "invitation_slots",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.invitation_slots WHERE false",
+    "expectedObject": "invitation_slots",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.invitations LIMIT 0",
+    "expectedObject": "invitations",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.invitations DEFAULT VALUES",
+    "expectedObject": "invitations",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.invitations SET id=id WHERE false",
+    "expectedObject": "invitations",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.invitations WHERE false",
+    "expectedObject": "invitations",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.memberships LIMIT 0",
+    "expectedObject": "memberships",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.memberships DEFAULT VALUES",
+    "expectedObject": "memberships",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.memberships SET id=id WHERE false",
+    "expectedObject": "memberships",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.memberships WHERE false",
+    "expectedObject": "memberships",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.organizations LIMIT 0",
+    "expectedObject": "organizations",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.organizations DEFAULT VALUES",
+    "expectedObject": "organizations",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.organizations SET id=id WHERE false",
+    "expectedObject": "organizations",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.organizations WHERE false",
+    "expectedObject": "organizations",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM audit.events LIMIT 0",
+    "expectedObject": "events",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO audit.events DEFAULT VALUES",
+    "expectedObject": "events",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE audit.events SET id=id WHERE false",
+    "expectedObject": "events",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM audit.events WHERE false",
+    "expectedObject": "events",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.enterprise_user_accounts LIMIT 0",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.enterprise_user_accounts DEFAULT VALUES",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.enterprise_user_accounts SET id=id WHERE false",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.enterprise_user_accounts WHERE false",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.identities LIMIT 0",
+    "expectedObject": "identities",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.identities DEFAULT VALUES",
+    "expectedObject": "identities",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.identities SET id=id WHERE false",
+    "expectedObject": "identities",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.identities WHERE false",
+    "expectedObject": "identities",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.identity_consumptions LIMIT 0",
+    "expectedObject": "identity_consumptions",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.identity_consumptions DEFAULT VALUES",
+    "expectedObject": "identity_consumptions",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.identity_consumptions SET identity_id=identity_id WHERE false",
+    "expectedObject": "identity_consumptions",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.identity_consumptions WHERE false",
+    "expectedObject": "identity_consumptions",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.identity_links LIMIT 0",
+    "expectedObject": "identity_links",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.identity_links DEFAULT VALUES",
+    "expectedObject": "identity_links",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.identity_links SET id=id WHERE false",
+    "expectedObject": "identity_links",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.identity_links WHERE false",
+    "expectedObject": "identity_links",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.recipient_references LIMIT 0",
+    "expectedObject": "recipient_references",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.recipient_references DEFAULT VALUES",
+    "expectedObject": "recipient_references",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.recipient_references SET identity_id=identity_id WHERE false",
+    "expectedObject": "recipient_references",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.recipient_references WHERE false",
+    "expectedObject": "recipient_references",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM operation.idempotency_records LIMIT 0",
+    "expectedObject": "idempotency_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO operation.idempotency_records DEFAULT VALUES",
+    "expectedObject": "idempotency_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE operation.idempotency_records SET id=id WHERE false",
+    "expectedObject": "idempotency_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM operation.idempotency_records WHERE false",
+    "expectedObject": "idempotency_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Explicit runtime Demo SELECT positive control, zero-row projection only.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO sandbox.demo_records DEFAULT VALUES",
+    "expectedObject": "demo_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE sandbox.demo_records SET id=id WHERE false",
+    "expectedObject": "demo_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM sandbox.demo_records WHERE false",
+    "expectedObject": "demo_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.invitation_slots LIMIT 0",
+    "expectedObject": "invitation_slots",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.invitation_slots DEFAULT VALUES",
+    "expectedObject": "invitation_slots",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.invitation_slots SET organization_id=organization_id WHERE false",
+    "expectedObject": "invitation_slots",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.invitation_slots WHERE false",
+    "expectedObject": "invitation_slots",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.invitations LIMIT 0",
+    "expectedObject": "invitations",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.invitations DEFAULT VALUES",
+    "expectedObject": "invitations",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.invitations SET id=id WHERE false",
+    "expectedObject": "invitations",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.invitations WHERE false",
+    "expectedObject": "invitations",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.memberships LIMIT 0",
+    "expectedObject": "memberships",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.memberships DEFAULT VALUES",
+    "expectedObject": "memberships",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.memberships SET id=id WHERE false",
+    "expectedObject": "memberships",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.memberships WHERE false",
+    "expectedObject": "memberships",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.organizations LIMIT 0",
+    "expectedObject": "organizations",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.organizations DEFAULT VALUES",
+    "expectedObject": "organizations",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.organizations SET id=id WHERE false",
+    "expectedObject": "organizations",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.organizations WHERE false",
+    "expectedObject": "organizations",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM audit.events LIMIT 0",
+    "expectedObject": "events",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO audit.events DEFAULT VALUES",
+    "expectedObject": "events",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE audit.events SET id=id WHERE false",
+    "expectedObject": "events",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM audit.events WHERE false",
+    "expectedObject": "events",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table events",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.enterprise_user_accounts LIMIT 0",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.enterprise_user_accounts DEFAULT VALUES",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.enterprise_user_accounts SET id=id WHERE false",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.enterprise_user_accounts WHERE false",
+    "expectedObject": "enterprise_user_accounts",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table enterprise_user_accounts",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.identities LIMIT 0",
+    "expectedObject": "identities",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.identities DEFAULT VALUES",
+    "expectedObject": "identities",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.identities SET id=id WHERE false",
+    "expectedObject": "identities",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.identities WHERE false",
+    "expectedObject": "identities",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identities",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.identity_consumptions LIMIT 0",
+    "expectedObject": "identity_consumptions",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.identity_consumptions DEFAULT VALUES",
+    "expectedObject": "identity_consumptions",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.identity_consumptions SET identity_id=identity_id WHERE false",
+    "expectedObject": "identity_consumptions",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.identity_consumptions WHERE false",
+    "expectedObject": "identity_consumptions",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_consumptions",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.identity_links LIMIT 0",
+    "expectedObject": "identity_links",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.identity_links DEFAULT VALUES",
+    "expectedObject": "identity_links",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.identity_links SET id=id WHERE false",
+    "expectedObject": "identity_links",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.identity_links WHERE false",
+    "expectedObject": "identity_links",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table identity_links",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM identity.recipient_references LIMIT 0",
+    "expectedObject": "recipient_references",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO identity.recipient_references DEFAULT VALUES",
+    "expectedObject": "recipient_references",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE identity.recipient_references SET identity_id=identity_id WHERE false",
+    "expectedObject": "recipient_references",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM identity.recipient_references WHERE false",
+    "expectedObject": "recipient_references",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table recipient_references",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM operation.idempotency_records LIMIT 0",
+    "expectedObject": "idempotency_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO operation.idempotency_records DEFAULT VALUES",
+    "expectedObject": "idempotency_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE operation.idempotency_records SET id=id WHERE false",
+    "expectedObject": "idempotency_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM operation.idempotency_records WHERE false",
+    "expectedObject": "idempotency_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table idempotency_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM sandbox.demo_records LIMIT 0",
+    "expectedObject": "demo_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO sandbox.demo_records DEFAULT VALUES",
+    "expectedObject": "demo_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE sandbox.demo_records SET id=id WHERE false",
+    "expectedObject": "demo_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM sandbox.demo_records WHERE false",
+    "expectedObject": "demo_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.invitation_slots LIMIT 0",
+    "expectedObject": "invitation_slots",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.invitation_slots DEFAULT VALUES",
+    "expectedObject": "invitation_slots",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.invitation_slots SET organization_id=organization_id WHERE false",
+    "expectedObject": "invitation_slots",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.invitation_slots WHERE false",
+    "expectedObject": "invitation_slots",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitation_slots",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.invitations LIMIT 0",
+    "expectedObject": "invitations",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.invitations DEFAULT VALUES",
+    "expectedObject": "invitations",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.invitations SET id=id WHERE false",
+    "expectedObject": "invitations",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.invitations WHERE false",
+    "expectedObject": "invitations",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table invitations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.memberships LIMIT 0",
+    "expectedObject": "memberships",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.memberships DEFAULT VALUES",
+    "expectedObject": "memberships",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.memberships SET id=id WHERE false",
+    "expectedObject": "memberships",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.memberships WHERE false",
+    "expectedObject": "memberships",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "SELECT * FROM tenancy.organizations LIMIT 0",
+    "expectedObject": "organizations",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "INSERT INTO tenancy.organizations DEFAULT VALUES",
+    "expectedObject": "organizations",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "UPDATE tenancy.organizations SET id=id WHERE false",
+    "expectedObject": "organizations",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "statement": "DELETE FROM tenancy.organizations WHERE false",
+    "expectedObject": "organizations",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table organizations",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F01/G1-runtime-table-operation-matrix",
+    "assertion": "ACL matrix leaves both canaries unchanged.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "TRUNCATE sandbox.demo_records",
+    "expectedObject": "demo_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "ALTER TABLE sandbox.demo_records DISABLE ROW LEVEL SECURITY",
+    "expectedObject": "demo_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "must be owner of table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "ALTER TABLE tenancy.memberships DISABLE TRIGGER ALL",
+    "expectedObject": "memberships",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "must be owner of table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "ALTER TABLE sandbox.demo_records OWNER TO core_tenant",
+    "expectedObject": "demo_records",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "must be owner of table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "TRUNCATE sandbox.demo_records",
+    "expectedObject": "demo_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "ALTER TABLE sandbox.demo_records DISABLE ROW LEVEL SECURITY",
+    "expectedObject": "demo_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "must be owner of table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "ALTER TABLE tenancy.memberships DISABLE TRIGGER ALL",
+    "expectedObject": "memberships",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "must be owner of table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "ALTER TABLE sandbox.demo_records OWNER TO core_tenant",
+    "expectedObject": "demo_records",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "must be owner of table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "TRUNCATE sandbox.demo_records",
+    "expectedObject": "demo_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "ALTER TABLE sandbox.demo_records DISABLE ROW LEVEL SECURITY",
+    "expectedObject": "demo_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "must be owner of table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "ALTER TABLE tenancy.memberships DISABLE TRIGGER ALL",
+    "expectedObject": "memberships",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "must be owner of table memberships",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "statement": "ALTER TABLE sandbox.demo_records OWNER TO core_tenant",
+    "expectedObject": "demo_records",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "must be owner of table demo_records",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F02/G1-DDL-TRUNCATE-protections-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.guard_immutable()",
+    "expectedObject": "guard_immutable",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for function guard_immutable",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.guard_invitation()",
+    "expectedObject": "guard_invitation",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for function guard_invitation",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.own_tenant_allowed(NULL::boolean)",
+    "expectedObject": "own_tenant_allowed",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for function own_tenant_allowed",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.validate_integrity()",
+    "expectedObject": "validate_integrity",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for function validate_integrity",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.validate_invitation_chain()",
+    "expectedObject": "validate_invitation_chain",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for function validate_invitation_chain",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.bootstrap(NULL::uuid,NULL::uuid,NULL::text,NULL::text,NULL::text)",
+    "expectedObject": "bootstrap",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for function bootstrap",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.replace_invitation(NULL::uuid,NULL::bigint,NULL::text,NULL::text)",
+    "expectedObject": "replace_invitation",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for function replace_invitation",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.revoke_membership(NULL::uuid,NULL::bigint)",
+    "expectedObject": "revoke_membership",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for function revoke_membership",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.update_demo(NULL::uuid,NULL::bigint,NULL::text)",
+    "expectedObject": "update_demo",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied for function update_demo",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.guard_immutable()",
+    "expectedObject": "guard_immutable",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for function guard_immutable",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.guard_invitation()",
+    "expectedObject": "guard_invitation",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for function guard_invitation",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.own_tenant_allowed(NULL::boolean)",
+    "expectedObject": "own_tenant_allowed",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for function own_tenant_allowed",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.validate_integrity()",
+    "expectedObject": "validate_integrity",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for function validate_integrity",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.validate_invitation_chain()",
+    "expectedObject": "validate_invitation_chain",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for function validate_invitation_chain",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.accept_invitation(NULL::uuid,NULL::text,NULL::bigint)",
+    "expectedObject": "accept_invitation",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for function accept_invitation",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.replace_invitation(NULL::uuid,NULL::bigint,NULL::text,NULL::text)",
+    "expectedObject": "replace_invitation",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for function replace_invitation",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.revoke_membership(NULL::uuid,NULL::bigint)",
+    "expectedObject": "revoke_membership",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for function revoke_membership",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.update_demo(NULL::uuid,NULL::bigint,NULL::text)",
+    "expectedObject": "update_demo",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied for function update_demo",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.guard_immutable()",
+    "expectedObject": "guard_immutable",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for function guard_immutable",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.guard_invitation()",
+    "expectedObject": "guard_invitation",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for function guard_invitation",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.validate_integrity()",
+    "expectedObject": "validate_integrity",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for function validate_integrity",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT authz.validate_invitation_chain()",
+    "expectedObject": "validate_invitation_chain",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for function validate_invitation_chain",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.accept_invitation(NULL::uuid,NULL::text,NULL::bigint)",
+    "expectedObject": "accept_invitation",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for function accept_invitation",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "statement": "SELECT operation.bootstrap(NULL::uuid,NULL::uuid,NULL::text,NULL::text,NULL::text)",
+    "expectedObject": "bootstrap",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied for function bootstrap",
+    "routine": "aclcheck_error",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/G1-every-ungranted-function-runtime-call",
+    "assertion": "No PUBLIC function execution in installed default ACL.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_identity",
+    "expectedObject": "exec_identity",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_identity\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_tenant",
+    "expectedObject": "exec_tenant",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_tenant\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_bootstrap",
+    "expectedObject": "exec_bootstrap",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_bootstrap\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_context",
+    "expectedObject": "exec_context",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_context\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_integrity",
+    "expectedObject": "exec_integrity",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_integrity\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE ddl_owner",
+    "expectedObject": "ddl_owner",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022ddl_owner\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE core_migrator",
+    "expectedObject": "core_migrator",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022core_migrator\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "GRANT exec_tenant TO core_identity",
+    "expectedObject": "exec_tenant",
+    "role": "core_identity",
+    "session": "core_identity",
+    "sqlstate": "42501",
+    "message": "permission denied to grant role \u0022exec_tenant\u0022",
+    "routine": "check_role_membership_authorization",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_identity",
+    "expectedObject": "exec_identity",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_identity\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_tenant",
+    "expectedObject": "exec_tenant",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_tenant\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_bootstrap",
+    "expectedObject": "exec_bootstrap",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_bootstrap\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_context",
+    "expectedObject": "exec_context",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_context\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_integrity",
+    "expectedObject": "exec_integrity",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_integrity\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE ddl_owner",
+    "expectedObject": "ddl_owner",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022ddl_owner\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE core_migrator",
+    "expectedObject": "core_migrator",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022core_migrator\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "GRANT exec_tenant TO core_tenant",
+    "expectedObject": "exec_tenant",
+    "role": "core_tenant",
+    "session": "core_tenant",
+    "sqlstate": "42501",
+    "message": "permission denied to grant role \u0022exec_tenant\u0022",
+    "routine": "check_role_membership_authorization",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_identity",
+    "expectedObject": "exec_identity",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_identity\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_tenant",
+    "expectedObject": "exec_tenant",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_tenant\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_bootstrap",
+    "expectedObject": "exec_bootstrap",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_bootstrap\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_context",
+    "expectedObject": "exec_context",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_context\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE exec_integrity",
+    "expectedObject": "exec_integrity",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022exec_integrity\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE ddl_owner",
+    "expectedObject": "ddl_owner",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022ddl_owner\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "SET LOCAL ROLE core_migrator",
+    "expectedObject": "core_migrator",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied to set role \u0022core_migrator\u0022",
+    "routine": "call_string_check_hook",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "statement": "GRANT exec_tenant TO core_platform",
+    "expectedObject": "exec_tenant",
+    "role": "core_platform",
+    "session": "core_platform",
+    "sqlstate": "42501",
+    "message": "permission denied to grant role \u0022exec_tenant\u0022",
+    "routine": "check_role_membership_authorization",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "matched": true
+  },
+  {
+    "proof": "F04/G1-SET-ROLE-and-self-grant-denied",
+    "assertion": "Native ACL diagnostic/object/effective role/statement identity match.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Active Member has own read context.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Member lacks write authority.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Mismatched identity/account cannot resolve T.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "New statement after committed revocation loses read authority.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F05/G1-installed-T-SELF-REC-BOOT-boundaries",
+    "assertion": "Platform actor has no implicit tenant account.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "All three final-state validators cover INSERT and UPDATE, enabled and deferred.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Multiple queued events read final coherent state.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "expectedState": "P1003",
+    "observedState": "P1003",
+    "expectedMessage": "Integrity.AccountMembership",
+    "observedMessage": "Integrity.AccountMembership",
+    "expectedRole": "g1_probe",
+    "sessionUser": "g1_probe",
+    "effectiveRole": "g1_probe",
+    "operation": "SET CONSTRAINTS ALL IMMEDIATE",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "executionMode": "Real runtime login; operation.* invokes SECURITY DEFINER",
+    "diagnosticBaseline": "PostgreSQL 17.11; exact routine version-specific",
+    "matched": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Exact error state/message/role/statement origin matched.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "expectedState": "P1005",
+    "observedState": "P1005",
+    "expectedMessage": "Integrity.Immutable",
+    "observedMessage": "Integrity.Immutable",
+    "expectedRole": "postgres",
+    "sessionUser": "postgres",
+    "effectiveRole": "postgres",
+    "operation": "DELETE FROM identity.enterprise_user_accounts",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "executionMode": "Privileged connection SET ROLE owner probe or operator fixture; not runtime login proof",
+    "diagnosticBaseline": "PostgreSQL 17.11; exact routine version-specific",
+    "matched": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Exact error state/message/role/statement origin matched.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "expectedState": "P1005",
+    "observedState": "P1005",
+    "expectedMessage": "Integrity.Immutable",
+    "observedMessage": "Integrity.Immutable",
+    "expectedRole": "postgres",
+    "sessionUser": "postgres",
+    "effectiveRole": "postgres",
+    "operation": "DELETE FROM tenancy.memberships",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "executionMode": "Privileged connection SET ROLE owner probe or operator fixture; not runtime login proof",
+    "diagnosticBaseline": "PostgreSQL 17.11; exact routine version-specific",
+    "matched": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Exact error state/message/role/statement origin matched.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "expectedState": "P1005",
+    "observedState": "P1005",
+    "expectedMessage": "Integrity.Immutable",
+    "observedMessage": "Integrity.Immutable",
+    "expectedRole": "postgres",
+    "sessionUser": "postgres",
+    "effectiveRole": "postgres",
+    "operation": "DELETE FROM tenancy.organizations",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "executionMode": "Privileged connection SET ROLE owner probe or operator fixture; not runtime login proof",
+    "diagnosticBaseline": "PostgreSQL 17.11; exact routine version-specific",
+    "matched": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Exact error state/message/role/statement origin matched.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "expectedState": "P1005",
+    "observedState": "P1005",
+    "expectedMessage": "Integrity.Immutable",
+    "observedMessage": "Integrity.Immutable",
+    "expectedRole": "postgres",
+    "sessionUser": "postgres",
+    "effectiveRole": "postgres",
+    "operation": "DELETE FROM identity.identity_consumptions",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "executionMode": "Privileged connection SET ROLE owner probe or operator fixture; not runtime login proof",
+    "diagnosticBaseline": "PostgreSQL 17.11; exact routine version-specific",
+    "matched": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Exact error state/message/role/statement origin matched.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "expectedState": "P1005",
+    "observedState": "P1005",
+    "expectedMessage": "Integrity.Immutable",
+    "observedMessage": "Integrity.Immutable",
+    "expectedRole": "postgres",
+    "sessionUser": "postgres",
+    "effectiveRole": "postgres",
+    "operation": "DELETE FROM identity.identity_links",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "executionMode": "Privileged connection SET ROLE owner probe or operator fixture; not runtime login proof",
+    "diagnosticBaseline": "PostgreSQL 17.11; exact routine version-specific",
+    "matched": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Exact error state/message/role/statement origin matched.",
+    "observed": true
+  },
+  {
+    "proof": "V06/G1-event-coverage-multiple-updates-and-immediate-check",
+    "assertion": "Early invalid constraint check leaves no partial revoke.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Read-only technical validator has no explicit row/advisory lock, repair or dynamic command: authz.validate_integrity()",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Read-only technical validator has no explicit row/advisory lock, repair or dynamic command: authz.validate_invitation_chain()",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V09/G1-validators-no-explicit-locks-or-repair",
+    "assertion": "Deferred commit completes coherent revoke after pre-acquired org lock.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Accept and authorized replay do not need identity-owner predecessor/successor SELECT.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Subtraction probe leaves Demo unchanged.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Accept/replace probe leaves original pending.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "Cleanup identity must match this run.",
+    "observed": true
+  },
+  {
+    "proof": "F10/G1-semantic-capability-subtraction-probe",
+    "assertion": "No run container remains.",
+    "observed": true
+  }
+]

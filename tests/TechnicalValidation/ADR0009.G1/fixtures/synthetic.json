@@ -1,0 +1,86 @@
+{
+  "status": "SYNTHETIC_SPECIFICATION_NO_ROWS_INSERTED",
+  "namespace": "Assign a fresh runId and UUID mapping per future run; no real emails or OIDC credentials",
+  "organizations": [
+    "A",
+    "B"
+  ],
+  "identities": [
+    {
+      "key": "IA",
+      "org": "A",
+      "role": "Owner"
+    },
+    {
+      "key": "IB",
+      "org": "B",
+      "role": "Owner"
+    },
+    {
+      "key": "AdminA",
+      "org": "A",
+      "role": "Admin"
+    },
+    {
+      "key": "MemberA",
+      "org": "A",
+      "role": "Member"
+    },
+    {
+      "key": "IN",
+      "org": null,
+      "consumed": false
+    },
+    {
+      "key": "IN2",
+      "org": null,
+      "consumed": false
+    },
+    {
+      "key": "IR",
+      "org": "A",
+      "status": "Revoked",
+      "consumed": true
+    },
+    {
+      "key": "IP",
+      "org": null,
+      "platform": true
+    },
+    {
+      "key": "IX",
+      "org": "A",
+      "consumptionWithoutCurrentAccount": true,
+      "requiresExceptionalProbe": true
+    }
+  ],
+  "invitations": [
+    "PendingValid",
+    "PendingExpiredStillPersisted",
+    "Accepted",
+    "Cancelled",
+    "Replaced"
+  ],
+  "clock": {
+    "T0": null,
+    "expiresAt": null,
+    "policy": "APPROVED_CLOCK_REQUIRED"
+  },
+  "baseline": [
+    "orgIds",
+    "accountIds",
+    "memberIds",
+    "versions",
+    "consumptionIdentityIds",
+    "invitationStates",
+    "auditOperationIds",
+    "idempotencyKeys"
+  ],
+  "credentialSeparation": {
+    "executor": "Runtime login for action under test",
+    "observer": "Dedicated test-only observer; never evidence of runtime access denial",
+    "probe": "Separate D5-approved role, preserves protections tested; never deployed with runtime"
+  },
+  "setupBinding": null,
+  "cleanupBinding": null
+}

@@ -1,0 +1,477 @@
+{
+  "run": "278c7b089faa",
+  "gate": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "cleanup": "REMOVED_RUN_CONTAINER_AND_TMPFS",
+  "schemaInstalled": true,
+  "stoppedForP0": true,
+  "counts": {
+    "NOT_EXECUTED": 43,
+    "BLOQUEADO": 10,
+    "FAIL": 1
+  },
+  "cases": {
+    "Q01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q07": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q08": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "Q09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "Q12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V04": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V05": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V07": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V08": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "V09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V13": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "V14": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F01": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F02": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F03": {
+      "Status": "BLOQUEADO",
+      "Detail": "SQL subproof passed; original scenario has remaining API/OIDC/variant/review prerequisites. See subproofs."
+    },
+    "F04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F11": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "F12": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K01": {
+      "Status": "FAIL",
+      "Detail": "Unexpected oracle violation; affected stage stopped, no post-failure security weakening."
+    },
+    "K02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K07": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K08": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K09": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "K10": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H01": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H02": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H03": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H04": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H05": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    },
+    "H06": {
+      "Status": "NOT_EXECUTED",
+      "Detail": "Not started."
+    }
+  },
+  "subproofs": [
+    {
+      "caseId": "Q08",
+      "variant": "tenant-sql-isolation",
+      "status": "PASS",
+      "milliseconds": 69,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "Q07",
+      "variant": "missing-mismatched-malformed-context",
+      "status": "PASS",
+      "milliseconds": 64,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V01",
+      "variant": "active-account-without-member-commit",
+      "status": "PASS",
+      "milliseconds": 126,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V05",
+      "variant": "organization-without-owner-at-commit",
+      "status": "PASS",
+      "milliseconds": 82,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V08",
+      "variant": "missing-integrity-context-rejects",
+      "status": "PASS",
+      "milliseconds": 53,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V04",
+      "variant": "partial-revocation-rejected",
+      "status": "PASS",
+      "milliseconds": 52,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "V07",
+      "variant": "immutable-org-and-historical-consumption",
+      "status": "PASS",
+      "milliseconds": 38,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F01",
+      "variant": "runtime-direct-dml-denied",
+      "status": "PASS",
+      "milliseconds": 120,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F03",
+      "variant": "public-execute-and-wrong-port-denied",
+      "status": "PASS",
+      "milliseconds": 60,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "F02",
+      "variant": "owners-and-runtime-not-bypass",
+      "status": "PASS",
+      "milliseconds": 116,
+      "evidence": "assertions.json plus observer and timeline"
+    },
+    {
+      "caseId": "K01",
+      "variant": "accept-A-B-two-physical-connections",
+      "status": "FAIL",
+      "exceptionType": "PostgresException",
+      "sqlstate": "42501",
+      "constraint": null,
+      "table": null,
+      "routine": "aclcheck_error",
+      "assertion": "Unexpected execution error; sanitized."
+    }
+  ],
+  "timeline": [
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 63,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 64,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 65,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "core_platform",
+      "pid": 66,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 67,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "preflight",
+      "role": "postgres",
+      "pid": 68,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q08/tenant-sql-isolation",
+      "role": "core_tenant",
+      "pid": 69,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "Q07/missing-mismatched-malformed-context",
+      "role": "core_tenant",
+      "pid": 70,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "postgres",
+      "pid": 71,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "g1_probe",
+      "pid": 72,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V01/active-account-without-member-commit",
+      "role": "postgres",
+      "pid": 73,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V05/organization-without-owner-at-commit",
+      "role": "g1_probe",
+      "pid": 74,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V05/organization-without-owner-at-commit",
+      "role": "postgres",
+      "pid": 75,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V08/missing-integrity-context-rejects",
+      "role": "g1_probe",
+      "pid": 76,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V04/partial-revocation-rejected",
+      "role": "g1_probe",
+      "pid": 77,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "V07/immutable-org-and-historical-consumption",
+      "role": "postgres",
+      "pid": 78,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "core_tenant",
+      "pid": 79,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "core_identity",
+      "pid": 80,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F01/runtime-direct-dml-denied",
+      "role": "core_platform",
+      "pid": 81,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/public-execute-and-wrong-port-denied",
+      "role": "postgres",
+      "pid": 82,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F03/public-execute-and-wrong-port-denied",
+      "role": "core_identity",
+      "pid": 83,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "F02/owners-and-runtime-not-bypass",
+      "role": "postgres",
+      "pid": 84,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "postgres",
+      "pid": 85,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "core_identity",
+      "pid": 86,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "core_identity",
+      "pid": 87,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01/accept-A-B-two-physical-connections",
+      "role": "postgres",
+      "pid": 88,
+      "eventName": "physical connection opened"
+    },
+    {
+      "proof": "K01",
+      "pid1": 86,
+      "pid2": 87,
+      "eventName": "D2 blocked by D1 identity; barrier observed"
+    }
+  ]
+}

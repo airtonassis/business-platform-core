@@ -1,0 +1,9 @@
+{
+  "run": "278c7b089faa",
+  "rawEvidencePreserved": true,
+  "finalReference": "9ba11b81e986",
+  "finding": "New deferred INVOKER chain validator executed at COMMIT under core_identity, which intentionally has no invitations SELECT.",
+  "correction": "Technical SECURITY DEFINER validator in existing exec_integrity group, scoped RLS/context and six justified SELECT columns; expectation refrozen before next observation.",
+  "classification": "P1_VALIDATOR_EXECUTION_CONTEXT; historical proof not PASS",
+  "operatorIntervention": "Concurrent failure cleanup stalled; isolated observer inspected sessions via container psql, terminated only idle-in-transaction backend 87 in owned database, harness then removed its own container. No evidence from this run reclassified PASS."
+}

@@ -1,0 +1,9 @@
+{
+  "category": "P0_STOP",
+  "stage": "catalog-and-proofs",
+  "exceptionType": "PostgresException",
+  "sqlstate": "42501",
+  "setupMessage": "new row violates row-level security policy for table \u0022memberships\u0022",
+  "position": 0,
+  "detail": "Failure recorded without SQL, payload or credential; inspect stage and sanitized proof evidence."
+}

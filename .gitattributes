@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Preserve approved evidence bytes (including historical CRLF) on every runner.
+/tests/TechnicalValidation/ADR0009.G1/** -text whitespace=cr-at-eol

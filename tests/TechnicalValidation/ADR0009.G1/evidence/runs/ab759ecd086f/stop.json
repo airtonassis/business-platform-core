@@ -1,0 +1,10 @@
+{
+  "category": "P0_STOP",
+  "stage": "catalog-and-proofs",
+  "exceptionType": "SafetyFailure",
+  "sqlstate": null,
+  "functionContext": null,
+  "setupMessage": null,
+  "position": 0,
+  "detail": "Expected exact rejection did not occur."
+}

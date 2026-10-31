@@ -1,0 +1,85 @@
+{
+  "run": "5efad327c7d7",
+  "status": "OBSERVED_FIXED_CALLS_SELF_REVIEW_NOT_INDEPENDENT_APPROVAL",
+  "source": "graph.json captured by PostgreSQL pg_get_functiondef",
+  "completePrivilegeGraphApproved": false,
+  "functions": [
+    {
+      "signature": "authz.ctx(text)",
+      "owner": "ddl_owner",
+      "calls": [],
+      "directSqlBodiesCaptured": true
+    },
+    {
+      "signature": "authz.guard_immutable()",
+      "owner": "exec_integrity",
+      "calls": [],
+      "directSqlBodiesCaptured": true
+    },
+    {
+      "signature": "authz.own_tenant_allowed(boolean)",
+      "owner": "exec_context",
+      "calls": [
+        "authz.ctx"
+      ],
+      "directSqlBodiesCaptured": true
+    },
+    {
+      "signature": "authz.validate_integrity()",
+      "owner": "exec_integrity",
+      "calls": [
+        "authz.ctx"
+      ],
+      "directSqlBodiesCaptured": true
+    },
+    {
+      "signature": "operation.accept_invitation(uuid,text,bigint)",
+      "owner": "exec_identity",
+      "calls": [
+        "authz.ctx"
+      ],
+      "directSqlBodiesCaptured": true
+    },
+    {
+      "signature": "operation.bootstrap(uuid,uuid,text,text,text)",
+      "owner": "exec_bootstrap",
+      "calls": [
+        "authz.ctx"
+      ],
+      "directSqlBodiesCaptured": true
+    },
+    {
+      "signature": "operation.replace_invitation(uuid,bigint,text,text)",
+      "owner": "exec_tenant",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "directSqlBodiesCaptured": true
+    },
+    {
+      "signature": "operation.revoke_membership(uuid,bigint)",
+      "owner": "exec_tenant",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "directSqlBodiesCaptured": true
+    },
+    {
+      "signature": "operation.update_demo(uuid,bigint,text)",
+      "owner": "exec_tenant",
+      "calls": [
+        "authz.ctx",
+        "authz.own_tenant_allowed"
+      ],
+      "directSqlBodiesCaptured": true
+    }
+  ],
+  "policyEdges": "See catalog.jsonl kind=policy; Tenant -> own_tenant_allowed -> exec_context base policies; integrity uses organization-scoped base policies independent of actor.",
+  "limitations": [
+    "Built-ins/table dependencies and privilege paths need catalog + body review",
+    "Source and policy graph extraction is not a proof of complete absence of dynamic or indirect privilege paths",
+    "No independent reviewer approval or G1 release"
+  ]
+}

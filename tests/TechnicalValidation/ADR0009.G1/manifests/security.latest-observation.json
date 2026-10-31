@@ -1,0 +1,24 @@
+{
+  "run": "ece79aa930df",
+  "baselineRun": "9ba11b81e986",
+  "candidate": "security.expected.json",
+  "candidateSha256": "aa94c117ed13a584bfdfa6a01e06c35f44dc9d2027b4d4ea444c261a296a2504",
+  "observed": "evidence/runs/ece79aa930df/security.observed.json",
+  "comparison": "evidence/runs/ece79aa930df/security.comparison.json",
+  "graph": "evidence/runs/ece79aa930df/graph.observed.json",
+  "status": "D2_AND_G1_HUMAN_APPROVED_DEFINED_TECHNICAL_SCOPE",
+  "humanAcceptance": {
+    "recordedDate": "2026-10-30",
+    "authority": "Responsible for Business Platform Core: express definitive D2/G1 acceptance communicated in this session",
+    "record": "EXECUTION_REPORT.md",
+    "D2": "APPROVED_178_COLUMN_PRIVILEGES",
+    "D3": "RATIFIED_EXISTING_SCOPE",
+    "D5": "RATIFIED_EXISTING_DISPOSABLE_HARNESS_SCOPE",
+    "G1": "APPROVED_DEFINED_TECHNICAL_SCOPE",
+    "all54ProtocolsComplete": false,
+    "V11StructuralGate": "G3",
+    "applicationApiOidcRecoveryGate": "G4",
+    "sprint1ReleaseChanged": false
+  },
+  "note": "Current decision pointer only. Frozen expectation and historical run results remain unchanged; this is human acceptance, not an executor claim of independent review or authorization to start another gate."
+}

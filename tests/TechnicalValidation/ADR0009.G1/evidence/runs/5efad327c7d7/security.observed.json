@@ -1,0 +1,1484 @@
+{
+    "run":  "5efad327c7d7",
+    "status":  "OBSERVED_TEST_ONLY_NOT_HUMAN_APPROVED",
+    "sourceSha256":  "4F54A001AE4FFF4EC52BF8F8FED11D157223E40E0870175143D11CCDB7D1DACA",
+    "groups":  [
+                   {
+                       "owner":  "exec_identity",
+                       "attributes":  [
+                                          {
+                                              "kind":  "role",
+                                              "name":  "exec_identity",
+                                              "canLogin":  false,
+                                              "superuser":  false,
+                                              "bypassRls":  false,
+                                              "inherit":  false,
+                                              "createRole":  false,
+                                              "createDb":  false,
+                                              "replication":  false
+                                          }
+                                      ],
+                       "functions":  [
+                                         {
+                                             "kind":  "function",
+                                             "identity":  "operation.accept_invitation(uuid,text,bigint)",
+                                             "schema":  "operation",
+                                             "name":  "accept_invitation",
+                                             "owner":  "exec_identity",
+                                             "securityDefiner":  true,
+                                             "volatility":  "v",
+                                             "leakproof":  false,
+                                             "config":  [
+                                                            "search_path=pg_catalog, pg_temp"
+                                                        ],
+                                             "bodyFingerprint":  "870f27c1c11757e9fb869f6bd5ba901c",
+                                             "acl":  [
+                                                         {
+                                                             "grantee":  "exec_identity",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         },
+                                                         {
+                                                             "grantee":  "core_identity",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         }
+                                                     ]
+                                         }
+                                     ],
+                       "tablePrivileges":  [
+                                               "identity.identities:SELECT",
+                                               "audit.events:INSERT",
+                                               "identity.enterprise_user_accounts:INSERT",
+                                               "identity.enterprise_user_accounts:SELECT",
+                                               "tenancy.memberships:INSERT",
+                                               "tenancy.memberships:SELECT",
+                                               "tenancy.organizations:SELECT",
+                                               "identity.identity_consumptions:INSERT",
+                                               "identity.identity_consumptions:SELECT",
+                                               "tenancy.invitations:SELECT",
+                                               "tenancy.invitation_slots:INSERT",
+                                               "tenancy.invitation_slots:SELECT"
+                                           ],
+                       "columnPrivileges":  [
+                                                "tenancy.organizations.name:SELECT",
+                                                "identity.identity_consumptions.consumed_at:INSERT",
+                                                "identity.identity_consumptions.consumed_at:SELECT",
+                                                "tenancy.memberships.id:INSERT",
+                                                "tenancy.memberships.id:SELECT",
+                                                "tenancy.invitation_slots.organization_id:INSERT",
+                                                "tenancy.invitation_slots.organization_id:SELECT",
+                                                "tenancy.invitation_slots.recipient_identity_id:INSERT",
+                                                "tenancy.invitation_slots.recipient_identity_id:SELECT",
+                                                "tenancy.invitations.id:SELECT",
+                                                "tenancy.invitations.organization_id:SELECT",
+                                                "tenancy.invitations.recipient_identity_id:SELECT",
+                                                "tenancy.invitations.issuer_membership_id:SELECT",
+                                                "tenancy.invitations.secret_hash:SELECT",
+                                                "tenancy.invitations.expires_at:SELECT",
+                                                "tenancy.invitations.predecessor_id:SELECT",
+                                                "tenancy.invitations.created_at:SELECT",
+                                                "tenancy.invitations.successor_id:SELECT",
+                                                "audit.events.organization_id:INSERT",
+                                                "audit.events.actor_id:INSERT",
+                                                "audit.events.action:INSERT",
+                                                "audit.events.operation_id:INSERT",
+                                                "audit.events.id:INSERT",
+                                                "audit.events.occurred_at:INSERT",
+                                                "identity.identities.id:SELECT",
+                                                "identity.identities.status:SELECT",
+                                                "identity.enterprise_user_accounts.identity_id:INSERT",
+                                                "identity.enterprise_user_accounts.identity_id:SELECT",
+                                                "tenancy.organizations.id:SELECT",
+                                                "tenancy.invitations.status:UPDATE",
+                                                "tenancy.invitations.status:SELECT",
+                                                "identity.enterprise_user_accounts.id:INSERT",
+                                                "identity.enterprise_user_accounts.id:SELECT",
+                                                "identity.enterprise_user_accounts.organization_id:INSERT",
+                                                "identity.enterprise_user_accounts.organization_id:SELECT",
+                                                "tenancy.invitations.version:UPDATE",
+                                                "tenancy.invitations.version:SELECT",
+                                                "tenancy.memberships.organization_id:INSERT",
+                                                "tenancy.memberships.organization_id:SELECT",
+                                                "tenancy.memberships.account_id:INSERT",
+                                                "tenancy.memberships.account_id:SELECT",
+                                                "tenancy.invitation_slots.version:UPDATE",
+                                                "tenancy.invitation_slots.version:INSERT",
+                                                "tenancy.invitation_slots.version:SELECT",
+                                                "identity.identity_consumptions.identity_id:INSERT",
+                                                "identity.identity_consumptions.identity_id:SELECT",
+                                                "identity.identity_consumptions.organization_id:INSERT",
+                                                "identity.identity_consumptions.organization_id:SELECT",
+                                                "identity.identity_consumptions.account_id:INSERT",
+                                                "identity.identity_consumptions.account_id:SELECT",
+                                                "tenancy.invitations.accepted_account_id:UPDATE",
+                                                "tenancy.invitations.accepted_account_id:SELECT",
+                                                "identity.identities.version:UPDATE",
+                                                "identity.identities.version:SELECT",
+                                                "identity.enterprise_user_accounts.status:INSERT",
+                                                "identity.enterprise_user_accounts.status:SELECT",
+                                                "identity.enterprise_user_accounts.version:UPDATE",
+                                                "identity.enterprise_user_accounts.version:INSERT",
+                                                "identity.enterprise_user_accounts.version:SELECT",
+                                                "tenancy.organizations.status:SELECT",
+                                                "tenancy.organizations.version:UPDATE",
+                                                "tenancy.organizations.version:SELECT",
+                                                "tenancy.memberships.role:INSERT",
+                                                "tenancy.memberships.role:SELECT",
+                                                "tenancy.memberships.status:INSERT",
+                                                "tenancy.memberships.status:SELECT",
+                                                "tenancy.memberships.version:UPDATE",
+                                                "tenancy.memberships.version:INSERT",
+                                                "tenancy.memberships.version:SELECT"
+                                            ],
+                       "execute":  [
+                                       "authz.ctx(text)",
+                                       "operation.accept_invitation(uuid,text,bigint)"
+                                   ]
+                   },
+                   {
+                       "owner":  "exec_tenant",
+                       "attributes":  [
+                                          {
+                                              "kind":  "role",
+                                              "name":  "exec_tenant",
+                                              "canLogin":  false,
+                                              "superuser":  false,
+                                              "bypassRls":  false,
+                                              "inherit":  false,
+                                              "createRole":  false,
+                                              "createDb":  false,
+                                              "replication":  false
+                                          }
+                                      ],
+                       "functions":  [
+                                         {
+                                             "kind":  "function",
+                                             "identity":  "operation.update_demo(uuid,bigint,text)",
+                                             "schema":  "operation",
+                                             "name":  "update_demo",
+                                             "owner":  "exec_tenant",
+                                             "securityDefiner":  true,
+                                             "volatility":  "v",
+                                             "leakproof":  false,
+                                             "config":  [
+                                                            "search_path=pg_catalog, pg_temp"
+                                                        ],
+                                             "bodyFingerprint":  "c2868dbc153047843b228869bf40ad20",
+                                             "acl":  [
+                                                         {
+                                                             "grantee":  "exec_tenant",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         },
+                                                         {
+                                                             "grantee":  "core_tenant",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         }
+                                                     ]
+                                         },
+                                         {
+                                             "kind":  "function",
+                                             "identity":  "operation.revoke_membership(uuid,bigint)",
+                                             "schema":  "operation",
+                                             "name":  "revoke_membership",
+                                             "owner":  "exec_tenant",
+                                             "securityDefiner":  true,
+                                             "volatility":  "v",
+                                             "leakproof":  false,
+                                             "config":  [
+                                                            "search_path=pg_catalog, pg_temp"
+                                                        ],
+                                             "bodyFingerprint":  "acb06c37f8616d44ca1d199fb0b5fc1f",
+                                             "acl":  [
+                                                         {
+                                                             "grantee":  "exec_tenant",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         },
+                                                         {
+                                                             "grantee":  "core_tenant",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         }
+                                                     ]
+                                         },
+                                         {
+                                             "kind":  "function",
+                                             "identity":  "operation.replace_invitation(uuid,bigint,text,text)",
+                                             "schema":  "operation",
+                                             "name":  "replace_invitation",
+                                             "owner":  "exec_tenant",
+                                             "securityDefiner":  true,
+                                             "volatility":  "v",
+                                             "leakproof":  false,
+                                             "config":  [
+                                                            "search_path=pg_catalog, pg_temp"
+                                                        ],
+                                             "bodyFingerprint":  "00bf06af495ca67aaa03dc608491309e",
+                                             "acl":  [
+                                                         {
+                                                             "grantee":  "exec_tenant",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         },
+                                                         {
+                                                             "grantee":  "core_tenant",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         }
+                                                     ]
+                                         }
+                                     ],
+                       "tablePrivileges":  [
+                                               "identity.identities:SELECT",
+                                               "audit.events:INSERT",
+                                               "operation.idempotency_records:INSERT",
+                                               "operation.idempotency_records:SELECT",
+                                               "sandbox.demo_records:INSERT",
+                                               "sandbox.demo_records:SELECT",
+                                               "identity.enterprise_user_accounts:SELECT",
+                                               "tenancy.memberships:SELECT",
+                                               "tenancy.organizations:SELECT",
+                                               "identity.identity_consumptions:SELECT",
+                                               "tenancy.invitations:INSERT",
+                                               "tenancy.invitations:SELECT",
+                                               "tenancy.invitation_slots:INSERT",
+                                               "tenancy.invitation_slots:SELECT"
+                                           ],
+                       "columnPrivileges":  [
+                                                "tenancy.organizations.name:SELECT",
+                                                "identity.identity_consumptions.consumed_at:SELECT",
+                                                "tenancy.memberships.id:SELECT",
+                                                "tenancy.invitation_slots.organization_id:INSERT",
+                                                "tenancy.invitation_slots.organization_id:SELECT",
+                                                "tenancy.invitation_slots.recipient_identity_id:INSERT",
+                                                "tenancy.invitation_slots.recipient_identity_id:SELECT",
+                                                "tenancy.invitations.id:INSERT",
+                                                "tenancy.invitations.id:SELECT",
+                                                "tenancy.invitations.organization_id:INSERT",
+                                                "tenancy.invitations.organization_id:SELECT",
+                                                "tenancy.invitations.recipient_identity_id:INSERT",
+                                                "tenancy.invitations.recipient_identity_id:SELECT",
+                                                "tenancy.invitations.issuer_membership_id:INSERT",
+                                                "tenancy.invitations.issuer_membership_id:SELECT",
+                                                "tenancy.invitations.secret_hash:INSERT",
+                                                "tenancy.invitations.secret_hash:SELECT",
+                                                "tenancy.invitations.expires_at:INSERT",
+                                                "tenancy.invitations.expires_at:SELECT",
+                                                "tenancy.invitations.predecessor_id:INSERT",
+                                                "tenancy.invitations.predecessor_id:SELECT",
+                                                "tenancy.invitations.created_at:INSERT",
+                                                "tenancy.invitations.created_at:SELECT",
+                                                "tenancy.invitations.successor_id:UPDATE",
+                                                "tenancy.invitations.successor_id:INSERT",
+                                                "tenancy.invitations.successor_id:SELECT",
+                                                "sandbox.demo_records.id:INSERT",
+                                                "sandbox.demo_records.id:SELECT",
+                                                "sandbox.demo_records.organization_id:INSERT",
+                                                "sandbox.demo_records.organization_id:SELECT",
+                                                "audit.events.organization_id:INSERT",
+                                                "audit.events.actor_id:INSERT",
+                                                "audit.events.action:INSERT",
+                                                "audit.events.operation_id:INSERT",
+                                                "audit.events.id:INSERT",
+                                                "audit.events.occurred_at:INSERT",
+                                                "operation.idempotency_records.actor_id:INSERT",
+                                                "operation.idempotency_records.actor_id:SELECT",
+                                                "operation.idempotency_records.scope_key:INSERT",
+                                                "operation.idempotency_records.scope_key:SELECT",
+                                                "operation.idempotency_records.operation:INSERT",
+                                                "operation.idempotency_records.operation:SELECT",
+                                                "operation.idempotency_records.key:INSERT",
+                                                "operation.idempotency_records.key:SELECT",
+                                                "operation.idempotency_records.request_hash:INSERT",
+                                                "operation.idempotency_records.request_hash:SELECT",
+                                                "operation.idempotency_records.result_id:INSERT",
+                                                "operation.idempotency_records.result_id:SELECT",
+                                                "operation.idempotency_records.id:INSERT",
+                                                "operation.idempotency_records.id:SELECT",
+                                                "identity.identities.id:SELECT",
+                                                "identity.identities.status:SELECT",
+                                                "identity.enterprise_user_accounts.identity_id:SELECT",
+                                                "tenancy.organizations.id:SELECT",
+                                                "tenancy.invitations.status:UPDATE",
+                                                "tenancy.invitations.status:INSERT",
+                                                "tenancy.invitations.status:SELECT",
+                                                "identity.enterprise_user_accounts.id:SELECT",
+                                                "identity.enterprise_user_accounts.organization_id:SELECT",
+                                                "tenancy.invitations.version:UPDATE",
+                                                "tenancy.invitations.version:INSERT",
+                                                "tenancy.invitations.version:SELECT",
+                                                "tenancy.memberships.organization_id:SELECT",
+                                                "tenancy.memberships.account_id:SELECT",
+                                                "tenancy.invitation_slots.version:UPDATE",
+                                                "tenancy.invitation_slots.version:INSERT",
+                                                "tenancy.invitation_slots.version:SELECT",
+                                                "identity.identity_consumptions.identity_id:SELECT",
+                                                "identity.identity_consumptions.organization_id:SELECT",
+                                                "identity.identity_consumptions.account_id:SELECT",
+                                                "tenancy.invitations.accepted_account_id:INSERT",
+                                                "tenancy.invitations.accepted_account_id:SELECT",
+                                                "identity.identities.version:UPDATE",
+                                                "identity.identities.version:SELECT",
+                                                "sandbox.demo_records.title:UPDATE",
+                                                "sandbox.demo_records.title:INSERT",
+                                                "sandbox.demo_records.title:SELECT",
+                                                "sandbox.demo_records.version:UPDATE",
+                                                "sandbox.demo_records.version:INSERT",
+                                                "sandbox.demo_records.version:SELECT",
+                                                "identity.enterprise_user_accounts.status:UPDATE",
+                                                "identity.enterprise_user_accounts.status:SELECT",
+                                                "identity.enterprise_user_accounts.version:UPDATE",
+                                                "identity.enterprise_user_accounts.version:SELECT",
+                                                "tenancy.organizations.status:SELECT",
+                                                "tenancy.organizations.version:UPDATE",
+                                                "tenancy.organizations.version:SELECT",
+                                                "tenancy.memberships.role:UPDATE",
+                                                "tenancy.memberships.role:SELECT",
+                                                "tenancy.memberships.status:UPDATE",
+                                                "tenancy.memberships.status:SELECT",
+                                                "tenancy.memberships.version:UPDATE",
+                                                "tenancy.memberships.version:SELECT"
+                                            ],
+                       "execute":  [
+                                       "authz.ctx(text)",
+                                       "authz.own_tenant_allowed(boolean)",
+                                       "operation.update_demo(uuid,bigint,text)",
+                                       "operation.revoke_membership(uuid,bigint)",
+                                       "operation.replace_invitation(uuid,bigint,text,text)"
+                                   ]
+                   },
+                   {
+                       "owner":  "exec_bootstrap",
+                       "attributes":  [
+                                          {
+                                              "kind":  "role",
+                                              "name":  "exec_bootstrap",
+                                              "canLogin":  false,
+                                              "superuser":  false,
+                                              "bypassRls":  false,
+                                              "inherit":  false,
+                                              "createRole":  false,
+                                              "createDb":  false,
+                                              "replication":  false
+                                          }
+                                      ],
+                       "functions":  [
+                                         {
+                                             "kind":  "function",
+                                             "identity":  "operation.bootstrap(uuid,uuid,text,text,text)",
+                                             "schema":  "operation",
+                                             "name":  "bootstrap",
+                                             "owner":  "exec_bootstrap",
+                                             "securityDefiner":  true,
+                                             "volatility":  "v",
+                                             "leakproof":  false,
+                                             "config":  [
+                                                            "search_path=pg_catalog, pg_temp"
+                                                        ],
+                                             "bodyFingerprint":  "47e73b3d1da7f13d700f26541fd9d0e2",
+                                             "acl":  [
+                                                         {
+                                                             "grantee":  "exec_bootstrap",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         },
+                                                         {
+                                                             "grantee":  "core_platform",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         }
+                                                     ]
+                                         }
+                                     ],
+                       "tablePrivileges":  [
+                                               "identity.recipient_references:SELECT",
+                                               "identity.identities:SELECT",
+                                               "audit.events:INSERT",
+                                               "operation.idempotency_records:INSERT",
+                                               "operation.idempotency_records:SELECT",
+                                               "identity.enterprise_user_accounts:INSERT",
+                                               "identity.enterprise_user_accounts:SELECT",
+                                               "tenancy.memberships:INSERT",
+                                               "tenancy.memberships:SELECT",
+                                               "tenancy.organizations:INSERT",
+                                               "tenancy.organizations:SELECT",
+                                               "identity.identity_consumptions:INSERT",
+                                               "identity.identity_consumptions:SELECT"
+                                           ],
+                       "columnPrivileges":  [
+                                                "tenancy.organizations.name:INSERT",
+                                                "tenancy.organizations.name:SELECT",
+                                                "identity.identity_consumptions.consumed_at:INSERT",
+                                                "identity.identity_consumptions.consumed_at:SELECT",
+                                                "tenancy.memberships.id:INSERT",
+                                                "tenancy.memberships.id:SELECT",
+                                                "identity.recipient_references.identity_id:SELECT",
+                                                "identity.recipient_references.secret_hash:SELECT",
+                                                "identity.recipient_references.expires_at:SELECT",
+                                                "audit.events.organization_id:INSERT",
+                                                "audit.events.actor_id:INSERT",
+                                                "audit.events.action:INSERT",
+                                                "audit.events.operation_id:INSERT",
+                                                "audit.events.id:INSERT",
+                                                "audit.events.occurred_at:INSERT",
+                                                "operation.idempotency_records.actor_id:INSERT",
+                                                "operation.idempotency_records.actor_id:SELECT",
+                                                "operation.idempotency_records.scope_key:INSERT",
+                                                "operation.idempotency_records.scope_key:SELECT",
+                                                "operation.idempotency_records.operation:INSERT",
+                                                "operation.idempotency_records.operation:SELECT",
+                                                "operation.idempotency_records.key:INSERT",
+                                                "operation.idempotency_records.key:SELECT",
+                                                "operation.idempotency_records.request_hash:INSERT",
+                                                "operation.idempotency_records.request_hash:SELECT",
+                                                "operation.idempotency_records.result_id:INSERT",
+                                                "operation.idempotency_records.result_id:SELECT",
+                                                "operation.idempotency_records.id:INSERT",
+                                                "operation.idempotency_records.id:SELECT",
+                                                "identity.identities.id:SELECT",
+                                                "identity.identities.status:SELECT",
+                                                "identity.enterprise_user_accounts.identity_id:INSERT",
+                                                "identity.enterprise_user_accounts.identity_id:SELECT",
+                                                "tenancy.organizations.id:INSERT",
+                                                "tenancy.organizations.id:SELECT",
+                                                "identity.enterprise_user_accounts.id:INSERT",
+                                                "identity.enterprise_user_accounts.id:SELECT",
+                                                "identity.enterprise_user_accounts.organization_id:INSERT",
+                                                "identity.enterprise_user_accounts.organization_id:SELECT",
+                                                "tenancy.memberships.organization_id:INSERT",
+                                                "tenancy.memberships.organization_id:SELECT",
+                                                "tenancy.memberships.account_id:INSERT",
+                                                "tenancy.memberships.account_id:SELECT",
+                                                "identity.identity_consumptions.identity_id:INSERT",
+                                                "identity.identity_consumptions.identity_id:SELECT",
+                                                "identity.identity_consumptions.organization_id:INSERT",
+                                                "identity.identity_consumptions.organization_id:SELECT",
+                                                "identity.identity_consumptions.account_id:INSERT",
+                                                "identity.identity_consumptions.account_id:SELECT",
+                                                "identity.identities.version:UPDATE",
+                                                "identity.identities.version:SELECT",
+                                                "identity.enterprise_user_accounts.status:INSERT",
+                                                "identity.enterprise_user_accounts.status:SELECT",
+                                                "identity.enterprise_user_accounts.version:INSERT",
+                                                "identity.enterprise_user_accounts.version:SELECT",
+                                                "tenancy.organizations.status:INSERT",
+                                                "tenancy.organizations.status:SELECT",
+                                                "tenancy.organizations.version:INSERT",
+                                                "tenancy.organizations.version:SELECT",
+                                                "tenancy.memberships.role:INSERT",
+                                                "tenancy.memberships.role:SELECT",
+                                                "tenancy.memberships.status:INSERT",
+                                                "tenancy.memberships.status:SELECT",
+                                                "tenancy.memberships.version:INSERT",
+                                                "tenancy.memberships.version:SELECT"
+                                            ],
+                       "execute":  [
+                                       "authz.ctx(text)",
+                                       "operation.bootstrap(uuid,uuid,text,text,text)"
+                                   ]
+                   },
+                   {
+                       "owner":  "exec_context",
+                       "attributes":  [
+                                          {
+                                              "kind":  "role",
+                                              "name":  "exec_context",
+                                              "canLogin":  false,
+                                              "superuser":  false,
+                                              "bypassRls":  false,
+                                              "inherit":  false,
+                                              "createRole":  false,
+                                              "createDb":  false,
+                                              "replication":  false
+                                          }
+                                      ],
+                       "functions":  [
+                                         {
+                                             "kind":  "function",
+                                             "identity":  "authz.own_tenant_allowed(boolean)",
+                                             "schema":  "authz",
+                                             "name":  "own_tenant_allowed",
+                                             "owner":  "exec_context",
+                                             "securityDefiner":  true,
+                                             "volatility":  "s",
+                                             "leakproof":  false,
+                                             "config":  [
+                                                            "search_path=pg_catalog, pg_temp"
+                                                        ],
+                                             "bodyFingerprint":  "1ddcc2c3edfb7c2c1e48df58d674c979",
+                                             "acl":  [
+                                                         {
+                                                             "grantee":  "exec_context",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         },
+                                                         {
+                                                             "grantee":  "core_tenant",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         },
+                                                         {
+                                                             "grantee":  "exec_tenant",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         }
+                                                     ]
+                                         }
+                                     ],
+                       "tablePrivileges":  [
+
+                                           ],
+                       "columnPrivileges":  [
+                                                "identity.identities.id:SELECT",
+                                                "identity.identities.status:SELECT",
+                                                "identity.enterprise_user_accounts.identity_id:SELECT",
+                                                "tenancy.organizations.id:SELECT",
+                                                "identity.enterprise_user_accounts.id:SELECT",
+                                                "identity.enterprise_user_accounts.organization_id:SELECT",
+                                                "tenancy.memberships.organization_id:SELECT",
+                                                "tenancy.memberships.account_id:SELECT",
+                                                "identity.enterprise_user_accounts.status:SELECT",
+                                                "tenancy.organizations.status:SELECT",
+                                                "tenancy.memberships.role:SELECT",
+                                                "tenancy.memberships.status:SELECT"
+                                            ],
+                       "execute":  [
+                                       "authz.ctx(text)",
+                                       "authz.own_tenant_allowed(boolean)"
+                                   ]
+                   },
+                   {
+                       "owner":  "exec_integrity",
+                       "attributes":  [
+                                          {
+                                              "kind":  "role",
+                                              "name":  "exec_integrity",
+                                              "canLogin":  false,
+                                              "superuser":  false,
+                                              "bypassRls":  false,
+                                              "inherit":  false,
+                                              "createRole":  false,
+                                              "createDb":  false,
+                                              "replication":  false
+                                          }
+                                      ],
+                       "functions":  [
+                                         {
+                                             "kind":  "function",
+                                             "identity":  "authz.validate_integrity()",
+                                             "schema":  "authz",
+                                             "name":  "validate_integrity",
+                                             "owner":  "exec_integrity",
+                                             "securityDefiner":  true,
+                                             "volatility":  "v",
+                                             "leakproof":  false,
+                                             "config":  [
+                                                            "search_path=pg_catalog, pg_temp"
+                                                        ],
+                                             "bodyFingerprint":  "d24386f541f004403b002c168d9b279e",
+                                             "acl":  [
+                                                         {
+                                                             "grantee":  "exec_integrity",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         }
+                                                     ]
+                                         },
+                                         {
+                                             "kind":  "function",
+                                             "identity":  "authz.guard_immutable()",
+                                             "schema":  "authz",
+                                             "name":  "guard_immutable",
+                                             "owner":  "exec_integrity",
+                                             "securityDefiner":  false,
+                                             "volatility":  "v",
+                                             "leakproof":  false,
+                                             "config":  [
+                                                            "search_path=pg_catalog, pg_temp"
+                                                        ],
+                                             "bodyFingerprint":  "0b6c470ca681adc5713faddadc6fd8ec",
+                                             "acl":  [
+                                                         {
+                                                             "grantee":  "exec_integrity",
+                                                             "privilege":  "EXECUTE",
+                                                             "grantable":  false
+                                                         }
+                                                     ]
+                                         }
+                                     ],
+                       "tablePrivileges":  [
+
+                                           ],
+                       "columnPrivileges":  [
+                                                "tenancy.organizations.id:SELECT",
+                                                "identity.enterprise_user_accounts.id:SELECT",
+                                                "identity.enterprise_user_accounts.organization_id:SELECT",
+                                                "tenancy.memberships.organization_id:SELECT",
+                                                "tenancy.memberships.account_id:SELECT",
+                                                "identity.identity_consumptions.identity_id:SELECT",
+                                                "identity.identity_consumptions.organization_id:SELECT",
+                                                "identity.identity_consumptions.account_id:SELECT",
+                                                "identity.enterprise_user_accounts.status:SELECT",
+                                                "tenancy.organizations.status:SELECT",
+                                                "tenancy.memberships.role:SELECT",
+                                                "tenancy.memberships.status:SELECT"
+                                            ],
+                       "execute":  [
+                                       "authz.validate_integrity()",
+                                       "authz.guard_immutable()",
+                                       "authz.ctx(text)"
+                                   ]
+                   }
+               ],
+    "memberships":  [
+
+                    ],
+    "tables":  [
+                   {
+                       "kind":  "table",
+                       "name":  "identity.identity_links",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "identity.recipient_references",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "identity.identities",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "audit.events",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "operation.idempotency_records",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "sandbox.demo_records",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "core_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "identity.enterprise_user_accounts",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "g1_probe",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "g1_probe",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "tenancy.memberships",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "g1_probe",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "g1_probe",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "tenancy.organizations",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "g1_probe",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "g1_probe",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "identity.identity_consumptions",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_bootstrap",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "g1_probe",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "g1_probe",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "tenancy.invitations",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   },
+                   {
+                       "kind":  "table",
+                       "name":  "tenancy.invitation_slots",
+                       "owner":  "ddl_owner",
+                       "relationKind":  "r",
+                       "rls":  true,
+                       "forceRls":  true,
+                       "acl":  [
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "UPDATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "DELETE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRUNCATE",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "REFERENCES",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "TRIGGER",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "ddl_owner",
+                                       "privilege":  "MAINTAIN",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_identity",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "INSERT",
+                                       "grantable":  false
+                                   },
+                                   {
+                                       "grantee":  "exec_tenant",
+                                       "privilege":  "SELECT",
+                                       "grantable":  false
+                                   }
+                               ]
+                   }
+               ],
+    "policyCount":  39,
+    "functionCount":  9,
+    "review":  "Raw effective unions observed; complete capability comparison and independent body/graph review remain pending. Operator/probe are not runtime proof."
+}

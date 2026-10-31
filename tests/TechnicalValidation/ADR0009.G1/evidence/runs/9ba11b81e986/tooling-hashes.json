@@ -1,0 +1,6 @@
+{
+  "harness\\freeze_candidate.py": "0cb95cfb5be6e73bbb8c5c0f847eb0f8ee7dc7f6288eec590acb1d58802ae138",
+  "harness\\compare_observed.py": "27cdeff1758aca616b0368fcb1cf4f17fbedcaacf1b781e450876950a0d8ac43",
+  "sql\\inspect-catalog.sql": "8e7d632bb7f1f7a16f138eeb6ae83fe35167d63e6c4bae1a3f406f52775366aa",
+  "manifests\\security.expected.json": "33fbf35732987457db0a95704bfe9c8a2c9737577fdd982b1c4bdc2fc6bcfdca"
+}

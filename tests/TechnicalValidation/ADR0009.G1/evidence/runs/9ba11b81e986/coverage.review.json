@@ -1,0 +1,384 @@
+{
+  "run": "9ba11b81e986",
+  "scope": "Affected SQL proofs plus required regressions; 54 original IDs unchanged",
+  "cases": [
+    {
+      "id": "Q01",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q02",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q03",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q04",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q05",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q06",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q07",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "missing-mismatched-malformed-context"
+      ],
+      "remaining": "SQL absent/mismatched/malformed context executed; complete Application attestation/API unavailable."
+    },
+    {
+      "id": "Q08",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "tenant-sql-isolation"
+      ],
+      "remaining": "Actual core_tenant SQL DemoRecord isolation executed; complete all-query/API matrix unavailable."
+    },
+    {
+      "id": "Q09",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "Q10",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Parte b caracteriza D1; parte a depende da Application/OIDC/API legitima inexistente."
+    },
+    {
+      "id": "Q11",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Pool Npgsql real testado; falta unidade de trabalho/conexao da Application."
+    },
+    {
+      "id": "Q12",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Savepoint testado; cancelamento de comando e protocolo completo de timeout nao exercitados."
+    },
+    {
+      "id": "V01",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "active-account-without-member-commit"
+      ],
+      "remaining": "Invariante SQL testada; faltam assertivas evento/recibo e superficie API sem criacao parcial."
+    },
+    {
+      "id": "V02",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "split-rls-not-null-catalog-and-rollback"
+      ],
+      "remaining": "Strict 42501 origin/session/effective role, expected NOT NULL column and UNIQUE constraint checked; runtime INSERT denied and rollback verified. API arbitrary-add negative still absent."
+    },
+    {
+      "id": "V03",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "cross-organization-foreign-key"
+      ],
+      "remaining": "FK composta testada; faltam todas as referencias cruzadas e portas do protocolo completo."
+    },
+    {
+      "id": "V04",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "partial-revocation-rejected",
+        "owner-transitions-and-role-promotion-denied"
+      ],
+      "remaining": "OLD/NEW terminal-status and immutable-role negative proofs passed, including direct exec_tenant. Full archival/restoration state matrix not implemented."
+    },
+    {
+      "id": "V05",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "organization-without-owner-at-commit"
+      ],
+      "remaining": "Organizacao sem Owner rejeitada; faltam estados e variantes de Owner desativado."
+    },
+    {
+      "id": "V06",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "V07",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "immutable-org-and-historical-consumption"
+      ],
+      "remaining": "Imutabilidade e exclusao do consumo testadas; faltam todos os objetos/colunas e restore."
+    },
+    {
+      "id": "V08",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "missing-integrity-context-rejects"
+      ],
+      "remaining": "Contexto tecnico ausente rejeitado; faltam todas as variantes finais de visibilidade e escritor."
+    },
+    {
+      "id": "V09",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "V10",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "V11",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "revocation-versus-owner-reactivation-after-wait"
+      ],
+      "remaining": "Previous revoke/terminal reactivation races regressed; does NOT constitute full two-Owner concurrent write-skew protocol or all writers/C1."
+    },
+    {
+      "id": "V12",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "V13",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Deadlock real do probe; faltam retry/reconciliacao da Application e inversoes de todos escritores."
+    },
+    {
+      "id": "V14",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F01",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "runtime-direct-dml-denied",
+        "minimal-grants-and-secret-read-denied"
+      ],
+      "remaining": "Non-observational manual candidate frozen before database creation; table/column/schema/EXECUTE/owner/mode compared. Candidate still requires independent approval and full operation matrix."
+    },
+    {
+      "id": "F02",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "owners-and-runtime-not-bypass"
+      ],
+      "remaining": "Atributos/ownership/FORCE capturados; faltam todas as negativas DDL/TRUNCATE/RLS/trigger e revisao."
+    },
+    {
+      "id": "F03",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "public-execute-and-wrong-port-denied"
+      ],
+      "remaining": "PUBLIC EXECUTE e porta inesperada negados; revisao da allowlist e de todas assinaturas pendente."
+    },
+    {
+      "id": "F04",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. SET ROLE para owners/migrator negado; falta revisao independente de toda cadeia de role."
+    },
+    {
+      "id": "F05",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F06",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "fixed-path-and-denied-shadow-object"
+      ],
+      "remaining": "search_path fixo e CREATE public/temp negados; revisao semantica de corpos e grafo pendente."
+    },
+    {
+      "id": "F07",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F08",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F09",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "private-audit-receipts-direct-denials",
+        "invalid-invitation-inserts-issuer-and-chain"
+      ],
+      "remaining": "Invalid invitation INSERT/issuer/consumption/chain/privilege negatives and private audit/receipt negatives executed. Initial issuance port, API, all revoked replay scopes remain absent."
+    },
+    {
+      "id": "F10",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F11",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "F12",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "K01",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "accept-A-B-two-physical-connections"
+      ],
+      "remaining": "Ambas ordens SQL A/B; falta C04/API, traducao de erros e variantes integrais de replay."
+    },
+    {
+      "id": "K02",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "bootstrap-versus-accept-both-orders"
+      ],
+      "remaining": "Ambas ordens bootstrap/aceite SQL; falta fluxo HTTP/idempotencia integral do protocolo."
+    },
+    {
+      "id": "K03",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "revoke-versus-command-both-orders"
+      ],
+      "remaining": "Ambas ordens revogar/comando SQL; falta request/response autorizada da Application."
+    },
+    {
+      "id": "K04",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "same-version-two-writers"
+      ],
+      "remaining": "DemoRecord concorrente testado; falta Membership concorrente e ETag HTTP."
+    },
+    {
+      "id": "K05",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "concurrent-replace-and-authorized-replay"
+      ],
+      "remaining": "Replace concorrente/ETag SQL/replay testados; faltam transporte/HTTP e variantes de reemissao."
+    },
+    {
+      "id": "K06",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "expiry-revalidated-after-real-lock-wait"
+      ],
+      "remaining": "Prazo revalidado apos espera; falta GET sem escrita/materializacao e API."
+    },
+    {
+      "id": "K07",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "confirmed-commit-lost-response-bootstrap-replay"
+      ],
+      "remaining": "Replay apos commit com resposta descartada; corte real do transporte durante COMMIT e reconciliacao nao implementados."
+    },
+    {
+      "id": "K08",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "audit-failure-rolls-back-demo"
+      ],
+      "remaining": "Falha CHECK de auditoria reverte mutacao; faltam caminhos restantes e resposta API."
+    },
+    {
+      "id": "K09",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "Owner-and-self-revocation-denied",
+        "two-active-Owners-direct-owner-revocation-denied"
+      ],
+      "remaining": "Two Active Owners: direct exec_tenant UPDATE and real runtime revoke SQL port rejected, account-first rollback proven. Complete concurrent last-Owner protocol not proven."
+    },
+    {
+      "id": "K10",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. Pool real apos aborto SQL; faltam cancelamento e reinicio operacional/Application."
+    },
+    {
+      "id": "H01",
+      "status": "BLOQUEADO",
+      "subproofs": [
+        "revoked-identity-cannot-accept-other-enterprise"
+      ],
+      "remaining": "Consumo apos revogacao impede aceite B; faltam arquivamento, referencia/emissao, nova identidade B e OIDC/API."
+    },
+    {
+      "id": "H02",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "H03",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "H04",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "H05",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    },
+    {
+      "id": "H06",
+      "status": "NOT_EXECUTED",
+      "subproofs": [],
+      "remaining": "Not selected in this scoped execution; prior evidence retained. Not selected in this correction-only execution; prior evidence retained separately. NOT_EXECUTED: protocolo completo nao iniciado nesta rodada; nao inferir falha ou ausencia de funcionalidade. Ver campos e dependencias originais em proofs/scenarios.json."
+    }
+  ]
+}

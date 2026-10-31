@@ -1,0 +1,8 @@
+{
+  "run": "15a36f6b1584",
+  "rawEvidencePreserved": true,
+  "finalReference": "9ba11b81e986",
+  "finding": "Intermediate successful SQL regression and permission comparison.",
+  "correction": "Final candidate rebuilt from a fresh literal object to remove all legacy observation metadata as potential expectation input; same capabilities frozen before final run.",
+  "classification": "HISTORICAL_SUCCESS_NOT_FINAL_G1_APPROVAL"
+}

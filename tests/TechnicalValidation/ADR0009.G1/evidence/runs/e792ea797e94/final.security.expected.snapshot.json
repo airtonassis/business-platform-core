@@ -1,0 +1,340 @@
+{
+  "formatVersion": 1,
+  "status": "EXPECTED_DESIGN_PLUS_OBSERVED_TEST_MANIFEST_NO_G1_APPROVAL",
+  "decisions": {
+    "D1": "APPROVED_TRUST_BOUNDARY_WITH_RESIDUAL_SQL_CREDENTIAL_RISK",
+    "D2": "APPROVED_FIVE_OWNER_GROUPS_NOT_EFFECTIVE_GRANTS",
+    "D3": "PENDING",
+    "D5": "PENDING"
+  },
+  "gate": "BLOCKED",
+  "source": "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md sections 1.2, 3.8, 3.9",
+  "schemas": [
+    "identity",
+    "tenancy",
+    "sandbox",
+    "audit",
+    "operation",
+    "authz"
+  ],
+  "runtimeLogins": [
+    "core_identity",
+    "core_tenant",
+    "core_platform"
+  ],
+  "owners": [
+    {
+      "name": "exec_identity",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "membershipOrSetRoleAllowed": false,
+      "candidateFunctions": [
+        "resolve_own_context",
+        "prepare_own_identity",
+        "own_recipient_reference",
+        "preview_own_invitation",
+        "accept_own_invitation"
+      ],
+      "exactFunctionSignatures": [],
+      "bindingStatus": "PARTIAL_TEST_IMPLEMENTATION_OBSERVED_NOT_ALL_CANDIDATE_PORTS",
+      "effectiveGrants": [],
+      "grantsStatus": "UNION_FROM_SOURCE_REQUIRES_COLUMN_LEVEL_FREEZE_AND_CATALOG_EVIDENCE",
+      "requiredReview": "Inspect role union including direct/table/column/schema/PUBLIC/inherited grants and transitive EXECUTE; a different function with same owner has no separate DML ACL.",
+      "proposedUnionFromApprovedDesign": {
+        "functions": "resolve_own_context, prepare_own_identity, own_recipient_reference, preview_own_invitation, accept_own_invitation; helpers internos de evento do aceite",
+        "grantUnion": "S técnico próprio ID/LINK/HIST/ACCOUNT/MEMBER/ORG, referência e convite exato; I ID/LINK/referência e, no aceite, HIST/ACCOUNT/MEMBER Member/AUDIT; I/S SLOT; U colunas técnicas necessárias aos locks em ID/ORG/ACCOUNT/MEMBER/SLOT e status/accepted_at/account/version de INV; sem S DEMO/auditoria Tenant/lista de membros",
+        "neededOperations": "Mapear identidade, resolver estado, preparar referência, provar convite e criar vínculo Member atômico",
+        "excessCapability": "Resolver/preview compartilham capacidade de inserir conta/membro/consumo e alterar convite necessária a accept; não são SQL read-only por terem corpo de consulta",
+        "risk": "Defeito no corpo/prova ou policy ampliada pode usar escrita do owner fora do caminho previsto; ausência de Membership não prova elegibilidade",
+        "recommendation": "**Manter compartilhado**, com projeções fixas, prova própria REC antes de revelar alvo, policies de escopo sem bypass, guards/constraints, grafo e testes F08/F10/V12. Nenhuma evidência documental demonstra necessidade de split. Separar resolver/prepare de accept somente se escopo de policy ou cadeia real não contiver risco concreto"
+      },
+      "observedFunctionSignatures": [
+        "operation.accept_invitation(uuid,text,bigint)"
+      ]
+    },
+    {
+      "name": "exec_tenant",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "membershipOrSetRoleAllowed": false,
+      "candidateFunctions": [
+        "check_recipient_reference (Tenant binding)",
+        "issue_invitation",
+        "cancel_invitation",
+        "replace_invitation",
+        "change_membership",
+        "revoke_membership",
+        "create_demo_record",
+        "update_demo_record"
+      ],
+      "exactFunctionSignatures": [],
+      "bindingStatus": "PARTIAL_TEST_IMPLEMENTATION_OBSERVED_NOT_ALL_CANDIDATE_PORTS",
+      "effectiveGrants": [],
+      "grantsStatus": "UNION_FROM_SOURCE_REQUIRES_COLUMN_LEVEL_FREEZE_AND_CATALOG_EVIDENCE",
+      "requiredReview": "Inspect role union including direct/table/column/schema/PUBLIC/inherited grants and transitive EXECUTE; a different function with same owner has no separate DML ACL.",
+      "proposedUnionFromApprovedDesign": {
+        "functions": "Conferência Tenant, emitir/cancelar/substituir convite, alterar/revogar Membership, criar/alterar DemoRecord, helpers de auditoria/recibo",
+        "grantUnion": "S vínculo próprio/atores/alvo provado, referência/HIST, INV/SLOT/DEMO/recibo; I INV/SLOT/DEMO/AUDIT/IDEM; U ACCOUNT.status/version, MEMBER.role/status/version, INV transições/version/sucessor, DEMO.title/version, campos técnicos mínimos para locks e recibo; sem I ORG/ACCOUNT/MEMBER/HIST, sem DELETE ou mutação AUDIT",
+        "neededOperations": "Gestão limitada C08, operações demonstrativas, estado de convites e replay atômico",
+        "excessCapability": "Função de conferência/convite partilha capacidade de mudar papel/revogar e escrever DEMO; funções de DEMO partilham acesso técnico a prova/hash de convite requerido por outra função",
+        "risk": "Autoelevação via bug, retorno indevido de hash, OR de policies ou aresta fora da matriz; nenhum split por nome contém isso",
+        "recommendation": "**Manter compartilhado** no escopo Tenant atual: nenhum corpo arbitrário, autorizar alvo/ator C08, projetar retorno sem hash, grants mínimos sem org mutável, RLS/guards, inspeção do grafo e V12. Remover grant/aresta desnecessários primeiro. Split só se surgir acesso excedente não contido com esses controles"
+      },
+      "observedFunctionSignatures": [
+        "operation.replace_invitation(uuid,bigint,text,text)",
+        "operation.revoke_membership(uuid,bigint)",
+        "operation.update_demo(uuid,bigint,text)"
+      ]
+    },
+    {
+      "name": "exec_bootstrap",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "membershipOrSetRoleAllowed": false,
+      "candidateFunctions": [
+        "check_recipient_reference (Platform binding)",
+        "bootstrap_organization_owner"
+      ],
+      "exactFunctionSignatures": [],
+      "bindingStatus": "PARTIAL_TEST_IMPLEMENTATION_OBSERVED_NOT_ALL_CANDIDATE_PORTS",
+      "effectiveGrants": [],
+      "grantsStatus": "UNION_FROM_SOURCE_REQUIRES_COLUMN_LEVEL_FREEZE_AND_CATALOG_EVIDENCE",
+      "requiredReview": "Inspect role union including direct/table/column/schema/PUBLIC/inherited grants and transitive EXECUTE; a different function with same owner has no separate DML ACL.",
+      "proposedUnionFromApprovedDesign": {
+        "functions": "Conferência Platform, bootstrap_organization_owner, helpers próprios AUDIT/IDEM",
+        "grantUnion": "S identidade/referência/HIST do proprietário provado e recibo Platform; I ORG/HIST/ACCOUNT/MEMBER Owner/AUDIT/IDEM; U técnico mínimo na identidade para lock e recibo quando exigido; S mínimo de âncoras da operação para replay/validação, sem SELECT empresarial geral",
+        "neededOperations": "Criar org/proprietário atomicamente e recuperar comprovante exato",
+        "excessCapability": "Conferência sob mesmo owner tem capacidade SQL de criação de empresa/Owner; não pode ser descrita como owner somente leitura",
+        "risk": "Bug de prova/grafo pode antecipar criação ou permitir owner inelegível; scheme/MFA depende da Application D1",
+        "recommendation": "**Manter compartilhado**, isolado dos owners Tenant/Identity como já previsto. EXECUTE só CP, prova C02 e elegibilidade rechecadas, vínculo permanente/commit/recibo. Não devolver dados Tenant. Separar conferência de bootstrap apenas se implementação evidenciar aresta/policy incontível"
+      },
+      "observedFunctionSignatures": [
+        "operation.bootstrap(uuid,uuid,text,text,text)"
+      ]
+    },
+    {
+      "name": "exec_context",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "membershipOrSetRoleAllowed": false,
+      "candidateFunctions": [
+        "own_tenant_allowed"
+      ],
+      "exactFunctionSignatures": [],
+      "bindingStatus": "PARTIAL_TEST_IMPLEMENTATION_OBSERVED_NOT_ALL_CANDIDATE_PORTS",
+      "effectiveGrants": [],
+      "grantsStatus": "UNION_FROM_SOURCE_REQUIRES_COLUMN_LEVEL_FREEZE_AND_CATALOG_EVIDENCE",
+      "requiredReview": "Inspect role union including direct/table/column/schema/PUBLIC/inherited grants and transitive EXECUTE; a different function with same owner has no separate DML ACL.",
+      "proposedUnionFromApprovedDesign": {
+        "functions": "own_tenant_allowed e helpers booleanos privados de mesmo alcance",
+        "grantUnion": "S somente IDs/status e role necessários ao join próprio ID/ACCOUNT/MEMBER/ORG sob policies-base SELF/contexto; nenhum I/U/DELETE/lock",
+        "neededOperations": "Responder booleano para policies sem recursão",
+        "excessCapability": "A função pode internamente ler fatos próprios além do booleano exposto; nenhum DML agregado",
+        "risk": "Mudança de projeção/policy pode revelar fato ou recursão; owner não deve absorver consultas integrais de integridade",
+        "recommendation": "**Manter grupo de leitura próprio existente**, sem juntar a writers/exec_integrity. F05/Q09 verificam grafo sem ciclo, escopo e retorno booleano"
+      },
+      "observedFunctionSignatures": [
+        "authz.own_tenant_allowed(boolean)"
+      ]
+    },
+    {
+      "name": "exec_integrity",
+      "login": false,
+      "superuser": false,
+      "bypassRls": false,
+      "inherit": false,
+      "tableOwnershipAllowed": false,
+      "membershipOrSetRoleAllowed": false,
+      "candidateFunctions": [
+        "validate_account_membership",
+        "validate_org_owner",
+        "guard_immutable"
+      ],
+      "exactFunctionSignatures": [],
+      "bindingStatus": "PARTIAL_TEST_IMPLEMENTATION_OBSERVED_NOT_ALL_CANDIDATE_PORTS",
+      "effectiveGrants": [],
+      "grantsStatus": "UNION_FROM_SOURCE_REQUIRES_COLUMN_LEVEL_FREEZE_AND_CATALOG_EVIDENCE",
+      "requiredReview": "Inspect role union including direct/table/column/schema/PUBLIC/inherited grants and transitive EXECUTE; a different function with same owner has no separate DML ACL.",
+      "proposedUnionFromApprovedDesign": {
+        "functions": "validate_account_membership, validate_org_owner e guards conforme V2/F2",
+        "grantUnion": "S de IDs/referências/status/role em ORG/ACCOUNT/MEMBER/HIST de toda org afetada via 3.8; guard usa OLD/NEW; nenhum I/U/DELETE/lock/SELECT de perfil/DEMO/segredos, sem EXECUTE externo",
+        "neededOperations": "Verificar fatos finais completos independentes de papel/estado do ator",
+        "excessCapability": "Cada validator pode ler fatos técnicos de integridade da org também usados pelo outro, mais amplos que T do ator",
+        "risk": "Retorno/call graph indevido transformaria leitura interna em exfiltração; scope incorreto ocultaria fatos",
+        "recommendation": "**Manter validators compartilhados neste owner separado**, como desenho atual. Policies técnicas não dependem de T, invocação só por trigger, retorno interno sem dataset e escopo/evento verificado. Não fundir com helper empresarial"
+      },
+      "observedFunctionSignatures": [
+        "authz.guard_immutable()",
+        "authz.validate_integrity()"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "name": "identity.identities",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "identity.identity_links",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "identity.identity_consumptions",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "identity.enterprise_user_accounts",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "tenancy.organizations",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "tenancy.memberships",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "tenancy.invitation_slots",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "tenancy.invitations",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "sandbox.demo_records",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "audit.events",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    },
+    {
+      "name": "operation.idempotency_records",
+      "status": "CANDIDATE_NOT_OBSERVED",
+      "rlsRequired": true,
+      "forceRlsRequired": true,
+      "approvedColumns": [],
+      "approvedConstraints": [],
+      "approvedPolicies": []
+    }
+  ],
+  "callGraph": {
+    "status": "REQUIRES_BODY_REVIEW_AND_CATALOG",
+    "approvedEdges": [],
+    "forbiddenEdges": [
+      "runtime -> migrator/ddl_owner",
+      "runtime SET ROLE -> exec_*",
+      "exec_context -> command writer",
+      "exec_integrity -> command writer",
+      "validator -> late explicit row/advisory lock"
+    ],
+    "catalogPgDependIsComplete": false,
+    "candidateEdges": [
+      {
+        "from": "Tenant SELECT policy",
+        "to": "own_tenant_allowed",
+        "owner": "exec_context",
+        "status": "REQUIRES_EXACT_BINDING"
+      },
+      {
+        "from": "own_tenant_allowed",
+        "to": "SELF/context equality base policies",
+        "recursionAllowed": false
+      },
+      {
+        "from": "command writer",
+        "to": "private audit/receipt helper of same owner and scope"
+      },
+      {
+        "from": "deferred trigger",
+        "to": "integrity validator",
+        "owner": "exec_integrity"
+      },
+      {
+        "from": "integrity validator",
+        "to": "technical organization-scoped base policy",
+        "actorAuthorizationDependencyAllowed": false,
+        "lateExplicitLocksAllowed": false
+      }
+    ]
+  },
+  "controls": {
+    "publicExecuteAllowed": false,
+    "publicCreateInTrustedSchemasAllowed": false,
+    "runtimeDdlAllowed": false,
+    "runtimeTruncateAllowed": false,
+    "runtimeDirectDmlAllowed": false,
+    "unqualifiedDynamicSqlAllowed": false,
+    "searchPath": "pg_catalog, approved non-writable schemas, pg_temp last; exact per signature pending",
+    "missingObjectOutcome": "BLOCKED_NOT_PASS",
+    "extraPrivilegeOutcome": "REVIEW_REQUIRED_P0_IF_UNJUSTIFIED"
+  },
+  "observedRun": "e792ea797e94",
+  "observedManifest": "evidence/runs/e792ea797e94/security.observed.json",
+  "observedGraph": "evidence/runs/e792ea797e94/graph.observed.json",
+  "observedComparison": "evidence/runs/e792ea797e94/security.comparison.json"
+}

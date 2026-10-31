@@ -1,0 +1,39 @@
+{
+  "commands": [
+    {
+      "command": "git status --short; rg --files -g AGENTS.md; source/ADR/catalog reads",
+      "result": "Preexisting changes preserved; no AGENTS.md found under repository."
+    },
+    {
+      "command": "dotnet run --project tests/TechnicalValidation/ADR0009.G1/runtime/G1.Validation.csproj -- --execute-disposable",
+      "runs": [
+        {
+          "id": "903159e3df67",
+          "result": "K03 fixture version FAIL P2007; raw stop and triage retained; cleanup removed container"
+        },
+        {
+          "id": "b6d9b294dd92",
+          "result": "Selected regressions and new negatives passed; cleanup removed container"
+        },
+        {
+          "id": "0e053ebdb26e",
+          "result": "Strengthened error role/object oracle passed; cleanup removed container"
+        },
+        {
+          "id": "7dad9c5a2703",
+          "result": "25 subproof PASS; both Account/Member concurrent guard variants; 23 parent BLOQUEADO / 31 NOT_EXECUTED; cleanup removed container"
+        }
+      ]
+    },
+    {
+      "command": "python tests/TechnicalValidation/ADR0009.G1/harness/compare_observed.py 7dad9c5a2703",
+      "result": "See security.comparison.json; expected snapshot immutable; self-executor comparison only"
+    },
+    {
+      "command": "git diff --check; docker ps -a --filter label=bpc.adr0009.run --format {{.Names}}",
+      "result": "No whitespace errors or remaining run containers"
+    }
+  ],
+  "environment": "Pinned existing PostgreSQL image; no production access, image pull, commit, push, merge or deploy",
+  "allowlistMethod": "Normalize explicit reviewed SQL GRANT statements into effective table/column tuples; relation-column metadata from catalog, never copy observed allowed flags as expected. Compare independent observed ACL-derived values. Test expectation only, not human approval."
+}

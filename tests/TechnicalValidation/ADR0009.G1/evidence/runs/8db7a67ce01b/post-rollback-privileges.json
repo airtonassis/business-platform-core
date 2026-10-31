@@ -1,0 +1,8 @@
+[
+  {
+    "identity_predecessor": true,
+    "identity_successor": true,
+    "tenant_account_org": true,
+    "tenant_account_status": true
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "schemaname": "authz",
+    "funcname": "ctx",
+    "calls": 863
+  },
+  {
+    "schemaname": "authz",
+    "funcname": "guard_immutable",
+    "calls": 9
+  },
+  {
+    "schemaname": "authz",
+    "funcname": "guard_invitation",
+    "calls": 13
+  },
+  {
+    "schemaname": "authz",
+    "funcname": "own_tenant_allowed",
+    "calls": 15
+  },
+  {
+    "schemaname": "authz",
+    "funcname": "validate_integrity",
+    "calls": 24
+  },
+  {
+    "schemaname": "authz",
+    "funcname": "validate_invitation_chain",
+    "calls": 13
+  },
+  {
+    "schemaname": "operation",
+    "funcname": "accept_invitation",
+    "calls": 6
+  },
+  {
+    "schemaname": "operation",
+    "funcname": "bootstrap",
+    "calls": 2
+  },
+  {
+    "schemaname": "operation",
+    "funcname": "replace_invitation",
+    "calls": 1
+  },
+  {
+    "schemaname": "operation",
+    "funcname": "revoke_membership",
+    "calls": 3
+  },
+  {
+    "schemaname": "operation",
+    "funcname": "update_demo",
+    "calls": 1
+  },
+  {
+    "schemaname": "pg_catalog",
+    "funcname": "obj_description",
+    "calls": 1
+  }
+]

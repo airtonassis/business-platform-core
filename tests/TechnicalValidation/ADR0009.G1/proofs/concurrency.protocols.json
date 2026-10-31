@@ -1,0 +1,369 @@
+{
+  "status": "PARTIAL_SQL_PROOFS_FULL_SCENARIOS_BLOCKED",
+  "barrierRule": "No sleeps as ordering proof; confirm blocker before release. pg_locks alone does not prove all row locks.",
+  "protocols": [
+    {
+      "id": "K01",
+      "source": "Plan K01 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "D1 and D2 physical sessions, plus O observer; distinct backend PIDs for races",
+      "roles": [
+        "CI",
+        "CI"
+      ],
+      "barrier": "B-L",
+      "lock": "Identity IN",
+      "actions": [
+        "D1 accept A pauses after identity lock",
+        "D2 accept B waits, observer confirms blocker",
+        "D1 commits; D2 revalidates; then swap winner"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "Um consumo/Account/Member e um aceite com sucesso; perdedor não transfere nem cria órfão e segue C04 (403 após prova de inelegibilidade). Se UNIQUE 23505 for alcançada internamente, traduzir só constraint conhecida. COMMIT só vencedor.",
+      "evidence": "evidence/runs/9ba11b81e986/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "Ambas ordens SQL A/B; falta C04/API, traducao de erros e variantes integrais de replay.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs"
+    },
+    {
+      "id": "K02",
+      "source": "Plan K02 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "D1 and D2 physical sessions, plus O observer; distinct backend PIDs for races",
+      "roles": [
+        "CP",
+        "CI"
+      ],
+      "barrier": "B-L",
+      "lock": "Identity IN",
+      "actions": [
+        "Bootstrap and accept target same IN",
+        "Hold winner identity lock, confirm loser wait",
+        "Commit winner, inspect loser rollback incl new org; swap"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "Um consome; bootstrap perdedor não deixa org/Owner/auditoria de sucesso/recibo; accept perdedor sem Accepted. Retry bootstrap confirmado só retorna mesmo comprovante, sem novo consumo.",
+      "evidence": "evidence/runs/9ba11b81e986/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "Ambas ordens bootstrap/aceite SQL; falta fluxo HTTP/idempotencia integral do protocolo.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs"
+    },
+    {
+      "id": "K03",
+      "source": "Plan K03 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "D1 and D2 physical sessions, plus O observer; distinct backend PIDs for races",
+      "roles": [
+        "CT",
+        "CT"
+      ],
+      "barrier": "B-L",
+      "lock": "Identity then org then Account/Membership",
+      "actions": [
+        "Command first keeps locks while revoke waits",
+        "Commit command then revoke and query new request",
+        "Repeat revoke first, command must revalidate after wait"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "Comando primeiro pode confirmar antes de revogação; revogação primeiro bloqueia comando depois de revalidar. Próxima requisição negada; Account+Membership revogados; sem promessa de invalidar JWT de produtos.",
+      "evidence": "evidence/runs/9ba11b81e986/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "Ambas ordens revogar/comando SQL; falta request/response autorizada da Application.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs"
+    },
+    {
+      "id": "K04",
+      "source": "Plan K04 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "D1 and D2 physical sessions, plus O observer; distinct backend PIDs for races",
+      "roles": [
+        "CT",
+        "CT"
+      ],
+      "barrier": "B-V",
+      "lock": "C1 org/resource, shared initial ETag",
+      "actions": [
+        "Both read same resource version",
+        "Release concurrent authorized PATCHes",
+        "Observe one update, stale loser 412; permission denial precedes version disclosure"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "Uma gravação incrementa versão; outra 412. Ausente 428, malformado/wildcard 400; sem direito precede revelação de versão (403/404). Sem overwrite ou retry automático; SQLSTATE de optimistic check pode não existir.",
+      "evidence": "evidence/runs/9ba11b81e986/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "DemoRecord concorrente testado; falta Membership concorrente e ETag HTTP.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs"
+    },
+    {
+      "id": "K05",
+      "source": "Plan K05 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "D1 and D2 physical sessions, plus O observer; distinct backend PIDs for races",
+      "roles": [
+        "CT",
+        "CT"
+      ],
+      "barrier": "B-L",
+      "lock": "C06 key then C1/slot/invitation",
+      "actions": [
+        "Both replace same invitation ETag; different keys",
+        "Verify one successor and Pending",
+        "Repeat same key/payload, replay has no code"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "Uma substituição; outra 412 se ainda autorizada. Mesma chave retorna replay C06 sem código; um Pending/sucessor, predecessor Replaced, segredo antigo inválido. Constraints 23505 só salvaguarda interna conhecida.",
+      "evidence": "evidence/runs/9ba11b81e986/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "Replace concorrente/ETag SQL/replay testados; faltam transporte/HTTP e variantes de reemissao.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs"
+    },
+    {
+      "id": "K06",
+      "source": "Plan K06 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "D1 and D2 physical sessions, plus O observer; distinct backend PIDs for races",
+      "roles": [
+        "CT holding",
+        "CI or CT"
+      ],
+      "barrier": "B-T",
+      "lock": "slot/invitation under C1",
+      "actions": [
+        "Preview valid before expiry",
+        "Hold lock while approved clock crosses expiry",
+        "Release, recheck fresh time; accept expires; allowed next mutation materializes expiry"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "Aceite 409 Expired mesmo ETag igual; GET não grava/incrementa; mutação materializa Expired auditado e libera Pending único. Sem validade por timestamp pré-espera ou índice com now().",
+      "evidence": "evidence/runs/9ba11b81e986/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "Prazo revalidado apos espera; falta GET sem escrita/materializacao e API.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs"
+    },
+    {
+      "id": "K07",
+      "source": "Plan K07 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "D1 and D2 physical sessions, plus O observer; distinct backend PIDs for races",
+      "roles": [
+        "CT/CP/CI as operation",
+        "observer"
+      ],
+      "barrier": "B-C",
+      "lock": "operation-specific C1",
+      "actions": [
+        "Commit then suppress response",
+        "Separate variant loses transport during commit",
+        "Reconcile from fresh connection/receipt, authorized replay, no blind new key"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "Um efeito no máximo; caso incerto não é chamado rollback. Recibo/Accepted reconcilia estado; replay create 200 vs primeiro 201, sem segredo; accept só direito atual. Nova chave não é mecanismo automático de retry.",
+      "evidence": "evidence/runs/9ba11b81e986/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "Replay apos commit com resposta descartada; corte real do transporte durante COMMIT e reconciliacao nao implementados.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs"
+    },
+    {
+      "id": "K08",
+      "source": "Plan K08 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "D1 and D2 physical sessions, plus O observer; distinct backend PIDs for races",
+      "roles": [
+        "CT/CP/CI as operation",
+        "observer"
+      ],
+      "barrier": "B-A",
+      "lock": "operation-specific C1",
+      "actions": [
+        "Reach append in same transaction",
+        "Inject approved deterministic audit failure",
+        "Observe complete rollback; transport uncertainty routes K07"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "Rollback confirmado remove todos efeitos de sucesso; nenhum sucesso parcial. Rede incerta segue K07; não classificar toda falha como 409/412. SQLSTATE é o da injeção D5, sanitizado; não criar evento de sucesso em outra transação.",
+      "evidence": "evidence/runs/9ba11b81e986/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "Falha CHECK de auditoria reverte mutacao; faltam caminhos restantes e resposta API.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs"
+    },
+    {
+      "id": "K09",
+      "source": "Plan K09 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "Two runtime sessions for API variants, approved structural probe sessions separately, plus observer",
+      "roles": [
+        "CT for API; isolated P1/P2 for structural test"
+      ],
+      "barrier": "B-L",
+      "lock": "org then accounts/members",
+      "actions": [
+        "API rejects any Owner/self alteration",
+        "Structural approved probe serializes two would-be removals",
+        "At least one valid Owner remains; no runtime transfer function added"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "API nega todas alterações de Owner, mesmo com dois. Probe não confirma zero Owner; rollback preserva composição anterior. Nenhuma licença/permissão nova; erro de trigger D3 separado de autorização HTTP.",
+      "evidence": "evidence/runs/9ba11b81e986/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "Auto-revogacao/Owner negadas; faltam dois Owners concorrentes e operacoes de role/ultimo Owner.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs"
+    },
+    {
+      "id": "K10",
+      "source": "Plan K10 / complementary C1/C2",
+      "status": "BLOQUEADO",
+      "executionReady": false,
+      "isolation": "READ COMMITTED EXECUTED_TEST_ONLY_NOT_PRODUCTION_APPROVAL",
+      "physicalConnections": "D1 and D2 physical sessions, plus O observer; distinct backend PIDs for races",
+      "roles": [
+        "CT",
+        "observer"
+      ],
+      "barrier": "physical-lease tracking",
+      "lock": "none carried across transactions",
+      "actions": [
+        "Run real aborts from K03/K06/K08/V14",
+        "Acquire same backend physical PID and no context",
+        "Verify empty/deny then B only; reset uncertain requires discard and different PID"
+      ],
+      "setup": "Use a new synthetic fixture namespace and capture baseline through observer O; never use observer credentials for runtime action.",
+      "oracle": "Backend reutilizável só após estado limpo; sem A em B nem transação abortada retornada ao pool. Se reset incerto, descarte comprovado. Falha de obtenção de mesmo PID não prova reuso e deixa variante inconclusiva.",
+      "evidence": "evidence/runs/e792ea797e94/results.json",
+      "cleanup": "Rollback uncommitted sessions, reconcile uncertain commits, then use the approved per-run cleanup procedure; no automatic DELETE/DROP.",
+      "bindings": {
+        "setup": null,
+        "sessionOne": null,
+        "sessionTwo": null,
+        "observerAssertions": null,
+        "barrierHooks": null,
+        "cleanup": null
+      },
+      "blockedBy": [
+        "Pool real apos aborto SQL; faltam cancelamento e reinicio operacional/Application.",
+        "INDEPENDENT_REVIEW_PENDING"
+      ],
+      "runtimeBinding": "runtime/Program.cs",
+      "notSelectedInLatestRun": "9ba11b81e986"
+    }
+  ],
+  "latestRun": "5efad327c7d7",
+  "additionalEvidenceRun": "528dfa651b66",
+  "note": "Ten K families have SQL subproofs in prior complete partial run; latest run stopped at V02. All three migration hashes are identical across those runs; source harness hashes retained. No API/full-case PASS inferred."
+}

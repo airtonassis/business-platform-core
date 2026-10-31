@@ -1,0 +1,565 @@
+[
+  {
+    "proof": "preflight",
+    "assertion": "Pinned local Linux image identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Run label.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Container image.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Loopback only.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "preflight",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "Only one own row.",
+    "observed": true
+  },
+  {
+    "proof": "Q08/tenant-sql-isolation",
+    "assertion": "No B canary.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "assertion": "Absent context denies.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "assertion": "Mismatched tuple denies.",
+    "observed": true
+  },
+  {
+    "proof": "Q07/missing-mismatched-malformed-context",
+    "expectedSqlstate": "22P02",
+    "observedSqlstate": "22P02",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "string_to_uuid",
+    "message": "invalid input syntax for type uuid: \u0022invalid-uuid\u0022",
+    "sessionUser": "core_tenant",
+    "effectiveRole": "core_tenant",
+    "operation": "SELECT",
+    "statementSha256": "C9F0F7F75E4744391CDC4435FD3CE691462E348B0430DE9E1E92E0350E5090F2",
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "expectedSqlstate": "P1003",
+    "observedSqlstate": "P1003",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.AccountMembership",
+    "sessionUser": null,
+    "effectiveRole": null,
+    "operation": null,
+    "statementSha256": null,
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "No consumed identity persisted.",
+    "observed": true
+  },
+  {
+    "proof": "V01/active-account-without-member-commit",
+    "assertion": "No partial account.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "expectedSqlstate": "P1004",
+    "observedSqlstate": "P1004",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.OwnerMissing",
+    "sessionUser": null,
+    "effectiveRole": null,
+    "operation": null,
+    "statementSha256": null,
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V05/organization-without-owner-at-commit",
+    "assertion": "No orphan org.",
+    "observed": true
+  },
+  {
+    "proof": "V08/missing-integrity-context-rejects",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V08/missing-integrity-context-rejects",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V08/missing-integrity-context-rejects",
+    "expectedSqlstate": "P1001",
+    "observedSqlstate": "P1001",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.ContextInvalid",
+    "sessionUser": null,
+    "effectiveRole": null,
+    "operation": null,
+    "statementSha256": null,
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "V04/partial-revocation-rejected",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V04/partial-revocation-rejected",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V04/partial-revocation-rejected",
+    "expectedSqlstate": "P1003",
+    "observedSqlstate": "P1003",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.AccountMembership",
+    "sessionUser": null,
+    "effectiveRole": null,
+    "operation": null,
+    "statementSha256": null,
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "V07/immutable-org-and-historical-consumption",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "V07/immutable-org-and-historical-consumption",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "V07/immutable-org-and-historical-consumption",
+    "expectedSqlstate": "P1005",
+    "observedSqlstate": "P1005",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.Immutable",
+    "sessionUser": "postgres",
+    "effectiveRole": "postgres",
+    "operation": "UPDATE",
+    "statementSha256": "13DF87DE5A7B7A1C85D4DF206F0A9BC0EE6DDA0910DC5F128449272889F201EA",
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "V07/immutable-org-and-historical-consumption",
+    "expectedSqlstate": "P1005",
+    "observedSqlstate": "P1005",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "exec_stmt_raise",
+    "message": "Integrity.Immutable",
+    "sessionUser": "postgres",
+    "effectiveRole": "postgres",
+    "operation": "DELETE",
+    "statementSha256": "35ADE3A8C871358DD5FDBC39CBE84414AB3CC392EEEF3BE495B19C578B16DC37",
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "sessionUser": "core_tenant",
+    "effectiveRole": "core_tenant",
+    "operation": "INSERT",
+    "statementSha256": "F2E342979542E69D03C21299593691BB4D43CFD62565F1B3A02B511FFC854D57",
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "sessionUser": "core_identity",
+    "effectiveRole": "core_identity",
+    "operation": "INSERT",
+    "statementSha256": "F2E342979542E69D03C21299593691BB4D43CFD62565F1B3A02B511FFC854D57",
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "sessionUser": "core_identity",
+    "effectiveRole": "core_identity",
+    "operation": "SELECT",
+    "statementSha256": "C9F0F7F75E4744391CDC4435FD3CE691462E348B0430DE9E1E92E0350E5090F2",
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "sessionUser": "core_platform",
+    "effectiveRole": "core_platform",
+    "operation": "INSERT",
+    "statementSha256": "F2E342979542E69D03C21299593691BB4D43CFD62565F1B3A02B511FFC854D57",
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "F01/runtime-direct-dml-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for table demo_records",
+    "sessionUser": "core_platform",
+    "effectiveRole": "core_platform",
+    "operation": "SELECT",
+    "statementSha256": "C9F0F7F75E4744391CDC4435FD3CE691462E348B0430DE9E1E92E0350E5090F2",
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "No PUBLIC execute.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F03/public-execute-and-wrong-port-denied",
+    "expectedSqlstate": "42501",
+    "observedSqlstate": "42501",
+    "table": null,
+    "column": null,
+    "constraint": null,
+    "routine": "aclcheck_error",
+    "message": "permission denied for function bootstrap",
+    "sessionUser": "core_identity",
+    "effectiveRole": "core_identity",
+    "operation": "SELECT",
+    "statementSha256": "208C72ECE17662C3C77F2D2744E932575A33B399C37BA1B7F4E47B17A878E7FB",
+    "diagnosticBaseline": "PostgreSQL 17.11 only; routine changes require oracle review, not weakened policy",
+    "check": "matched"
+  },
+  {
+    "proof": "F02/owners-and-runtime-not-bypass",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "F02/owners-and-runtime-not-bypass",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "F02/owners-and-runtime-not-bypass",
+    "assertion": "No unsafe role attributes.",
+    "observed": true
+  },
+  {
+    "proof": "F02/owners-and-runtime-not-bypass",
+    "assertion": "All tables forced and segregated.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Connection target guard.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Server database identity.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Distinct physical connections.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "Cleanup identity must match this run.",
+    "observed": true
+  },
+  {
+    "proof": "K01/accept-A-B-two-physical-connections",
+    "assertion": "No run container remains.",
+    "observed": true
+  }
+]
