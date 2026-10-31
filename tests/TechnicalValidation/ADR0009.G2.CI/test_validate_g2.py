@@ -79,6 +79,21 @@ class Checks(unittest.TestCase):
         p.write_text("{}")
         g2.check_hashes(self.root, {"dir\\a.json": g2.digest(p)})
 
+    def test_g1_support_lock_git_lf_preserves_recorded_crlf_digest(self):
+        p = self.root / g2.G1_LOCK
+        p.parent.mkdir(parents=True)
+        data = (REPO / g2.G1_LOCK).read_bytes().replace(b"\r\n", b"\n")
+        p.write_bytes(data)
+        g2.check_hashes(self.root, {g2.G1_LOCK: g2.ANCHORS[g2.G1_LOCK]})
+        self.assertEqual(data, p.read_bytes())
+
+    def test_g1_support_lock_content_change_still_fails(self):
+        p = self.root / g2.G1_LOCK
+        p.parent.mkdir(parents=True)
+        p.write_bytes((REPO / g2.G1_LOCK).read_bytes().replace(b"\r\n", b"\n") + b" ")
+        with self.assertRaises(ValueError):
+            g2.check_hashes(self.root, {g2.G1_LOCK: g2.ANCHORS[g2.G1_LOCK]})
+
     def test_traversal_rejected(self):
         with self.assertRaises(ValueError):
             g2.check_hashes(self.root, {"../outside": "0" * 64})

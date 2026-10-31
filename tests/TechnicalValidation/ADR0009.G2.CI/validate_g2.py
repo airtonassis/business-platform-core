@@ -1,6 +1,7 @@
 """Read-only G2 artifact validation. Only Git subprocesses; no historical runner imports."""
 import argparse
 from collections import Counter
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -18,6 +19,7 @@ G1 = "tests/TechnicalValidation/ADR0009.G1"
 G2 = "tests/TechnicalValidation/ADR0009.G2"
 SUPPORT = "tests/TechnicalValidation/ADR0009.G2.CI"
 WORKFLOW = ".github/workflows/adr0009-g2.yml"
+G1_LOCK = "tests/TechnicalValidation/ADR0009.G1.CI/originals.sha256.json"
 RUNS = ("f31a6617ed85", "6909108391b4")
 ALLOWED_IDS = {"Q07", "Q08", "Q11", "Q12", "V01", "V02", "V03", "V04", "V05",
                "V06", "V07", "V08", "F01", "F02", "F03", "F04", "F05", "F06", "F09", "H01"}
@@ -46,7 +48,16 @@ def check_hashes(root, entries):
     for name, expected in entries.items():
         p = file(root, name)
         require(isinstance(expected, str) and re.fullmatch(r"[a-fA-F0-9]{64}", expected), "HASH: invalid digest")
-        require(digest(p) == expected.lower(), "HASH: mismatch: " + name)
+        observed = digest(p)
+        if observed != expected.lower() and name.replace("\\", "/") == G1_LOCK:
+            # Only this non-evidence support file is Git-normalized (* text=auto).
+            # The historical G2 source reference hashes its Windows CRLF bytes.
+            # Verify those exact recorded bytes in memory; never rewrite the file,
+            # change the recorded checksum or normalize any G1/G2 evidence.
+            data = p.read_bytes()
+            if b"\r" not in data:
+                observed = hashlib.sha256(data.replace(b"\n", b"\r\n")).hexdigest()
+        require(observed == expected.lower(), "HASH: mismatch: " + name)
 
 
 def pointer(value, path):
