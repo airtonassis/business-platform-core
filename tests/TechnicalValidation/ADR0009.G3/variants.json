@@ -1,0 +1,1409 @@
+{
+  "formatVersion": 1,
+  "sources": {
+    "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md": "f3a27f60c67f7f9d340210ba37ff0c78833b139fd7322ca324638808b6bbef2f",
+    "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md": "3bd756b31d1c92c1c81eeae408bc1407aaee427aaa641bffbd2dae39dc1e4fa5",
+    "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md": "2255c23f1303c09304c79e8a1bfa9e70885fb8c91f22d1834148beb20e1c8e71",
+    "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md": "2c49a6dfd36704e9e9d67a4d15ab4f89f0448020acf6159e58858ba4aee5e5c6",
+    "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md": "2cdd3858dc95038156938328370b4ae067c381a00035240c9b84073d48dd9971",
+    "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json": "501dc499fca3e0783b0fcdc645673ef548f67d67abfdc10a0f13fe452c883a41"
+  },
+  "decisions": {
+    "D4": "PENDING",
+    "STAGE2": "PENDING",
+    "D5-TRANSPORT": "PENDING",
+    "D5-DEFERRED": "PENDING",
+    "D5-RESET": "PENDING",
+    "D5-OWNER": "PENDING",
+    "D5-DEADLOCK": "PENDING"
+  },
+  "exclusions": [
+    {
+      "protocol": "K04",
+      "gate": "G4",
+      "reason": "Membership edit port and HTTP ETag mapping absent."
+    },
+    {
+      "protocol": "K06",
+      "gate": "G4",
+      "reason": "GET preview and initial invitation issue port absent; HTTP behavior not proven by SQL."
+    },
+    {
+      "protocol": "K07",
+      "gate": "G4",
+      "reason": "Application response recovery and HTTP replay authorization."
+    },
+    {
+      "protocol": "K09",
+      "gate": "G4",
+      "reason": "HTTP Owner denial remains independent of structural probe."
+    },
+    {
+      "protocol": "Q12",
+      "gate": "G4",
+      "reason": "Web/OIDC session recovery and operational restart."
+    },
+    {
+      "protocol": "V12",
+      "gate": "G4",
+      "reason": "Application/API/OIDC handlers and future writers absent."
+    }
+  ],
+  "variants": [
+    {
+      "id": "K01/accept-a-first",
+      "protocol": "K01",
+      "relatedK": [
+        "K01"
+      ],
+      "contracts": [
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "description": "Concurrent acceptance of invitations A/B, a-first",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Exactly one lifetime account and consumption; loser has specific consumed-identity diagnostic and confirmed rollback; invitation, membership and audit observed independently.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N3/N6/N7; C1/C2; C04/C05/C06; I06; K01",
+      "sourceSection": "K01"
+    },
+    {
+      "id": "K02/bootstrap-accept-a-first",
+      "protocol": "K02",
+      "relatedK": [
+        "K02"
+      ],
+      "contracts": [
+        "C04",
+        "C06",
+        "C09"
+      ],
+      "description": "Bootstrap races invitation acceptance, a-first",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "One identity consumption; losing bootstrap leaves no organization/account/Owner/audit/receipt; losing acceptance creates no partial membership.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N3/N5/N6; C1/C2; C04/C06/C09; I06/I09; K02",
+      "sourceSection": "K02"
+    },
+    {
+      "id": "K01/accept-b-first",
+      "protocol": "K01",
+      "relatedK": [
+        "K01"
+      ],
+      "contracts": [
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "description": "Concurrent acceptance of invitations A/B, b-first",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Exactly one lifetime account and consumption; loser has specific consumed-identity diagnostic and confirmed rollback; invitation, membership and audit observed independently.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N3/N6/N7; C1/C2; C04/C05/C06; I06; K01",
+      "sourceSection": "K01"
+    },
+    {
+      "id": "K02/bootstrap-accept-b-first",
+      "protocol": "K02",
+      "relatedK": [
+        "K02"
+      ],
+      "contracts": [
+        "C04",
+        "C06",
+        "C09"
+      ],
+      "description": "Bootstrap races invitation acceptance, b-first",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "One identity consumption; losing bootstrap leaves no organization/account/Owner/audit/receipt; losing acceptance creates no partial membership.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N3/N5/N6; C1/C2; C04/C06/C09; I06/I09; K02",
+      "sourceSection": "K02"
+    },
+    {
+      "id": "K03/revoke-first",
+      "protocol": "K03",
+      "relatedK": [
+        "K03"
+      ],
+      "contracts": [
+        "C05",
+        "C08",
+        "C09"
+      ],
+      "description": "Revocation versus authorized DemoRecord update, revoke-first",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Revoke-first: post-wait authorization rejects with 42501 and no DemoRecord effect. Command-first may commit before revocation; final Account/Membership coherent; prove waits and fresh revalidation.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N4/N6/N7; C2/V3; C05/C07/C08; I10; K03",
+      "sourceSection": "K03"
+    },
+    {
+      "id": "K03/command-first",
+      "protocol": "K03",
+      "relatedK": [
+        "K03"
+      ],
+      "contracts": [
+        "C05",
+        "C08",
+        "C09"
+      ],
+      "description": "Revocation versus authorized DemoRecord update, command-first",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Revoke-first: post-wait authorization rejects with 42501 and no DemoRecord effect. Command-first may commit before revocation; final Account/Membership coherent; prove waits and fresh revalidation.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N4/N6/N7; C2/V3; C05/C07/C08; I10; K03",
+      "sourceSection": "K03"
+    },
+    {
+      "id": "K04/demo-version",
+      "protocol": "K04",
+      "relatedK": [
+        "K04"
+      ],
+      "contracts": [
+        "C05",
+        "C08"
+      ],
+      "description": "Concurrent DemoRecord update with equal version",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Exactly one update; authorized loser P2007, original diagnostic and rollback; final version increments once; HTTP ETag mapping remains G4.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N9; C05/C08; I02/I10; K04",
+      "sourceSection": "K04"
+    },
+    {
+      "id": "K05/different-keys",
+      "protocol": "K05",
+      "relatedK": [
+        "K05"
+      ],
+      "contracts": [
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "description": "Concurrent replace: different-keys",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "One replacement; authorized stale-version loser P2007; one Pending successor, predecessor Replaced and old secret invalid.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N9/N10; C04/C05/C06; I06; K05",
+      "sourceSection": "K05"
+    },
+    {
+      "id": "K05/same-key-replay",
+      "protocol": "K05",
+      "relatedK": [
+        "K05"
+      ],
+      "contracts": [
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "description": "Concurrent replace: same-key-replay",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "One effect and receipt; authorized identical replay returns same safe result without secret; wait on scoped key observed.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N9/N10; C04/C05/C06; I06; K05",
+      "sourceSection": "K05"
+    },
+    {
+      "id": "K05/changed-payload",
+      "protocol": "K05",
+      "relatedK": [
+        "K05"
+      ],
+      "contracts": [
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "description": "Concurrent replace: changed-payload",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Same scoped key with changed canonical target/version is P2001; no additional successor/event/receipt.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N9/N10; C04/C05/C06; I06; K05",
+      "sourceSection": "K05"
+    },
+    {
+      "id": "K06/accept-after-expiry",
+      "protocol": "K06",
+      "relatedK": [
+        "K06"
+      ],
+      "contracts": [
+        "C04",
+        "C05"
+      ],
+      "description": "Invitation expires while acceptance waits",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Database clock after wait exceeds expiresAt; acceptance P2005 and confirmed rollback; no account/consumption; Pending may remain after rollback, not falsely materialized.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N9; C04/C05; I03/I06; K06",
+      "sourceSection": "K06"
+    },
+    {
+      "id": "K06/replace-expired",
+      "protocol": "K06",
+      "relatedK": [
+        "K06"
+      ],
+      "contracts": [
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "description": "Replace invitation expired during lock wait",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Observe approved implemented transition, expiration audit and Replaced predecessor plus single new Pending; no index using now(); freeze exact transition oracle against implementation before execution.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N9; C04/C05; I03/I06; K06",
+      "sourceSection": "K06"
+    },
+    {
+      "id": "K07/confirmed-commit-lost-response",
+      "protocol": "K07",
+      "relatedK": [
+        "K07"
+      ],
+      "contracts": [
+        "C06",
+        "C09"
+      ],
+      "description": "Confirmed commit with response suppressed; authorized replay",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Observer proves committed transaction before reply suppression; replay same key has one effect, receipt and safe result; no fabricated transport uncertainty.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N10; C06/C09; I09; K07",
+      "sourceSection": "K07"
+    },
+    {
+      "id": "K07/unknown-commit",
+      "protocol": "K07",
+      "relatedK": [
+        "K07"
+      ],
+      "contracts": [
+        "C06",
+        "C09"
+      ],
+      "description": "Transport cut during COMMIT with uncertain result",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "D5-TRANSPORT",
+        "STAGE2"
+      ],
+      "oracle": "Record UNKNOWN until independent reconciliation; exact replay only after current authorization; never infer rollback from network exception.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "BLOCKED",
+      "blockers": [
+        "New transport fault mechanism not approved under existing D5."
+      ],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N10; C06/C09; I09; K07",
+      "sourceSection": "K07"
+    },
+    {
+      "id": "K08/audit-failure-bootstrap",
+      "protocol": "K08",
+      "relatedK": [
+        "K08"
+      ],
+      "contracts": [
+        "C06",
+        "C09"
+      ],
+      "description": "Atomic audit failure for existing writer bootstrap",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Exact injected 23514 and constraint g1_fault_audit; confirmed rollback of business data, audit and applicable receipt; independent pre/post state and positive control. Observer and fixture privileges separated.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N11; C06/C09; I09/I10; K08",
+      "sourceSection": "K08"
+    },
+    {
+      "id": "K08/audit-failure-accept",
+      "protocol": "K08",
+      "relatedK": [
+        "K08"
+      ],
+      "contracts": [
+        "C06",
+        "C09"
+      ],
+      "description": "Atomic audit failure for existing writer accept",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Exact injected 23514 and constraint g1_fault_audit; confirmed rollback of business data, audit and applicable receipt; independent pre/post state and positive control. Observer and fixture privileges separated.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N11; C06/C09; I09/I10; K08",
+      "sourceSection": "K08"
+    },
+    {
+      "id": "K08/audit-failure-update-demo",
+      "protocol": "K08",
+      "relatedK": [
+        "K08"
+      ],
+      "contracts": [
+        "C06",
+        "C09"
+      ],
+      "description": "Atomic audit failure for existing writer update-demo",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Exact injected 23514 and constraint g1_fault_audit; confirmed rollback of business data, audit and applicable receipt; independent pre/post state and positive control. Observer and fixture privileges separated.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N11; C06/C09; I09/I10; K08",
+      "sourceSection": "K08"
+    },
+    {
+      "id": "K08/audit-failure-revoke-membership",
+      "protocol": "K08",
+      "relatedK": [
+        "K08"
+      ],
+      "contracts": [
+        "C06",
+        "C09"
+      ],
+      "description": "Atomic audit failure for existing writer revoke-membership",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Exact injected 23514 and constraint g1_fault_audit; confirmed rollback of business data, audit and applicable receipt; independent pre/post state and positive control. Observer and fixture privileges separated.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N11; C06/C09; I09/I10; K08",
+      "sourceSection": "K08"
+    },
+    {
+      "id": "K08/audit-failure-replace-invitation",
+      "protocol": "K08",
+      "relatedK": [
+        "K08"
+      ],
+      "contracts": [
+        "C06",
+        "C09"
+      ],
+      "description": "Atomic audit failure for existing writer replace-invitation",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Exact injected 23514 and constraint g1_fault_audit; confirmed rollback of business data, audit and applicable receipt; independent pre/post state and positive control. Observer and fixture privileges separated.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N11; C06/C09; I09/I10; K08",
+      "sourceSection": "K08"
+    },
+    {
+      "id": "K08/deferred-audit-fault",
+      "protocol": "K08",
+      "relatedK": [
+        "K08"
+      ],
+      "contracts": [
+        "C06",
+        "C09"
+      ],
+      "description": "Deferred audit failure variant",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "D5-DEFERRED",
+        "STAGE2"
+      ],
+      "oracle": "Error at COMMIT, no partial data/event/receipt; network uncertainty classified separately.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "BLOCKED",
+      "blockers": [
+        "Deferred failpoint is not approved in existing D5."
+      ],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N11; C06/C09; I09/I10; K08",
+      "sourceSection": "K08"
+    },
+    {
+      "id": "K09/structural-owner",
+      "protocol": "K09",
+      "relatedK": [
+        "K09"
+      ],
+      "contracts": [
+        "C08",
+        "C09"
+      ],
+      "description": "Structural last-Owner invariant shares V11 without double counting",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [
+        "V11/two-owner-write-skew"
+      ],
+      "executionRequirements": [
+        "D4",
+        "D5-OWNER",
+        "STAGE2"
+      ],
+      "oracle": "Both removals must not commit leaving zero Owner; two guard denials do not satisfy structural write-skew proof.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "BLOCKED",
+      "blockers": [
+        "No approved reachable Owner-removal experiment; existing guards must remain unchanged."
+      ],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N5/N7; C08/V2; I09/I10; K09",
+      "sourceSection": "K09"
+    },
+    {
+      "id": "K10/pool-after-revoke",
+      "protocol": "K10",
+      "relatedK": [
+        "K10"
+      ],
+      "contracts": [
+        "C07",
+        "C09"
+      ],
+      "description": "Pool reuse after real revoke failure",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [
+        "K03/revoke-first"
+      ],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "One-connection pool proves same backend PID after confirmed rollback; no-context access denied; next transaction B never reads A; no aborted transaction returned to pool.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-POOL"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N2/N6; R4/Q3; C07/C09; I02; K10",
+      "sourceSection": "K10"
+    },
+    {
+      "id": "K10/pool-after-expiry",
+      "protocol": "K10",
+      "relatedK": [
+        "K10"
+      ],
+      "contracts": [
+        "C07",
+        "C09"
+      ],
+      "description": "Pool reuse after real expiry failure",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [
+        "K06/accept-after-expiry"
+      ],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "One-connection pool proves same backend PID after confirmed rollback; no-context access denied; next transaction B never reads A; no aborted transaction returned to pool.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-POOL"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N2/N6; R4/Q3; C07/C09; I02; K10",
+      "sourceSection": "K10"
+    },
+    {
+      "id": "K10/pool-after-audit",
+      "protocol": "K10",
+      "relatedK": [
+        "K10"
+      ],
+      "contracts": [
+        "C07",
+        "C09"
+      ],
+      "description": "Pool reuse after real audit failure",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [
+        "K08/audit-failure-update-demo"
+      ],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "One-connection pool proves same backend PID after confirmed rollback; no-context access denied; next transaction B never reads A; no aborted transaction returned to pool.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-POOL"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N2/N6; R4/Q3; C07/C09; I02; K10",
+      "sourceSection": "K10"
+    },
+    {
+      "id": "K10/pool-after-commit",
+      "protocol": "K10",
+      "relatedK": [
+        "K10"
+      ],
+      "contracts": [
+        "C07",
+        "C09"
+      ],
+      "description": "Pool reuse after real commit failure",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [
+        "V14/deferred-commit-failure"
+      ],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "One-connection pool proves same backend PID after confirmed rollback; no-context access denied; next transaction B never reads A; no aborted transaction returned to pool.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-POOL"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N2/N6; R4/Q3; C07/C09; I02; K10",
+      "sourceSection": "K10"
+    },
+    {
+      "id": "Q12/cancel-reset-uncertain",
+      "protocol": "Q12",
+      "relatedK": [
+        "K10"
+      ],
+      "contracts": [
+        "C07"
+      ],
+      "description": "Cancel command and uncertain rollback/reset",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "D5-RESET",
+        "STAGE2"
+      ],
+      "oracle": "Abort unit if context/locks lost; uncertain reset discards old backend, new PID observed; no transaction/context leakage to B.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-POOL"
+      ],
+      "planningState": "BLOCKED",
+      "blockers": [
+        "Cancellation/reset fault mechanism needs explicit D5 approval."
+      ],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N2; R4/Q3/V3; C07; I02/I10; K10",
+      "sourceSection": "Q12"
+    },
+    {
+      "id": "V08/final-visibility",
+      "protocol": "V08",
+      "relatedK": [
+        "K03",
+        "K08"
+      ],
+      "contracts": [
+        "C08",
+        "C09"
+      ],
+      "description": "Technical integrity context at deferred validation",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Compare full final organization facts (including revoked rows) with independent observer; missing actor authorization must not hide Account/Membership/Owner; absent anchor/context rejects COMMIT, no empty-set success, no repair or late explicit locks.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N4/N5/N7; V3 e 3.8 deste plano; C08/C09; I09/I10",
+      "sourceSection": "V08"
+    },
+    {
+      "id": "V09/writer-lock-correlation",
+      "protocol": "V09",
+      "relatedK": [
+        "K01",
+        "K02",
+        "K03",
+        "K04",
+        "K05",
+        "K06",
+        "K08",
+        "K09"
+      ],
+      "contracts": [
+        "C05",
+        "C08"
+      ],
+      "description": "Correlate all existing writers, trigger bodies and observed lock order",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Reuse G1 body review but correlate dynamic trace with C1 for each enumerated writer; no explicit FOR UPDATE/SHARE/advisory lock or repair in validators. FK/UNIQUE internal locks distinguished; absence of waiting alone is insufficient.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK",
+        "E-ACL",
+        "E-REVIEW"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N7; C1/V1/V3; C05/C08; K01\u2013K09",
+      "sourceSection": "V09"
+    },
+    {
+      "id": "V10/post-wait-revalidation",
+      "protocol": "V10",
+      "relatedK": [
+        "K03"
+      ],
+      "contracts": [
+        "C05",
+        "C08"
+      ],
+      "description": "READ COMMITTED fresh read after revocation wait",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [
+        "K03/revoke-first"
+      ],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Distinct physical sessions; prove wait then committed revocation and new statement revalidation denying stale authorization; role change is not introduced.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N7; C1/V1; C05/C08; I10; K03",
+      "sourceSection": "V10"
+    },
+    {
+      "id": "V11/two-owner-write-skew",
+      "protocol": "V11",
+      "relatedK": [
+        "K09"
+      ],
+      "contracts": [
+        "C08"
+      ],
+      "description": "Structural two-Owner write-skew, both orders",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "D5-OWNER",
+        "STAGE2"
+      ],
+      "oracle": "Approved reachable structural probe must serialize by organization, prevent zero Owner commit and perform no late explicit validator locks. Concurrent denied revocations are not this proof.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "BLOCKED",
+      "blockers": [
+        "All current Owner transitions are prohibited; human applicability/oracle or compatible probe decision required."
+      ],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N5/N7; V1/V2; C08; I10; K09",
+      "sourceSection": "V11"
+    },
+    {
+      "id": "V12/existing-writer-c1",
+      "protocol": "V12",
+      "relatedK": [
+        "K01",
+        "K02",
+        "K03",
+        "K04",
+        "K05",
+        "K06",
+        "K08"
+      ],
+      "contracts": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "description": "C1 inventory for five implemented SQL write ports",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Enumerate bootstrap, accept, update_demo, revoke_membership and replace_invitation; bind each actual write/implicit trigger to C1, revalidation, audit, receipt and commit; privilege fixtures are not runtime ports; absent future handlers remain G4.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-ACL",
+        "E-REVIEW",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N7/N11; F2/V1; C02\u2013C09; I03\u2013I10",
+      "sourceSection": "V12"
+    },
+    {
+      "id": "V13/controlled-deadlock",
+      "protocol": "V13",
+      "relatedK": [
+        "K01",
+        "K02",
+        "K03",
+        "K04",
+        "K05"
+      ],
+      "contracts": [
+        "C05",
+        "C06",
+        "C09"
+      ],
+      "description": "Controlled real deadlock and whole-transaction handling",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "D5-DEADLOCK",
+        "STAGE2"
+      ],
+      "oracle": "Real 40P01 with native diagnostics and one victim (not fixed PID); full victim rollback; bounded explicit whole-transaction retry only under approved D4, never COMMIT-only. Do not fabricate 40001 under READ COMMITTED.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "BLOCKED",
+      "blockers": [
+        "Controlled inversion probe must be approved; no mutation of production C1."
+      ],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N6/N7/N10; C3/V3; C06/C09; K07/K08",
+      "sourceSection": "V13"
+    },
+    {
+      "id": "V14/deferred-commit-failure",
+      "protocol": "V14",
+      "relatedK": [
+        "K08",
+        "K10"
+      ],
+      "contracts": [
+        "C06",
+        "C09"
+      ],
+      "description": "Invalid final state rejected at actual COMMIT",
+      "preconditions": [
+        "Synthetic identities and organizations; distinct writer and observer sessions; C1 locks before mutation; READ COMMITTED; no runtime bypass.",
+        "Freeze fixture, barriers and exact diagnostics before future execution."
+      ],
+      "dependencies": [],
+      "executionRequirements": [
+        "D4",
+        "STAGE2"
+      ],
+      "oracle": "Specific deferred-validator diagnostic at COMMIT; independently observed rollback of invalid state and any applicable audit/receipt. Existing probe lacks audit/receipt grants: coverage must remain partial, no privileges expanded.",
+      "evidenceTypes": [
+        "E-TRACE",
+        "E-DB",
+        "E-LOCK"
+      ],
+      "planningState": "PLANNED",
+      "blockers": [],
+      "references": [
+        "docs/architecture/decisions/ADR-0008-organization-membership-and-context.md",
+        "docs/architecture/decisions/ADR-0009-persistence-isolation-and-concurrency.md",
+        "docs/architecture/ADR_0009_MODELO_RLS_CONCORRENCIA.md",
+        "docs/architecture/PLANO_VALIDACAO_TECNICA_ADR_0009.md",
+        "docs/architecture/SPRINT_1_CONTRATOS_FLUXOS.md",
+        "tests/TechnicalValidation/ADR0009.G1/proofs/scenarios.json"
+      ],
+      "sourceTrace": "ADR-0009; N4/N6/N11; V2/V3; C06/C09; I09",
+      "sourceSection": "V14"
+    }
+  ]
+}
