@@ -1,0 +1,42 @@
+name: ADR-0009 G3 stage 1 offline validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/TechnicalValidation/ADR0009.G3/**'
+      - '.github/workflows/adr0009-g3-offline.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  offline-validation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Test offline contracts with temporary fixtures
+        run: python -B -m unittest discover -s tests/TechnicalValidation/ADR0009.G3 -p test_offline.py -v
+      - name: Validate variant manifest
+        run: python -B tests/TechnicalValidation/ADR0009.G3/offline.py validate
+      - name: List planned variants
+        run: python -B tests/TechnicalValidation/ADR0009.G3/offline.py list
+      - name: Select an explicit variant without execution
+        run: python -B tests/TechnicalValidation/ADR0009.G3/offline.py select K01/accept-a-first
+      - name: Check JSON syntax
+        run: python -B -m json.tool tests/TechnicalValidation/ADR0009.G3/variants.json > /dev/null
+      - name: Check whitespace in the pull request diff
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: git diff --check "$BASE_SHA"...HEAD
+      - name: Confirm validation did not change files
+        run: git diff --exit-code
