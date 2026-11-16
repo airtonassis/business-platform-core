@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsTestProject>true</IsTestProject>
+    <IsPackable>false</IsPackable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="PostgresProbe/**/*.cs" />
+    <Compile Remove="AuditProbe/**/*.cs" />
+    <Compile Remove="MembershipProbe/**/*.cs" />
+    <Compile Remove="InvitationProbe/**/*.cs" />
+    <Compile Remove="DemoProbe/**/*.cs" />
+    <Compile Remove="WebMembershipProbe/**/*.cs" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <ProjectReference Include="../../src/Business.Platform.Core.Api/Business.Platform.Core.Api.csproj" />
+  </ItemGroup>
+</Project>

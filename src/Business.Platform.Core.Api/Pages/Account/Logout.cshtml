@@ -1,0 +1,4 @@
+@page "/account/logout"
+@model Business.Platform.Core.Api.Pages.Account.LogoutModel
+@if(Model.Ended){<h1>Sessão encerrada neste aplicativo</h1><p>O provedor pode manter sessões em outros aplicativos.</p><a href="/account/login">Entrar novamente</a>}
+else{<h1>Encerrar sessão?</h1><form method="post"><button>Sair deste aplicativo</button></form>}

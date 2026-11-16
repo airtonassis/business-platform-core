@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><GenerateDocumentationFile>false</GenerateDocumentationFile></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../../src/Business.Platform.Core.Infrastructure/Business.Platform.Core.Infrastructure.csproj" /></ItemGroup>
+</Project>
