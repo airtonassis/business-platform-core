@@ -12,6 +12,14 @@ Uma empresa é uma Organization isolada e um ambiente empresarial, com assinatur
 
 [Modelo de identidade/conta e matriz de impacto](CONTA_EMPRESARIAL_UNICA.md): identidade técnica, e-mail e conta empresarial são conceitos distintos. A unicidade permanente por identidade e a exigência de novo login/identidade e convite para outra empresa são regras de produto aprovadas. Modelo físico, constraints, registro histórico e política do IdP exigem aprovação técnica; nenhuma pessoa/contato recebe múltiplos vínculos automaticamente. Templates versionados orientam parametrização específica por empresa e aplicação; não compartilham configuração/dados. Contratação/licenças/templates são futuras, sem antecipação na Sprint 1. A diretriz preserva o modelo híbrido ERP/CRM abaixo.
 
+## Acesso integrado Core–produtos
+
+A experiência normal da plataforma parte de uma entrada autenticada única. Depois do login, o contexto empresarial validado identifica a organização vinculada, os produtos disponíveis e os escopos autorizados; o usuário não deve precisar manter credenciais, portais ou uma coleção de links independentes por produto como rotina. Um produto contratado só fica acessível quando coexistem vínculo/membership ativos, entitlement/licença válida, perfil ativo atribuído e permissão efetiva para a funcionalidade; operações com escopo de filial também exigem a unidade ativa autorizada. Direitos administrativos no Core permitem somente as funções administrativas efetivamente concedidas e não liberam automaticamente todas as operações de cada produto.
+
+O Core é responsável pela governança compartilhada de identidade, organização, filiais, usuários/vínculos, licenciamento, perfis e permissões. Cada produto continua dono de sua aplicação, dados e regras de domínio, valida o contexto recebido e autoriza suas operações no backend. Implantação, APIs e bancos independentes não criam outra fonte de identidade nem justificam uma experiência habitual de login/portal separado. A integração deve seguir o contexto versionado DCSE-01/DCSE-CTX-V1 e os contratos de autenticação aplicáveis; esta diretriz de experiência não autoriza compartilhar cookies entre aplicações nem escolhe um mecanismo técnico além das decisões existentes.
+
+Fontes: [DCSE-01](IDENTIDADE_CENARIOS_E_DECISOES.md#dcse-01), [Consolidação do Plano Diretor, §20.5](decisions/PLANO_DIRETOR_BUSINESS_PLATFORM_CORE.md#205-conta-empresarial-única--revisão-de-produto-aprovada), [ARS-NAV e ARS-FUNC](../standards/DEVELOPMENT_STANDARDS.md#araia-smart-navigation--ars-nav). A maturidade de cada mecanismo de licença, sessão e integração continua registrada em DCSE-01 e nos contratos técnicos; esta consolidação não a promove.
+
 ## Decisão estratégica
 
 Organizar o ecossistema em quatro responsabilidades:
@@ -74,3 +82,5 @@ Os repositórios dos produtos não foram inspecionados nesta consolidação. Imp
 ## Gate de governança
 
 Aprovação estratégica registrada neste documento não aprova implementação. Rever os ADRs propostos e a matriz de decisões da Sprint 1 antes de qualquer desenvolvimento. Não alterar silenciosamente gates históricos ou contratos CLOSED da Foundation.
+
+**Registro documental (16/11/2026):** explicitada a experiência de acesso integrado e a interseção cumulativa de contexto, entitlement, perfil e permissão a partir das diretrizes existentes DCSE-01 e Plano Diretor §20.5. Sem novo identificador de decisão, mudança de escopo de domínio ou promoção de estado de implementação/homologação.

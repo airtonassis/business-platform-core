@@ -2,9 +2,9 @@
 
 ## Autoridade e estado
 
-**Regras de produto aprovadas; ADRs 0007/0008 e contratos técnicos permanecem Propostos.**
+**Regras de produto aprovadas.** DCSE-01 foi aprovada como diretriz funcional em 07/11/2026. Seu recorte DCSE-CTX-V1 foi implementado e validado localmente no Core e ERP; a política completa continua parcialmente pendente. ADRs 0007/0008 permanecem Propostas; a autorização técnica específica deste recorte não aprova os demais mecanismos candidatos.
 
-Autorização desta etapa: somente documentação relacionada à identidade/conta empresarial. Nenhum endpoint, schema, migration, frontend, teste executável ou infraestrutura criado. Foundation e ADRs 0001–0006 não são alterados. Referências: [ADR-0007](decisions/ADR-0007-oidc-identity-and-web-session.md), [ADR-0008](decisions/ADR-0008-organization-membership-and-context.md), [C01–C10](SPRINT_1_CONTRATOS_FLUXOS.md), [modelo M01–M10](CONTA_EMPRESARIAL_UNICA.md), [RF/UAT](SPRINT_1_RASTREABILIDADE_UX.md).
+Autorização desta etapa: somente documentação relacionada à identidade/conta empresarial. Nenhum endpoint, schema, migration, frontend, teste executável ou infraestrutura criado. Foundation e ADRs 0001–0006 não são alterados. Referências: [Política Central de Sessão e Contexto Empresarial](#dcse-01), [ADR-0007](decisions/ADR-0007-oidc-identity-and-web-session.md), [ADR-0008](decisions/ADR-0008-organization-membership-and-context.md), [C01–C10](SPRINT_1_CONTRATOS_FLUXOS.md), [modelo M01–M10](CONTA_EMPRESARIAL_UNICA.md), [RF/UAT](SPRINT_1_RASTREABILIDADE_UX.md).
 
 Produto aprovado: identidade técnica OIDC tem no máximo uma EnterpriseUserAccount durante todo seu ciclo de vida. Vínculo a Organization é imutável inclusive após revogação. Funcionário que muda A→B usa novo login/identidade e novo convite/conta. Mesma pessoa e e-mail não unem identidades. Mesmo e-mail só pode ser reutilizado como atributo entre identidades distintas se o IdP/política permitir. Não há seletor ou transferência, e PlatformOperator permanece separado.
 
@@ -82,3 +82,29 @@ Para I03/I04: ID/código inválido ou conta destinatária errada continuam respo
 | Gate e execução | Revisar I01–I12, RF/UAT, ADRs e restrições antes de implementar | Revisão humana; autorizações separadas |
 
 Critério documental: todos os cenários têm resultado positivo/negativo e rastreabilidade; nenhuma regra aprovada é apresentada como opção de produto ainda em aberto. Critério técnico futuro: testes reais IdP/PostgreSQL/concorrência/runtime somente sob autorização. Nenhum resultado aprovado é inventado nesta etapa.
+
+<a id="dcse-01"></a>
+
+## H05 — Política Central de Sessão e Contexto Empresarial (DCSE-01)
+
+**Estado:** diretriz funcional aprovada em 07/11/2026; recorte DCSE-CTX-V1 implementado e validado localmente por autorização expressa posterior. A política completa não está implementada. Fonte técnica: [contratos — DCSE-CTX-V1](SPRINT_1_CONTRATOS_FLUXOS.md). A arquitetura aprovada em P00 e BASE-03 permanece preservada; homologação humana/publicação pendentes.
+
+**Compatibilidade com decisão anterior:** DCSE-01 não altera a regra aprovada de vínculo permanente de uma identidade a uma única Organization (ADR-0007/0008). A preparação de contexto inclui os dados da empresa vinculada e as unidades autorizadas; não cria alternância entre empresas nem seletor de organização.
+
+| ID | Regra central aprovada | Critério verificável futuro | Estado |
+|---|---|---|---|
+| DCSE-01.01 | A AraIa Core responde por identidade, licenciamento, perfis, permissões, empresas, matrizes, filiais e contexto empresarial ativo. | Um produto recebe contexto autenticado e versionado da Core; não cria autoridade paralela para esses domínios. | Responsabilidade central preservada; contexto comprovado no DCSE-CTX-V1 sem reconstruir os demais domínios |
+| DCSE-01.02 | No login, preparar o contexto autorizado do usuário, incluindo produtos licenciados, permissões, empresas e unidades disponíveis. Com uma unidade autorizada, ativá-la automaticamente; com várias, restaurar a última unidade válida. | A unidade ativa pertence ao usuário e à organização autenticados, permanece autorizada e é identificada por ID estável. Nenhuma unidade inválida é restaurada. | Implementado/validado localmente no recorte DCSE-CTX-V1 |
+| DCSE-01.03 | Permitir alternar a unidade ativa durante a sessão sem novo login. Consultas que abrangem filiais independem da unidade ativa e dependem das permissões aplicáveis. | A troca não altera vínculos de registros existentes; consultas entre filiais aplicam autorização por alvo e não ampliam escrita. | Implementado/validado localmente: sessão preservada, dois Drafts em unidades distintas e origem imutável |
+| DCSE-01.04 | Evitar consultas redundantes à Core e permitir validação local segura pelos produtos. Contratos compartilhados devem ser versionados e preservar a autonomia dos produtos. | Cada contrato identifica versão, produtor, consumidores, dados autorizativos, validação, atualização/revogação e compatibilidade. Não confiar em IDs livres enviados pelo cliente. | DCSE-CTX-V1 implementado/validado Core→ERP; demais produtos não integrados neste recorte |
+| DCSE-01.05 | Centralizar a política configurável de inatividade e integrá-la ao Keycloak. | Política única aplicada coerentemente entre Core e fluxo OIDC; configuração, renovação, expiração e efeito sobre sessões são cobertos por testes. Os tempos aprovados em BASE-03 não são alterados por esta diretriz. | Diretriz aprovada; desenho e implementação pendentes |
+| DCSE-01.06 | Prever atualização ou revogação de sessões em situações críticas. | Mudança/revogação de contexto ou permissão tem comportamento definido para sessão em andamento, próxima requisição e produtos consumidores, com auditoria e evidência de propagação. | Lease e revalidação de comandos validados neste recorte; revogação crítica global de sessões continua pendente |
+| DCSE-01.07 | Aplicar vencimentos automáticos de licença na virada do dia conforme a regra comercial vigente. | A licença vencida deixa de autorizar operações no limite temporal definido pela regra comercial e sua mudança é refletida nos consumidores sem ampliar permissões locais. | Diretriz aprovada; regra temporal comercial e mecanismo técnico devem ser referenciados e validados antes da implementação |
+
+**Rastreabilidade e limites:** a ausência de filial ativa observada no CAD-1A v1.6 continua válida como histórico daquele binário/ambiente. DCSE-CTX-V1 comprova agora o produtor e o percurso em clones privados locais com OIDC real. O código operacional está no worktree `business-platform-core-s2-1-ui` (`feat/s2-1-araia-ui`), com migration 034; o banco original não foi migrado pelo runner. O ERP registra o resultado em `docs/IMOB_CADASTRO.md` v1.8. Nenhuma atribuição livre de filial, duplicação de identidade ou concessão global foi criada.
+
+**Histórico:** 1.0 (07/11/2026) — diretriz central de sessão e contexto aprovada; registrada sem alteração de código, endpoints, schema, infraestrutura ou estado de homologação.
+
+**Histórico 1.1 (07/11/2026):** recorte técnico autorizado e implementado. 23 testes de unidade Core, 2 HTTP Core e 10 testes focados ERP executados; SQL restrito/rollback e percurso real com 28 subchecks PASS, sem somar repetições. Evidências no worktree operacional `TestResults/dcse-01/real-summary.json` e recibos associados. A origem de grants vazios foi comprovada: controle/concessões de homologação vencidos e nenhuma licença comercial válida. A prova configurou e revogou concessão temporária no clone pelo operador existente, reutilizando perfil atribuído. Políticas DCSE-01.05–07 completas, homologação humana/mobile e publicação permanecem pendentes; validação de lease não equivale à revogação global de sessões.
+
+**Registro Monday da implementação:** updates 5704123990 no item P00 (13469835847) e 5704123989 no item IMOB-01 (13489071888), sem alterar status/gates ou criar atividades duplicadas.

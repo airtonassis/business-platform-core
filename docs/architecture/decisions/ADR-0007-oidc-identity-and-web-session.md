@@ -4,7 +4,9 @@
 
 **Proposto — pendente de aprovação humana. Não autoriza implementação.**
 
-Regras de produto abaixo foram aprovadas explicitamente pelo gestor; ADR, fornecedor, bibliotecas, parâmetros de sessão e storage continuam propostos. Referências: [conta única](../CONTA_EMPRESARIAL_UNICA.md), [ADR-0008](ADR-0008-organization-membership-and-context.md), [C01–C10](../SPRINT_1_CONTRATOS_FLUXOS.md), [12 cenários](../IDENTIDADE_CENARIOS_E_DECISOES.md), [ADR-0001](ADR-0001-technology-stack.md).
+**Recorte posterior expressamente autorizado (07/11/2026):** DCSE-CTX-V1 implementa e valida localmente o contexto ativo Core→ERP com OIDC existente, migration 034 e contratos descritos em [C07/C08 e DCSE-CTX-V1](../SPRINT_1_CONTRATOS_FLUXOS.md). Essa autorização delimitada não aprova esta ADR integralmente nem implementa a política completa de inatividade/revogação; ver [DCSE-01](../IDENTIDADE_CENARIOS_E_DECISOES.md#dcse-01).
+
+Regras de produto abaixo e a [Política Central de Sessão e Contexto Empresarial DCSE-01](../IDENTIDADE_CENARIOS_E_DECISOES.md#dcse-01) foram aprovadas explicitamente pelo gestor. Esta ADR, fornecedor, bibliotecas, protocolos, contratos técnicos, parâmetros não cobertos por BASE-03 e storage continuam propostos. Referências: [conta única](../CONTA_EMPRESARIAL_UNICA.md), [ADR-0008](ADR-0008-organization-membership-and-context.md), [C01–C10](../SPRINT_1_CONTRATOS_FLUXOS.md), [12 cenários](../IDENTIDADE_CENARIOS_E_DECISOES.md), [ADR-0001](ADR-0001-technology-stack.md).
 
 ## Conceitos e regra aprovada
 
@@ -41,6 +43,8 @@ Após login: identidade validada → histórico único de conta → empresa/memb
 C09 propõe 200 state=NotLinked como resultado esperado de GET /me/context, substituindo explicitamente a hipótese anterior de 409, pendente de aprovação. GET não cria identidade/conta/membership; preparação técnica de identidade é etapa explícita/idempotente no processamento de autenticação, não efeito oculto da consulta.
 
 ## Recuperação, sessão e revogação
+
+DCSE-01 aprova a política central configurável de inatividade integrada ao Keycloak e a capacidade de atualizar/revogar sessões em situações críticas. O mecanismo, o contrato compartilhado, os efeitos de atualização nos produtos e a validação técnica permanecem pendentes; os tempos já aprovados em BASE-03 são preservados.
 
 Senha/MFA/recuperação são do IdP. Recuperar A permite autenticar como A; não reativa membership/conta, muda OrganizationId ou cria B. Novo login B exige novo par técnico e novo convite, não reset ou renomeação da identidade A.
 

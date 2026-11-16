@@ -1,5 +1,138 @@
 # Sprint 1 — contratos e fluxos para fechamento UX
 
+## Recorte E2-05 autorizado — 04/11/2026
+
+Transporte aprovado Razor→Application. UI fortemente tipada usa os mesmos casos
+de uso dos contratos HTTP, sem cliente HTTP interno, BFF ou acesso SQL em páginas.
+/api/v1 permanece bearer; /app e /account usam somente cookie web explícito.
+Extensão P1-B autorizada: POST HTTPS `/account/backchannel-logout` é endpoint de
+protocolo servidor→servidor, autenticado exclusivamente por logout token OIDC
+assinado/validado, sem cookie/Bearer ou antiforgery de formulário. Não altera o
+antiforgery do logout/continuação Razor. Contrato detalhado e limites na seção 7.3
+de [prontidão pós-E2](PRONTIDAO_OPERACIONAL_POS_E2.md).
+O login não permite escolher organização. Contexto vem do vínculo único corrente.
+
+WebAuthentication:Enabled habilita o adapter local somente em Development;
+Authority, ClientId e ClientSecret (somente se o cliente exigir) vêm da configuração
+externa. OIDC e aplicativo web exigem HTTPS, incluindo callbacks e cookies Secure.
+O provedor descartável usa certificado efêmero e CertificateAuthorityBase64 com
+validação de CA e hostname reutilizada; não altera trust do Windows nem aceita
+certificados indiscriminadamente. Não desabilitar assinatura, issuer, audience,
+state, nonce ou PKCE. Não versionar chaves,
+senhas ou tokens. Configurar no provedor os callbacks /account/oidc-callback e
+/account/oidc-signed-out com a origem HTTPS exata do aplicativo.
+
+Sessão local E2-05: store em memória; P1-A/P1-B acrescentam perfil PostgreSQL
+técnico explícito e Data Protection persistente, conforme contrato de prontidão.
+Ambos preservam revogação no servidor, expiração absoluta 24 h e
+inatividade 30 min. Cookie opaco Secure/HttpOnly/Lax; cookies de nonce/correlação
+do middleware mantêm Secure. Tokens ficam no ticket servidor para logout remoto,
+nunca em localStorage/sessionStorage ou no cookie de autenticação. GET
+/account/session consulta expiração/fingerprint não autorizativo e revalida contexto
+sem renovar. POST /account/session/continue exige antiforgery, estende inatividade
+até o limite absoluto. POST /account/logout revoga antes do logout remoto; GET
+não efetua logout. Alteração de identidade invalida sessão antiga. Abas/histórico
+revalidam; fingerprint divergente limpa o conteúdo antes de recarregar. Sem drafts
+persistidos nesta etapa e sem alegação automática de conformidade WCAG.
+
+Jornadas /app: DemoRecord (list/item/create/update), Membership (list/item/comandos
+C08), Invitation (list/item/issue/cancel/replace/preview/accept) e referência própria
+C02. Formulários mutáveis têm antiforgery; título/versão/chave permanecem vinculados
+à operação, mas organização e papel são sempre resolvidos no servidor. 400/401/
+403/404/409/412/428 possuem mensagens sanitizadas; nada sobrescreve conflito ou
+repete mutação automaticamente. Referências e códigos são enviados apenas no body,
+mostrados uma vez quando emitidos e não reapresentados após erro/preview.
+
+Novo GET /api/v1/organizations/{orgId}/memberships: Owner/Admin ativo; 25 itens por
+padrão, limit 1–100, offset 0–10000; ordenação membershipId crescente, items/hasMore.
+Item expõe membershipId/accountId/organizationId/role/status/resourceVersion forte;
+sem issuer/subject, nomes, e-mail ou SELECT geral. Member/Platform negados; escopo
+divergente 404, papel proibido 403, paginação inválida 400. Porta SQL incremental
+read-only, sem novos grants em tabelas e sem alterar comandos/Owner existentes.
+
+Validação reproduzível local: scripts/validate_web_oidc_local.py --execute-local
+--output TestResults/<nova-rodada> cria Keycloak sintético somente em loopback,
+executa protocolo Code/PKCE/PAR contra Razor TestServer HTTPS e remove seu container
+e import temporário. scripts/validate_tenant_audit_local.py --execute-local
+--membership-list-only --output TestResults/<nova-rodada> valida a porta/readiness
+e o adapter em PostgreSQL 17 descartável. Nenhum script acessa VPS ou produção.
+O store local não é infraestrutura de sessão de produção; habilitação fora de
+Development falha fechada. Gate E2 permanece não aprovado.
+
+## Recorte E2-04 autorizado ? 04/11/2026
+
+DemoRecord ? o recurso de demonstra??o Sandbox previsto, sem dom?nio comercial
+novo. Esta aprova??o local abrange os novos objetos e suas portas, n?o grants
+adicionais sobre tabelas existentes, opera??o externa ou aprova??o do gate E2.
+
+- POST `/api/v1/organizations/{orgId}/demo-records`: Owner/Admin ativos,
+  `{ "title": "..." }`, Idempotency-Key UUID can?nico obrigat?rio. 201 com Location
+  e ETag na primeira execu??o; 200 com representa??o original em replay autorizado.
+  Chave por identidade/org/a??o, conte?do can?nico SHA-256, 48 h; payload divergente
+  ou recibo vencido 409, sem reexecu??o. Expurgo n?o implementado.
+- GET cole??o: Owner/Admin/Member ativos, `limit` padr?o 25, 1?100, `offset` padr?o
+  zero, 0?10000. Retorna `{ items, hasMore }`, ID crescente como ordem total fixa;
+  sem sort SQL arbitr?rio, contagem global ou ETag de cole??o.
+- GET `/{id}`: pap?is ativos acima; item do mesmo Tenant com ETag individual.
+- PATCH `/{id}`: Owner/Admin, somente t?tulo e If-Match concreto; ausente 428,
+  malformado/weak/lista/wildcard/outro recurso 400, vers?o obsoleta 412 ap?s
+  autoriza??o. Sem sobrescrita autom?tica; organiza??o/ID imut?veis.
+
+Representa??o p?blica: `id`, `organizationId`, `title`, `resourceVersion`. ETag e
+resourceVersion usam base64url can?nica sem padding de
+`d1|organizationId:D|id:D|version decimal`, entre aspas; contador persistido, n?o xmin.
+T?tulo obrigat?rio, trim no servidor, 1?200 escalares Unicode. Campos JSON extras
+(incluindo organization_id, organizationId ou version) s?o rejeitados com 400.
+
+401 sem autentica??o; 403 a??o proibida no Tenant acess?vel; 404 organiza??o/item
+inacess?vel, inclusive ap?s revoga??o; 400 entrada/pagina??o inv?lida; 503 depend?ncia
+ou resultado incerto, sem afirmar falha definitiva de commit. Erros s?o sanitizados.
+A Application deriva issuer/subject do ator autenticado e resolve v?nculo permanente,
+Account, Organization e Membership correntes; rota/claims Tenant n?o autorizam.
+
+Portas SQL p?blicas separadas: read_demo_records, create_demo_record e
+update_demo_record. Muta??es reautorizam ap?s locks e gravam DemoRecord + evento
+sandbox.demo_events + recibo (somente create) no mesmo commit. RLS/FORCE e ACL m?nima
+s?o barreiras adicionais; GUC n?o ? autentica??o. Auditoria transacional dedicada
+n?o amplia o contrato/whitelist ou os privil?gios do leitor HMAC E2-02A.
+
+## Recorte E2-03 autorizado — 04/11/2026
+
+Autorização expressa para implementação e testes locais do ciclo de convites API/
+Application/PostgreSQL, preservando E2-01/E2-02/E2-02A e migrations 001–007.
+O responsável aprovou **convite 24 h e janela de recibos 48 h**, mantendo produção
+e expurgo fora desta execução, e confirmou **preservar estados e negativas existentes**.
+Não existe novo estado Rejected/Declined: abandonar a jornada não altera o convite.
+Esses parâmetros deixam de ser pendência neste recorte; não aprovam o documento
+integral, UI/continuation/sessão web, envio de e-mail, operação ou gate E2.
+
+C04/C06 neste recorte: convite somente Member; Owner/Admin do contexto atual emite,
+consulta, cancela e substitui. Destinatário conhecido com referência C02 válida;
+aceite exige identidade autenticada correspondente e código de 256 bits, com hash
+persistido. URL `/app/invitations/{id}` não contém código e é endereço canônico para
+a futura UI; esta entrega executa o ciclo pelos endpoints bearer, sem implementar
+a página web. Preview/GET não alteram estado nem renovam prazos. Validade usa relógio
+do PostgreSQL, inclusive após espera por locks. Cancelled/Replaced/Expired não são
+aceitáveis. Replay de Accepted recupera o mesmo vínculo somente se ainda ativo.
+Cancel repetido não cria efeitos e pode retornar conflito; não há reativação.
+
+Idempotency-Key é UUID D não vazio, consistente com as operações existentes.
+Emissão/substituição retornam código somente na primeira resposta 201; replay 200
+contém metadados e secretUnavailable, sem recuperar código. A janela de 48 h não
+autoriza apagamento automático; chave expirada não reexecuta a criação. Recibos
+guardam IDs e fingerprint de parâmetros técnicos/hashes, sem código recuperável.
+ETag de convite é forte e tipada: base64url sem padding de
+`i1|organizationId:D|invitationId:D|version decimal`, entre aspas. If-Match rejeita
+weak/wildcard/lista/outro item; autenticação/autorização precedem 428/400/412.
+GET de lista aceita limit 1–100 (padrão 25), cursor canônico de timestamp/UUID e
+state opcional Pending/Accepted/Expired/Cancelled/Replaced, com ordenação decrescente.
+
+POSTs de convite reutilizam o limitador existente (10/identidade/min e 30/IP/min),
+com Retry-After, sem fixar nova política operacional de convites por hora. Falhas
+após confirmação de conflito SQL podem reler estado autorizado uma vez para
+classificar Expired/Cancelled/Replaced/AlreadyAccepted; nunca repetem a mutação.
+Falha de transporte em escrita é resultado desconhecido, sem alegar rollback.
+
 ## Status e relação com decisões existentes
 
 **Proposto — revisão humana obrigatória; nenhuma implementação autorizada.**
@@ -120,6 +253,8 @@ Resultado desconhecido: mostrar "Não foi possível confirmar o resultado"; desa
 
 ## C07 — Sessão, expiração, logout e múltiplas abas (UX-08/10/11)
 
+**Diretriz funcional aprovada aplicável:** [DCSE-01](IDENTIDADE_CENARIOS_E_DECISOES.md#dcse-01). A Core prepara organização, permissões, produtos licenciados e unidades autorizadas no login; ativa automaticamente uma única unidade autorizada ou restaura a última válida entre várias; permite alternância sem novo login. A inatividade é política central configurável integrada ao Keycloak. Os tempos BASE-03 já aprovados permanecem válidos. Esta diretriz não torna implementados os mecanismos e contratos candidatos descritos nesta seção.
+
 ### Alternativas e recomendação pendente
 
 | Alternativa | Vantagens | Riscos / escolha |
@@ -151,6 +286,8 @@ Ao detectar conta/membership revogado: remover dados/ações protegidos, cancela
 Testes UAT-02/07/08/11/12/13/15; validar aviso e extensões, limite absoluto, outra conta, rede, foco, histórico e múltiplas abas. Não alegar acessibilidade somente por ter aviso. Dependências: IdP/store e decisões de segurança/privacidade/acessibilidade ainda pendentes.
 
 ## C08 — Matriz de autorização por ator, alvo, estado e ação (UX-16)
+
+**Aplicação de DCSE-01:** operações dependentes da unidade ativa usam o contexto central autenticado e revalidado; consultas entre filiais avaliam autorização para cada alvo sem depender da unidade ativa. O contrato compartilhado, sua versão e a validação local segura continuam dependências técnicas anteriores a uma integração de produto.
 
 Pré-condições globais: identidade ativa, esquema adequado, conta empresarial com vínculo único, organização ativa e membership do ator ativo para rotas Tenant. Licença/assinatura futura não é concedida pelo papel. Platform sem membership não opera dados Tenant. Conta Platform separada e sem poder de impersonação. Tudo não listado é negado; ocultar botão não substitui a mesma regra no caso de uso.
 
@@ -201,6 +338,36 @@ Datas visíveis com timezone claro, auditoria UTC no armazenamento e apresentaç
 Regra aprovada e permanente: identidade única→conta única, vínculo imutável inclusive revogado, novo login+convite para B e e-mail sem autoridade. Não escolher fornecedor ou aprovar tempo de sessão. Continuam propostas técnicas: transporte Razor/Application, referência de destinatário, link+código separado, continuation técnica, novos endpoints, estados/transições, idempotência/48 h, sessão/rascunho, mecanismos de unicidade histórica/constraints, matriz de acesso e UI Platform mínima. Revisor humano pode escolher alternativa documentada; nesse caso atualizar contratos/testes juntos antes do desenvolvimento.
 
 Nenhum ajuste altera Foundation ou aprova grants/IdP/versões/MaxOffset. Infraestrutura técnica candidata (sessão, continuation, referências, rascunhos e idempotência) não é novo domínio compartilhado da plataforma; requer estimativa e aprovação de armazenamento/privacidade. Aprovação deste detalhamento não executa o esquema, testes, UI ou integração dos produtos.
+
+## DCSE-CTX-V1 — contexto empresarial ativo (recorte local DCSE-01)
+
+**Versão técnica:** 1.0. **Origem:** autorização expressa de implementação local DCSE-01, 07/11/2026. Código no worktree operacional `business-platform-core-s2-1-ui`, branch `feat/s2-1-araia-ui`; consumidor `erp-imobiliario-platform`, branch `imob-end-01-address`. Não aprova integralmente ADRs propostas, gates, homologação humana ou publicação.
+
+### Contrato e responsabilidade
+
+- Core: novo `GET /api/v1/access/context` autenticado por bearer existente, `schemaVersion=1`. Retorna issuer/subject, organização/conta/membership, papel administrativo, perfil operacional selecionado, produtos licenciados e vigências, grants efetivos, unidades autorizadas, unidade ativa/última válida, contextVersion e issuedAtUtc/expiresAtUtc. A lista de unidades não constitui escolha de unidade ativa.
+- A sessão usa o `sid` já autenticado pelo Keycloak, associado a issuer/subject; somente o hash dessa associação é persistido. O login web prepara o contexto e a consulta nova permite preparação idempotente após autenticação. Mantém uma organização por identidade e o limite absoluto BASE-03 de 24 h; não implementa nova política de inatividade.
+- Uma unidade autorizada autoativa. Várias restauram somente a última ainda autorizada; sem última válida, selectionRequired=true e activeEstablishmentId=null. Sem unidades, operações dependentes ficam negadas. Consultas autorizadas entre filiais não dependem da unidade ativa.
+- `POST /api/v1/access/context/active-establishment` recebe somente establishmentId e versão esperada; bearer existente. O equivalente web é `GET/POST /account/context`, com sessão web e antiforgery no POST. A seleção é solicitação, nunca autoridade: backend revalida empresa/membership/unidade na transação. Versão obsoleta: 409. Sem autenticação: 401; sem autorização: 403; seleção inválida: 400; sessão/contexto ausente: 409; dependência inválida/indisponível: 502/503.
+- Interface central: seletor de unidades autorizadas e atualização controlada, sem novo login. O ERP não possui seletor paralelo. Registros já cadastrados conservam organização, unidade e criador originais.
+
+### Persistência, autorização e eficiência
+
+Migration aditiva `034_active_business_context.sql`: preferências por membership, contexto por sessão e eventos; FK de unidade composta com organização, RLS/FORCE e owner técnico restrito. A porta SECURITY DEFINER tem search_path fechado, sem EXECUTE público nem DML de tabelas para o runtime. Atualização, preferência, versão e auditoria são transacionais; migrations anteriores permanecem imutáveis.
+
+Direitos vêm exclusivamente da interseção existente de perfil selecionado, catálogo publicado e licença/concessão válida. Papel Owner/Admin não concede recursos de produto por si. A prova usa concessão temporária de homologação pelo operador existente e reutiliza o perfil já atribuído, somente no banco descartável; licenciamento comercial e usuários reais não são alterados.
+
+O snapshot HTTP não é token de autenticação nem JWT emitido pela Core. O ERP o obtém em HTTPS confiável com o access token existente e valida versão, issuer, subject, organização, unidades, grants e validade. Quando o cookie OIDC omite a claim `iss`, usa a autoridade já configurada e validada pelo mecanismo existente.
+
+Lease central de no máximo 5 s, limitada também à validade de licenças e sessão. Cache do ERP somente no servidor, chaveada por origem/issuer/subject/hash do token, expira conservadoramente e não se prolonga na falha. Consultas reutilizam o snapshot; abertura de novo Draft e comandos mutáveis obtêm um snapshot fresco uma vez e reutilizam-no nas conferências daquele comando. Assim, uma cache de leitura não escolhe a unidade anterior numa gravação. Leituras podem refletir alterações de direitos/unidade por até 5 s; não há promessa de revogação global instantânea. Propagação crítica completa continua fora deste recorte.
+
+Ativação técnica explícita: Core `ActiveContext:Enabled=true` após migration/EXECUTE da porta no ambiente autorizado; ERP `Core:ContextVersion=1`. O modo legado permanece disponível por configuração. Não há fallback silencioso de um contrato novo indisponível para uma autorização antiga. Endpoints Core preexistentes e APIs imobiliárias v1/v2 não mudam de payload.
+
+### Evidências e limites
+
+Evidências executadas no worktree operacional: `TestResults/dcse-01/` (testes .NET, SQL restrito/rollback, navegador real, persistência e limpeza); inventário final e fingerprints identificam os fontes e ambientes. As evidências históricas do CAD-1A (104) e integração anterior (25) são reutilizadas apenas nos domínios não alterados, sem contabilizá-las como testes novos ou promover todo o produto por inferência.
+
+A implantação da migration foi validada somente em clones privados descartáveis; os bancos originais não são migrados pelo runner. Hosts de prova são encerrados e containers removidos. Homologação humana/mobile e publicação permanecem pendentes. DCSE-01.05–07 não são declaradas integralmente implementadas.
 
 ## Referências técnicas
 

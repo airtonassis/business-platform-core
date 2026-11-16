@@ -1,7 +1,7 @@
 PLANO DIRETOR
 BUSINESS PLATFORM CORE
 Plataforma SaaS multiproduto, multiempresa e extensível por aplicações, serviços e agentes de IA
-Versão 1.2 | Consolidação documental da visão estratégica aprovada; origem: versão 1.0 de 30 de outubro de 2026.
+Versão 1.3 | Consolidação documental da visão estratégica aprovada; origem: versão 1.0 de 30 de outubro de 2026.
 Situação: visão estratégica validada pelo gestor. Decisões técnicas da Sprint 1, contratos, estimativas e implementação permanecem sujeitos à aprovação humana. Esta revisão altera somente documentação; não executa implementação, testes, migração ou deploy.
 Leitura de status: a seção 1 registra a inspeção original; as seções 18 e 19 preservam o processo originalmente proposto. A Sprint 0 foi posteriormente recebida e revisada, e o planejamento da Sprint 1 foi autorizado. A seção 20 e a revisão de conta empresarial única consolidam a orientação vigente sem converter propostas técnicas em decisões aprovadas.
 
@@ -39,7 +39,7 @@ Provisionamento e Console Admin	Observabilidade e automações	Outras aplicaçõ
 
 Contatos, financeiro e workflows não entram automaticamente no Core: só se tornam serviços compartilhados quando houver contrato comum estável e pelo menos dois consumidores reais. Evitar Shared Kernel amplo com entidades de domínio de setores distintos.
 4. Arquitetura lógica e topologia de implantação
-1.	Portal de acesso: autenticação e entrada direta na empresa vinculada, sem seletor padrão. Catálogo de produtos contratados e links/launch são capacidades futuras por empresa.
+1.	Acesso integrado: uma entrada autenticada resolve a empresa vinculada e apresenta somente produtos e funções autorizados. O uso normal não exige credenciais ou portais separados por produto; destinos podem ter rotas/URLs técnicas próprias, sob a sessão/federação aprovada. O catálogo e o launch centralizados podem evoluir, sem mudar a responsabilidade dos produtos por autorização e dados.
 2.	Control Plane: Core API + módulos Identity, Tenancy, Access, Catalog, Subscription, Entitlements, Provisioning, Audit e Admin.
 3.	Data Plane: GIV, ERP Imobiliário, CRM e demais serviços, com banco de domínio independente e validação local de autorização.
 4.	Shared Services: notificações, documentos, mensageria, integrações e AI Platform, opcionais e isolados por tenant.
@@ -49,9 +49,9 @@ Integrações síncronas: REST/JSON versionado e OpenAPI; assíncronas: eventos 
 5. Identidade, tenants e autorização
 5.1 Modelo de identidade
 •	Identidade técnica não é e-mail, pessoa civil ou empresa. A conta empresarial de usuário é vinculada a uma única Organization no MVP; Membership define papel/estado nesse ambiente. Administração multiempresa é estudo futuro, sem vínculo automático.
-•	Login único com OpenID Connect/OAuth 2.0; usar provedor maduro (gerenciado ou self-hosted) após ADR, evitando construir protocolo de identidade do zero.
+•	A experiência de acesso é única entre Core e produtos autorizados. Login/federação usa o contrato de identidade aprovado; OpenID Connect/OAuth 2.0 e escolha de provedor seguem as ADRs e seu estado atual, sem criar credenciais ou portal empresarial paralelo por produto.
 •	Tokens de curta duração, validação de issuer/audience/assinatura/expiração; revogação e refresh conforme risco e canal.
-•	Empresa resolvida pelo vínculo único validado no servidor após autenticação; APIs revalidam conta, empresa, membership, permissão e escopo. Produtos contratados exigirão entitlements futuros; sem seletor de empresa.
+•	Empresa resolvida pelo vínculo único validado no servidor após autenticação. O acesso ao produto depende cumulativamente de vínculo/membership, entitlement/licença, perfil ativo e permissão efetiva; APIs revalidam também a filial/unidade e o escopo da operação. Não há seletor de empresa.
 •	Perfis separados: PlatformOwner/PlatformOperator/PlatformSupport e TenantOwner/TenantAdmin/TenantMember; suporte com acesso excepcional temporário e auditado.
 5.2 Multi-tenancy e proteção
 •	Banco separado por aplicação como padrão inicial; dentro de cada produto, escolher banco por tenant ou compartilhado com RLS e tenant_id conforme custo, risco e escala.
@@ -94,8 +94,8 @@ Política de falha:  definir explicitamente se falha temporária no Core permite
 Separação de UI e API: console Platform Admin com API e políticas privilegiadas distintas. Não permitir bypass de tenant em endpoints convencionais; break-glass com motivo, prazo, aprovação e auditoria.
 8. Contrato de integração de uma aplicação
 Capacidade	Contrato mínimo
-Identidade	Validar OIDC; mapear user_id e organization_id sem confiar em dados de interface.
-Registro de produto	ProductId estável, versão, URLs de launch, health, OpenAPI e compatibilidade.
+Identidade e entrada	Reutilizar a identidade/contexto central e a experiência de acesso integrado; validar o contrato de autenticação/federação aprovado, mapear identidade e organização do servidor e não criar login/portal empresarial paralelo nem confiar em dados da interface.
+Registro de produto	ProductId estável, versão, rotas de destino/launch, health, OpenAPI e compatibilidade; destinos técnicos próprios não implicam uma experiência de acesso independente.
 Provisionamento	POST/activate, suspend, resume e status; idempotency key, retries e confirmação.
 Entitlements	API ou token/manifest assinado com versão, TTL, limites e invalidação.
 Permissões	Escopos e políticas do produto registrados; decisão de autorização no backend do produto.
@@ -261,6 +261,6 @@ Conclusão documental prepara revisão humana para eventual prototipação separ
 
 ### 20.5 Conta empresarial única — revisão de produto aprovada
 
-A diretriz vigente é uma conta empresarial/ambiente por empresa, representada por Organization isolada, assinatura futura independente e produtos/módulos individuais ou pacotes. Usuário empresarial entra diretamente na empresa vinculada, sem lista/seletor/troca na experiência padrão. Uma empresa pode utilizar GIV, ERP Imobiliário, ERP Multissetorial e CRM conforme direitos contratados; permissões/licenças/parametrizações pertencem ao seu ambiente. Templates futuros versionados sugerem configurações ajustáveis por atividade, não compartilham dados nem impõem regra universal.
+A diretriz vigente é uma conta empresarial/ambiente por empresa, representada por Organization isolada, assinatura futura independente e produtos/módulos individuais ou pacotes. Usuário empresarial entra diretamente na empresa vinculada, sem lista/seletor/troca na experiência padrão. O Core resolve produtos licenciados e direitos efetivos; acesso funcional combina licença/entitlement, perfil ativo e permissão, com organização e filial autorizadas. Uma empresa pode utilizar GIV, ERP Imobiliário, ERP Multissetorial e CRM conforme esses direitos; administração no Core não concede acesso irrestrito aos produtos. Templates futuros versionados sugerem configurações ajustáveis por atividade, não compartilham dados nem impõem regra universal. Ver também [DCSE-01](../IDENTIDADE_CENARIOS_E_DECISOES.md#dcse-01) e [Acesso integrado Core–produtos](../CONSOLIDACAO_ESTRATEGICA.md#acesso-integrado-coreprodutos).
 
 A proposta anterior de um mesmo usuário operar A/B com seleção foi substituída antes de implementação. Contas distintas em A/B permanecem fixtures obrigatórias de isolamento. O [modelo e matriz de impacto](../CONTA_EMPRESARIAL_UNICA.md) distinguem empresa, identidade técnica, e-mail e conta de usuário, analisam outra empresa pela mesma pessoa e registram alternativas. Recomendações técnicas, constraints e ADRs 0007–0012 continuam propostos. PlatformOperator é separado e não recebe dados empresariais automaticamente. Fundação SaaS não antecipa contratação, billing, licenças, catálogo, templates ou IA; demonstração técnica é somente homologação. Nenhuma mudança em Foundation, código ou infraestrutura foi autorizada.
